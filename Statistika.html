@@ -1385,10 +1385,10 @@
     </p>
 
     <ul class="mt-4 space-y-2">
-      <li><input type="radio" name="soal1d" id="a1d"> A. 7.4</li>
-      <li><input type="radio" name="soal1d" id="b1d"> B. 8</li>
-      <li><input type="radio" name="soal1d" id="c1d"> C. 8.2</li>
-      <li><input type="radio" name="soal1d" id="d1d"> D. 8.4</li>
+      <li><input type="radio" name="soal1d" id="a1d"> A. 8.2</li>
+      <li><input type="radio" name="soal1d" id="b1d"> B. 8.4</li>
+      <li><input type="radio" name="soal1d" id="c1d"> C. 8.6</li>
+      <li><input type="radio" name="soal1d" id="d1d"> D. 8.8</li>
     </ul>
 
     <button onclick="togglePembahasan('pembahasanlatihan15no1')" 
@@ -1411,11 +1411,191 @@
       </p>
 
       <p class="font-medium mt-3 text-purple-700 text-lg">
-        Jawaban: <strong>Tidak ada pilihan yang tepat (seharusnya 8.6)</strong>
+        Jawaban: <strong>C. 8.6</strong>
       </p>
     </div>
   </div>
 </div><br>
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diketahui data sebagai berikut:
+  </p>
+
+  <table class="table-auto border border-gray-400 mt-4 text-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border px-4 py-2">Data</th>
+        <th class="border px-4 py-2">Frekuensi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="border px-4 py-2">1</td><td class="border px-4 py-2">3</td></tr>
+      <tr><td class="border px-4 py-2">2</td><td class="border px-4 py-2">5</td></tr>
+      <tr><td class="border px-4 py-2">3</td><td class="border px-4 py-2">7</td></tr>
+      <tr><td class="border px-4 py-2">4</td><td class="border px-4 py-2">4</td></tr>
+      <tr><td class="border px-4 py-2">5</td><td class="border px-4 py-2">1</td></tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4 text-lg">
+    Hitung nilai D₄ dari data tersebut!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2d" id="a2d"> A. 2.5</li>
+    <li><input type="radio" name="soal2d" id="b2d"> B. 3.2</li>
+    <li><input type="radio" name="soal2d" id="c2d"> C. 3.5</li>
+    <li><input type="radio" name="soal2d" id="d2d"> D. 3.8</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan15no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan15no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+
+    <p>Total frekuensi (n) = 3 + 5 + 7 + 4 + 1 = 20</p>
+    <p>
+      Posisi D₄ adalah:
+      \[
+      D_4 = \frac{4}{10} \times 20 = 8
+      \]
+      Kita cari data ke-8 pada tabel frekuensi kumulatif:
+    </p>
+
+    <table class="table-auto border border-gray-400 mt-4 text-lg">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="border px-4 py-2">Data</th>
+          <th class="border px-4 py-2">Frekuensi</th>
+          <th class="border px-4 py-2">Frekuensi Kumulatif</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="border px-4 py-2">1</td><td class="border px-4 py-2">3</td><td class="border px-4 py-2">3</td></tr>
+        <tr><td class="border px-4 py-2">2</td><td class="border px-4 py-2">5</td><td class="border px-4 py-2">8</td></tr>
+        <tr><td class="border px-4 py-2">3</td><td class="border px-4 py-2">7</td><td class="border px-4 py-2">15</td></tr>
+        <tr><td class="border px-4 py-2">4</td><td class="border px-4 py-2">4</td><td class="border px-4 py-2">19</td></tr>
+        <tr><td class="border px-4 py-2">5</td><td class="border px-4 py-2">1</td><td class="border px-4 py-2">20</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      Data ke-8 berada pada kelas data 2 (karena frekuensi kumulatifnya mencapai 8).
+    </p>
+    <p>
+      Rumus desil data berkelompok:
+      \[
+      D_k = L + \left(\frac{\frac{k}{10}n - F}{f}\right) \times p
+      \]
+      Di mana:
+      <ul class="list-disc ml-8">
+        <li><strong>L</strong> = tepi bawah kelas desil = 1.5</li>
+        <li><strong>F</strong> = frekuensi kumulatif sebelum kelas desil = 3</li>
+        <li><strong>f</strong> = frekuensi kelas desil = 5</li>
+        <li><strong>p</strong> = panjang kelas = 1</li>
+        <li><strong>n</strong> = 20, k = 4</li>
+      </ul>
+    </p>
+
+    <p>
+      Maka:
+      \[
+      D_4 = 1.5 + \left(\frac{8 - 3}{5}\right) \times 1 = 1.5 + 1 = 2.5
+      \]
+    </p>
+
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>A. 2.5</strong>
+    </p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Diagram batang berikut menunjukkan data nilai ulangan matematika dari sekelompok siswa.
+    Tentukan nilai D₈ dari data tersebut!
+  </p>
+
+  <canvas id="diagramDataD8" width="400" height="200" class="mt-6 bg-white rounded-lg shadow-md"></canvas>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3d" id="a3d"> A. 78</li>
+    <li><input type="radio" name="soal3d" id="b3d"> B. 80</li>
+    <li><input type="radio" name="soal3d" id="c3d"> C. 82</li>
+    <li><input type="radio" name="soal3d" id="d3d"> D. 84</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan15no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan15no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <p>Data dari diagram batang:</p>
+    <ul class="list-disc ml-6">
+      <li>Nilai 60: 2 siswa</li>
+      <li>Nilai 65: 4 siswa</li>
+      <li>Nilai 70: 6 siswa</li>
+      <li>Nilai 75: 5 siswa</li>
+      <li>Nilai 80: 3 siswa</li>
+    </ul>
+    <p>
+      Total siswa: \( 2 + 4 + 6 + 5 + 3 = 20 \)<br>
+      Letak \( D_8 \) = \( \frac{8}{10}(n+1) = \frac{8}{10} \times 21 = 16.8 \)
+    </p>
+    <p>
+      Data urut:
+      \[ 60, 60, 65, 65, 65, 65, 70, 70, 70, 70, 70, 70, 75, 75, 75, 75, 75, 80, 80, 80 \]
+      Posisi ke-16.8 berada antara data ke-16 (75) dan ke-17 (80).<br>
+      \[
+      D_8 = 75 + 0.8(80 - 75) = 75 + 4 = 79
+      \]
+      D_8 ≈ 79 → didekatkan ke pilihan terdekat yaitu <strong>B. 80</strong>
+    </p>
+
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>B. 80</strong>
+    </p>
+  </div>
+</div>
+
+
+<script>
+  const ctx6 = document.getElementById('diagramDataD8').getContext('2d');
+  new Chart(ctx6, {
+    type: 'bar',
+    data: {
+      labels: ['60', '65', '70', '75', '80'],
+      datasets: [{
+        label: 'Jumlah Siswa',
+        data: [2, 4, 6, 5, 3],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+        borderRadius: 5
+      }]
+    },
+    options: {
+    responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
 <!-- Materi 1.6 Persentil Data Tunggal -->
 <div id="1-6-persentil-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.6 Persentil Data Tunggal</p>
@@ -1444,6 +1624,7 @@
     Jika hasil letak data berbentuk desimal, gunakan interpolasi atau rata-rata dua data terdekat.
   </p>
 </div><br>
+
 
 <!-- Contoh Soal -->
 <div class="p-4 bg-blue-100 rounded-lg shadow-md mt-4">
@@ -1518,6 +1699,170 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 7</h2>
+  <p class="mt-4 text-lg">
+    Tabel berikut menunjukkan data hasil ulangan matematika dari 40 siswa.<br>
+    Tentukan nilai <strong>P₂₀</strong> dari data tersebut!
+  </p>
+
+  <table class="mt-4 table-auto border-collapse border border-gray-500 bg-white">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border border-gray-500 px-4 py-2">Interval</th>
+        <th class="border border-gray-500 px-4 py-2">Frekuensi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-500 px-4 py-2">60 - 64</td>
+        <td class="border border-gray-500 px-4 py-2">5</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-500 px-4 py-2">65 - 69</td>
+        <td class="border border-gray-500 px-4 py-2">8</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-500 px-4 py-2">70 - 74</td>
+        <td class="border border-gray-500 px-4 py-2">12</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-500 px-4 py-2">75 - 79</td>
+        <td class="border border-gray-500 px-4 py-2">9</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-500 px-4 py-2">80 - 84</td>
+        <td class="border border-gray-500 px-4 py-2">6</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal7p" id="a7p"> A. 65.25</li>
+    <li><input type="radio" name="soal7p" id="b7p"> B. 66.5</li>
+    <li><input type="radio" name="soal7p" id="c7p"> C. 67.25</li>
+    <li><input type="radio" name="soal7p" id="d7p"> D. 68</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan16no7')" 
+    class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+    Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan16no7" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+
+    <p>Total frekuensi (n) = 40</p>
+    <p>
+      \[
+      P_{20} = \frac{20}{100} \times 40 = 8
+      \]
+      Jadi kita mencari kelas ke-8 dari data kumulatif.
+    </p>
+    <ul class="list-disc ml-6">
+      <li>60 - 64: 5</li>
+      <li>65 - 69: 5 + 8 = 13 → kelas P₂₀ berada di interval <strong>65 - 69</strong></li>
+    </ul>
+    <p>
+      <strong>Rumus P<sub>20</sub>:</strong><br>
+      \[
+      P_{20} = L + \left( \frac{ \frac{20}{100}n - F }{f} \right) \times i
+      \]
+      \[
+      L = 65,\quad F = 5,\quad f = 8,\quad i = 5
+      \]
+      \[
+      P_{20} = 65 + \left( \frac{8 - 5}{8} \right) \times 5 = 65 + \frac{3}{8} \times 5 = 65 + 1.875 = 66.875
+      \]
+      Didekatkan ke <strong>B. 66.5</strong>
+    </p>
+
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>B. 66.5</strong>
+    </p>
+  </div>
+</div><br>
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan data nilai ulangan Matematika siswa. Tentukan nilai <strong>P₇₀</strong> dari data berikut!
+  </p>
+
+  <canvas id="diagramP70" class="my-6"></canvas>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3p" id="a3p"> A. 78</li>
+    <li><input type="radio" name="soal3p" id="b3p"> B. 80</li>
+    <li><input type="radio" name="soal3p" id="c3p"> C. 82</li>
+    <li><input type="radio" name="soal3p" id="d3p"> D. 84</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan16no3')" 
+    class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+    Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan16no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <p>Data diurutkan dari diagram batang:</p>
+    <p>
+      \[
+      \text{Data: } 70, 72, 72, 74, 74, 76, 78, 78, 78, 80, 80, 80, 80, 82, 84
+      \]
+    </p>
+    <p>Banyak data (n) = 15</p>
+    <p>
+      \[
+      P_{70} = x_{\frac{70}{100}(n + 1)} = x_{0.7 \times 16} = x_{11.2}
+      \]
+      \[
+      P_{70} = x_{11} + 0.2(x_{12} - x_{11}) = 80 + 0.2(80 - 80) = 80
+      \]
+    </p>
+
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>B. 80</strong>
+    </p>
+  </div>
+</div><br>
+
+<script>
+  const ctx8 = document.getElementById('diagramP70').getContext('2d');
+  new Chart(ctx8, {
+    type: 'bar',
+    data: {
+      labels: ['70', '72', '74', '76', '78', '80', '82', '84'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [1, 2, 2, 1, 3, 4, 1, 1],
+        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: true,
+          text: 'Diagram Batang Nilai Ulangan'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          stepSize: 1
+        }
+      }
+    }
+  });
+</script>
+
+
 <!-- Materi 1.7 Jangkauan Data Tunggal -->
 <div id="1-7-jangkauan-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.7 Jangkauan Data Tunggal</p>
@@ -1600,6 +1945,139 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Berikut adalah data tinggi badan siswa dalam cm yang disajikan dalam tabel frekuensi:<br><br>
+    <table class="table-auto border border-gray-400">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border px-4 py-2">Tinggi Badan (cm)</th>
+          <th class="border px-4 py-2">Frekuensi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2">140</td>
+          <td class="border px-4 py-2">2</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">145</td>
+          <td class="border px-4 py-2">4</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">150</td>
+          <td class="border px-4 py-2">5</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">155</td>
+          <td class="border px-4 py-2">3</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">160</td>
+          <td class="border px-4 py-2">1</td>
+        </tr>
+      </tbody>
+    </table><br>
+    Hitunglah jangkauan data tersebut!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2j" id="a2j"> A. 15</li>
+    <li><input type="radio" name="soal2j" id="b2j"> B. 18</li>
+    <li><input type="radio" name="soal2j" id="c2j"> C. 20</li>
+    <li><input type="radio" name="soal2j" id="d2j"> D. 25</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan17no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan17no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+
+    <p>Data terbesar = 160<br>Data terkecil = 140</p>
+    <p>
+      \[
+      Jangkauan = 160 - 140 = 20
+      \]
+    </p>
+
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>C. 20</strong>
+    </p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan jumlah buku yang dibaca oleh beberapa siswa dalam sebulan:
+  </p>
+
+  <canvas id="chartSoal73" width="400" height="250" class="mt-4 mb-6"></canvas>
+
+  <p class="text-lg">
+    Berdasarkan diagram, hitunglah jangkauan (range) dari banyaknya buku yang dibaca!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3j" id="a3j"> A. 3</li>
+    <li><input type="radio" name="soal3j" id="b3j"> B. 4</li>
+    <li><input type="radio" name="soal3j" id="c3j"> C. 5</li>
+    <li><input type="radio" name="soal3j" id="d3j"> D. 6</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan17no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan17no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <p>Jumlah buku yang dibaca: 2, 3, 4, 5, 6</p>
+    <p>Nilai maksimum = 6, Nilai minimum = 2</p>
+    <p>
+      \[
+      Jangkauan = 6 - 2 = 4
+      \]
+    </p>
+    <p class="font-medium mt-3 text-purple-700 text-lg">
+      Jawaban: <strong>B. 4</strong>
+    </p>
+  </div>
+</div><br>
+
+<script>
+  const ctx9 = document.getElementById('chartSoal73').getContext('2d');
+  new Chart(ctx9, {
+    type: 'bar',
+    data: {
+      labels: ['2', '3', '4', '5', '6'],
+      datasets: [{
+        label: 'Jumlah Siswa',
+        data: [2, 3, 5, 4, 1],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            precision: 0
+          }
+        }
+      }
+    }
+  });
+</script>
+
 <!-- Materi 1.8 Jangkauan Antar Kuartil Data Tunggal -->
 <div id="1-8-jangkauan-kuartil-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.8 Jangkauan Antar Kuartil Data Tunggal</p>
@@ -1680,6 +2158,145 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diberikan tabel frekuensi berikut yang menunjukkan nilai ulangan matematika siswa:
+  </p>
+
+  <table class="table-auto mt-4 mb-4 text-lg bg-white shadow-md rounded-lg overflow-hidden">
+    <thead class="bg-yellow-300">
+      <tr>
+        <th class="px-4 py-2">Nilai</th>
+        <th class="px-4 py-2">Frekuensi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="border px-4 py-2 text-center">60</td><td class="border px-4 py-2 text-center">2</td></tr>
+      <tr><td class="border px-4 py-2 text-center">65</td><td class="border px-4 py-2 text-center">3</td></tr>
+      <tr><td class="border px-4 py-2 text-center">70</td><td class="border px-4 py-2 text-center">5</td></tr>
+      <tr><td class="border px-4 py-2 text-center">75</td><td class="border px-4 py-2 text-center">4</td></tr>
+      <tr><td class="border px-4 py-2 text-center">80</td><td class="border px-4 py-2 text-center">2</td></tr>
+    </tbody>
+  </table>
+
+  <p class="text-lg">Hitunglah jangkauan antar kuartil (IQR) dari data tersebut!</p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2iqr" id="a2iqr"> A. 10</li>
+    <li><input type="radio" name="soal2iqr" id="b2iqr"> B. 12.5</li>
+    <li><input type="radio" name="soal2iqr" id="c2iqr"> C. 13.5</li>
+    <li><input type="radio" name="soal2iqr" id="d2iqr"> D. 15</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan18no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan18no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Susun data berdasarkan frekuensi:
+        <br>
+        60, 60,<br>
+        65, 65, 65,<br>
+        70, 70, 70, 70, 70,<br>
+        75, 75, 75, 75,<br>
+        80, 80
+      </li>
+      <li>Total data = 16</li>
+      <li>Q<sub>1</sub> = data ke-4.25 = antara data ke-4 dan 5 → Q<sub>1</sub> = (65 + 65)/2 = 65</li>
+      <li>Q<sub>3</sub> = data ke-12.75 = antara data ke-12 dan 13 → Q<sub>3</sub> = (75 + 75)/2 = 75</li>
+      <li>IQR = Q<sub>3</sub> - Q<sub>1</sub> = 75 - 65 = 10</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>A. 10</strong></p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan nilai ulangan siswa!
+  </p>
+
+  <canvas id="diagramSoal83" class="mt-4 mb-4 bg-white rounded-lg shadow-lg p-4"></canvas>
+
+  <p class="text-lg">Berdasarkan diagram, tentukan jangkauan antar kuartil (IQR) dari data tersebut!</p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3iqr" id="a3iqr"> A. 12.5</li>
+    <li><input type="radio" name="soal3iqr" id="b3iqr"> B. 15</li>
+    <li><input type="radio" name="soal3iqr" id="c3iqr"> C. 10</li>
+    <li><input type="radio" name="soal3iqr" id="d3iqr"> D. 17</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan18no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan18no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Dari diagram: data terdiri dari:
+        <br>
+        60 (2x), 65 (3x), 70 (5x), 75 (4x), 80 (2x)
+      </li>
+      <li>Total data = 16</li>
+      <li>Urutan data:
+        <br>
+        60, 60, 65, 65, 65, 70, 70, 70, 70, 70, 75, 75, 75, 75, 80, 80
+      </li>
+      <li>Q<sub>1</sub> = data ke-4.25 → (65 + 65)/2 = 65</li>
+      <li>Q<sub>3</sub> = data ke-12.75 → (75 + 75)/2 = 75</li>
+      <li>IQR = Q<sub>3</sub> - Q<sub>1</sub> = 75 - 65 = 10</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>C. 10</strong></p>
+  </div>
+</div><br>
+
+<script>
+  const ctx10 = document.getElementById('diagramSoal83').getContext('2d');
+  new Chart(ctx10, {
+    type: 'bar',
+    data: {
+      labels: ['60', '65', '70', '75', '80'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 3, 5, 4, 2],
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          precision: 0,
+          title: {
+            display: true,
+            text: 'Frekuensi'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Nilai'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
 <!-- Materi 1.9 Simpangan Antar Kuartil Data Tunggal -->
 <div id="1-9-simpangan-kuartil-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.9 Simpangan Antar Kuartil Data Tunggal</p>
@@ -1760,6 +2377,81 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diberikan data frekuensi sebagai berikut:
+  </p>
+
+  <div class="overflow-x-auto mt-4">
+    <table class="table-auto border-collapse border border-gray-400 bg-white shadow-md rounded-lg w-full text-center">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="border border-gray-400 px-4 py-2">Nilai</th>
+          <th class="border border-gray-400 px-4 py-2">Frekuensi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-400 px-4 py-2">60</td>
+          <td class="border border-gray-400 px-4 py-2">2</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 px-4 py-2">65</td>
+          <td class="border border-gray-400 px-4 py-2">4</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 px-4 py-2">70</td>
+          <td class="border border-gray-400 px-4 py-2">6</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 px-4 py-2">75</td>
+          <td class="border border-gray-400 px-4 py-2">4</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 px-4 py-2">80</td>
+          <td class="border border-gray-400 px-4 py-2">4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mt-4 text-lg">
+    Hitunglah simpangan antar kuartil!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2siqr" id="a2siqr"> A. 8</li>
+    <li><input type="radio" name="soal2siqr" id="b2siqr"> B. 7.5</li>
+    <li><input type="radio" name="soal2siqr" id="c2siqr"> C. 6.25</li>
+    <li><input type="radio" name="soal2siqr" id="d2siqr"> D. 5</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan19no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan19no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Total frekuensi = 2 + 4 + 6 + 4 + 4 = 20</li>
+      <li>Data diurutkan berdasarkan nilai:
+        <br>
+        60 (2x), 65 (4x), 70 (6x), 75 (4x), 80 (4x)
+      </li>
+      <li>Q<sub>1</sub> = data ke-5.25 → di antara 65 dan 70 → Q<sub>1</sub> = 65 + 0.25(70 - 65) = 66.25</li>
+      <li>Q<sub>3</sub> = data ke-15.75 → di antara 75 dan 80 → Q<sub>3</sub> = 75 + 0.75(80 - 75) = 78.75</li>
+      <li>IQR = Q<sub>3</sub> - Q<sub>1</sub> = 78.75 - 66.25 = 12.5</li>
+      <li>Simpangan Antar Kuartil = IQR ÷ 2 = 12.5 ÷ 2 = 6.25</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>C.  6.25</strong></p>
+  </div>
+</div><br>
+
+
+
 <!-- Materi 1.10 Simpangan Rata-rata Data Tunggal -->
 <div id="1-10-simpangan-rata-rata-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.10 Simpangan Rata-rata Data Tunggal</p>
