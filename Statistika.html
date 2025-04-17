@@ -2450,6 +2450,72 @@
   </div>
 </div><br>
 
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut ini yang menunjukkan data:
+  </p>
+
+  <!-- Canvas Chart -->
+  <canvas id="chartSoal93" class="my-6"></canvas>
+
+  <p class="mt-4 text-lg">
+    Berdasarkan data tersebut, tentukan nilai <strong>simpangan antar kuartil</strong>!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3siqr" id="a3siqr"> A. 7</li>
+    <li><input type="radio" name="soal3siqr" id="b3siqr"> B. 6</li>
+    <li><input type="radio" name="soal3siqr" id="c3siqr"> C. 5</li>
+    <li><input type="radio" name="soal3siqr" id="d3siqr"> D. 4</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan19no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan19no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Data berdasarkan frekuensi: <br>
+        30, 30, 35, 40, 40, 42, 42, 42, 45, 45, 48, 48, 50, 52, 55
+      </li>
+      <li>Banyak data = 15</li>
+      <li>Q<sub>1</sub> = data ke-4 = <strong>40</strong></li>
+      <li>Q<sub>3</sub> = data ke-12 = <strong>48</strong></li>
+      <li>Simpangan Antar Kuartil = (Q3 - Q1)/2 = (48 - 40)/2 = <strong>4</strong></li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>D. 4</strong></p>
+  </div>
+</div><br>
+
+<script>
+  // Data diagram batang
+  const ctx11 = document.getElementById('chartSoal93').getContext('2d');
+  new Chart(ctx11, {
+    type: 'bar',
+    data: {
+      labels: ['30', '35', '40', '42', '45', '48', '50', '52', '55'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 1, 2, 3, 2, 2, 1, 1, 1],
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgb(54, 162, 235)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          stepSize: 1
+        }
+      }
+    }
+  });
+</script>
 
 
 <!-- Materi 1.10 Simpangan Rata-rata Data Tunggal -->
@@ -2547,6 +2613,152 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diketahui data berikut dalam bentuk tabel frekuensi:
+  </p>
+
+  <table class="table-auto mt-4 border-collapse border border-gray-400 text-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border border-gray-400 px-4 py-2">Nilai (x)</th>
+        <th class="border border-gray-400 px-4 py-2">Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">10</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">2</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">15</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">3</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">20</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4 text-lg">Hitunglah <strong>simpangan rata-rata</strong> dari data tersebut!</p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2sr" id="a2sr"> A. 3</li>
+    <li><input type="radio" name="soal2sr" id="b2sr"> B. 3.5</li>
+    <li><input type="radio" name="soal2sr" id="c2sr"> C. 4</li>
+    <li><input type="radio" name="soal2sr" id="d2sr"> D. 4.5</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan110no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan110no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Total frekuensi: 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        <br>
+        \( \bar{x} = \frac{(10 \times 2) + (15 \times 3) + (20 \times 5)}{10} = \frac{20 + 45 + 100}{10} = \frac{165}{10} = 16.5 \)
+      </li>
+      <li>Simpangan tiap nilai dari rata-rata:
+        <ul class="ml-4 list-disc">
+          <li>|10 - 16.5| × 2 = 6.5 × 2 = 13</li>
+          <li>|15 - 16.5| × 3 = 1.5 × 3 = 4.5</li>
+          <li>|20 - 16.5| × 5 = 3.5 × 5 = 17.5</li>
+        </ul>
+      </li>
+      <li>Total simpangan = 13 + 4.5 + 17.5 = 35</li>
+      <li>Simpangan Rata-rata = \( \frac{35}{10} = 3.5 \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>B. 3.5</strong></p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan nilai dan frekuensinya:
+  </p>
+
+  <canvas id="diagramSoal103" class="my-6"></canvas>
+
+  <p class="text-lg">
+    Hitunglah <strong>simpangan rata-rata</strong> dari data pada diagram tersebut!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3sr" id="a3sr"> A. 1.40</li>
+    <li><input type="radio" name="soal3sr" id="b3sr"> B. 1.80</li>
+    <li><input type="radio" name="soal3sr" id="c3sr"> C. 2.40</li>
+    <li><input type="radio" name="soal3sr" id="d3sr"> D. 2.80</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan110no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan110no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Data dari diagram:
+        <ul class="ml-4 list-disc">
+          <li>Nilai 10, frekuensi 2</li>
+          <li>Nilai 12, frekuensi 3</li>
+          <li>Nilai 14, frekuensi 5</li>
+        </ul>
+      </li>
+      <li>Total data = 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        \( \bar{x} = \frac{(10 \times 2) + (12 \times 3) + (14 \times 5)}{10} = \frac{20 + 36 + 70}{10} = \frac{126}{10} = 12.6 \)
+      </li>
+      <li>Hitung simpangan absolut:
+        <ul class="ml-4 list-disc">
+          <li>\( |10 - 12.6| \times 2 = 2.6 \times 2 = 5.2 \)</li>
+          <li>\( |12 - 12.6| \times 3 = 0.6 \times 3 = 1.8 \)</li>
+          <li>\( |14 - 12.6| \times 5 = 1.4 \times 5 = 7.0 \)</li>
+        </ul>
+      </li>
+      <li>Total = 5.2 + 1.8 + 7.0 = 14.0</li>
+      <li>Simpangan rata-rata = \( \frac{14.0}{10} = 1.4 \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>A. 1.40</strong></p>
+  </div>
+</div><br>
+
+<script>
+  const ctx12 = document.getElementById('diagramSoal103').getContext('2d');
+  new Chart(ctx12, {
+    type: 'bar',
+    data: {
+      labels: ['10', '12', '14'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 3, 5],
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+	responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+</script>
+
 <!-- Materi 1.11 Ragam (Variance) Data Tunggal -->
 <div id="1-11-ragam-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.11 Ragam (Variance) Data Tunggal</p>
@@ -2643,6 +2855,154 @@
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diketahui data berikut dalam bentuk tabel frekuensi:
+  </p>
+
+  <table class="table-auto mt-4 border-collapse border border-gray-400 text-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border border-gray-400 px-4 py-2">Nilai (x)</th>
+        <th class="border border-gray-400 px-4 py-2">Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">10</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">2</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">15</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">3</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">20</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4 text-lg">Hitunglah <strong>ragam (varian)</strong> dari data tersebut!</p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2var" id="a2var"> A. 11.25</li>
+    <li><input type="radio" name="soal2var" id="b2var"> B. 12.25</li>
+    <li><input type="radio" name="soal2var" id="c2var"> C. 13.25</li>
+    <li><input type="radio" name="soal2var" id="d2var"> D. 14.25</li>
+    <li><input type="radio" name="soal2var" id="d2var"> E. 15.25</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan111no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan111no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Total frekuensi: 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        <br>
+        \( \bar{x} = \frac{(10 \times 2) + (15 \times 3) + (20 \times 5)}{10} = \frac{20 + 45 + 100}{10} = \frac{165}{10} = 16.5 \)
+      </li>
+      <li>Selisih kuadrat dikalikan frekuensi:
+        <ul class="ml-4 list-disc">
+          <li>\( (10 - 16.5)^2 \times 2 = 42.25 \times 2 = 84.5 \)</li>
+          <li>\( (15 - 16.5)^2 \times 3 = 2.25 \times 3 = 6.75 \)</li>
+          <li>\( (20 - 16.5)^2 \times 5 = 12.25 \times 5 = 61.25 \)</li>
+        </ul>
+      </li>
+      <li>Jumlah = 84.5 + 6.75 + 61.25 = 152.5</li>
+      <li>Ragam = \( \frac{152.5}{10} = 15.25 \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>E. 15.25</strong></p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan nilai dan frekuensinya:
+  </p>
+
+  <canvas id="diagramSoal113" class="my-6"></canvas>
+
+  <p class="text-lg">
+    Hitunglah <strong>ragam (variance)</strong> dari data pada diagram tersebut!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3var" id="a3var"> A. 2.44</li>
+    <li><input type="radio" name="soal3var" id="b3var"> B. 2.56</li>
+    <li><input type="radio" name="soal3var" id="c3var"> C. 2.84</li>
+    <li><input type="radio" name="soal3var" id="d3var"> D. 3.14</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan111no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan111no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Data dari diagram:
+        <ul class="ml-4 list-disc">
+          <li>Nilai 10, frekuensi 2</li>
+          <li>Nilai 12, frekuensi 3</li>
+          <li>Nilai 14, frekuensi 5</li>
+        </ul>
+      </li>
+      <li>Total data = 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        \( \bar{x} = \frac{(10 \times 2) + (12 \times 3) + (14 \times 5)}{10} = \frac{126}{10} = 12.6 \)
+      </li>
+      <li>Hitung kuadrat selisih:
+        <ul class="ml-4 list-disc">
+          <li>\( (10 - 12.6)^2 \times 2 = 6.76 \times 2 = 13.52 \)</li>
+          <li>\( (12 - 12.6)^2 \times 3 = 0.36 \times 3 = 1.08 \)</li>
+          <li>\( (14 - 12.6)^2 \times 5 = 1.96 \times 5 = 9.8 \)</li>
+        </ul>
+      </li>
+      <li>Total = 13.52 + 1.08 + 9.8 = 24.4</li>
+      <li>Ragam (variance) = \( \frac{24.4}{10} = 2.44 \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>A. 2.44</strong></p>
+  </div>
+</div><br>
+
+<script>
+  const ctx13 = document.getElementById('diagramSoal113').getContext('2d');
+  new Chart(ctx13, {
+    type: 'bar',
+    data: {
+      labels: ['10', '12', '14'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 3, 5],
+        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+	responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
 <!-- Materi 1.12 Simpangan Baku Data Tunggal -->
 <div id="1-12-simpangan-baku-tunggal">
   <p class="text-xl text-blue-700 font-semibold">1.12 Simpangan Baku Data Tunggal</p>
@@ -2740,6 +3100,154 @@
   </div>
 </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Diketahui data berikut dalam bentuk tabel frekuensi:
+  </p>
+
+  <table class="table-auto mt-4 border-collapse border border-gray-400 text-lg">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border border-gray-400 px-4 py-2">Nilai (x)</th>
+        <th class="border border-gray-400 px-4 py-2">Frekuensi (f)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">10</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">2</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">15</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">3</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-400 px-4 py-2 text-center">20</td>
+        <td class="border border-gray-400 px-4 py-2 text-center">5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4 text-lg">Hitunglah <strong>simpangan baku (standar deviasi)</strong> dari data tersebut!</p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal2sb" id="a2sb"> A. \( \sqrt{15.25}  \)</li>
+    <li><input type="radio" name="soal2sb" id="b2sb"> B. \( \sqrt{16.25}  \)</li>
+    <li><input type="radio" name="soal2sb" id="c2sb"> C. \( \sqrt{17.25}  \)</li>
+    <li><input type="radio" name="soal2sb" id="d2sb"> D. \( \sqrt{18.25}  \)</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan112no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan112no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Total frekuensi: 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        <br>
+        \( \bar{x} = \frac{(10 \times 2) + (15 \times 3) + (20 \times 5)}{10} = \frac{20 + 45 + 100}{10} = \frac{165}{10} = 16.5 \)
+      </li>
+      <li>Selisih kuadrat dikalikan frekuensi:
+        <ul class="ml-4 list-disc">
+          <li>\( (10 - 16.5)^2 \times 2 = 42.25 \times 2 = 84.5 \)</li>
+          <li>\( (15 - 16.5)^2 \times 3 = 2.25 \times 3 = 6.75 \)</li>
+          <li>\( (20 - 16.5)^2 \times 5 = 12.25 \times 5 = 61.25 \)</li>
+        </ul>
+      </li>
+      <li>Jumlah = 84.5 + 6.75 + 61.25 = 152.5</li>
+      <li>Ragam = \( \frac{152.5}{10} = 15.25 \)</li>
+      <li>Simpangan baku = \( \sqrt{15.25}  \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>A. \( \sqrt{15.25}  \)</strong></p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan diagram batang berikut yang menunjukkan nilai dan frekuensinya:
+  </p>
+
+  <canvas id="diagramSoal123" class="my-6"></canvas>
+
+  <p class="text-lg">
+    Hitunglah <strong>simpangan baku</strong> dari data pada diagram tersebut!
+  </p>
+
+  <ul class="mt-4 space-y-2">
+    <li><input type="radio" name="soal3sb" id="a3sb"> A. \( \sqrt{1.44} \)</li>
+    <li><input type="radio" name="soal3sb" id="b3sb"> B. \( \sqrt{2.44} \)</li>
+    <li><input type="radio" name="soal3sb" id="c3sb"> C. \( \sqrt{3.44} \)</li>
+    <li><input type="radio" name="soal3sb" id="d3sb"> D. \( \sqrt{4.44} \)</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan112no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan112no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Data dari diagram:
+        <ul class="ml-4 list-disc">
+          <li>Nilai 10, frekuensi 2</li>
+          <li>Nilai 12, frekuensi 3</li>
+          <li>Nilai 14, frekuensi 5</li>
+        </ul>
+      </li>
+      <li>Total data = 2 + 3 + 5 = 10</li>
+      <li>Rata-rata:
+        \( \bar{x} = \frac{(10 \times 2) + (12 \times 3) + (14 \times 5)}{10} = \frac{126}{10} = 12.6 \)
+      </li>
+      <li>Hitung kuadrat selisih:
+        <ul class="ml-4 list-disc">
+          <li>\( (10 - 12.6)^2 \times 2 = 6.76 \times 2 = 13.52 \)</li>
+          <li>\( (12 - 12.6)^2 \times 3 = 0.36 \times 3 = 1.08 \)</li>
+          <li>\( (14 - 12.6)^2 \times 5 = 1.96 \times 5 = 9.8 \)</li>
+        </ul>
+      </li>
+      <li>Total = 13.52 + 1.08 + 9.8 = 24.4</li>
+      <li>Ragam (varian) = \( \frac{24.4}{10} = 2.44 \)</li>
+      <li><strong>Simpangan baku</strong> = \( \sqrt{2.44} \)</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>A. \( \sqrt{2.44} \)</strong></p>
+  </div>
+</div><br>
+
+<script>
+  const ctx14 = document.getElementById('diagramSoal123').getContext('2d');
+  new Chart(ctx14, {
+    type: 'bar',
+    data: {
+      labels: ['10', '12', '14'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 3, 5],
+        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+	 responsive: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+</script>
+
 
 <div id="2-ukuran-data-kelompok">
     <p class="text-2xl text-blue-800 font-semibold">2. Penentuan Ukuran Data Statistik dari Data Kelompok</p>
@@ -2976,7 +3484,7 @@
 
     <ul class="mt-4 space-y-2 text-lg">
       <li><input type="radio" name="soal1mean" id="a1mean"> A. 71,75</li>
-      <li><input type="radio" name="soal1mean" id="b1mean"> B. 72,5</li>
+      <li><input type="radio" name="soal1mean" id="b1mean"> B. 72,2</li>
       <li><input type="radio" name="soal1mean" id="c1mean"> C. 73</li>
       <li><input type="radio" name="soal1mean" id="d1mean"> D. 73,25</li>
     </ul>
@@ -3011,10 +3519,391 @@
         <li>Jumlah seluruh nilai tengah × frekuensi = 186 + 335 + 576 + 462 + 246 = 1805</li>
         <li>Mean = \( \frac{1805}{25} = 72,2 \)</li>
       </ul>
-      <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>Tidak ada pilihan yang tepat. Jawaban seharusnya 72,2</strong></p>
+      <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>B. 72,2</strong></p>
     </div>
   </div>
 </div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+  <p class="mt-4 text-lg">
+    Tabel berikut menunjukkan distribusi frekuensi nilai ulangan matematika siswa kelas XI.
+  </p>
+  <table class="table-auto mt-4 mb-4 border border-black text-lg">
+    <thead>
+      <tr>
+        <th class="border border-black px-4 py-2">Nilai</th>
+        <th class="border border-black px-4 py-2">Frekuensi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-black px-4 py-2">60 - 64</td>
+        <td class="border border-black px-4 py-2">3</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">65 - 69</td>
+        <td class="border border-black px-4 py-2">5</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">70 - 74</td>
+        <td class="border border-black px-4 py-2">8</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">75 - 79</td>
+        <td class="border border-black px-4 py-2">6</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">80 - 84</td>
+        <td class="border border-black px-4 py-2">3</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-lg">
+    Hitunglah rata-rata (mean) dari data tersebut menggunakan metode rata-rata sementara!
+  </p>
+
+  <ul class="mt-4 space-y-2 text-lg">
+    <li><input type="radio" name="soal2mean" id="a2mean"> A. 71,75</li>
+    <li><input type="radio" name="soal2mean" id="b2mean"> B. 72,2</li>
+    <li><input type="radio" name="soal2mean" id="c2mean"> C. 73</li>
+    <li><input type="radio" name="soal2mean" id="d2mean"> D. 73,25</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan21no2')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan21no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <table class="table-auto border border-black text-lg mt-4">
+      <thead>
+        <tr>
+          <th class="border border-black px-4 py-2">Kelas</th>
+          <th class="border border-black px-4 py-2">Frekuensi (f)</th>
+          <th class="border border-black px-4 py-2">Tengah Kelas (x)</th>
+          <th class="border border-black px-4 py-2">\( d = \frac{x - A}{c} \)</th>
+          <th class="border border-black px-4 py-2">\( f \cdot d \)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-black px-4 py-2">60 - 64</td>
+          <td class="border border-black px-4 py-2">3</td>
+          <td class="border border-black px-4 py-2">62</td>
+          <td class="border border-black px-4 py-2">-2</td>
+          <td class="border border-black px-4 py-2">-6</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">65 - 69</td>
+          <td class="border border-black px-4 py-2">5</td>
+          <td class="border border-black px-4 py-2">67</td>
+          <td class="border border-black px-4 py-2">-1</td>
+          <td class="border border-black px-4 py-2">-5</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">70 - 74</td>
+          <td class="border border-black px-4 py-2">8</td>
+          <td class="border border-black px-4 py-2">72</td>
+          <td class="border border-black px-4 py-2">0</td>
+          <td class="border border-black px-4 py-2">0</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">75 - 79</td>
+          <td class="border border-black px-4 py-2">6</td>
+          <td class="border border-black px-4 py-2">77</td>
+          <td class="border border-black px-4 py-2">1</td>
+          <td class="border border-black px-4 py-2">6</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">80 - 84</td>
+          <td class="border border-black px-4 py-2">3</td>
+          <td class="border border-black px-4 py-2">82</td>
+          <td class="border border-black px-4 py-2">2</td>
+          <td class="border border-black px-4 py-2">6</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="list-disc list-inside ml-4 mt-4 text-lg">
+      <li>Ambil nilai tengah kelas ke-3 sebagai rata-rata sementara (A) = 72</li>
+      <li>Panjang kelas (c) = 5</li>
+      <li>Jumlah frekuensi (Σf) = 25</li>
+      <li>Jumlah \( f \cdot d \) = -6 + (-5) + 0 + 6 + 6 = 1</li>
+      <li>Maka, Mean = A + \( \frac{\sum f \cdot d}{\sum f} \times c \) = 72 + \( \frac{1}{25} \times 5 \) = 72 + 0,2 = 72,2</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>B. 72,2</strong></p>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Tabel berikut menunjukkan distribusi frekuensi nilai ulangan matematika siswa kelas XI.
+  </p>
+  <table class="table-auto mt-4 mb-4 border border-black text-lg">
+    <thead>
+      <tr>
+        <th class="border border-black px-4 py-2">Nilai</th>
+        <th class="border border-black px-4 py-2">Frekuensi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-black px-4 py-2">50 - 54</td>
+        <td class="border border-black px-4 py-2">4</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">55 - 59</td>
+        <td class="border border-black px-4 py-2">6</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">60 - 64</td>
+        <td class="border border-black px-4 py-2">10</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">65 - 69</td>
+        <td class="border border-black px-4 py-2">8</td>
+      </tr>
+      <tr>
+        <td class="border border-black px-4 py-2">70 - 74</td>
+        <td class="border border-black px-4 py-2">5</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-lg">
+    Tentukan banyak siswa yang nilainya di atas rata-rata!
+  </p>
+<ul class="mt-4 space-y-2 text-lg">
+    <li><input type="radio" name="soal3mean" id="a3mean"> A. 11</li>
+    <li><input type="radio" name="soal3mean" id="b3mean"> B. 12</li>
+    <li><input type="radio" name="soal3mean" id="c3mean"> C. 13</li>
+    <li><input type="radio" name="soal3mean" id="d3mean"> D. 14</li>
+  </ul>
+
+
+  <button onclick="togglePembahasan('pembahasanlatihan21no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan21no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Langkah pertama adalah menghitung rata-rata (mean). Kita tentukan nilai tengah setiap kelas.</li>
+      <ul class="ml-4 list-disc">
+        <li>50 - 54 → \( \frac{50 + 54}{2} = 52 \)</li>
+        <li>55 - 59 → \( \frac{55 + 59}{2} = 57 \)</li>
+        <li>60 - 64 → \( \frac{60 + 64}{2} = 62 \)</li>
+        <li>65 - 69 → \( \frac{65 + 69}{2} = 67 \)</li>
+        <li>70 - 74 → \( \frac{70 + 74}{2} = 72 \)</li>
+      </ul>
+      <li>Kalikan nilai tengah dengan frekuensi:</li>
+      <ul class="ml-4 list-disc">
+        <li>52 × 4 = 208</li>
+        <li>57 × 6 = 342</li>
+        <li>62 × 10 = 620</li>
+        <li>67 × 8 = 536</li>
+        <li>72 × 5 = 360</li>
+      </ul>
+      <li>Jumlah frekuensi = 4 + 6 + 10 + 8 + 5 = 33</li>
+      <li>Jumlah seluruh nilai tengah × frekuensi = 208 + 342 + 620 + 536 + 360 = 2066</li>
+      <li>Rata-rata (mean) = \( \frac{2066}{33} \approx 62,6 \)</li>
+      <p class="mt-2">Nilai di atas rata-rata adalah nilai yang lebih besar dari 62,6. Jadi, kita ambil kelas yang memiliki nilai tengah lebih besar dari 62,6.</p>
+      <table class="table-auto mt-4 mb-4 border border-black text-lg">
+        <thead>
+          <tr>
+            <th class="border border-black px-4 py-2">Nilai</th>
+            <th class="border border-black px-4 py-2">Frekuensi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-black px-4 py-2">65 - 69</td>
+            <td class="border border-black px-4 py-2">8</td>
+          </tr>
+          <tr>
+            <td class="border border-black px-4 py-2">70 - 74</td>
+            <td class="border border-black px-4 py-2">5</td>
+          </tr>
+        </tbody>
+      </table>
+      <li>Frekuensi untuk nilai di atas rata-rata (65-74) adalah 8 + 5 = 13 siswa.</li>
+      <p class="mt-2 font-medium text-purple-700 text-lg">Banyak siswa yang nilainya di atas rata-rata adalah <strong>C. 13 siswa</strong>.</p>
+    </ul>
+  </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-purple-700 mt-6">Soal 4</h2>
+  <p class="mt-4 text-lg">
+    Diagram batang berikut menunjukkan distribusi frekuensi nilai ulangan matematika siswa kelas IX.
+  </p>
+
+  <canvas id="chartNo4" width="400" height="300" class="mt-4 mb-4"></canvas>
+
+  <p class="text-lg">
+    Berdasarkan diagram tersebut, hitunglah rata-rata nilai ulangan siswa!
+  </p>
+<ul class="mt-4 space-y-2 text-lg">
+    <li><input type="radio" name="soal4mean" id="a4mean"> A.76.83</li>
+    <li><input type="radio" name="soal4mean" id="b4mean"> B.86.83</li>
+    <li><input type="radio" name="soal4mean" id="c4mean"> C.96.83</li>
+    <li><input type="radio" name="soal4mean" id="d4mean"> D.106.83</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan21no4')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan21no4" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Tentukan nilai tengah tiap kelas:</li>
+      <ul class="ml-4 list-disc">
+        <li>50 - 59 → (50 + 59) / 2 = 54.5</li>
+        <li>60 - 69 → (60 + 69) / 2 = 64.5</li>
+        <li>70 - 79 → (70 + 79) / 2 = 74.5</li>
+        <li>80 - 89 → (80 + 89) / 2 = 84.5</li>
+        <li>90 - 99 → (90 + 99) / 2 = 94.5</li>
+      </ul>
+      <li>Kalikan nilai tengah dengan frekuensi:</li>
+      <ul class="ml-4 list-disc">
+        <li>54.5 × 2 = 109</li>
+        <li>64.5 × 6 = 387</li>
+        <li>74.5 × 10 = 745</li>
+        <li>84.5 × 7 = 591.5</li>
+        <li>94.5 × 5 = 472.5</li>
+      </ul>
+      <li>Jumlah frekuensi = 2 + 6 + 10 + 7 + 5 = 30</li>
+      <li>Jumlah nilai tengah × frekuensi = 109 + 387 + 745 + 591.5 + 472.5 = 2305</li>
+      <li>Mean = 2305 / 30 = 76.83</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">
+      Jadi, rata-rata nilai ulangan siswa adalah <strong>A.76,83</strong>.
+    </p>
+  </div>
+</div><br>
+
+<script>
+  const ctx15 = document.getElementById('chartNo4').getContext('2d');
+  new Chart(ctx15, {
+    type: 'bar',
+    data: {
+      labels: ['50-59', '60-69', '70-79', '80-89', '90-99'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 6, 10, 7, 5],
+        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+        borderRadius: 5
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { precision: 0 }
+        }
+      }
+    }
+  });
+</script>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-purple-700 mt-6">Soal 5</h2>
+  <p class="mt-4 text-lg">
+    Histogram berikut menunjukkan distribusi frekuensi nilai ulangan IPA siswa kelas IX.
+  </p>
+
+  <canvas id="histogramNo5" width="400" height="300" class="mt-4 mb-4"></canvas>
+
+  <p class="text-lg">
+    Berdasarkan histogram tersebut, hitunglah rata-rata nilai ulangan siswa!
+  </p>
+  <ul class="mt-4 space-y-2 text-lg">
+    <li><input type="radio" name="soal5mean" id="a5mean"> A.76.83</li>
+    <li><input type="radio" name="soal5mean" id="b5mean"> B.86.83</li>
+    <li><input type="radio" name="soal5mean" id="c5mean"> C.96.83</li>
+    <li><input type="radio" name="soal5mean" id="d5mean"> D.106.83</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan21no5')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan21no5" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <ul class="list-disc list-inside ml-4">
+      <li>Tentukan nilai tengah tiap kelas:</li>
+      <ul class="ml-4 list-disc">
+        <li>50 - 59 → (50 + 59) / 2 = 54.5</li>
+        <li>60 - 69 → (60 + 69) / 2 = 64.5</li>
+        <li>70 - 79 → (70 + 79) / 2 = 74.5</li>
+        <li>80 - 89 → (80 + 89) / 2 = 84.5</li>
+        <li>90 - 99 → (90 + 99) / 2 = 94.5</li>
+      </ul>
+      <li>Kalikan nilai tengah dengan frekuensi:</li>
+      <ul class="ml-4 list-disc">
+        <li>54.5 × 2 = 109</li>
+        <li>64.5 × 6 = 387</li>
+        <li>74.5 × 10 = 745</li>
+        <li>84.5 × 7 = 591.5</li>
+        <li>94.5 × 5 = 472.5</li>
+      </ul>
+      <li>Jumlah frekuensi = 2 + 6 + 10 + 7 + 5 = 30</li>
+      <li>Jumlah nilai tengah × frekuensi = 2305</li>
+      <li>Mean = 2305 / 30 = 76.83</li>
+    </ul>
+    <p class="mt-2 font-medium text-purple-700 text-lg">
+      Jadi, rata-rata nilai ulangan siswa adalah <strong>A.76,83</strong>.
+    </p>
+  </div>
+</div>
+
+<script>
+  const ctx17 = document.getElementById('histogramNo5').getContext('2d');
+  new Chart(ctx17, {
+    type: 'bar',
+    data: {
+      labels: ['50-59', '60-69', '70-79', '80-89', '90-99'],
+      datasets: [{
+        label: 'Frekuensi',
+        data: [2, 6, 10, 7, 5],
+        backgroundColor: 'rgba(255, 159, 64, 0.8)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 1,
+        borderRadius: 0, // agar seperti histogram
+        barPercentage: 1.0,
+        categoryPercentage: 1.0
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 14 } }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { stepSize: 1, font: { size: 14 } }
+        }
+      }
+    }
+  });
+</script>
+
 
 <div id="2-2-median-kelompok">
     <p class="text-xl text-blue-700 font-semibold">2.2 Median Data Kelompok</p>
@@ -4890,6 +5779,7 @@ function downloadPDF() {
       { username: "admin", password: "12345" },
       { username: "user1", password: "abcde" },
       { username: "Nisa SMKN Kersana 11", password: "semangatbelajar45" }
+      { username: "Silva SMA Kersana 11", password: "semangatbelajar45" }
     ];
 
     const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
