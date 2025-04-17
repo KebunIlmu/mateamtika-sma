@@ -4105,6 +4105,232 @@
   </div>
 </div><br>
   
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+    <p class="mt-4 text-lg">
+      Tabel berikut menunjukkan distribusi frekuensi waktu bermain game siswa dalam seminggu:
+    </p>
+    <table class="table-auto mt-4 mb-4 border border-black text-lg">
+      <thead>
+        <tr>
+          <th class="border border-black px-4 py-2">Waktu Bermain (jam)</th>
+          <th class="border border-black px-4 py-2">Frekuensi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-black px-4 py-2">0 - 2</td>
+          <td class="border border-black px-4 py-2">4</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">3 - 5</td>
+          <td class="border border-black px-4 py-2">6</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">6 - 8</td>
+          <td class="border border-black px-4 py-2">x</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">9 - 11</td>
+          <td class="border border-black px-4 py-2">5</td>
+        </tr>
+        <tr>
+          <td class="border border-black px-4 py-2">12 - 14</td>
+          <td class="border border-black px-4 py-2">3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="mt-4 text-lg">
+      Jika median dari data tersebut adalah 6,5 jam, tentukan nilai \(x\) (frekuensi yang hilang)!
+    </p>
+    <ul class="mt-4 space-y-2 text-lg">
+      <li><input type="radio" name="soal2x" id="a2x"> A. 5</li>
+      <li><input type="radio" name="soal2x" id="b2x"> B. 6</li>
+      <li><input type="radio" name="soal2x" id="c2x"> C. 7</li>
+      <li><input type="radio" name="soal2x" id="d2x"> D. 8</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan22no2')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan22no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+      <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+      <div class="ml-4 mt-2">
+        <p>
+          Misal jumlah seluruh frekuensi \( n = 18 + x \).<br>
+          Letak median di data ke \( \frac{n}{2} \).
+        </p>
+      </div>
+      <p>
+        \[
+        \begin{array}{c|c|c}
+        \text{Waktu Bermain} & f & f_k \\
+        \hline
+        0-2 & 4 & 4 \\
+        3-5 & 6 & 10 \\
+        6-8 & x & 10+x \\
+        9-11 & 5 & 15+x \\
+        12-14 & 3 & 18+x \\
+        \end{array}
+        \]
+      </p>
+      <div class="ml-4 mt-2">
+        <p>
+          Karena median 7,5 jam, maka kelas median adalah 6-8.
+          <ul class="list-disc ml-6">
+              <li>\( L = 5.5 \) (tepi bawah kelas median)</li>
+              <li>\( f_k = 10 \) (frekuensi kumulatif sebelum kelas median)</li>
+              <li>\( f = x \) (frekuensi kelas median)</li>
+              <li>\( i = 3 \) (panjang interval)</li>
+          </ul>
+        </p>
+        <p class="mt-4">
+          Substitusi ke rumus:
+          \[
+          6.5 = 5.5 + \left( \frac{\frac{18+x}{2} - 10}{x} \right) \times 3
+          \]
+        </p>
+      </div>
+      <p>
+        Selesaikan:
+        \[
+        6.5 - 5.5 = \left( \frac{\frac{18+x}{2} - 10}{x} \right) \times 3
+        \]
+        \[
+        1 = \left( \frac{(18+x)-20}{2x} \right) \times 3
+        \]
+        \[
+        1 = \left( \frac{x-2}{2x} \right) \times 3
+        \]
+        \[
+        1 = \frac{3(x-2)}{2x}
+        \]
+        \[
+        2x = 3(x-2)
+        \]
+        \[
+        2x = 3x - 6
+        \]
+        \[
+        2x - 3x = -6
+        \]
+        \[
+        -x = -6
+        \]
+   \[
+        x = 6
+        \]
+      </p>
+      <p class="mt-2 font-medium text-purple-700 text-lg">Jawaban: <strong>B. 6</strong></p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+  <p class="mt-4 text-lg">
+    Perhatikan histogram berikut yang menunjukkan distribusi nilai ujian Matematika siswa:
+  </p>
+
+  <div class="mt-4">
+    <canvas id="histogramSoal223" width="400" height="250"></canvas>
+  </div>
+
+  <p class="mt-4 text-lg">
+    Berdasarkan histogram tersebut, tentukan nilai median!
+  </p>
+
+  <ul class="mt-4 space-y-2 text-lg">
+    <li><input type="radio" name="soal3median" id="a3median"> A. 62,5</li>
+    <li><input type="radio" name="soal3median" id="b3median"> B. 65,5</li>
+    <li><input type="radio" name="soal3median" id="c3median"> C. 66,25</li>
+    <li><input type="radio" name="soal3median" id="d3median"> D. 67,5</li>
+  </ul>
+
+  <button onclick="togglePembahasan('pembahasanlatihan22no3')" 
+      class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+      Lihat Pembahasan
+  </button>
+
+  <div id="pembahasanlatihan22no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+    <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+    <div class="ml-4 mt-2">
+      <p>
+        Dari histogram terlihat:
+        <ul class="list-disc ml-6">
+          <li>40–49: 3 siswa</li>
+          <li>50–59: 7 siswa</li>
+          <li>60–69: 10 siswa</li>
+          <li>70–79: 5 siswa</li>
+          <li>80–89: 2 siswa</li>
+        </ul>
+      </p>
+      <p>
+        Jumlah seluruh siswa \(n = 27\), maka letak median di data ke-\( \frac{27+1}{2} = 14 \).
+      </p>
+      <p>
+        Dari frekuensi kumulatif:
+        <ul class="list-disc ml-6">
+          <li>40–49: 3</li>
+          <li>50–59: 10</li>
+          <li>60–69: 20 → Kelas Median</li>
+        </ul>
+      </p>
+      <p>
+        Data di kelas 60–69, tepi bawah \(L = 59.5\), frekuensi sebelum \(f_k = 10\), frekuensi kelas \(f = 10\), panjang interval \(i = 10\).
+      </p>
+      <p class="mt-4">
+        Substitusi ke rumus median:
+        \[
+        \text{Median} = L + \left( \frac{\frac{n}{2} - f_k}{f} \right) \times i
+        \]
+        \[
+        = 59.5 + \left( \frac{14 - 10}{10} \right) \times 10
+        \]
+        \[
+        = 59.5 + (0.4) \times 10
+        \]
+        \[
+        = 59.5 + 4
+        \]
+        \[
+        = 63.5
+        \]
+      </p>
+      <p class="mt-4 font-medium text-purple-700 text-lg">Jawaban: <strong>B. 65,5</strong></p>
+    </div>
+  </div>
+</div><br>
+
+<script>
+const ctx18 = document.getElementById('histogramSoal223').getContext('2d');
+new Chart(ctx18, {
+    type: 'bar',
+    data: {
+        labels: ['40-49', '50-59', '60-69', '70-79', '80-89'],
+        datasets: [{
+            label: 'Jumlah Siswa',
+            data: [3, 7, 10, 5, 2],
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+            responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true,
+                stepSize: 1
+            }
+        }
+    }
+});
+</script>
+
+
 <div id="2-3-modus-kelompok">
   <p class="text-xl text-blue-700 font-semibold">2.3 Modus Data Kelompok</p>
   <p class="mt-2 ml-4">
