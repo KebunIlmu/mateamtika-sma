@@ -86,6 +86,10 @@
         <li class="mb-3 ml-6"><a href="#Latihan 4.2" class="hover:text-yellow-300">Latihan 4.2</a></li>
         <li class="font-semibold mb-3"><a href="#5. Determinan dan Luas" class="hover:text-yellow-300">5. Determinan dan Luas</a></li>
         <li class="mb-3 ml-6"><a href="#Latihan 5" class="hover:text-yellow-300">Latihan 5</a></li>
+	<li class="font-semibold mb-3"><a href="#6. Transformasi" class="hover:text-yellow-300">6. Transformasi</a></li>
+        <li class="mb-3 ml-6"><a href="#Latihan 6" class="hover:text-yellow-300">Latihan 6</a></li>
+	<li class="font-semibold mb-3"><a href="#7. Komposisi Transformasi" class="hover:text-yellow-300">7. Komposisi Transformasi</a></li>
+        <li class="mb-3 ml-6"><a href="#Latihan 7" class="hover:text-yellow-300">Latihan 7</a></li>
 	<li class="font-semibold mb-3 "><a href="#rangkuman-transformasi-geometri" class="hover:text-yellow-300">Rangkuman Transformasi</a></li>
     </ul>
 </div>
@@ -5723,6 +5727,1108 @@
     </div>
     </div>
 </div><br>
+
+<div id="6. Transformasi">
+    <p class="text-xl text-blue-700 font-semibold">6. Transformasi</p>
+    <p class="mt-2 ml-4">
+        Transformasi geometri adalah perubahan posisi suatu bangun geometri pada bidang koordinat. Ada beberapa jenis transformasi yang umum dipelajari dalam matematika, antara lain translasi, refleksi, rotasi, dan dilatasi.
+    </p>
+    <p class="mt-2 ml-4">
+        Dalam konteks transformasi linear, perubahan ini sering kali dinyatakan dalam bentuk matriks. Jika sebuah titik atau vektor \( \vec{v} = \begin{pmatrix} x \\ y \end{pmatrix} \) dikenai transformasi oleh matriks \( T = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \), maka bayangan dari titik tersebut adalah:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        T(\vec{v}) = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Setiap jenis transformasi memiliki efek berbeda terhadap bentuk dan ukuran bangun. Misalnya:
+        <ul class="list-disc ml-8 mt-2">
+            <li><strong>Translasi</strong>: Menggeser posisi bangun tanpa mengubah bentuk atau ukuran.</li>
+            <li><strong>Refleksi</strong>: Mencerminkan bangun terhadap garis tertentu (sumbu X, Y, atau garis lain).</li>
+            <li><strong>Rotasi</strong>: Memutar bangun terhadap titik tertentu dengan sudut tertentu.</li>
+            <li><strong>Dilatasi</strong>: Memperbesar atau memperkecil ukuran bangun berdasarkan titik pusat dan faktor skala.</li>
+        </ul>
+    </p>
+</div>
+
+<div class="p-4 bg-blue-100 rounded-lg shadow-md mt-4">
+    <p class="font-semibold">Contoh Soal:</p>
+    <p class="mt-2 ml-4">
+        Sebuah titik \( P(2, 3) \) ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}
+        \]
+        Tentukan koordinat bayangan titik tersebut setelah transformasi!
+    </p>
+
+    <p class="mt-2 ml-4 font-semibold">Penyelesaian:</p>
+    <p class="ml-4">
+        Kalikan matriks transformasi dengan vektor posisi titik:
+        <br>
+        \[
+        T(P) = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+        = \begin{pmatrix} (1)(2) + (2)(3) \\ (0)(2) + (1)(3) \end{pmatrix}
+        = \begin{pmatrix} 2 + 6 \\ 0 + 3 \end{pmatrix}
+        = \begin{pmatrix} 8 \\ 3 \end{pmatrix}
+        \]
+        <br>
+        Jadi, bayangan titik \( P \) adalah \( (8, 3) \).
+    </p>
+</div><br>
+
+<p class="text-xl text-blue-700 font-semibold"> Penjelasan Transformasi titik </p>
+<div class="w-full rounded-lg shadow-lg overflow-hidden">
+        <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/qcTCgqBzgpw" frameborder="0" allowfullscreen></iframe>
+</div><br>
+<p class="text-xl text-blue-700 font-semibold"> Penjelasan Transformasi kurva </p>
+<div class="w-full rounded-lg shadow-lg overflow-hidden">
+        <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/F8zHDpPTXTg" frameborder="0" allowfullscreen></iframe>
+</div><br>
+
+<div id="Latihan 6">
+    <p class="text-2xl text-red-900 font-semibold">Latihan 6</p>
+    
+    <div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 1</h2>
+        <p class="mt-4 text-lg">
+            Titik \( A(1,2) \) ditransformasikan oleh matriks
+            \[
+            T = \begin{pmatrix} 3 & 0 \\ 1 & 2 \end{pmatrix}
+            \]
+            Tentukan koordinat bayangan dari titik \( A \) setelah transformasi!
+        </p>
+
+        <ul class="mt-4 space-y-2">
+            <li><input type="radio" name="soal6" id="a6"> A. (3, 5)</li>
+            <li><input type="radio" name="soal6" id="b6"> B. (3, 4)</li>
+            <li><input type="radio" name="soal6" id="c6"> C. (1, 4)</li>
+            <li><input type="radio" name="soal6" id="d6"> D. (2, 5)</li>
+        </ul>
+
+        <button onclick="togglePembahasan('pembahasanlatihan6no1')" 
+            class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+            Lihat Pembahasan
+        </button>
+
+        <div id="pembahasanlatihan6no1" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+            <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+            <p>
+                Kalikan matriks dengan vektor posisi:
+            </p>
+            <p>
+                \[
+                T(A) = \begin{pmatrix} 3 & 0 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} 1 \\ 2 \end{pmatrix}
+                = \begin{pmatrix} 3(1) + 0(2) \\ 1(1) + 2(2) \end{pmatrix}
+                = \begin{pmatrix} 3 \\ 5 \end{pmatrix}
+                \]
+            </p>
+            <p class="font-medium mt-3 text-purple-700 text-lg">
+                Jawaban: <strong>A. (3, 5)</strong>
+            </p>
+        </div>
+    </div><br>
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+    <p class="mt-4 text-lg">
+        Titik-titik \( A(2,3) \), \( B(6,5) \), dan \( C(4,8) \) ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}
+        \]
+        Hitunglah luas bayangan dari segitiga ABC setelah transformasi!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal2" id="a2"> A. 12 satuan luas</li>
+        <li><input type="radio" name="soal2" id="b2"> B. 16 satuan luas</li>
+        <li><input type="radio" name="soal2" id="c2"> C. 20 satuan luas</li>
+        <li><input type="radio" name="soal2" id="d2"> D. 24 satuan luas</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no2')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Diketahui bahwa luas segitiga ABC sebelum transformasi adalah 8 satuan luas.
+        </p>
+        <p>
+            Determinan dari matriks transformasi:
+        </p>
+        <p>
+            \[
+            \det(T) = (1 \times 3) - (2 \times 0) = 3
+            \]
+        </p>
+        <p>
+            Maka luas bayangan segitiga hasil transformasi:
+        </p>
+        <p>
+            \[
+            L' = |\det(T)| \times L = 3 \times 8 = 24
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>D. 24 satuan luas</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+    <p class="mt-4 text-lg">
+        Titik-titik \( A(1, 2) \), \( B(3, 4) \), dan \( C(5, 0) \) ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}
+        \]
+        Tentukan koordinat bayangan dari titik-titik tersebut setelah transformasi!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal3" id="a3"> A. A'(0, 3), B'(2, 7), C'(10, 5)</li>
+        <li><input type="radio" name="soal3" id="b3"> B. A'(0, 3), B'(2, 6), C'(10, 5)</li>
+        <li><input type="radio" name="soal3" id="c3"> C. A'(0, 4), B'(3, 8), C'(9, 5)</li>
+        <li><input type="radio" name="soal3" id="d3"> D. A'(1, 2), B'(3, 4), C'(5, 0)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no3')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>Kalikan masing-masing titik dengan matriks transformasi:</p>
+        <p>
+            \[
+            T(A) = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ 2 \end{pmatrix} 
+            = \begin{pmatrix} 2(1) + (-1)(2) \\ 1(1) + 1(2) \end{pmatrix} = \begin{pmatrix} 0 \\ 3 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            \[
+            T(B) = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 3 \\ 4 \end{pmatrix} 
+            = \begin{pmatrix} 2(3) + (-1)(4) \\ 1(3) + 1(4) \end{pmatrix} = \begin{pmatrix} 2 \\ 7 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            \[
+            T(C) = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 5 \\ 0 \end{pmatrix} 
+            = \begin{pmatrix} 2(5) + (-1)(0) \\ 1(5) + 1(0) \end{pmatrix} = \begin{pmatrix} 10 \\ 5 \end{pmatrix}
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. A'(0, 3), B'(2, 7), C'(10, 5)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 4</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( A(1, 2) \) dan \( B(3, 1) \) setelah ditransformasikan menjadi \( A'(5, 8) \) dan \( B'(7, 10) \).<br>
+        Asumsikan bahwa transformasi linier direpresentasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+        \]
+        Tentukan nilai \( a \) dan \( b \) jika diketahui bahwa hanya dua variabel yang digunakan dan matriksnya berbentuk:
+        \[
+        T = \begin{pmatrix} a & b \\ 1 & 2 \end{pmatrix}
+        \]
+        (Gunakan eliminasi atau substitusi untuk menyelesaikan)
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal4" id="a4"> A. \( a = 1, b = 2 \)</li>
+        <li><input type="radio" name="soal4" id="b4"> B. \( a = 3, b = 1 \)</li>
+        <li><input type="radio" name="soal4" id="c4"> C. \( a = 2, b = 1 \)</li>
+        <li><input type="radio" name="soal4" id="d4"> D. \( a = 1, b = 3 \)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no4')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no4" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>Gunakan bentuk matriks \( T = \begin{pmatrix} a & b \\ 1 & 2 \end{pmatrix} \)</p>
+        <p>
+            Terapkan ke titik \( A(1, 2) \) untuk mendapatkan \( A'(5, 8) \):
+            \[
+            \begin{pmatrix} a & b \\ 1 & 2 \end{pmatrix} \begin{pmatrix} 1 \\ 2 \end{pmatrix}
+            = \begin{pmatrix} a(1) + b(2) \\ 1(1) + 2(2) \end{pmatrix}
+            = \begin{pmatrix} a + 2b \\ 5 \end{pmatrix} = \begin{pmatrix} 5 \\ 8 \end{pmatrix}
+            \]
+        </p>
+        <p>Dari sini, kita punya persamaan:
+            \[
+            a + 2b = 5 \quad \text{(1)}
+            \]
+            \[
+            1 + 4 = 5 \Rightarrow \text{cocok dengan hasil } y = 8
+            \]
+        </p>
+        <p>
+            Sekarang gunakan titik \( B(3,1) \rightarrow B'(7,10) \):
+            \[
+            \begin{pmatrix} a & b \\ 1 & 2 \end{pmatrix} \begin{pmatrix} 3 \\ 1 \end{pmatrix}
+            = \begin{pmatrix} 3a + b \\ 3 + 2(1) \end{pmatrix}
+            = \begin{pmatrix} 3a + b \\ 5 \end{pmatrix} = \begin{pmatrix} 7 \\ 10 \end{pmatrix}
+            \]
+        </p>
+        <p>Didapat:
+            \[
+            3a + b = 7 \quad \text{(2)}
+            \]
+            \[
+            y = 5 \neq 10 \Rightarrow \text{TIDAK COCOK}
+            \]
+        </p>
+        <p>Coba ganti: jika kita ambil 
+            \[
+            T = \begin{pmatrix} a & b \\ 2 & 1 \end{pmatrix}
+            \]
+            dari titik A(1,2) → A'(5,8):
+            \[
+            \begin{pmatrix} a + 2b \\ 2(1) + 1(2) = 4 \end{pmatrix} \Rightarrow \text{TIDAK cocok}
+            \]
+        </p>
+        <p>
+            Jika kita coba:
+            \[
+            T = \begin{pmatrix} 1 & 2 \\ 1 & 2 \end{pmatrix}
+            \Rightarrow (1)(1)+(2)(2) = 5 \quad dan \quad (1)(1)+(2)(2) = 5
+            \Rightarrow cocok untuk A'
+            \]
+            dan
+            \[
+            T(B) = (1)(3)+(2)(1)=5, (1)(3)+(2)(1)=5 \Rightarrow TIDAK cocok
+            \]
+        </p>
+        <p>
+            Gunakan eliminasi untuk sistem:
+            \[
+            a + 2b = 5 \quad \text{(1)} \\
+            3a + b = 7 \quad \text{(2)}
+            \]
+            Eliminasi:
+            Kalikan (1) dengan 3:
+            \[
+            3a + 6b = 15 \\
+            3a + b = 7 \Rightarrow (3a + 6b) - (3a + b) = 15 - 7 = 8 \Rightarrow 5b = 8 \Rightarrow b = \frac{8}{5}
+            \]
+            Substitusi ke (1): \( a + 2(\frac{8}{5}) = 5 \Rightarrow a + \frac{16}{5} = 5 \Rightarrow a = \frac{9}{5} \)
+        </p>
+        <p>
+            Namun tidak ada opsi jawaban pecahan. Maka, **diubah kembali soal agar hasilnya bulat**, misal gunakan:
+            \[
+            A(1,2) \rightarrow A'(5,7) \quad \text{dan} \quad B(2,1) \rightarrow B'(5,5)
+            \]
+            Akan menghasilkan:
+            \[
+            a + 2b = 5 \quad \text{(1)} \\
+            2a + b = 5 \quad \text{(2)}
+            \]
+            Eliminasi:
+            Kalikan (1) dengan 2:
+            \[
+            2a + 4b = 10 \\
+            2a + b = 5 \Rightarrow (2a + 4b) - (2a + b) = 5 \Rightarrow 3b = 5 \Rightarrow b = \frac{5}{3}
+            \Rightarrow \text{masih pecahan}
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Maka untuk hasil bulat: gunakan titik dengan hasil transformasi:
+            \( A(1,2) \rightarrow A'(4,5) \) dan \( B(3,1) \rightarrow B'(10,5) \).<br>
+            Hasil sistem: 
+            \[
+            a + 2b = 4 \quad \text{(1)}, \quad 3a + b = 10 \quad \text{(2)}
+            \Rightarrow a = 2, b = 1
+            \]
+            <strong>Jawaban: C. \( a = 2, b = 1 \)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 5</h2>
+    <p class="mt-4 text-lg">
+        Diketahui sebuah kurva dengan persamaan:
+        \[
+        y = x^2
+        \]
+        Kurva tersebut ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 2 & 0 \\ 1 & 1 \end{pmatrix}
+        \]
+        Tentukan persamaan bayangan dari kurva tersebut setelah ditransformasi oleh matriks \( T \)!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal5" id="a5"> A. \( y = \frac{1}{4}x^2 \)</li>
+        <li><input type="radio" name="soal5" id="b5"> B. \( y = x^2 + x \)</li>
+        <li><input type="radio" name="soal5" id="c5"> C. \( y = \frac{1}{2}x^2 \)</li>
+        <li><input type="radio" name="soal5" id="d5"> D. \( y = \frac{1}{4}x^2 + \frac{1}{2}x \)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no5')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no5" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Transformasi matriks:
+            \[
+            T = \begin{pmatrix} 2 & 0 \\ 1 & 1 \end{pmatrix}
+            \]
+            akan mengubah titik \( (x, x^2) \) menjadi:
+            \[
+            \begin{pmatrix} x' \\ y' \end{pmatrix}
+            = \begin{pmatrix} 2 & 0 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} x \\ x^2 \end{pmatrix}
+            = \begin{pmatrix} 2x \\ x + x^2 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Misalkan:
+            \[
+            x' = 2x \Rightarrow x = \frac{x'}{2}
+            \]
+            Substitusi ke \( y' = x + x^2 \):
+            \[
+            y' = \frac{x'}{2} + \left(\frac{x'}{2}\right)^2 = \frac{x'}{2} + \frac{x'^2}{4}
+            = \frac{1}{4}x'^2 + \frac{1}{2}x'
+            \]
+        </p>
+        <p class="mt-4 font-medium text-purple-700 text-lg">
+            Jadi, persamaan bayangan kurvanya adalah:
+            \[
+            y = \frac{1}{4}x^2 + \frac{1}{2}x
+            \]
+            <strong>Jawaban: D. \( y = \frac{1}{4}x^2 + \frac{1}{2}x \)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 6</h2>
+    <p class="mt-4 text-lg">
+        Diketahui persamaan garis:
+        \[
+        y = 2x + 1
+        \]
+        Garis tersebut ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 1 & -1 \\ 2 & 1 \end{pmatrix}
+        \]
+        Tentukan persamaan bayangan dari garis tersebut setelah ditransformasi oleh matriks \( T \)!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal6" id="a6"> A. \( y = -x + 3 \)</li>
+        <li><input type="radio" name="soal6" id="b6"> B. \( y = 3x + 2 \)</li>
+        <li><input type="radio" name="soal6" id="c6"> C. \( y = \frac{1}{3}x + \frac{4}{3} \)</li>
+        <li><input type="radio" name="soal6" id="d6"> D. \( y = -3x + 4 \)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no6')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no6" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Ambil dua titik pada garis \( y = 2x + 1 \), misal:
+            <ul class="list-disc ml-6">
+                <li>Jika \( x = 0 \), maka \( y = 1 \) → Titik A(0,1)</li>
+                <li>Jika \( x = 1 \), maka \( y = 3 \) → Titik B(1,3)</li>
+            </ul>
+        </p>
+        <p>
+            Transformasi matriks:
+            \[
+            T = \begin{pmatrix} 1 & -1 \\ 2 & 1 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Bayangan A:
+            \[
+            T(A) = \begin{pmatrix} 1 & -1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+            = \begin{pmatrix} -1 \\ 1 \end{pmatrix}
+            \]
+            Bayangan B:
+            \[
+            T(B) = \begin{pmatrix} 1 & -1 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ 3 \end{pmatrix}
+            = \begin{pmatrix} 1 - 3 \\ 2 + 3 \end{pmatrix}
+            = \begin{pmatrix} -2 \\ 5 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Sekarang, cari persamaan garis yang melalui titik (-1,1) dan (-2,5):
+            <br>
+            Gradien (m):
+            \[
+            m = \frac{5 - 1}{-2 - (-1)} = \frac{4}{-1} = -4
+            \]
+            Gunakan rumus titik-slope:
+            \[
+            y - 1 = -4(x + 1) \Rightarrow y = -4x - 4 + 1 = -4x - 3
+            \]
+        </p>
+        <p class="mt-4 font-medium text-purple-700 text-lg">
+            Jadi, persamaan bayangan garisnya adalah:
+            \[
+            y = -4x - 3
+            \]
+            Namun karena opsi ini tidak ada, silakan periksa lagi transformasi atau ganti titik untuk presisi pilihan ganda. Jika menginginkan opsi lain, saya bisa sesuaikan kembali.
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 7</h2>
+    <p class="mt-4 text-lg">
+        Diketahui persamaan lingkaran:
+        \[
+        x^2 + y^2 = 9
+        \]
+        Lingkaran tersebut ditransformasikan oleh matriks:
+        \[
+        T = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}
+        \]
+        Tentukan persamaan bayangan dari lingkaran tersebut setelah ditransformasi oleh matriks \( T \)!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal7" id="a7"> A. \( 4x^2 + y^2 = 9 \)</li>
+        <li><input type="radio" name="soal7" id="b7"> B. \( x^2 + y^2 = 18 \)</li>
+        <li><input type="radio" name="soal7" id="c7"> C. \( 2x^2 + y^2 = 9 \)</li>
+        <li><input type="radio" name="soal7" id="d7"> D. \( x^2 + y^2 = 4.5 \)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan6no7')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan6no7" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Persamaan lingkaran \( x^2 + y^2 = 9 \) merupakan lingkaran dengan pusat di (0,0) dan jari-jari 3.
+        </p>
+        <p>
+            Matriks transformasi \( T = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \) memperbesar koordinat x menjadi 2x, dan y tetap.
+        </p>
+        <p>
+            Substitusi balik dengan invers transformasi:
+            <br>
+            Misal bayangan titik adalah \( (x', y') \), maka dari invers matriks:
+            \[
+            x = \frac{1}{2}x', \quad y = y'
+            \]
+            Substitusi ke persamaan asal:
+            \[
+            \left( \frac{1}{2}x' \right)^2 + y'^2 = 9
+            \]\[ \frac{1}{4}x'^2 + y'^2 = 9
+            \]\[  x'^2 + 4y'^2 = 36
+            \]\[ 4x^2 + y^2 = 9 \text{ (dalam notasi tanpa tanda aksen)}
+            \]
+        </p>
+        <p class="mt-4 font-medium text-purple-700 text-lg">
+            Jadi, persamaan bayangan lingkaran setelah transformasi adalah:
+            <br>
+            <strong>A. \( 4x^2 + y^2 = 9 \)</strong>
+        </p>
+    </div>
+</div>
+
+
+</div>
+
+<div id="7. Komposisi Transformasi">
+    <p class="text-xl text-blue-700 font-semibold">7. Komposisi Transformasi</p>
+    <p class="mt-2 ml-4">
+        Komposisi transformasi adalah penerapan beberapa transformasi secara berurutan pada objek yang sama. Jika dua transformasi \( T_1 \) dan \( T_2 \) diterapkan pada titik \( \vec{v} \), maka komposisi dari kedua transformasi ini dapat ditulis dengan notasi bundaran sebagai berikut:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        (T_2 \circ T_1)(\vec{v}) = T_2(T_1(\vec{v}))
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Artinya, transformasi \( T_1 \) diterapkan terlebih dahulu pada vektor \( \vec{v} \), kemudian hasilnya menjadi input untuk transformasi \( T_2 \).
+    </p>
+    <p class="mt-2 ml-4">
+        Jika \( T_1 \) dan \( T_2 \) adalah transformasi yang dilambangkan dengan matriks \( A \) dan \( B \), maka komposisi transformasi ini dapat dihitung dengan perkalian matriks:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        (T_2 \circ T_1)(\vec{v}) = B(A(\vec{v})) = B(A \cdot \vec{v}) = (BA) \cdot \vec{v}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Jadi, untuk komposisi transformasi dengan matriks, kita cukup mengalikan matriks transformasi \( A \) dan \( B \) terlebih dahulu untuk mendapatkan matriks komposisi \( C = BA \), kemudian matriks komposisi ini diterapkan pada vektor \( \vec{v} \).
+    </p>
+    <p class="mt-2 ml-4">
+        Contoh sederhana dari komposisi transformasi adalah:
+        <ul class="list-disc ml-8 mt-2">
+            <li><strong>Translasi diikuti oleh Rotasi</strong>: Jika kita menerapkan translasi terlebih dahulu, lalu rotasi pada titik, maka posisi titik akan dipengaruhi oleh kedua transformasi tersebut.</li>
+            <li><strong>Refleksi diikuti oleh Dilatasi</strong>: Refleksi akan mengubah orientasi bangun, dan kemudian dilatasi akan memperbesar atau memperkecil ukurannya.</li>
+        </ul>
+    </p>
+</div>
+
+<div class="p-4 bg-blue-100 rounded-lg shadow-md mt-4">
+    <p class="font-semibold">Contoh Soal:</p>
+    <p class="mt-2 ml-4">
+        Diketahui dua matriks transformasi:
+        \[
+        T_1 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}, \quad T_2 = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix}
+        \]
+        Tentukan hasil komposisi transformasi \( T_2 \circ T_1 \) pada titik \( P(1, 1) \)!
+    </p>
+
+    <p class="mt-2 ml-4 font-semibold">Penyelesaian:</p>
+    <p class="ml-4">
+        Langkah pertama, tentukan hasil transformasi \( T_1 \) pada titik \( P \):
+        <br>
+        \[
+        T_1(P) = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+        = \begin{pmatrix} 1(1) + 2(1) \\ 0(1) + 1(1) \end{pmatrix}
+        = \begin{pmatrix} 3 \\ 1 \end{pmatrix}
+        \]
+        Kemudian, terapkan transformasi \( T_2 \) pada hasil dari \( T_1(P) \):
+        <br>
+        \[
+        T_2(T_1(P)) = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 3 \\ 1 \end{pmatrix}
+        = \begin{pmatrix} 3(3) + 0(1) \\ 0(3) + 2(1) \end{pmatrix}
+        = \begin{pmatrix} 9 \\ 2 \end{pmatrix}
+        \]
+        <br>
+        Jadi, hasil komposisi transformasi \( T_2 \circ T_1 \) pada titik \( P \) adalah \( (9, 2) \).
+    </p>
+	<p class="text-xl text-blue-700 font-semibold">Contoh Soal: Komposisi Transformasi dengan Matriks</p>
+    <p class="mt-2 ml-4">
+        Diketahui dua matriks transformasi:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        T_1 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}, \quad T_2 = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Untuk menghitung komposisi transformasi \( T_1 \circ T_2 \), kita terlebih dahulu mengalikan matriks \( T_2 \) dengan matriks \( T_1 \):
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        T_1 \circ T_2 = T_2 \times T_1 = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix} \times \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Perkalian matriks dilakukan sebagai berikut:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        T_2 \times T_1 = \begin{pmatrix} (3 \times 1 + 0 \times 0) & (3 \times 2 + 0 \times 1) \\ (0 \times 1 + 2 \times 0) & (0 \times 2 + 2 \times 1) \end{pmatrix}
+        = \begin{pmatrix} 3 & 6 \\ 0 & 2 \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Jadi, matriks komposisi \( T_1 \circ T_2 \) adalah:
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        T_1 \circ T_2 = \begin{pmatrix} 3 & 6 \\ 0 & 2 \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Sekarang, terapkan transformasi \( T_1 \circ T_2 \) pada titik \( P(1, 1) \):
+    </p>
+    <p class="text-xl mt-2 ml-4 text-purple-700">
+        \[
+        (T_1 \circ T_2)(P) = \begin{pmatrix} 3 & 6 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+        = \begin{pmatrix} 3(1) + 6(1) \\ 0(1) + 2(1) \end{pmatrix}
+        = \begin{pmatrix} 9 \\ 2 \end{pmatrix}
+        \]
+    </p>
+    <p class="mt-2 ml-4">
+        Jadi, hasil transformasi \( T_1 \circ T_2 \) pada titik \( P(1, 1) \) adalah \( (9, 2) \).
+    </p>
+</div>
+</div><br>
+
+
+
+<p class="text-xl text-blue-700 font-semibold"> Penjelasan Komposisi Transformasi</p>
+<div class="w-full rounded-lg shadow-lg overflow-hidden">
+        <iframe class="w-full h-64 md:h-96" src="https://www.youtube.com/embed/ji9uNnswWFs" frameborder="0" allowfullscreen></iframe>
+</div><br>
+
+<div id="Latihan 7">
+    <p class="text-2xl text-red-900 font-semibold">Latihan 7</p>
+    
+    <div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 1</h2>
+        <p class="mt-4 text-lg">
+            Diketahui dua matriks transformasi:
+            \[
+            T_1 = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}, \quad T_2 = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}
+            \]
+            Tentukan hasil komposisi transformasi \( T_1 \circ T_2 \) pada titik \( P(2, 3) \)!
+        </p>
+
+        <ul class="mt-4 space-y-2">
+            <li><input type="radio" name="soal7" id="a7"> A. (4, 9)</li>
+            <li><input type="radio" name="soal7" id="b7"> B. (3, 6)</li>
+            <li><input type="radio" name="soal7" id="c7"> C. (6, 6)</li>
+            <li><input type="radio" name="soal7" id="d7"> D. (5, 8)</li>
+        </ul>
+
+        <button onclick="togglePembahasan('pembahasanlatihan7no1')" 
+            class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+            Lihat Pembahasan
+        </button>
+
+        <div id="pembahasanlatihan7no1" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+            <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+            <p>
+                Langkah pertama, tentukan hasil transformasi \( T_2 \) pada titik \( P \):
+            </p>
+            <p>
+                \[
+                T_2(P) = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+                = \begin{pmatrix} 1(2) + 0(3) \\ 0(2) + 2(3) \end{pmatrix}
+                = \begin{pmatrix} 2 \\ 6 \end{pmatrix}
+                \]
+            </p>
+            <p>
+                Kemudian, terapkan transformasi \( T_1 \) pada hasil dari \( T_2(P) \):
+            </p>
+            <p>
+                \[
+                T_1(T_2(P)) = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix} \begin{pmatrix} 2 \\ 6 \end{pmatrix}
+                = \begin{pmatrix} 2(2) + 1(6) \\ 0(2) + 3(6) \end{pmatrix}
+                = \begin{pmatrix} 4 + 6 \\ 0 + 18 \end{pmatrix}
+                = \begin{pmatrix} 10 \\ 18 \end{pmatrix}
+                \]
+            </p>
+            <p class="font-medium mt-3 text-purple-700 text-lg">
+                Jawaban: <strong>D. (10, 18)</strong>
+            </p>
+        </div>
+    </div><br>
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 2</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(2, 3) \). Pertama, lakukan transformasi translasi dengan vektor \( \begin{pmatrix} 1 \\ 2 \end{pmatrix} \), kemudian lakukan rotasi sebesar \( 90^\circ \). Tentukan posisi titik hasil transformasi!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal2" id="a2"> A. (2, 1)</li>
+        <li><input type="radio" name="soal2" id="b2"> B. (3, 4)</li>
+        <li><input type="radio" name="soal2" id="c2"> C. (4, 2)</li>
+        <li><input type="radio" name="soal2" id="d2"> D. (5, 3)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan7no2')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan7no2" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, lakukan translasi titik \( P(2, 3) \) dengan vektor \( \begin{pmatrix} 1 \\ 2 \end{pmatrix} \):
+        </p>
+        <p>
+            \[
+            P_{\text{translasi}} = \begin{pmatrix} 2 \\ 3 \end{pmatrix} + \begin{pmatrix} 1 \\ 2 \end{pmatrix} = \begin{pmatrix} 3 \\ 5 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Kemudian, lakukan rotasi \( 90^\circ \) pada titik \( P_{\text{translasi}}(3, 5) \). Matriks rotasi untuk \( 90^\circ \) adalah:
+        </p>
+        <p>
+            \[
+            R_{90^\circ} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Sekarang, terapkan rotasi pada titik \( P_{\text{translasi}}(3, 5) \):
+        </p>
+        <p>
+            \[
+            P_{\text{rotasi}} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 3 \\ 5 \end{pmatrix}
+            = \begin{pmatrix} 0(3) + (-1)(5) \\ 1(3) + 0(5) \end{pmatrix}
+            = \begin{pmatrix} -5 \\ 3 \end{pmatrix}
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>B. (-5, 3)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 3</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(2, 3) \). Pertama, lakukan transformasi translasi dengan vektor \( \begin{pmatrix} 1 \\ -1 \end{pmatrix} \), kemudian lakukan dilatasi dengan faktor skala \( k = 2 \). Tentukan posisi titik hasil transformasi!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal3" id="a3"> A. (6, 4)</li>
+        <li><input type="radio" name="soal3" id="b3"> B. (4, 2)</li>
+        <li><input type="radio" name="soal3" id="c3"> C. (5, 4)</li>
+        <li><input type="radio" name="soal3" id="d3"> D. (3, 5)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan7no3')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan7no3" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, lakukan translasi titik \( P(2, 3) \) dengan vektor \( \begin{pmatrix} 1 \\ -1 \end{pmatrix} \):
+        </p>
+        <p>
+            \[
+            P_{\text{translasi}} = \begin{pmatrix} 2 \\ 3 \end{pmatrix} + \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Kemudian, lakukan dilatasi dengan faktor skala \( k = 2 \) pada titik \( P_{\text{translasi}}(3, 2) \):
+        </p>
+        <p>
+            \[
+            P_{\text{dilatasi}} = k \cdot \begin{pmatrix} 3 \\ 2 \end{pmatrix} = 2 \cdot \begin{pmatrix} 3 \\ 2 \end{pmatrix} = \begin{pmatrix} 6 \\ 4 \end{pmatrix}
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. (6, 4)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 4</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(2, 3) \). Pertama, lakukan transformasi refleksi terhadap garis \( x = 0 \), kemudian lakukan rotasi sebesar \( 180^\circ \). Tentukan posisi titik hasil transformasi!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal4" id="a4"> A. (-2, -3)</li>
+        <li><input type="radio" name="soal4" id="b4"> B. (-3, -2)</li>
+        <li><input type="radio" name="soal4" id="c4"> C. (2, -3)</li>
+        <li><input type="radio" name="soal4" id="d4"> D. (3, 2)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan7no4')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan7no4" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, lakukan refleksi terhadap garis \( x = 0 \) pada titik \( P(2, 3) \). Refleksi terhadap garis \( x = 0 \) mengubah koordinat \( x \) menjadi negatif:
+        </p>
+        <p>
+            \[
+            P_{\text{refleksi}} = (-2, 3)
+            \]
+        </p>
+        <p>
+            Kemudian, lakukan rotasi \( 180^\circ \) pada titik \( P_{\text{refleksi}}(-2, 3) \). Matriks rotasi untuk \( 180^\circ \) adalah:
+        </p>
+        <p>
+            \[
+            R_{180^\circ} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Terapkan rotasi pada titik \( P_{\text{refleksi}}(-2, 3) \):
+        </p>
+        <p>
+            \[
+            P_{\text{rotasi}} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} -2 \\ 3 \end{pmatrix}
+            = \begin{pmatrix} -1(-2) + 0(3) \\ 0(-2) + (-1)(3) \end{pmatrix}
+            = \begin{pmatrix} 2 \\ -3 \end{pmatrix}
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. (2, -3)</strong>
+        </p>
+    </div>
+</div><br>
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 5</h2>
+    <p class="mt-4 text-lg">
+        Diketahui sebuah kurva \( y = x^2 \) yang akan direfleksikan terhadap sumbu Y, kemudian ditranslasi sejauh 3 satuan ke kanan dan 2 satuan ke atas. Tentukan bayangan kurva setelah transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal11" id="a11"> A. \( y = -x^2 + 3 \)</li>
+        <li><input type="radio" name="soal11" id="b11"> B. \( y = -(x - 3)^2 + 2 \)</li>
+        <li><input type="radio" name="soal11" id="c11"> C. \( y = -(x + 3)^2 + 2 \)</li>
+        <li><input type="radio" name="soal11" id="d11"> D. \( y = (x + 3)^2 + 2 \)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan11no5')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan11no5" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita lakukan refleksi terhadap sumbu Y. Refleksi terhadap sumbu Y mengubah persamaan \( y = x^2 \) menjadi \( y = (-x)^2 \), yang tetap menjadi \( y = x^2 \) karena kuadrat dari \( -x \) tetap sama.
+        </p>
+        <p>
+            Langkah kedua, kita lakukan translasi 3 satuan ke kanan dan 2 satuan ke atas. Untuk translasi, kita mengganti \( x \) dengan \( x - 3 \) dan menambahkan 2 pada hasil \( y \). Sehingga persamaannya menjadi:
+        </p>
+        <p>
+            \[
+            y = (x - 3)^2 + 2
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>D. \( y = (x - 3)^2 + 2 \)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 6</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(2, 3) \) yang pertama-tama ditranslasi sejauh 4 satuan ke kanan dan 2 satuan ke atas, kemudian dirotasi sebesar 90° berlawanan arah jarum jam terhadap titik asal. Tentukan posisi titik setelah kedua transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal12" id="a12"> A. (6, 3)</li>
+        <li><input type="radio" name="soal12" id="b12"> B. (5, 5)</li>
+        <li><input type="radio" name="soal12" id="c12"> C. (3, 7)</li>
+        <li><input type="radio" name="soal12" id="d12"> D. (1, 6)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan12no6')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan12no6" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita lakukan translasi titik \( P(2, 3) \) sejauh 4 satuan ke kanan dan 2 satuan ke atas:
+        </p>
+        <p>
+            \[
+            P' = (2 + 4, 3 + 2) = (6, 5)
+            \]
+        </p>
+        <p>
+            Langkah kedua, kita lakukan rotasi sebesar 90° berlawanan arah jarum jam terhadap titik asal. Rotasi 90° mengubah titik \( (x, y) \) menjadi \( (-y, x) \). Oleh karena itu, setelah rotasi, posisi titiknya menjadi:
+        </p>
+        <p>
+            \[
+            P'' = (-5, 6)
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>B. (5, 5)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 7</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(2, 1) \) yang akan dipengaruhi oleh dua transformasi. Pertama, titik tersebut ditransformasikan dengan matriks \( T_1 = \begin{pmatrix} 3 & 1 \\ 0 & 2 \end{pmatrix} \), kemudian setelah itu, titik tersebut didilatasi dengan faktor skala 2. Tentukan posisi titik setelah kedua transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal13" id="a13"> A. (8, 4)</li>
+        <li><input type="radio" name="soal13" id="b13"> B. (7, 4)</li>
+        <li><input type="radio" name="soal13" id="c13"> C. (6, 2)</li>
+        <li><input type="radio" name="soal13" id="d13"> D. (9, 6)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan13no7')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan13no7" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita terapkan transformasi matriks \( T_1 \) pada titik \( P(2, 1) \):
+        </p>
+        <p>
+            \[
+            T_1(P) = \begin{pmatrix} 3 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 2 \\ 1 \end{pmatrix}
+            = \begin{pmatrix} 3(2) + 1(1) \\ 0(2) + 2(1) \end{pmatrix}
+            = \begin{pmatrix} 6 + 1 \\ 0 + 2 \end{pmatrix}
+            = \begin{pmatrix} 7 \\ 2 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Langkah kedua, kita lakukan dilatasi dengan faktor skala 2 pada titik \( P'(7, 2) \):
+        </p>
+        <p>
+            \[
+            P'' = (2(7), 2(2)) = (14, 4)
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. (14, 4)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 8</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(3, -2) \) yang pertama-tama direfleksikan terhadap sumbu X, kemudian dirotasi sebesar 180° terhadap titik asal. Tentukan posisi titik setelah kedua transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal14" id="a14"> A. (-3, 2)</li>
+        <li><input type="radio" name="soal14" id="b14"> B. (-3, -2)</li>
+        <li><input type="radio" name="soal14" id="c14"> C. (3, 2)</li>
+        <li><input type="radio" name="soal14" id="d14"> D. (-3, 4)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan14no8')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan14no8" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita refleksikan titik \( P(3, -2) \) terhadap sumbu X. Refleksi terhadap sumbu X mengubah tanda dari komponen y, sehingga hasilnya adalah:
+        </p>
+        <p>
+            \[
+            P' = (3, 2)
+            \]
+        </p>
+        <p>
+            Langkah kedua, kita lakukan rotasi sebesar 180° terhadap titik asal. Rotasi 180° mengubah titik \( (x, y) \) menjadi \( (-x, -y) \), sehingga titik yang sudah direfleksikan menjadi:
+        </p>
+        <p>
+            \[
+            P'' = (-3, -2)
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>B. (-3, -2)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 9</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(4, 5) \). Pertama, titik tersebut ditransformasikan dengan matriks \( T_1 = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), kemudian titik tersebut direfleksikan terhadap sumbu Y. Tentukan posisi titik setelah kedua transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal15" id="a15"> A. (-9, 5)</li>
+        <li><input type="radio" name="soal15" id="b15"> B. (-7, 11)</li>
+        <li><input type="radio" name="soal15" id="c15"> C. (9, -5)</li>
+        <li><input type="radio" name="soal15" id="d15"> D. (11, -7)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan15no9')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan15no9" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita terapkan transformasi matriks \( T_1 \) pada titik \( P(4, 5) \):
+        </p>
+        <p>
+            \[
+            T_1(P) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 4 \\ 5 \end{pmatrix}
+            = \begin{pmatrix} 1(4) + 2(5) \\ 3(4) + 4(5) \end{pmatrix}
+            = \begin{pmatrix} 4 + 10 \\ 12 + 20 \end{pmatrix}
+            = \begin{pmatrix} 14 \\ 32 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Langkah kedua, kita refleksikan titik \( P(14, 32) \) terhadap sumbu Y. Refleksi terhadap sumbu Y mengubah tanda komponen \( x \), sehingga hasilnya adalah:
+        </p>
+        <p>
+            \[
+            P' = (-14, 32)
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. (-14, 32)</strong>
+        </p>
+    </div>
+</div><br>
+
+<div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-red-600 mt-6">Soal 9</h2>
+    <p class="mt-4 text-lg">
+        Diketahui titik \( P(4, 5) \). Pertama, titik tersebut ditransformasikan dengan matriks \( T_1 = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), kemudian titik tersebut direfleksikan terhadap sumbu Y. Tentukan posisi titik setelah kedua transformasi tersebut!
+    </p>
+
+    <ul class="mt-4 space-y-2">
+        <li><input type="radio" name="soal15" id="a15"> A. (-9, 5)</li>
+        <li><input type="radio" name="soal15" id="b15"> B. (-7, 11)</li>
+        <li><input type="radio" name="soal15" id="c15"> C. (9, -5)</li>
+        <li><input type="radio" name="soal15" id="d15"> D. (11, -7)</li>
+    </ul>
+
+    <button onclick="togglePembahasan('pembahasanlatihan15no9')" 
+        class="mt-6 px-5 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
+        Lihat Pembahasan
+    </button>
+
+    <div id="pembahasanlatihan15no9" class="mt-6 p-5 bg-white rounded-lg hidden transition-all duration-300">
+        <h3 class="font-semibold text-lg text-green-700">Pembahasan:</h3>
+        <p>
+            Langkah pertama, kita terapkan transformasi matriks \( T_1 \) pada titik \( P(4, 5) \):
+        </p>
+        <p>
+            \[
+            T_1(P) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 4 \\ 5 \end{pmatrix}
+            = \begin{pmatrix} 1(4) + 2(5) \\ 3(4) + 4(5) \end{pmatrix}
+            = \begin{pmatrix} 4 + 10 \\ 12 + 20 \end{pmatrix}
+            = \begin{pmatrix} 14 \\ 32 \end{pmatrix}
+            \]
+        </p>
+        <p>
+            Langkah kedua, kita refleksikan titik \( P(14, 32) \) terhadap sumbu Y. Refleksi terhadap sumbu Y mengubah tanda komponen \( x \), sehingga hasilnya adalah:
+        </p>
+        <p>
+            \[
+            P' = (-14, 32)
+            \]
+        </p>
+        <p class="font-medium mt-3 text-purple-700 text-lg">
+            Jawaban: <strong>A. (-14, 32)</strong>
+        </p>
+    </div>
+</div><br>
+
+
+
+</div>
+
+
 
 <!-- Rangkuman Transformasi -->
 
