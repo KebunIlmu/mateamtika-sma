@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif</title>
+<style>
+	
+       table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+        th { background-color: #1E90FF; }
+        button { display: block; margin: 0 auto 30px; padding: 10px 20px; cursor: pointer; }
+        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("-translate-x-full");
+        }
+
+    </script>
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-purple-500 p-5 flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-64 bg-blue-600 text-white p-6 h-screen fixed transform transition-transform -translate-x-full rounded-r-lg shadow-lg z-50">
+        <button onclick="toggleSidebar()" class="absolute top-5 right-5 bg-red-500 text-white p-2 rounded-lg">✖</button>
+        <h2 class="text-2xl font-bold mb-4">📖 Daftar Isi</h2>
+        <ul>
+            <li class="mb-3"><a href="Matriks.html" class="hover:text-yellow-300">▶️ Matriks</a></li>
+            <li class="mb-3"><a href="#Latihan Soal 1A" class="hover:text-yellow-300">📝 Latihan Soal 1A</a></li>
+	    <li class="mb-3"><a href="Transformasi.html" class="hover:text-yellow-300">▶️ Transformasi</a></li>
+
+	    <li class="mb-3"><a href="#Latihan Soal 2A" class="hover:text-yellow-300">📝 Latihan Soal 2A</a></li>
+        </ul>
+    </div>
+    
+    <!-- Menu Bar di belakang Sidebar -->
+    <button onclick="toggleSidebar()" class="fixed top-5 left-5 bg-yellow-400 text-white p-3 rounded-lg shadow-lg z-40">☰ Menu</button>
+    
+    <!-- Konten Utama -->
+    <div class="ml-0 w-full max-w-7xl mx-auto bg-white p-8 rounded-lg shadow-2xl" style="margin-right: 10px;">
+        <h1 class="text-3xl font-bold text-center text-purple-800 mb-6">Media Pembelajaran Matematika Interaktif</h1>
+        
+        <!-- Bunga Tunggal, Majemuk Anuitas-->
+<div id="Bunga Tunggal, Majemuk Anuitas" class="mb-8">
+    <h1 class="text-2xl font-bold mb-4 text-purple-700">Bunga Tunggal, Majemuk, dan Anuitas</h1>
+    <ul class="text-purple-700 p-6 bg-blue-100 rounded-lg shadow-md">
+        <li class="mb-3"><a href="#1. Bunga Tunggal" class="hover:text-yellow-300">1. Bunga Tunggal</a></li>
+        <li class="mb-3"><a href="#2. Bunga Majemuk" class="hover:text-yellow-300">2. Pengertian Bunga Majemuk</a></li>
+        <li class="mb-3"><a href="#3. Anuitas" class="hover:text-yellow-300">3. Anuitas</a></li>
+            </ul>
+</div>
+<div id="Latihan"></div> 
+<div class="p-6 bg-blue-100 rounded-lg shadow-md">
+  <p class="text-2xl text-white font-bold bg-blue-800">Latihan</p><br>
+<p class="text-2xl text-white font-bold bg-green-600 text-center ">Bunga Tunggal</p>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 1</h2>
+  <p>Seorang siswa meminjam uang sebesar <strong>Rp2.000.000</strong> di koperasi sekolah dengan bunga tunggal <strong>5% per tahun</strong>. Jika lama peminjaman adalah <strong>2 tahun</strong>, hitunglah:</p>
+  <ol class="list-decimal list-inside mt-2">
+    <li>Besar bunga yang harus dibayar.</li>
+    <li>Total uang yang harus dikembalikan.</li>
+  </ol>
+
+  <br>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">Gunakan rumus bunga tunggal: <br>
+    <code>B = P × i × t</code> dan <code>A = P + B</code></p>
+
+  <!-- Soal 1a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Bunga (B) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban1a" placeholder="contoh: 200000">
+      <button onclick="cekSatu('jawaban1a', '200000', 'hasil1a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil1a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <!-- Soal 1b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">b. Total yang harus dikembalikan (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban1b" placeholder="contoh: 2200000">
+      <button onclick="cekSatu('jawaban1b', '2200000', 'hasil1b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil1b" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 2</h2>
+  <p>Seorang petani meminjam uang sebesar <strong>Rp5.000.000</strong> dari bank untuk modal usaha. Ia dikenai bunga tunggal sebesar <strong>0.5% per bulan</strong>. Jika ia mengembalikan pinjaman tersebut dalam waktu <strong>3 tahun</strong>, hitunglah:</p>
+  <ol class="list-decimal list-inside mt-2">
+    <li>Besar bunga yang harus dibayar.</li>
+    <li>Total uang yang harus dikembalikan.</li>
+  </ol>
+
+  <br>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">Gunakan rumus bunga tunggal: <br>
+    <code>B = P × i × t</code> dan <code>A = P + B</code></p>
+
+  <!-- Soal 2a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Bunga (B) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban2a" placeholder="contoh: 900000">
+      <button onclick="cekSatu('jawaban2a', '900000', 'hasil2a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil2a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <!-- Soal 2b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">b. Total yang harus dikembalikan (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban2b" placeholder="contoh: 5900000">
+      <button onclick="cekSatu('jawaban2b', '5900000', 'hasil2b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil2b" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 3</h2>
+  <p>Rani meminjam uang sebesar <strong>Rp4.500.000</strong> dari koperasi sekolah. Ia harus membayar bunga sebesar <strong>Rp540.000</strong> setelah beberapa tahun. Jika tingkat bunga tunggal yang dikenakan adalah <strong>4% per tahun</strong>, hitunglah:</p>
+  <ol class="list-decimal list-inside mt-2">
+    <li>Lama waktu (t) Rani meminjam uang tersebut.</li>
+    <li>Total uang yang harus dikembalikan.</li>
+  </ol>
+
+  <br>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">Gunakan rumus bunga tunggal: <br>
+    <code>B = P × i × t</code> dan <code>A = P + B</code></p>
+
+  <!-- Soal 3a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Lama waktu pinjaman (t) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban3a" placeholder="contoh: 3">
+      <button onclick="cekSatu('jawaban3a', '3', 'hasil3a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil3a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <!-- Soal 3b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">b. Total yang harus dikembalikan (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban3b" placeholder="contoh: 5040000">
+      <button onclick="cekSatu('jawaban3b', '5040000', 'hasil3b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil3b" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 4</h2>
+  <p>Pak Budi membayar bunga sebesar <strong>Rp1.200.000</strong> setelah meminjam uang selama <strong>2 tahun</strong> dengan tingkat bunga tunggal <strong>8% per tahun</strong>. Hitunglah:</p>
+  <ol class="list-decimal list-inside mt-2">
+    <li>Besar pinjaman awal (modal) Pak Budi.</li>
+    <li>Total uang yang harus dikembalikan Pak Budi.</li>
+  </ol>
+
+  <br>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">Gunakan rumus bunga tunggal: <br>
+    <code>B = P × i × t</code> dan <code>A = P + B</code></p>
+
+  <!-- Soal 4a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Besar pinjaman awal (P) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban4a" placeholder="contoh: 7500000">
+      <button onclick="cekSatu('jawaban4a', '7500000', 'hasil4a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil4a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <!-- Soal 4b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">b. Total yang harus dikembalikan (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban4b" placeholder="contoh: 8700000">
+      <button onclick="cekSatu('jawaban4b', '8700000', 'hasil4b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil4b" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 5</h2>
+  <p>Rani menabung sebesar <strong>Rp5.000.000</strong> di sebuah bank dengan tingkat bunga tunggal <strong>6% per tahun</strong>. Setelah beberapa waktu, ia memperoleh bunga sebesar <strong>Rp900.000</strong>.</p>
+  <p>Hitunglah:</p>
+  <ol class="list-decimal list-inside mt-2">
+    <li>Lama waktu Rani menabung di bank tersebut.</li>
+    <li>Total tabungan Rani setelah memperoleh bunga.</li>
+  </ol>
+
+  <br>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">Gunakan rumus bunga tunggal: <br>
+    <code>B = P × i × t</code> dan <code>A = P + B</code></p>
+
+  <!-- Soal 5a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Lama waktu menabung (t) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban5a" placeholder="contoh: 3">
+      <button onclick="cekSatu('jawaban5a', '3', 'hasil5a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil5a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+
+  <!-- Soal 5b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">b. Total tabungan setelah mendapat bunga (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-36" id="jawaban5b" placeholder="contoh: 5900000">
+      <button onclick="cekSatu('jawaban5b', '5900000', 'hasil5b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil5b" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+<p class="text-2xl text-white font-bold bg-green-600 text-center ">Bunga Majemuk</p>
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 6</h2>
+  <p>Raka menabung sebesar <strong>Rp10.000.000</strong> di bank dengan bunga majemuk <strong>5% per tahun</strong>. Berapa jumlah tabungan Raka setelah <strong>3 tahun</strong>?</p>
+  
+  <p class="mt-3">Gunakan rumus bunga majemuk:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[ A = P \times (1 + i)^t \]
+    <br>
+    di mana:<br>
+    A = jumlah akhir<br>
+    P = modal awal<br>
+    i = suku bunga per periode<br>
+    t = jumlah periode
+  </p>
+
+  <!-- Soal 6a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Jumlah tabungan setelah 3 tahun (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-40" id="jawaban6a" placeholder="contoh: 1157625">
+      <button onclick="cekSatu('jawaban6a', '11576250', 'hasil6a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil6a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 7</h2>
+  <p>Pak Dodi menginvestasikan uang sebesar <strong>Rp8.000.000</strong> pada sebuah produk investasi dengan tingkat bunga majemuk sebesar <strong>0.5% per bulan</strong>. Berapa jumlah uang Pak Dodi setelah <strong>4 tahun</strong>?</p>
+
+  <p class="mt-3">Gunakan rumus bunga majemuk:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[ A = P \times (1 + i)^t \]  
+    <br>
+    di mana:<br>
+    A = jumlah akhir (nilai masa depan)<br>
+    P = modal awal<br>
+    i = tingkat bunga per tahun<br>
+    t = waktu dalam tahun
+  </p>
+
+  <!-- Soal 7a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Jumlah uang setelah 4 tahun (A) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-40" id="jawaban7a" placeholder="contoh: 10100000">
+      <button onclick="cekSatu('jawaban7a', '10123762', 'hasil7a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil7a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 8</h2>
+  <p>Ibu Rani menabung sebesar <strong>Rp5.000.000</strong> pada sebuah bank dengan bunga majemuk <strong>4% per tahun</strong>. Setelah beberapa tahun, jumlah tabungannya menjadi <strong>Rp6.083.265</strong>. Berapa tahun Ibu Rani menabung?</p>
+
+  <p class="mt-3">Gunakan rumus bunga majemuk:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[ A = P \times (1 + i)^t \]  
+    <br>
+    di mana:<br>
+    A = jumlah akhir<br>
+    P = modal awal<br>
+    i = tingkat bunga per tahun<br>
+    t = waktu (tahun)
+  </p>
+
+  <!-- Soal 8a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+      <p class="mb-1 font-medium">a. Lama menabung (t) =</p>
+      <input type="text" class="border rounded px-2 py-1 w-40" id="jawaban8a" placeholder="contoh: 5">
+      <button onclick="cekSatu('jawaban8a', '5', 'hasil8a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+      <span id="hasil8a" class="font-semibold ml-2"></span>
+    </div>
+  </div>
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 9</h2>
+  <p>Budi menabung sebesar <strong>Rp7.000.000</strong> di bank dengan bunga majemuk <strong>5% per tahun</strong>. Jika tabungannya menjadi <strong>Rp8.925.000</strong>, hitunglah:</p>
+  <ol class="list-decimal list-inside text-blue-800 font-medium">
+    <li>Berapa lama (t) Budi menabung?</li>
+    <li>Berapa jumlah uang (A) jika Budi menabung selama 4 tahun?</li>
+  </ol>
+
+  <p class="mt-3">Rumus bunga majemuk:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[ A = P \times (1 + i)^t \]
+  </p>
+
+  <!-- Soal 9a -->
+  <div class="mb-6 mt-4">
+<div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">a. Lama menabung (t) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-40 mb-4" id="jawaban9a" placeholder="contoh: 5">
+    <button onclick="cekSatu('jawaban9a', '5', 'hasil9a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil9a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+  <!-- Soal 9b -->
+  <div class="mb-6 mt-4">
+<div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">b. Jumlah uang setelah 4 tahun (A) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-40" id="jawaban9b" placeholder="contoh: 8500000">
+    <button onclick="cekSatu('jawaban9b', '8500000', 'hasil9b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil9b" class="font-semibold ml-2"></span>
+  </div>
+</div>
+  
+<h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 10</h2>
+  <p>Seorang investor menaruh modal sebesar <strong>Rp10.000.000</strong>. Setelah <strong>3 tahun</strong>, uangnya menjadi <strong>Rp11.576.250</strong> dengan sistem bunga majemuk.</p>
+  <p>Hitunglah:</p>
+  <ol class="list-decimal list-inside text-blue-800 font-medium">
+    <li>Besar bunga per tahun (i) dalam persen.</li>
+    <li>Jumlah uang jika investasi diperpanjang menjadi 5 tahun dengan bunga tersebut.</li>
+  </ol>
+
+  <p class="mt-3">Rumus bunga majemuk:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[ A = P \times (1 + i)^t \]
+  </p>
+
+  <!-- Soal 10a -->
+  <div class="mb-6 mt-4">
+<div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">a. Besar bunga per tahun (i) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-40 mb-4" id="jawaban10a" placeholder="contoh: 5">
+    <button onclick="cekSatu('jawaban10a', '5', 'hasil10a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil10a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+  <!-- Soal 10b -->
+  <div class="mb-6 mt-4">
+<div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">b. Jumlah uang setelah 5 tahun (A) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-40" id="jawaban10b" placeholder="contoh: 12000000">
+    <button onclick="cekSatu('jawaban10b', '12762815', 'hasil10b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil10b" class="font-semibold ml-2"></span>
+  </div>
+</div>
+<p class="text-2xl text-white font-bold bg-green-600 text-center ">Anuitas</p>
+  
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 11</h2>
+  <p>Pak Bagas mengajukan pinjaman KUR ke Bank ABC sebesar <strong>Rp40.000.000</strong> dengan periode pengembalian selama <strong>12 bulan</strong>. Jika besar suku bunga <strong>6% per tahun</strong>, tentukan:</p>
+  <ol class="list-decimal list-inside text-blue-800 mt-3 space-y-2">
+    <li>Besar angsuran yang harus dibayar Pak Bagas tiap bulan</li>
+    <li>Besar bunga dan angsuran pokok yang harus dibayarkan pada bulan terakhir</li>
+  </ol>
+
+  <p class="mt-4">Gunakan rumus anuitas:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[
+    A = a_n +b_n
+    \]
+    \[
+    A = \frac{M \cdot i(1+i)^n}{(1+i)^n-1}
+    \]
+    \[
+    a_1 = \frac{M \cdot i}{(1+i)^n-1}
+    \]
+    \[
+    a_n = a_1(1+i)^{n-1}
+    \]
+  </p>
+  <p>Keterangan:</p>
+  <ul class="list-disc list-inside text-blue-800">
+    <li><strong>A</strong> = Angsuran per bulan (Anuitas)</li>
+    <li><strong>M</strong> = Jumlah Pinjaman</li>
+    <li><strong>i</strong> = Suku Bunga</li>
+    <li><strong>n</strong> = Jangka Waktu Pelunasan</li>
+    <li><strong>\(a_1\)</strong> = Angsuran Pokok (Angsuran Periode Pertama)</li>
+    <li><strong>\(a_n\)</strong> = Angsuran Periode ke-n</li>
+    <li><strong>\(b_n\)</strong> = Bunga Periode ke-n</li>
+  </ul>
+
+  <!-- Jawaban a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">a. Besar angsuran tiap bulan (A) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban11a" placeholder="contoh: 3437040">
+    <button onclick="cekSatu('jawaban11a', '3442657', 'hasil11a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil11a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+  <!-- Jawaban b -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">b. Besar bunga pada bulan ke-12 =</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban11b_bunga" placeholder="contoh: 200000">
+    <button onclick="cekSatu('jawaban11b_bunga', '17128', 'hasil11b_bunga')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil11b_bunga" class="font-semibold ml-2"></span>
+  </div>
+</div>
+  
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">c. Besar angsuran pokok bulan ke-12 =</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban11b_pokok" placeholder="contoh: 3237040">
+    <button onclick="cekSatu('jawaban11b_pokok', '3425529', 'hasil11b_pokok')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil11b_pokok" class="font-semibold ml-2"></span>
+  </div>
+</div>
+ 
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 12</h2>
+  <p>Bu Desi mengambil pinjaman dengan jangka waktu pengembalian <strong>3 tahun</strong> dan angsuran yang harus dibayarkan setiap bulan sebesar <strong>Rp1.660.715,49</strong>. Jika suku bunga sebesar <strong>12% per tahun</strong>, tentukan:</p>
+  <ol class="list-decimal list-inside text-blue-800 mt-3 space-y-2">
+    <li>Besar uang yang dipinjam Bu Desi.</li>
+  </ol>
+
+ <p class="mt-4">Gunakan rumus anuitas:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[
+    A = a_n +b_n
+    \]
+    \[
+    A = \frac{M \cdot i(1+i)^n}{(1+i)^n-1}
+    \]
+    \[
+    a_1 = \frac{M \cdot i}{(1+i)^n-1}
+    \]
+    \[
+    a_n = a_1(1+i)^{n-1}
+    \]
+  </p>
+  <p>Keterangan:</p>
+  <ul class="list-disc list-inside text-blue-800">
+    <li><strong>A</strong> = Angsuran per bulan (Anuitas)</li>
+    <li><strong>M</strong> = Jumlah Pinjaman</li>
+    <li><strong>i</strong> = Suku Bunga</li>
+    <li><strong>n</strong> = Jangka Waktu Pelunasan</li>
+    <li><strong>\(a_1\)</strong> = Angsuran Pokok (Angsuran Periode Pertama)</li>
+    <li><strong>\(a_n\)</strong> = Angsuran Periode ke-n</li>
+    <li><strong>\(b_n\)</strong> = Bunga Periode ke-n</li>
+  </ul>
+
+
+  <!-- Jawaban a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">a. Besar pinjaman (M) =</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban12a" placeholder="contoh: 50000000">
+    <button onclick="cekSatu('jawaban12a', '50000000', 'hasil12a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil12a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 13</h2>
+  <p>Suatu pinjaman dengan suku bunga majemuk <strong>13% per tahun</strong> akan dilunasi dengan sistem anuitas tahunan. Jika angsuran ke-2 dari pinjaman tersebut sebesar <strong>Rp734.500,00</strong>, maka dengan bantuan tabel di bawah ini, tentukan besarnya <strong>angsuran ke-4</strong>!</p>
+
+  <table class="table-auto mt-4 border-collapse border border-blue-800 text-blue-900">
+    <thead class="bg-blue-200">
+      <tr>
+        <th class="border border-blue-800 px-4 py-2">n</th>
+        <th class="border border-blue-800 px-4 py-2">13%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-blue-800 px-4 py-2">2</td>
+        <td class="border border-blue-800 px-4 py-2">1,2769</td>
+      </tr>
+      <tr>
+        <td class="border border-blue-800 px-4 py-2">3</td>
+        <td class="border border-blue-800 px-4 py-2">1,4429</td>
+      </tr>
+      <tr>
+        <td class="border border-blue-800 px-4 py-2">4</td>
+        <td class="border border-blue-800 px-4 py-2">1,6305</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4">Gunakan rumus anuitas:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[
+    A = a_n +b_n
+    \]
+    \[
+    A = \frac{M \cdot i(1+i)^n}{(1+i)^n-1}
+    \]
+    \[
+    a_1 = \frac{M \cdot i}{(1+i)^n-1}
+    \]
+    \[
+    a_n = a_1(1+i)^{n-1}
+    \]
+  </p>
+  <p>Keterangan:</p>
+  <ul class="list-disc list-inside text-blue-800">
+    <li><strong>A</strong> = Angsuran per bulan (Anuitas)</li>
+    <li><strong>M</strong> = Jumlah Pinjaman</li>
+    <li><strong>i</strong> = Suku Bunga</li>
+    <li><strong>n</strong> = Jangka Waktu Pelunasan</li>
+    <li><strong>\(a_1\)</strong> = Angsuran Pokok (Angsuran Periode Pertama)</li>
+    <li><strong>\(a_n\)</strong> = Angsuran Periode ke-n</li>
+    <li><strong>\(b_n\)</strong> = Bunga Periode ke-n</li>
+  </ul>
+
+
+  <!-- Jawaban a -->
+  <div class="mb-6 mt-4">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">Besarnya angsuran ke-4 adalah:</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban13a" placeholder="contoh: 937000">
+    <button onclick="cekSatu('jawaban13a', '937883', 'hasil13a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil13a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+  <h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 14</h2>
+  <p>Bu Rina mengambil pinjaman sebesar <strong>Rp3.000.000,00</strong> dengan suku bunga <strong>2% per bulan</strong>. Pinjaman tersebut akan dilunasi dengan sistem anuitas sebesar <strong>Rp200.000,00</strong> per bulan. Tentukan:</p>
+  <ol class="list-decimal ml-6 text-blue-800 mt-4">
+    <li>Besar bunga pada bulan pertama</li>
+    <li>Besar angsuran pokok pada bulan ke-6</li>
+  </ol>
+<p class="mt-4">Gunakan rumus anuitas:</p>
+  <p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+    \[
+    A = a_n +b_n
+    \]
+    \[
+    A = \frac{M \cdot i(1+i)^n}{(1+i)^n-1}
+    \]
+    \[
+    a_1 = \frac{M \cdot i}{(1+i)^n-1}
+    \]
+    \[
+    a_n = a_1(1+i)^{n-1}
+    \]
+  </p>
+  <p>Keterangan:</p>
+  <ul class="list-disc list-inside text-blue-800">
+    <li><strong>A</strong> = Angsuran per bulan (Anuitas)</li>
+    <li><strong>M</strong> = Jumlah Pinjaman</li>
+    <li><strong>i</strong> = Suku Bunga</li>
+    <li><strong>n</strong> = Jangka Waktu Pelunasan</li>
+    <li><strong>\(a_1\)</strong> = Angsuran Pokok (Angsuran Periode Pertama)</li>
+    <li><strong>\(a_n\)</strong> = Angsuran Periode ke-n</li>
+    <li><strong>\(b_n\)</strong> = Bunga Periode ke-n</li>
+  </ul>
+  <!-- Jawaban a -->
+  <div class="mb-6 mt-6">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">a. Besar bunga bulan pertama:</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban14a" placeholder="contoh: 200000">
+    <button onclick="cekSatu('jawaban14a', '60000', 'hasil14a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil14a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+  <!-- Jawaban b -->
+  <div class="mb-6">
+    <div class="flex flex-row items-center gap-2">
+<p class="mb-1 font-medium">b. Besar angsuran pokok bulan ke-6:</p>
+   
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban14b" placeholder="contoh: 175000">
+    <button onclick="cekSatu('jawaban14b', '154571', 'hasil14b')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil14b" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+<h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 15</h2>
+<p>Suatu pinjaman besarnya <strong>Rp8.000.000,00</strong> akan dilunasi dengan sistem <strong>anuitas tahunan</strong> pada tingkat bunga <strong>6% per tahun</strong> dalam tempo pembayaran <strong>4 tahun</strong>.</p>
+<ol class="list-decimal ml-6 text-blue-800 mt-4">
+  <li>Tentukan besarnya nilai anuitas.</li>
+  <li>Buatlah tabel rencana angsurannya.</li>
+</ol>
+
+<p class="mt-4">Gunakan rumus anuitas tahunan:</p>
+<p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+  \[
+  A = \frac{M \cdot i(1+i)^n}{(1+i)^n - 1}
+  \]
+</p>
+<p>Keterangan:</p>
+<ul class="list-disc list-inside text-blue-800">
+  <li><strong>A</strong> = Angsuran per tahun (Anuitas)</li>
+  <li><strong>M</strong> = Jumlah Pinjaman</li>
+  <li><strong>i</strong> = Suku Bunga per tahun</li>
+  <li><strong>n</strong> = Jangka Waktu Pelunasan (tahun)</li>
+</ul>
+
+<!-- Jawaban a -->
+<div class="mb-6 mt-6">
+  <div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">a. Besar nilai anuitas per tahun:</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban15a" placeholder="contoh: 2400000">
+    <button onclick="cekSatu('jawaban15a', '2308732', 'hasil15a')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil15a" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+<!-- Jawaban b -->
+<div class="mb-6 mt-4">
+  <p class="mb-2 font-medium">b. Tabel Rencana Angsuran (tahun ke-1 sampai tahun ke-4):</p>
+  <p class="text-blue-800">Silakan lengkapi tabel berikut ini dengan angsuran pokok dan bunga setiap tahun.</p>
+  <table class="table-auto border border-collapse border-blue-800 mt-4 text-blue-800">
+    <thead class="bg-blue-100">
+      <tr>
+        <th class="border px-2 py-1">Tahun</th>
+        <th class="border px-2 py-1">Angsuran</th>
+        <th class="border px-2 py-1">Bunga</th>
+        <th class="border px-2 py-1">Angsuran Pokok</th>
+        <th class="border px-2 py-1">Sisa Pinjaman</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-2 py-1 text-center">1</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1 text-center">2</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1 text-center">3</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1 text-center">4</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">-</td>
+        <td class="border px-2 py-1 text-center">Rp0</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 16</h2>
+<p>Pinjaman sebesar <strong>Rp1.000.000,00</strong> dengan suku bunga <strong>1,2% per bulan</strong>, dilunasi secara anuitas sebesar <strong>Rp89.975,43</strong> per bulan. Tentukan:</p>
+<ol class="list-decimal ml-6 text-blue-800 mt-4">
+  <li>Sisa hutang pada akhir bulan ke-2</li>
+</ol>
+<p class="mt-4">Gunakan rumus anuitas dan informasi berikut:</p>
+<p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+  \[
+  M_n = (1+b)^n\cdot (M_0-\frac{A}{B})+\frac{A}{B}
+  \]
+</p>
+<p>Keterangan:</p>
+<ul class="list-disc list-inside text-blue-800">
+  <li><strong>\(M_n\)</strong> = Sisa Hutang Periode ke-n</li>
+  <li><strong>\(M_0\)</strong> = Hutang di awal</li>
+  <li><strong>A</strong> = Anuitas</li>
+  <li><strong>B</strong> = Suku Bunga</li>
+</ul>
+
+<!-- Jawaban -->
+<div class="mb-6 mt-6">
+  <div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">Sisa hutang pada akhir bulan ke-2:</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban16" placeholder="contoh: 843113">
+    <button onclick="cekSatu('jawaban16', '843113', 'hasil16')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil16" class="font-semibold ml-2"></span>
+  </div>
+</div>
+<h2 class="text-xl font-semibold text-blue-800 mt-6">Soal 17</h2>
+<p>Suatu pinjaman dilunasi dengan anuitas bulanan sebesar <strong>Rp1.250.000,00</strong>. Besar suku bunga majemuknya adalah <strong>5% per bulan</strong>. Jika besar angsuran pokok pada bulan pertama adalah <strong>Rp250.000,00</strong>, tentukan besar pinjamannya!</p>
+
+<p class="mt-4">Gunakan rumus:</p>
+<p class="bg-red-100 p-2 text-lg font-semibold text-blue-900">
+  \[
+  A = a_1 + b_1
+  \]
+  \[
+  a_1 = \frac{M \times i}{(1+i)^n - 1}
+  \]
+  \[
+  b_1 = M \times i
+  \]
+</p>
+
+<p>Keterangan:</p>
+<ul class="list-disc list-inside text-blue-800">
+  <li><strong>A</strong> = angsuran per bulan (anuitas)</li>
+  <li><strong>M</strong> = besar pinjaman</li>
+  <li><strong>i</strong> = suku bunga per bulan (desimal)</li>
+  <li><strong>a_1</strong> = angsuran pokok bulan pertama</li>
+  <li><strong>b_1</strong> = bunga bulan pertama</li>
+  <li><strong>n</strong> = jumlah bulan pelunasan (tidak diketahui)</li>
+</ul>
+
+<!-- Jawaban -->
+<div class="mb-6 mt-6">
+  <div class="flex flex-row items-center gap-2">
+    <p class="mb-1 font-medium">Besar pinjaman (Rp):</p>
+    <input type="text" class="border rounded px-2 py-1 w-56" id="jawaban17" placeholder="contoh: 10000000">
+    <button onclick="cekSatu('jawaban17', '20000000', 'hasil17')" class="bg-[#4dd4a3] text-white px-3 py-1 rounded hover:bg-[#38c197]">Cek</button>
+    <span id="hasil17" class="font-semibold ml-2"></span>
+  </div>
+</div>
+
+</div>
+
+<script>
+    function togglePembahasan(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains("hidden")) {
+            element.classList.remove("hidden");
+        } else {
+            element.classList.add("hidden");
+        }
+    }
+</script>
+
+<script>
+    function togglePembahasan(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "none" || x.style.display === "") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+
+<script>
+    function togglePembahasan(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "none" || x.style.display === "") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+<script>
+  function cekSatu(selectId, kunci, hasilId) {
+    const userJawaban = document.getElementById(selectId).value;
+    const hasilEl = document.getElementById(hasilId);
+
+    if (userJawaban === "") {
+      hasilEl.innerHTML = "Pilih dulu!";
+      hasilEl.className = "font-semibold text-yellow-600";
+    } else if (userJawaban === kunci) {
+      hasilEl.innerHTML = "✅ Benar";
+      hasilEl.className = "font-semibold text-green-600";
+    } else {
+      hasilEl.innerHTML = "❌ Salah";
+      hasilEl.className = "font-semibold text-red-600";
+    }
+  }
+</script>
+
+<script>
+    function togglePembahasan(id) {
+        var pembahasan = document.getElementById(id);
+        pembahasan.classList.toggle("hidden");
+    }
+</script>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
