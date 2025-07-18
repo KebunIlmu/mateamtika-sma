@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+       body::before,
+body::after {
+    /* Ganti ukurannya jadi persentase agar aman di mobile */
+    width: 100vw;
+    height: 100vw;
+    background: white;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.2;
+}
+        body::before {
+            top: -30%;
+            right: -30%;
+        }
+        body::after {
+            bottom: -50%;
+            left: -30%;
+        }
+	html, body {
+    overflow-x: hidden;
+}
+
+
+.login-box {
+    background: linear-gradient(135deg, #ce9ffc, #f9c7d9); /* Ganti background */
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 300px;
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Ganti background tombol */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+    background: linear-gradient(135deg, #5e0dca, #1d60e7); /* Hover efek */
+}
+    .hidden {
+      display: none;
+    }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #4dd4a3;
+            position: fixed;
+            left: -250px;
+            transition: left 0.3s ease-in-out;
+            padding-top: 20px;
+            z-index: 1300;
+        }
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 5px;
+            text-align: left;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            display: block;
+        }
+        .sidebar ul li:hover {
+            background: #f8d444;
+        }
+        .toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            background: #f8d444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            z-index: 1400;
+        }
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            background: #f8d444;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header span {
+            flex: 80%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+	    color: #4dd4a3;
+        }
+        .header img {
+            flex: 20%;
+            max-width: 60px;
+            height: auto;
+            margin-left: 10px;
+        }
+        .content {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: white;
+        }
+        .card:nth-child(1) { background: #4dd4a3; }
+        .card:nth-child(2) { background: #4dd4a3; }
+        .card:nth-child(3) { background: #4dd4a3; }
+        .card:nth-child(4) { background: #4dd4a3; }
+	.card:nth-child(5) { background: #4dd4a3; }
+        .card:nth-child(6) { background: #4dd4a3; }
+        .card:nth-child(7) { background: #4dd4a3; }
+        .card:nth-child(8) { background: #4dd4a3; }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+/* Tambahan untuk responsif mobile */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 80vw;
+    left: -80vw; /* sebelumnya -80% yang kurang presisi */
+  }
+}
+
+  .card {
+    width: 90%;
+  }
+
+  .sidebar {
+    width: 80%;
+    left: -80%;
+  }
+
+  .toggle-btn {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .header span {
+    font-size: 20px;
+  }
+
+  .login-box {
+    width: 90%;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+    </style>
+</head>
+<body>
+<div class="login-box" id="loginForm">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username" /><br><br>
+  <input type="password" id="password" placeholder="Password" /><br><br>
+  <button onclick="checkLogin()">Masuk</button>
+  <p id="errorMsg" style="color:red;"></p>
+</div>
+
+<div id="content22" class="hidden">
+
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+        <h2 class=" text-2xl text-semibold ">Menu</h2>
+        <ul class="text-black p-6 bg-[#4dd4a3] rounded-lg shadow-md">
+  <li class="mb-3"><a href="#1.-What-delicious-bakso" class="hover:text-white">1. What delicious bakso!</a></li>
+  <li class="mb-3"><a href="#2.-I-want-an-ice-cream-cone" class="hover:text-white">2. I want an ice cream cone</a></li>
+  <li class="mb-3"><a href="#3.-How-much-is-it" class="hover:text-white">3. How much is it?</a></li>
+  <li class="mb-3"><a href="#4.-I-have-a-stomachache" class="hover:text-white">4. I have a stomachache</a></li>
+  <li class="mb-3"><a href="#5.-What-a-nice-skirt" class="hover:text-white">5. What a nice skirt!</a></li>
+</ul>
+
+
+    </div>
+    
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="header">
+        <span>Media Pembelajaran Interaktif</span>
+        <img src="https://zahwan93.github.io/Kebun-Ilmu-Matematika-SMP/logo.png" alt="Logo">
+    </div>
+    
+    <!-- Konten Utama -->
+<div class="w-full max-w-7xl overflow-x-auto mx-auto bg-white px-4 sm:px-8 py-8 rounded-lg shadow-2xl">
+  <h1 class="text-3xl font-bold text-center text-[#4dd4a3] mb-6">Matematika SMA</h1>
+
+  <!-- Matematika SMA -->
+  <div id="IPA SMP/MTs" class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-[#4dd4a3]">Regresi Linear</h2>
+
+    <ul class="text-black p-6 bg-[#4dd4a3] rounded-lg shadow-md">
+  <li class="mb-3"><a href="#1.-Pengertian-Data-Bivariat" class="hover:text-white">1. Pengertian Data Bivariat</a></li>
+  <li class="mb-3"><a href="#2.-Diagram-Pencar" class="hover:text-white">2. Diagram Pencar</a></li>
+  <li class="mb-3"><a href="#3.-Korelasi-Linear" class="hover:text-white">3. Korelasi Linear</a></li>
+  <li class="mb-3"><a href="#4.-Koefisien-Korelasi" class="hover:text-white">4. Koefisien Korelasi Pearson (r)</a></li>
+  <li class="mb-3"><a href="#5.-Persamaan-Regresi" class="hover:text-white">5. Persamaan Regresi Linear</a></li>
+  <li class="mb-3"><a href="#6.-Penggunaan-Teknologi" class="hover:text-white">6. Penggunaan Teknologi</a></li>
+  <li class="mb-3"><a href="#7.-Interpretasi-Konteks" class="hover:text-white">7. Interpretasi dalam Konteks</a></li>
+</ul>
+
+<!-- Section 1 -->
+<div id="1.-Pengertian-Data-Bivariat" class="text-gray-800 mt-6 space-y-4">
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">1. Pengertian Data Bivariat</h2>
+  <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+    <p>Data bivariat adalah data yang melibatkan dua variabel yang diukur dari individu atau objek yang sama. Contohnya adalah tinggi dan berat badan seseorang.</p>
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div id="2.-Diagram-Pencar" class="text-gray-800 mt-6 space-y-4">
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">2. Diagram Pencar (Scatter Plot)</h2>
+  <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 space-y-3">
+    <p>Diagram pencar digunakan untuk memvisualisasikan hubungan antara dua variabel. Setiap titik pada diagram mewakili satu pasangan nilai dari dua variabel.</p>
+    
+        
+    <!-- Gambar contoh diagram -->
+    <div class="flex justify-center">
+      <img src="https://www.iitianacademy.com/wp-content/uploads/2025/05/567-768x325.png" alt="Contoh diagram pencar" class="w-full max-w-md rounded shadow-md border border-gray-300">
+    </div>
+  </div>
+</div>
+<!-- Section 3 -->
+<div id="3.-Korelasi-Linear" class="text-gray-800 mt-6 space-y-4">
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">3. Korelasi Linear</h2>
+  <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200">
+    <ul class="list-disc list-inside">
+      <li><strong>Korelasi Positif:</strong> Jika satu variabel meningkat, variabel lainnya juga meningkat.</li>
+      <li><strong>Korelasi Negatif:</strong> Jika satu variabel meningkat, variabel lainnya menurun.</li>
+      <li><strong>Tidak Ada Korelasi:</strong> Tidak ada pola hubungan yang jelas antara dua variabel.</li>
+    </ul>
+<!-- Gambar contoh diagram -->
+    <div class="flex justify-center">
+      <img src="https://www.iitianacademy.com/wp-content/uploads/2025/05/567-768x325.png" alt="Contoh diagram pencar" class="w-full max-w-md rounded shadow-md border border-gray-300">
+
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div id="4.-Koefisien-Korelasi" class="text-gray-800 mt-6 space-y-4">
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">4. Koefisien Korelasi Pearson (r)</h2>
+
+  <!-- Penjelasan Umum -->
+  <div class="bg-[#fef3c7] p-4 rounded-lg shadow-md border border-yellow-300 space-y-3">
+    <p>
+      Koefisien korelasi Pearson, dilambangkan dengan <strong>r</strong>, adalah ukuran statistik yang menunjukkan <strong>kekuatan</strong> dan <strong>arah</strong> hubungan linear antara dua variabel kuantitatif (data berbentuk angka).
+    </p>
+    <p>
+      Nilai <strong>r</strong> selalu berada dalam rentang:
+    </p>
+    <p class="font-mono text-center text-lg">-1 &le; r &le; 1</p>
+    <p>
+      Interpretasi dasar nilai r:
+    </p>
+    <ul class="list-disc list-inside">
+      <li><strong>r = 1</strong>: Hubungan linear sempurna positif (titik-titik tepat pada garis naik).</li>
+      <li><strong>r = -1</strong>: Hubungan linear sempurna negatif (titik-titik tepat pada garis turun).</li>
+      <li><strong>r = 0</strong>: Tidak ada hubungan <em>linear</em> (bisa jadi ada pola non-linear, tetapi tidak linear).</li>
+    </ul>
+  </div>
+
+  <!-- Rumus -->
+  <div class="bg-[#e0f2fe] p-4 rounded-lg shadow-md border border-blue-300 space-y-3">
+    <p class="font-semibold">🔢 Rumus Koefisien Korelasi Pearson:</p>
+    <p class="overflow-x-auto font-mono text-sm">
+      r = ( Σ (x<sub>i</sub> - x̄)(y<sub>i</sub> - ȳ) ) ÷ √[ Σ (x<sub>i</sub> - x̄)<sup>2</sup> · Σ (y<sub>i</sub> - ȳ)<sup>2</sup> ]
+    </p>
+    <p><strong>Keterangan:</strong></p>
+    <ul class="list-disc list-inside">
+      <li><code>x<sub>i</sub></code>, <code>y<sub>i</sub></code>: Nilai ke-i dari variabel X dan Y.</li>
+      <li><code>x̄</code>, <code>ȳ</code>: Rata-rata (mean) dari X dan Y.</li>
+      <li><code>n</code>: Jumlah pasangan data.</li>
+    </ul>
+  </div>
+
+  <!-- Catatan Variasi Skala Interpretasi -->
+  <div class="bg-[#fff1f2] p-4 rounded-lg shadow-md border border-rose-300 space-y-2 text-sm italic">
+    <p>⚠️ <strong>Catatan:</strong> Batas interval interpretasi (misal 0,7; 0,3; dll.) dapat sedikit berbeda antar buku atau sumber. Gunakan panduan yang sama secara konsisten dalam satu materi.</p>
+  </div>
+
+  <!-- Tabel Interpretasi -->
+  <div class="bg-[#f0fdf4] p-4 rounded-lg shadow-md border border-green-300 space-y-3">
+    <p class="font-semibold">📊 Tabel Interpretasi Nilai r:</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left border border-gray-300">
+        <thead class="bg-[#bbf7d0] text-gray-800">
+          <tr>
+            <th class="px-4 py-2 border border-gray-300">Nilai r</th>
+            <th class="px-4 py-2 border border-gray-300">Kekuatan Hubungan</th>
+            <th class="px-4 py-2 border border-gray-300">Arah Hubungan</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">r = 1</td>
+            <td class="px-4 py-2 border border-gray-300">Sempurna</td>
+            <td class="px-4 py-2 border border-gray-300">Positif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">0,7 &le; r &lt; 1</td>
+            <td class="px-4 py-2 border border-gray-300">Kuat</td>
+            <td class="px-4 py-2 border border-gray-300">Positif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">0,3 &le; r &lt; 0,7</td>
+            <td class="px-4 py-2 border border-gray-300">Sedang</td>
+            <td class="px-4 py-2 border border-gray-300">Positif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">0 &lt; r &lt; 0,3</td>
+            <td class="px-4 py-2 border border-gray-300">Lemah</td>
+            <td class="px-4 py-2 border border-gray-300">Positif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">r = 0</td>
+            <td class="px-4 py-2 border border-gray-300">Tidak ada korelasi linear</td>
+            <td class="px-4 py-2 border border-gray-300">-</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">−0,3 &lt; r &lt; 0</td>
+            <td class="px-4 py-2 border border-gray-300">Lemah</td>
+            <td class="px-4 py-2 border border-gray-300">Negatif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">−0,7 &lt; r &le; −0,3</td>
+            <td class="px-4 py-2 border border-gray-300">Sedang</td>
+            <td class="px-4 py-2 border border-gray-300">Negatif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">−1 &lt; r &le; −0,7</td>
+            <td class="px-4 py-2 border border-gray-300">Kuat</td>
+            <td class="px-4 py-2 border border-gray-300">Negatif</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 border border-gray-300">r = −1</td>
+            <td class="px-4 py-2 border border-gray-300">Sempurna</td>
+            <td class="px-4 py-2 border border-gray-300">Negatif</td>
+          </tr>
+        </tbody>
+      </table>
+<div class="mt-4">
+  <p class="text-sm mb-2 italic">Contoh diagram dari sumber luar:</p>
+  <img src="https://www.iitianacademy.com/wp-content/uploads/2025/05/Screenshot-2025-05-20-123055-1536x244.png" alt="Contoh Koefisien Korelasi dari Wikipedia" class="w-full max-w-xl rounded shadow border border-gray-300 mx-auto">
+  <p class="text-xs text-center mt-1 text-gray-500">Sumber: Wikipedia Commons</p>
+</div>
+
+    </div>
+  </div>
+
+<div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 space-y-6 max-w-2xl mx-auto">
+
+  <!-- Judul -->
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">🧠 Soal 1</h2>
+
+  <!-- Gambar dari Google Drive -->
+  <div class="text-center">
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/Mk7m6Ryq/Screenshot-2025-07-17-143018.png" alt="Screenshot-2025-07-17-143018" border="0"></a>
+
+  </div>
+
+  <!-- Tombol Jawaban -->
+  <div>
+    <button onclick="toggleJawaban()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Lihat Jawaban</button>
+    <div id="jawaban" class="mt-4 hidden bg-gray-100 p-4 rounded text-gray-800 text-sm">
+      <p><strong>Jawaban:</strong></p>
+      <ul class="list-disc list-inside">
+        <li><strong>a.</strong> Titik-titik: (10, 3500), (20, 5500), ..., (70, 13000)</li>
+        <li><strong>b.</strong> Persamaan regresi: ŷ = 1700 + 154x</li>
+        <li><strong>c.</strong> Merek D tidak wajar (harga jauh lebih tinggi)</li>
+        <li><strong>d.</strong> Prediksi harga untuk 35%: Rp7.090</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tombol Pembahasan Video -->
+  <div>
+    <button onclick="toggleVideo('video1')" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 mt-4 transition">Lihat Pembahasan 🎥</button>
+    <div id="video1" class="hidden mt-4">
+      <iframe width="100%" height="315" class="rounded-lg shadow" 
+              src="https://www.youtube.com/embed/yi4VdTnq8YE" 
+              title="Video Pembahasan" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</div>
+
+<!-- Script untuk Toggle -->
+<script>
+  function toggleJawaban() {
+    document.getElementById("jawaban").classList.toggle("hidden");
+  }
+
+  function toggleVideo(id) {
+    document.getElementById(id).classList.toggle("hidden");
+  }
+</script>
+
+    <script>
+        function toggleSidebar() {
+  let sidebar = document.getElementById("sidebar");
+  if (sidebar.style.left === "0px" || sidebar.style.left === "0") {
+    sidebar.style.left = sidebar.offsetWidth * -1 + "px";
+  } else {
+    sidebar.style.left = "0";
+  }
+}
+
+    </script>
+<script>
+  function checkLogin() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    // Akun yang sudah disediakan
+    const validAccounts = [
+      { username: "admin", password: "12345" },
+      { username: "user1", password: "abcde" },
+      { username: "Diza MTSN 1 Brebes 7", password: "semangatbelajar45" },
+    ];
+
+    const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
+
+    if (found) {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("content22").classList.remove("hidden");
+    } else {
+      document.getElementById("errorMsg").innerText = "Username atau password salah!";
+    }
+  }
+</script>
+
+</body>
+</html>
