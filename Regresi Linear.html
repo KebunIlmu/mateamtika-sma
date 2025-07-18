@@ -366,8 +366,10 @@ body::after {
   <!-- Rumus -->
   <div class="bg-[#e0f2fe] p-4 rounded-lg shadow-md border border-blue-300 space-y-3">
     <p class="font-semibold">🔢 Rumus Koefisien Korelasi Pearson:</p>
-    <p class="overflow-x-auto font-mono text-sm">
-      r = ( Σ (x<sub>i</sub> - x̄)(y<sub>i</sub> - ȳ) ) ÷ √[ Σ (x<sub>i</sub> - x̄)<sup>2</sup> · Σ (y<sub>i</sub> - ȳ)<sup>2</sup> ]
+    <p class="font-mono text-sm">
+  \( r = \frac{ \sum{(x_i - \bar{x})(y_i - \bar{y})} }{ \sqrt{ \sum{(x_i - \bar{x})^2} \cdot \sum{(y_i - \bar{y})^2} } } \)
+</p>
+
     </p>
     <p><strong>Keterangan:</strong></p>
     <ul class="list-disc list-inside">
@@ -447,9 +449,53 @@ body::after {
   <img src="https://www.iitianacademy.com/wp-content/uploads/2025/05/Screenshot-2025-05-20-123055-1536x244.png" alt="Contoh Koefisien Korelasi dari Wikipedia" class="w-full max-w-xl rounded shadow border border-gray-300 mx-auto">
   <p class="text-xs text-center mt-1 text-gray-500">Sumber: Wikipedia Commons</p>
 </div>
-
     </div>
   </div>
+<!-- Section 5 -->
+<div id="5.-Persamaan-Regresi-Linear" class="text-gray-800 mt-6 space-y-4">
+  <h2 class="text-2xl font-bold text-[#4dd4a3]">5. Persamaan Regresi Linear</h2>
+
+  <div class="bg-white p-4 rounded-lg shadow-md border border-gray-200 space-y-4">
+    <!-- Rumus Persamaan Regresi -->
+    <p class="font-mono text-sm">
+      \( \hat{y} = a + bx \)
+    </p>
+
+    <!-- Rumus b -->
+    <p class="font-mono text-sm">
+      \( b = \frac{SS_{xy}}{SS_{xx}} \)
+    </p>
+
+    <!-- Rumus SSxy -->
+    <p class="font-mono text-sm">
+      \( SS_{xy} = \sum{(x_i - \bar{x})(y_i - \bar{y})} \)
+    </p>
+
+    <!-- Rumus SSxx -->
+    <p class="font-mono text-sm">
+      \( SS_{xx} = \sum{(x_i - \bar{x})^2} \)
+    </p>
+
+    <!-- Rumus a -->
+    <p class="font-mono text-sm">
+      \( a = \bar{y} - b\bar{x} \)
+    </p>
+
+    <!-- Penjelasan Variabel -->
+    <div class="text-sm text-gray-700 mt-2 space-y-1">
+      <ul class="list-disc list-inside">
+        <li><strong>\( \hat{y} \):</strong> Nilai prediksi dari Y</li>
+        <li><strong>\( a \):</strong> Intersep (konstanta), nilai Y saat X = 0</li>
+        <li><strong>\( b \):</strong> Koefisien regresi, menunjukkan perubahan Y terhadap X</li>
+        <li><strong>\( x_i, y_i \):</strong> Data ke-i dari X dan Y</li>
+        <li><strong>\( \bar{x}, \bar{y} \):</strong> Rata-rata dari X dan Y</li>
+        <li><strong>\( SS_{xy} \):</strong> Jumlah hasil kali selisih X dan Y</li>
+        <li><strong>\( SS_{xx} \):</strong> Jumlah kuadrat selisih X</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 space-y-6 max-w-2xl mx-auto">
 
