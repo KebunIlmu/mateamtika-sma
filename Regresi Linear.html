@@ -510,8 +510,9 @@ body::after {
 
   <!-- Tombol Jawaban -->
   <div>
-    <button onclick="toggleJawaban()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Lihat Jawaban</button>
-    <div id="jawaban" class="mt-4 hidden bg-gray-100 p-4 rounded text-gray-800 text-sm">
+    <button onclick="toggle('jawaban1')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Jawaban</button>
+  <div id="jawaban1" class="mt-4 hidden bg-gray-100 p-4 rounded text-gray-800 text-sm">
+
       <p><strong>Jawaban:</strong></p>
       <ul class="list-disc list-inside">
         <li><strong>a.</strong> Titik-titik: (10, 3500), (20, 5500), ..., (70, 13000)</li>
@@ -532,12 +533,83 @@ body::after {
     </div>
   </div>
 
+<h2 class="text-2xl font-bold text-[#4dd4a3]">🧠 Soal 2</h2>
+
+<!-- Gambar dari Google Drive -->
+<div class="text-center">
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/YTZjTdJx/Screenshot-2025-07-18-165845.png" alt="Screenshot-2025-07-18-165845" border="0"></a>
+</div>
+
+<!-- Tombol Jawaban -->
+<div>
+  <button onclick="toggle('jawaban2')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Jawaban</button>
+  <div id="jawaban2" class="mt-4 hidden bg-gray-100 p-4 rounded text-gray-800 text-sm">
+
+    <p><strong>Jawaban:</strong></p>
+    <ul class="list-disc list-inside">
+      <li><strong>a.</strong> Diagram pencar menunjukkan pola penurunan harga seiring bertambahnya usia mobil.</li>
+      <li><strong>b.</strong> Ya, ada hubungan linear negatif antara usia dan harga mobil.</li>
+      <li><strong>c.</strong> Persamaan regresi: <code>ŷ = 322,4483 – 34,4425x</code></li>
+      <li><strong>d.</strong> a = 322,4483 Juta  (harga awal), b = -27.34 (setiap tambahan 1 tahun, harga turun 34,4425 juta)</li>
+      <li><strong>e.</strong> Prediksi harga mobil usia 7 tahun: <strong>Rp81.350.800,00</strong></li>
+      <li><strong>f.</strong> Prediksi harga mobil usia 18 tahun: <strong>Rp–297.516.700,00</strong> → tidak logis</li>
+      <li><strong>g.</strong> Hasil f menunjukkan bahwa model regresi linier tidak cocok untuk prediksi jauh di luar rentang data.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tombol Pembahasan Video -->
+<div>
+  <button onclick="toggleVideo('video2')" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 mt-4 transition">Lihat Pembahasan 🎥</button>
+  <div id="video2" class="hidden mt-4">
+    <iframe width="100%" height="315" class="rounded-lg shadow" 
+            src="https://www.youtube.com/embed/PUz3oPE2f_M" 
+            title="Video Pembahasan" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<h2 class="text-2xl font-bold text-[#4dd4a3]">🧠 Soal 3</h2>
+
+<!-- Gambar dari i.ibb.co -->
+<div class="text-center">
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/kW4GSP7/Screenshot-2025-07-19-102717.png" alt="Screenshot-2025-07-19-102717" border="0"></a>
+</div>
+
+<!-- Tombol Jawaban -->
+<div>
+  <button onclick="toggle('jawaban3')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Jawaban</button>
+  <div id="jawaban3" class="mt-4 hidden bg-gray-100 p-4 rounded text-gray-800 text-sm">
+
+    <p><strong>Jawaban:</strong></p>
+    <ul class="list-disc list-inside">
+      <li><strong>a.</strong> Diagram pencar menunjukkan hubungan positive antara umur dan rata-rata tinggi badan anak perempuan.</li>
+      <li><strong>b.</strong> Ya, ada indikasi kuat hubungan linear posistf antara umur dan rata-rata tinggi badan.</li>
+      <li><strong>c.</strong> Persamaan regresi: <code>ŷ = 90,065+ 6,165x</code> (contoh, ganti jika hitungan lain)</li>
+      <li><strong>d.</strong> a = 80,065: rata-rata tinggi awal saat usia 0 tahun. b = 6,6165: penambahan tinggi rata-rata 6,6165 pertahun.</li>
+      <li><strong>e.</strong> Prediksi tinggi badan anak perempuan usia 5,8 tahun: <strong>115,822 cm</strong></li>
+      <li><strong>f.</strong> Prediksi tinggi badan anak perempuan usia 30 tahun: <strong>265,015 cm</strong></li>
+      <li><strong>g.</strong> <strong> Tidak reliable </strong>, karena tingginya sudah melewati batas wajar pertumbuhan manusia pada umumnya.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tombol Pembahasan Video -->
+<div>
+  <button onclick="toggleVideo('video3')" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 mt-4 transition">Lihat Pembahasan 🎥</button>
+  <div id="video3" class="hidden mt-4">
+    <iframe width="100%" height="315" class="rounded-lg shadow" 
+            src="https://www.youtube.com/embed/KsU1EShlQKQ?si=iR-OnR_hiZ3IrhLs" 
+            title="Video Pembahasan" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
 </div>
 
 <!-- Script untuk Toggle -->
 <script>
-  function toggleJawaban() {
-    document.getElementById("jawaban").classList.toggle("hidden");
+  function toggle(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("hidden");
   }
 
   function toggleVideo(id) {
