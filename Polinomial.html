@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Pembelajaran Interaktif</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: linear-gradient(135deg, #ce9ffc, #f9c7d9);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 300px;
+      margin: 10px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .login-box input, .login-box button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .login-box button {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: linear-gradient(135deg, #5e0dca, #1d60e7);
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background: #4dd4a3;
+      position: fixed;
+      left: -250px;
+      transition: left 0.3s ease-in-out;
+      padding-top: 20px;
+      z-index: 1300;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      font-size: 24px;
+      background: #f8d444;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      z-index: 1400;
+    }
+
+    .header {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      border-radius: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header img {
+      max-width: 60px;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      .sidebar {
+        width: 80%;
+        left: -80%;
+      }
+
+      .toggle-btn {
+        font-size: 20px;
+        padding: 8px 12px;
+      }
+
+      .login-box {
+        width: 90%;
+        max-width: 90%;
+        margin: 20px auto;
+      }
+
+      .header span {
+        font-size: 20px;
+      }
+
+      .header img {
+        max-width: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box" id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="checkLogin()">Masuk</button>
+    <p id="errorMsg" style="color:red;"></p>
+  </div>
+
+  <div id="content22" class="hidden">
+    <!-- Tombol Buka -->
+<div class="toggle-btn" onclick="toggleSidebar()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+  <h2 class="text-2xl text-white text-center mb-4">Menu</h2>
+  <ul class="text-black p-6 bg-[#4dd4a3] rounded-lg shadow-md">
+    <li class="mb-3"><a href="#1" class="hover:text-white">Materi 1</a></li>
+    <li class="mb-3"><a href="#2" class="hover:text-white">Materi 2</a></li>
+    <!-- dst -->
+  </ul>
+</div>
+
+<!-- Konten Utama -->
+  <div class="w-full max-w-7xl mx-auto bg-white px-4 sm:px-8 py-8 rounded-lg shadow-2xl">
+    <h1 class="text-3xl font-bold text-center text-[#4dd4a3] mb-6">Matematika SMA — Polinomial</h1>
+
+    <!-- Daftar Isi (kartu grid) -->
+    <nav class="mb-8 p-6 rounded-lg shadow-lg bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white">
+      <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+        📚 Daftar Isi
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="#1-Pengertian-Polinomial" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">1. Pengertian Polinomial</span>
+          <p class="text-sm opacity-90 mt-1">Definisi, suku, derajat, koefisien.</p>
+        </a>
+
+        <a href="#2-Operasi-Polinomial" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">2. Operasi Polinomial</span>
+          <p class="text-sm opacity-90 mt-1">Penjumlahan, pengurangan, perkalian, pangkat.</p>
+        </a>
+
+        <a href="#3-Nilai-Polinomial" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">3. Nilai Polinomial</span>
+          <p class="text-sm opacity-90 mt-1">Evaluasi polinomial untuk nilai x tertentu.</p>
+        </a>
+
+        <a href="#4-Pembagian-Polinomial" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">4. Pembagian Polinomial</span>
+          <p class="text-sm opacity-90 mt-1">Pembagian bersusun & Horner (variasi cepat).</p>
+        </a>
+
+        <a href="#5-Teorema-Faktor" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">5. Teorema Faktor</span>
+          <p class="text-sm opacity-90 mt-1">Hubungan akar dengan faktor (x − a).</p>
+        </a>
+
+        <a href="#6-Teorema-Sisa" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">6. Teorema Sisa</span>
+          <p class="text-sm opacity-90 mt-1">Sisa pembagian polinomial oleh (x − a).</p>
+        </a>
+
+        <a href="#7-Metode-Partial" class="block p-4 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300 shadow-md">
+          <span class="text-lg font-semibold">7. Metode Partial (Dekomposisi)</span>
+          <p class="text-sm opacity-90 mt-1">Pengantar dekomposisi partial (untuk pecahan rasional).</p>
+        </a>
+
+      </div>
+    </nav>
+  <!-- 1. Pengertian Polinomial -->
+<div id="1-Pengertian-Polinomial" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">1. Pengertian Polinomial</h3>
+  <p class="text-lg leading-relaxed mb-4 text-white">
+    <strong>Polinomial</strong> adalah bentuk aljabar yang merupakan penjumlahan atau pengurangan dari suku-suku yang terdiri atas <em>koefisien</em> dikalikan dengan variabel berpangkat bilangan bulat non-negatif. Bentuk umumnya dapat ditulis:
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md font-mono mb-6 overflow-x-auto whitespace-nowrap text-sm sm:text-base">
+    P(x) = a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x + a<sub>0</sub>
+  </div>
+
+  <ul class="list-disc ml-6 text-white mb-6 text-base">
+    <li><strong>P(x)</strong> : nama polinomial</li>
+    <li><strong>a<sub>n</sub>, a<sub>n-1</sub>, ..., a<sub>0</sub></strong> : koefisien (bilangan real)</li>
+    <li><strong>x</strong> : variabel</li>
+    <li><strong>n</strong> : derajat polinomial (bilangan bulat non-negatif)</li>
+    <li><strong>Suku</strong> : setiap bagian polinomial yang dipisahkan oleh tanda + atau −</li>
+  </ul>
+
+  <h4 class="text-2xl font-semibold text-white mb-3">Contoh Polinomial</h4>
+  <p class="text-white mb-6 text-lg">
+    2x + 3, &nbsp; x<sup>2</sup> − 5x + 6, &nbsp; 4x<sup>3</sup> + 2x<sup>2</sup> − x + 7
+  </p>
+
+  <h4 class="text-2xl font-semibold text-white mb-3">Bukan Polinomial</h4>
+  <ul class="list-disc ml-6 text-white text-lg space-y-2">
+    <li>3x<sup>-1</sup> + 2 (pangkat negatif)</li>
+    <li>√x + 1 (pangkat pecahan)</li>
+    <li>5/x + 2 (variabel di penyebut)</li>
+    <li>2<sup>x</sup> + 3 (variabel sebagai pangkat)</li>
+  </ul>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-8 rounded-3xl shadow-2xl border border-gray-200">
+  <h2 class="text-3xl font-extrabold text-[#4dd4a3] mb-6 text-center drop-shadow-md">
+    📘 Soal Matematika - Suku Banyak
+  </h2>
+  <p class="mb-8 text-gray-700 text-center text-lg">
+    Sebutkan variabel, derajat, dan koefisien tiap suku banyak berikut:
+  </p>
+
+  <!-- SOAL A -->
+  <div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+    a. 5x³ - 2x² + 10x + 4
+  </div>
+  
+  <!-- Variabel A -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+    <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+    <input id="varA101" type="text" class="flex-1 border rounded-xl px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#4dd4a3]" placeholder="contoh: x">
+    <button onclick="cekJawabanPolinomial('varA101','x','resVarA101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resVarA101" class="text-sm font-semibold hidden"></div>
+
+  <!-- Derajat A -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+    <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+    <input id="degA101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 3">
+    <button onclick="cekJawabanPolinomial('degA101','3','resDegA101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resDegA101" class="text-sm font-semibold hidden"></div>
+
+  <!-- Koefisien A -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+    <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+    <input id="coefA101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 5,-2,10,4">
+    <button onclick="cekJawabanPolinomial('coefA101','5,-2,10,4','resCoefA101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resCoefA101" class="text-sm font-semibold hidden"></div>
+
+  <hr class="my-8 border-t border-gray-300">
+
+  <!-- SOAL B -->
+  <div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+    b. y⁴ + 4y³ - 3y² + y + 2
+  </div>
+  
+  <!-- Variabel B -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+    <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+    <input id="varB101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: y">
+    <button onclick="cekJawabanPolinomial('varB101','y','resVarB101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resVarB101" class="text-sm font-semibold hidden"></div>
+
+  <!-- Derajat B -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+    <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+    <input id="degB101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 4">
+    <button onclick="cekJawabanPolinomial('degB101','4','resDegB101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resDegB101" class="text-sm font-semibold hidden"></div>
+
+  <!-- Koefisien B -->
+  <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+    <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+    <input id="coefB101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 1,4,-3,1,2">
+    <button onclick="cekJawabanPolinomial('coefB101','1,4,-3,1,2','resCoefB101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+  </div>
+  <div id="resCoefB101" class="text-sm font-semibold hidden"></div>
+<!-- SOAL C -->
+<div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+  c. (x - 2)²
+</div>
+
+<!-- Variabel C -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+  <input id="varC101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: x">
+  <button onclick="cekJawabanPolinomial('varC101','x','resVarC101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resVarC101" class="text-sm font-semibold hidden"></div>
+
+<!-- Derajat C -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+  <input id="degC101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 2">
+  <button onclick="cekJawabanPolinomial('degC101','2','resDegC101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resDegC101" class="text-sm font-semibold hidden"></div>
+
+<!-- Koefisien C -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+  <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+  <input id="coefC101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 1,-4,4">
+  <button onclick="cekJawabanPolinomial('coefC101','1,-4,4','resCoefC101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resCoefC101" class="text-sm font-semibold hidden"></div>
+
+<!-- SOAL D -->
+<div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+  d. (x + 2)(x - 4)
+</div>
+
+<!-- Variabel D -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+  <input id="varD101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: x">
+  <button onclick="cekJawabanPolinomial('varD101','x','resVarD101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resVarD101" class="text-sm font-semibold hidden"></div>
+
+<!-- Derajat D -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+  <input id="degD101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 2">
+  <button onclick="cekJawabanPolinomial('degD101','2','resDegD101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resDegD101" class="text-sm font-semibold hidden"></div>
+
+<!-- Koefisien D -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+  <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+  <input id="coefD101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 1,-2,-8">
+  <button onclick="cekJawabanPolinomial('coefD101','1,-2,-8','resCoefD101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resCoefD101" class="text-sm font-semibold hidden"></div>
+
+<!-- SOAL E -->
+<div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+  e. (t - 4)²(t + 1)
+</div>
+
+<!-- Variabel E -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+  <input id="varE101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: t">
+  <button onclick="cekJawabanPolinomial('varE101','t','resVarE101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resVarE101" class="text-sm font-semibold hidden"></div>
+
+<!-- Derajat E -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+  <input id="degE101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 3">
+  <button onclick="cekJawabanPolinomial('degE101','3','resDegE101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resDegE101" class="text-sm font-semibold hidden"></div>
+
+<!-- Koefisien E -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+  <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+  <input id="coefE101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 1,-7,8,16">
+  <button onclick="cekJawabanPolinomial('coefE101','1,-7,8,16','resCoefE101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resCoefE101" class="text-sm font-semibold hidden"></div>
+
+<!-- SOAL F -->
+<div class="p-4 bg-gradient-to-r from-[#4dd4a3] to-green-500 text-white rounded-xl text-lg font-bold mb-6 text-center shadow-md">
+  f. (y - 2)(2y + 1)(4y + 1)²
+</div>
+
+<!-- Variabel F -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">🔤 Variabel:</label>
+  <input id="varF101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: y">
+  <button onclick="cekJawabanPolinomial('varF101','y','resVarF101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resVarF101" class="text-sm font-semibold hidden"></div>
+
+<!-- Derajat F -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+  <label class="sm:w-28 font-semibold text-gray-700">📏 Derajat:</label>
+  <input id="degF101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 4">
+  <button onclick="cekJawabanPolinomial('degF101','4','resDegF101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resDegF101" class="text-sm font-semibold hidden"></div>
+
+<!-- Koefisien F -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-8">
+  <label class="sm:w-28 font-semibold text-gray-700">🔢 Koefisien:</label>
+  <input id="coefF101" type="text" class="flex-1 border rounded-xl px-3 py-2" placeholder="contoh: 8,-22,-3,10,2">
+  <button onclick="cekJawabanPolinomial('coefF101','8,-22,-3,10,2','resCoefF101')" class="bg-[#4dd4a3] hover:bg-green-600 text-white px-4 py-2 rounded-xl transition">Cek</button>
+</div>
+<div id="resCoefF101" class="text-sm font-semibold hidden"></div>
+</div>
+
+
+<script>
+function cekJawabanPolinomial(inputId, jawabanBenar, resultId) {
+  const inputElem = document.getElementById(inputId);
+  const userAnswer = inputElem.value.trim().toLowerCase();
+  const correctAnswer = jawabanBenar.trim().toLowerCase();
+  const resultElem = document.getElementById(resultId);
+
+  if (userAnswer === correctAnswer) {
+    resultElem.textContent = "✅ Benar!";
+    resultElem.className = "text-green-600 text-sm font-semibold mt-1";
+    resultElem.classList.remove("hidden");
+    inputElem.classList.remove("border-red-500");
+    inputElem.classList.add("border-green-500");
+  } else {
+    resultElem.textContent = "❌ Salah, coba lagi!";
+    resultElem.className = "text-red-600 text-sm font-semibold mt-1";
+    resultElem.classList.remove("hidden");
+    inputElem.classList.remove("border-green-500");
+    inputElem.classList.add("border-red-500");
+  }
+}
+</script>
+
+
+<!-- 2. Operasi Polinomial -->
+<div id="2-Operasi-Polinomial" class="mb-10">
+  <h3 class="text-2xl font-semibold text-[#4dd4a3] mb-4">2. Operasi Polinomial</h3>
+  <p class="text-gray-700 mb-3">Operasi dasar yang biasa dipelajari pada polinomial meliputi:</p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- Penjumlahan & Pengurangan -->
+    <div class="bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+      <h4 class="font-bold mb-2">Penjumlahan & Pengurangan</h4>
+      <p class="mb-2">Susun suku sejenis (pangkat sama) lalu jumlahkan atau kurangkan koefisiennya.</p>
+      <div class="bg-white text-black p-3 rounded-md font-mono mb-2">
+        (3x<sup>2</sup> + 2x + 5) + (4x<sup>2</sup> − x + 3)  
+        = (3 + 4)x<sup>2</sup> + (2 − 1)x + (5 + 3)  
+        = 7x<sup>2</sup> + x + 8
+      </div>
+      <div class="bg-white text-black p-3 rounded-md font-mono">
+        (5x<sup>3</sup> + 4x − 2) − (2x<sup>3</sup> − x + 7)  
+        = (5 − 2)x<sup>3</sup> + (4 + 1)x + (−2 − 7)  
+        = 3x<sup>3</sup> + 5x − 9
+      </div>
+    </div>
+
+    <!-- Perkalian -->
+    <div class="bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+      <h4 class="font-bold mb-2">Perkalian</h4>
+      <p class="mb-2">Kalikan setiap suku pada polinomial pertama dengan setiap suku pada polinomial kedua, kemudian gabungkan suku sejenis.</p>
+      <div class="bg-white text-black p-3 rounded-md font-mono">
+        (x + 2)(x + 3)  
+        = x(x + 3) + 2(x + 3)  
+        = x<sup>2</sup> + 3x + 2x + 6  
+        = x<sup>2</sup> + 5x + 6
+      </div>
+    </div>
+
+    <!-- Pembagian -->
+    <div class="bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+      <h4 class="font-bold mb-2">Pembagian (Ringkasan)</h4>
+      <p>Pembagian polinomial dapat dilakukan dengan metode <em>pembagian bersusun</em> atau <em>Horner</em>. Rumus khusus tidak sederhana, sehingga akan dijelaskan pada bagian tersendiri.</p>
+    </div>
+
+    <!-- Faktorisasi -->
+    <div class="bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+      <h4 class="font-bold mb-2">Faktorisasi</h4>
+      <p>Mencari faktor-faktor polinomial, misalnya dengan mencari akar (nilai x yang membuat polinomial = 0) lalu menuliskan dalam bentuk perkalian faktor linear.</p>
+      <div class="bg-white text-black p-3 rounded-md font-mono">
+        x<sup>2</sup> + 5x + 6 = (x + 2)(x + 3)
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ========== SOAL 1 ========== -->
+  <div class="bg-white p-4 rounded-xl shadow-lg">
+    <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+      1. Hasil dari <span class="font-bold">(3x² + 2x + 5) + (4x² - 3x + 1)</span> adalah ...
+    </div>
+
+    <form id="quiz1" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban1" value="A" class="hidden peer">
+        <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          A. 7x² - x + 6
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban1" value="B" class="hidden peer">
+        <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          B. 7x² - x + 4
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban1" value="C" class="hidden peer">
+        <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          C. 7x² + 5x + 6
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban1" value="D" class="hidden peer">
+        <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          D. 7x² - 5x + 4
+        </div>
+      </label>
+    </form>
+
+    <div class="flex gap-2 mb-4">
+      <button onclick="cekJawaban('quiz1','A','hasil1')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+      <button onclick="togglePembahasan('pembahasan1')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+    </div>
+
+    <div id="hasil1" class="text-lg font-semibold mb-2 hidden"></div>
+    <div id="pembahasan1" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+      (3x² + 2x + 5) + (4x² - 3x + 1)  
+      = (3x² + 4x²) + (2x - 3x) + (5 + 1)  
+      = 7x² - x + 6 → **Jawaban: A**
+    </div>
+  </div>
+
+  <!-- ========== SOAL 2 ========== -->
+  <div class="bg-white p-4 rounded-xl shadow-lg">
+    <div class="p-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white rounded-lg text-lg font-semibold mb-4">
+      2. Hasil dari <span class="font-bold">(5x² - 3x + 7) - (2x² + 4x - 5)</span> adalah ...
+    </div>
+
+    <form id="quiz2" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban2" value="A" class="hidden peer">
+        <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          A. 3x² - 7x + 12
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban2" value="B" class="hidden peer">
+        <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          B. 7x² + x + 2
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban2" value="C" class="hidden peer">
+        <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          C. 3x² - 7x + 2
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban2" value="D" class="hidden peer">
+        <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          D. 7x² - x + 12
+        </div>
+      </label>
+    </form>
+
+    <div class="flex gap-2 mb-4">
+      <button onclick="cekJawaban('quiz2','A','hasil2')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+      <button onclick="togglePembahasan('pembahasan2')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+    </div>
+
+    <div id="hasil2" class="text-lg font-semibold mb-2 hidden"></div>
+    <div id="pembahasan2" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+      (5x² - 3x + 7) - (2x² + 4x - 5)  
+      = (5x² - 2x²) + (-3x - 4x) + (7 + 5)  
+      = 3x² - 7x + 12 → **Jawaban: A**
+    </div>
+  </div>
+
+  <!-- ========== SOAL 3 ========== -->
+  <div class="bg-white p-4 rounded-xl shadow-lg">
+    <div class="p-4 bg-gradient-to-r from-indigo-400 to-blue-500 text-white rounded-lg text-lg font-semibold mb-4">
+      3. Hasil dari <span class="font-bold">(x + 3)(x - 2)</span> adalah ...
+    </div>
+
+    <form id="quiz3" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban3" value="A" class="hidden peer">
+        <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          A. x² + x - 6
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban3" value="B" class="hidden peer">
+        <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          B. x² + x + 6
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban3" value="C" class="hidden peer">
+        <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          C. x² - x - 6
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="jawaban3" value="D" class="hidden peer">
+        <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+          D. x² - x + 6
+        </div>
+      </label>
+    </form>
+
+    <div class="flex gap-2 mb-4">
+      <button onclick="cekJawaban('quiz3','A','hasil3')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+      <button onclick="togglePembahasan('pembahasan3')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+    </div>
+
+    <div id="hasil3" class="text-lg font-semibold mb-2 hidden"></div>
+    <div id="pembahasan3" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+      (x + 3)(x - 2)  
+      = x² - 2x + 3x - 6  
+      = x² + x - 6 → **Jawaban: A**
+    </div>
+  </div>
+<!-- ========== SOAL 4 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-indigo-400 to-blue-500 text-white rounded-lg text-lg font-semibold mb-4">
+    4. Hasil dari <span class="font-bold">(x + 2)(x² - 3x + 4)</span> adalah ...
+  </div>
+
+  <form id="quiz4" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban4" value="A" class="hidden peer">
+      <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. x³ - x² - 2x + 8
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban4" value="B" class="hidden peer">
+      <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x³ - x² + 2x + 8
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban4" value="C" class="hidden peer">
+      <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. x³ - x² + 2x + 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban4" value="D" class="hidden peer">
+      <div class="peer-checked:border-indigo-500 peer-checked:bg-indigo-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. x³ - x² - 2x + 4
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz4','A','hasil4')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan4')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil4" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan4" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    (x + 2)(x² - 3x + 4)  
+    = x³ - 3x² + 4x + 2x² - 6x + 8  
+    = x³ - x² - 2x + 8 → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 5 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-purple-400 to-fuchsia-500 text-white rounded-lg text-lg font-semibold mb-4">
+    5. Hasil dari <span class="font-bold">(2x² - 3x + 1) + (x² + 4x - 5) - (3x² - 2x + 7)</span> adalah ...
+  </div>
+
+  <form id="quiz5" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban5" value="A" class="hidden peer">
+      <div class="peer-checked:border-purple-500 peer-checked:bg-purple-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. -x² + 3x - 11
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban5" value="B" class="hidden peer">
+      <div class="peer-checked:border-purple-500 peer-checked:bg-purple-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x² - x - 11
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban5" value="C" class="hidden peer">
+      <div class="peer-checked:border-purple-500 peer-checked:bg-purple-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. -x² + 5x - 11
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban5" value="D" class="hidden peer">
+      <div class="peer-checked:border-purple-500 peer-checked:bg-purple-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. x² + 3x - 11
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz5','A','hasil5')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan5')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil5" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan5" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    (2x² - 3x + 1) + (x² + 4x - 5) - (3x² - 2x + 7)  
+    = 2x² + x² - 3x² + (-3x + 4x + 2x) + (1 - 5 - 7)  
+    = -x² + 3x - 11 → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 6 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-lg text-lg font-semibold mb-4">
+    6. Hasil dari <span class="font-bold">(x - 4)(x² + 2x - 1)</span> adalah ...
+  </div>
+
+  <form id="quiz6" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban6" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. x³ - 2x² - 9x + 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban6" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x³ - 2x² - 7x + 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban6" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. x³ - 2x² - 9x - 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban6" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. x³ - 2x² - 7x - 4
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz6','B','hasil6')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan6')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil6" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan6" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    (x - 4)(x² + 2x - 1)  
+    = x³ + 2x² - x - 4x² - 8x + 4  
+    = x³ - 2x² - 9x + 4 → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 7 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg text-lg font-semibold mb-4">
+    7. Hasil dari <span class="font-bold">(2x + 3)(x² - x + 5) - (x³ - 2x² + 4)</span> adalah ...
+  </div>
+
+  <form id="quiz7" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban7" value="A" class="hidden peer">
+      <div class="peer-checked:border-orange-500 peer-checked:bg-orange-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. x³ + x² + 10x + 11
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban7" value="B" class="hidden peer">
+      <div class="peer-checked:border-orange-500 peer-checked:bg-orange-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x³ + 5x² + 10x + 11
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban7" value="C" class="hidden peer">
+      <div class="peer-checked:border-orange-500 peer-checked:bg-orange-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. x³ + x² + 10x - 9
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban7" value="D" class="hidden peer">
+      <div class="peer-checked:border-orange-500 peer-checked:bg-orange-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 2x³ + x² + 10x + 11
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz7','A','hasil7')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan7')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil7" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan7" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    (2x + 3)(x² - x + 5) = 2x³ - 2x² + 10x + 3x² - 3x + 15  
+    = 2x³ + x² + 7x + 15  
+    Lalu dikurangi (x³ - 2x² + 4):  
+    (2x³ - x³) + (x² + 2x²) + 7x + (15 - 4)  
+    = x³ + 3x² + 7x + 11 → **Jawaban: A**
+  </div>
+</div>
+
+  <script>
+    function cekJawaban(formId, correctAnswer, hasilId) {
+      const pilihan = document.querySelector(`input[name="${formId.replace('quiz','jawaban')}"]:checked`);
+      const hasil = document.getElementById(hasilId);
+      if (!pilihan) {
+        hasil.textContent = "⚠️ Pilih salah satu jawaban!";
+        hasil.className = "text-red-500 font-semibold mb-2";
+        hasil.classList.remove('hidden');
+        return;
+      }
+      if (pilihan.value === correctAnswer) {
+        hasil.textContent = "✅ Benar! 🎉";
+        hasil.className = "text-green-500 font-semibold mb-2";
+      } else {
+        hasil.textContent = "❌ Salah!";
+        hasil.className = "text-red-500 font-semibold mb-2";
+      }
+      hasil.classList.remove('hidden');
+    }
+
+    function togglePembahasan(id) {
+      document.getElementById(id).classList.toggle('hidden');
+    }
+  </script>
+
+  <!-- 3. Nilai Polinomial -->
+<div id="3-Nilai-Polinomial" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">3. Nilai Polinomial</h3>
+  <p class="text-lg leading-relaxed mb-4">
+    Untuk mendapatkan nilai polinomial pada \(x = c\), substitusikan nilai \(c\) ke \(P(x)\) dan hitung.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md font-mono mb-6 overflow-x-auto whitespace-nowrap text-sm sm:text-base">
+    Contoh:  
+    \[
+      P(x) = x^2 - 3x + 2
+    \]
+    Maka  
+    \[
+      P(2) = 2^2 - 3 \cdot 2 + 2 = 4 - 6 + 2 = 0
+    \]
+  </div>
+
+  <p class="text-lg">
+    Metode Horner juga mempercepat evaluasi nilai \(P(c)\) (lihat bagian 4b.i).
+  </p>
+</div>
+
+<!-- ========== SOAL 1 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+    1. Jika f(x) = 2x² + 3x - 5, maka nilai f(2) adalah ...
+  </div>
+
+  <form id="quiz_polinom1" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom1" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 9
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom1" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 7
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom1" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 5
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom1" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 11
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom1','A','hasil_polinom1')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom1')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom1" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom1" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    f(2) = 2(2²) + 3(2) - 5  
+    = 2(4) + 6 - 5  
+    = 8 + 6 - 5 = 9 → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 2 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white rounded-lg text-lg font-semibold mb-4">
+    2. Jika g(x) = x³ - 2x² + x + 4, maka nilai g(-1) adalah ...
+  </div>
+
+  <form id="quiz_polinom2" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom2" value="A" class="hidden peer">
+      <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom2" value="B" class="hidden peer">
+      <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 2
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom2" value="C" class="hidden peer">
+      <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 0
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom2" value="D" class="hidden peer">
+      <div class="peer-checked:border-pink-500 peer-checked:bg-pink-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. -2
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom2','B','hasil_polinom2')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom2')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom2" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom2" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    g(-1) = (-1)³ - 2(-1)² + (-1) + 4  
+    = -1 - 2(1) - 1 + 4  
+    = -1 - 2 - 1 + 4 = 0 → **Jawaban: C**
+  </div>
+</div>
+<!-- ========== SOAL 3 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-indigo-400 to-blue-500 text-white rounded-lg text-lg font-semibold mb-4">
+    3. Jika <span class="font-bold">f(x) = ax² + 2x + 1</span> dan f(1) = 8, maka nilai a adalah ...
+  </div>
+
+  <form id="quiz_polinom3" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom3" value="A" class="hidden peer">
+      <div class="peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom3" value="B" class="hidden peer">
+      <div class="peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 5
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom3" value="C" class="hidden peer">
+      <div class="peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 6
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom3" value="D" class="hidden peer">
+      <div class="peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 3
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom3','B','hasil_polinom3')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom3')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom3" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom3" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    f(1) = a(1)² + 2(1) + 1  
+    = a + 2 + 1 = a + 3.  
+    Diberi f(1) = 8 → a + 3 = 8 → a = 8 - 3 = 5 → **Jawaban: B**
+  </div>
+</div>
+
+<!-- ========== SOAL 4 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg text-lg font-semibold mb-4">
+    4. Jika <span class="font-bold">g(x) = 3x² + ax - 1</span> dan g(1) = 8, maka nilai a adalah ...
+  </div>
+
+  <form id="quiz_polinom4" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom4" value="A" class="hidden peer">
+      <div class="peer-checked:border-yellow-600 peer-checked:bg-yellow-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 4
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom4" value="B" class="hidden peer">
+      <div class="peer-checked:border-yellow-600 peer-checked:bg-yellow-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 5
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom4" value="C" class="hidden peer">
+      <div class="peer-checked:border-yellow-600 peer-checked:bg-yellow-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 8
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom4" value="D" class="hidden peer">
+      <div class="peer-checked:border-yellow-600 peer-checked:bg-yellow-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 6
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom4','D','hasil_polinom4')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom4')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom4" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom4" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    g(1) = 3(1)² + a(1) - 1  
+    = 3 + a - 1 = a + 2.  
+    Diberi g(1) = 8 → a + 2 = 8 → a = 8 - 2 = 6 → **Jawaban: D**
+  </div>
+</div>
+<!-- ========== SOAL 5 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-purple-400 to-violet-500 text-white rounded-lg text-lg font-semibold mb-4">
+    5. Volume suatu balok (dalam cm³) dapat dimodelkan oleh fungsi <span class="font-bold">V(x) = 2x³ - 3x² + 4x + 5</span>, dengan x adalah panjang rusuk dalam cm. Tentukan volume balok jika panjang rusuknya 2 cm.
+  </div>
+
+  <form id="quiz_polinom5" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom5" value="A" class="hidden peer">
+      <div class="peer-checked:border-violet-600 peer-checked:bg-violet-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 13 cm³
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom5" value="B" class="hidden peer">
+      <div class="peer-checked:border-violet-600 peer-checked:bg-violet-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 15 cm³
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom5" value="C" class="hidden peer">
+      <div class="peer-checked:border-violet-600 peer-checked:bg-violet-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 17 cm³
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom5" value="D" class="hidden peer">
+      <div class="peer-checked:border-violet-600 peer-checked:bg-violet-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 19 cm³
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom5','D','hasil_polinom5')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom5')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom5" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom5" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    V(2) = 2(2³) - 3(2²) + 4(2) + 5  
+    = 2(8) - 3(4) + 8 + 5  
+    = 16 - 12 + 8 + 5 = 17 → **Jawaban: C**
+  </div>
+</div>
+
+<!-- ========== SOAL 6 ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-red-400 to-orange-500 text-white rounded-lg text-lg font-semibold mb-4">
+    6. Sebuah perusahaan memodelkan keuntungan bersih (dalam juta rupiah) dengan fungsi <span class="font-bold">P(x) = -x³ + 6x² - 5x + 12</span>, dengan x adalah jumlah produk terjual (dalam ribuan unit). Jika terjual 4 ribu unit, berapa keuntungan bersihnya?
+  </div>
+
+  <form id="quiz_polinom6" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom6" value="A" class="hidden peer">
+      <div class="peer-checked:border-orange-600 peer-checked:bg-orange-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 16 juta
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom6" value="B" class="hidden peer">
+      <div class="peer-checked:border-orange-600 peer-checked:bg-orange-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 20 juta
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom6" value="C" class="hidden peer">
+      <div class="peer-checked:border-orange-600 peer-checked:bg-orange-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 24 juta
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_polinom6" value="D" class="hidden peer">
+      <div class="peer-checked:border-orange-600 peer-checked:bg-orange-600 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 28 juta
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_polinom6','A','hasil_polinom6')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_polinom6')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_polinom6" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_polinom6" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    P(4) = -(4³) + 6(4²) - 5(4) + 12  
+    = -64 + 6(16) - 20 + 12  
+    = -64 + 96 - 20 + 12 = 24 → **Jawaban: C**
+  </div>
+</div>
+
+  <!-- 4. Pembagian Polinomial -->
+  <div id="4-Pembagian-Polinomial" class="mb-10">
+    <h3 class="text-2xl font-semibold text-[#4dd4a3] mb-4">4. Pembagian Polinomial</h3>
+    <p class="text-gray-700 mb-4">Dua pendekatan umum:</p>
+
+    <!-- 4a Pembagian Bersusun -->
+    <div id="4a-Metode-Pembagian-Bersusun" class="mb-6 bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+      <h4 class="text-xl font-bold mb-2">a. Metode Pembagian Bersusun</h4>
+      <p>
+        Teknik analog dengan pembagian bilangan: bagi suku tertinggi, kalikan, kurangi, turunkan suku berikutnya, ulangi sampai selesai. Hasilnya berupa <em>hasil bagi</em> dan <em>sisa</em>.
+      </p>
+      <p class="mt-2"><strong>Contoh singkat:</strong> (x³ − 2x² + 4) ÷ (x − 1) → lakukan langkah bersusun untuk mendapatkan kuosien dan sisa.</p>
+    </div>
+
+    <!-- 4b Metode Horner -->
+    <div id="4b-Metode-Horner" class="mb-6">
+      <!-- i Horner -->
+      <div id="4b-i-Metode-Horner" class="mb-4 bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+        <h5 class="font-semibold mb-1">i. Metode Horner</h5>
+        <p>
+          Horner menyederhanakan pembagian oleh (x − c) sekaligus mengevaluasi P(c). Susun koefisien, turunkan langkah perkalian & penjumlahan berulang untuk memperoleh kuosien dan sisa.
+        </p>
+      </div>
+
+      <!-- ii Horner kino -->
+      <div id="4b-ii-Metode-Horner-Kino" class="mb-4 bg-[#4dd4a3] text-white p-4 rounded-lg shadow">
+        <h5 class="font-semibold mb-1">ii. Metode Horner (variasi/quick)</h5>
+        <p>
+          Variasi penulisan Horner yang lebih ringkas, kadang disebut quick Horner, digunakan untuk perhitungan cepat tanpa menulis variabel secara eksplisit.
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- ========== SOAL 1 (Horner) ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+    1. Tentukan hasil bagi dan sisa dari pembagian <strong>2x³ + 3x² - 2x + 5</strong> oleh <strong>x - 2</strong> menggunakan metode Horner.
+  </div>
+
+  <form id="quiz_horner1" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner1" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 2x² + 7x + 12, sisa 29
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner1" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 2x² + 7x + 12, sisa 28
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner1" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 2x² + 5x + 10, sisa 20
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner1" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 2x² - x + 0, sisa 5
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_horner1','A','hasil_horner1')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_horner1')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_horner1" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_horner1" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    Gunakan metode Horner dengan pembagi <strong>(x - 2)</strong>, k = 2.  
+    Susun: 2 | 3 | -2 | 5  
+    Turunkan 2 → kalikan 2×2=4 → jumlah 3+4=7 → kalikan 7×2=14 → jumlah -2+14=12 → kalikan 12×2=24 → jumlah 5+24=29.  
+    Hasil bagi: <strong>2x² + 7x + 12</strong>, sisa <strong>29</strong>. → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 2 (Horner) ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+    2. Tentukan hasil bagi dan sisa dari pembagian <strong>x³ + 4x² - 5x - 14</strong> oleh <strong>x + 3</strong> menggunakan metode Horner.
+  </div>
+
+  <form id="quiz_horner2" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner2" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. x² + x - 8, sisa 10
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner2" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x² + x - 8, sisa -10
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner2" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. x² + 7x + 16, sisa 0
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_horner2" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. x² + x - 5, sisa 3
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_horner2','B','hasil_horner2')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_horner2')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_horner2" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_horner2" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    k = -3 (dari x + 3). Susun: 1 | 4 | -5 | -14  
+    Turunkan 1 → kalikan -3 → 1×-3=-3 → jumlah 4-3=1 → kalikan -3 → 1×-3=-3 → jumlah -5-3=-8 → kalikan -3 → -8×-3=24 → jumlah -14+24=10.  
+    Hasil bagi: <strong>x² + x - 8</strong>, sisa <strong>10</strong>. → **Jawaban: B**
+  </div>
+</div>
+
+<!-- ========== SOAL 3 (Susun) ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+    3. Tentukan hasil bagi dan sisa dari pembagian <strong>2x³ - 5x² - 4x + 9</strong> oleh <strong>x - 4</strong> menggunakan metode susun.
+  </div>
+
+  <form id="quiz_susun1" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun1" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. 2x² + 3x + 8, sisa 41
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun1" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. 2x² + 3x + 8, sisa -41
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun1" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. 2x² - 13x + 48, sisa 3
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun1" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. 2x² + 3x + 8, sisa 0
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_susun1','A','hasil_susun1')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_susun1')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_susun1" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_susun1" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    Metode susun: Bagi 2x³ : x = 2x² → kalikan (2x²)(x - 4) = 2x³ - 8x² → kurangi: -5x² - (-8x²) = 3x².  
+    Turunkan -4x → bagi 3x² : x = 3x → kalikan (3x)(x - 4) = 3x² - 12x → kurangi: -4x - (-12x) = 8x.  
+    Turunkan +9 → bagi 8x : x = 8 → kalikan (8)(x - 4) = 8x - 32 → kurangi: 9 - (-32) = 41.  
+    Hasil bagi: <strong>2x² + 3x + 8</strong>, sisa <strong>41</strong>. → **Jawaban: A**
+  </div>
+</div>
+
+<!-- ========== SOAL 4 (Susun) ========== -->
+<div class="bg-white p-4 rounded-xl shadow-lg">
+  <div class="p-4 bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-lg text-lg font-semibold mb-4">
+    4. Tentukan hasil bagi dan sisa dari pembagian <strong>x³ - 3x² + 4x - 12</strong> oleh <strong>x + 1</strong> menggunakan metode susun.
+  </div>
+
+  <form id="quiz_susun2" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun2" value="A" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        A. x² - 4x + 8, sisa -20
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun2" value="B" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        B. x² - 4x + 8, sisa 0
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun2" value="C" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        C. x² + 2x + 4, sisa -16
+      </div>
+    </label>
+    <label class="cursor-pointer">
+      <input type="radio" name="jawaban_susun2" value="D" class="hidden peer">
+      <div class="peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:text-white border-2 border-gray-300 rounded-lg p-4 bg-white hover:scale-105 transition">
+        D. x² - 4x + 8, sisa -4
+      </div>
+    </label>
+  </form>
+
+  <div class="flex gap-2 mb-4">
+    <button onclick="cekJawaban('quiz_susun2','A','hasil_susun2')" class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold">Cek Jawaban</button>
+    <button onclick="togglePembahasan('pembahasan_susun2')" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">Pembahasan</button>
+  </div>
+
+  <div id="hasil_susun2" class="text-lg font-semibold mb-2 hidden"></div>
+  <div id="pembahasan_susun2" class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg hidden">
+    Metode susun: Bagi x³ : x = x² → kalikan (x²)(x + 1) = x³ + x² → kurangi: -3x² - x² = -4x².  
+    Turunkan +4x → bagi -4x² : x = -4x → kalikan (-4x)(x + 1) = -4x² - 4x → kurangi: 4x - (-4x) = 8x.  
+    Turunkan -12 → bagi 8x : x = 8 → kalikan (8)(x + 1) = 8x + 8 → kurangi: -12 - 8 = -20.  
+    Hasil bagi: <strong>x² - 4x + 8</strong>, sisa <strong>-20</strong>. → **Jawaban: A**
+  </div>
+</div>
+
+
+  <<!-- 5. Teorema Faktor -->
+<div id="5-Teorema-Faktor" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">5. Teorema Faktor</h3>
+  <p class="text-lg mb-4 leading-relaxed">
+    Jika <span class="font-semibold">P(c) = 0</span>, maka <span class="italic">(x − c)</span> adalah faktor dari <span class="font-semibold">P(x)</span>.
+    Artinya, bila suatu nilai <span class="font-semibold">c</span> membuat polinomial sama dengan nol, maka <span class="italic">(x − c)</span> membagi habis <span class="font-semibold">P(x)</span>.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md mb-6">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Contoh Soal:</h4>
+    <p class="mb-3">
+      Tentukan apakah <code>(x - 2)</code> merupakan faktor dari polinomial <code>P(x) = x³ - 4x² + 5x - 2</code>.
+    </p>
+     </div>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Pembahasan:</h4>
+    <p>
+      Untuk menentukan apakah <code>(x - 2)</code> adalah faktor dari <code>P(x)</code>, kita substitusi <code>c = 2</code> ke dalam <code>P(x)</code>:
+    </p>
+    <p class="my-2">
+      <code>P(2) = 2³ - 4(2)² + 5(2) - 2 = 8 - 16 + 10 - 2 = 0</code>
+    </p>
+    <p>
+      Karena <code>P(2) = 0</code>, maka <code>(x - 2)</code> adalah faktor dari <code>P(x)</code>.
+    </p>
+  </div>
+</div>
+
+
+  <!-- 6. Teorema Sisa -->
+<div id="6-Teorema-Sisa" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">6. Teorema Sisa</h3>
+  <p class="text-lg mb-4 leading-relaxed">
+    Sisa pembagian <span class="font-semibold">P(x)</span> oleh <span class="italic">(x − c)</span> sama dengan <span class="font-semibold">P(c)</span>.
+    Jadi, untuk mengetahui sisa pembagian, cukup evaluasi polinomial <span class="font-semibold">P</span> pada <span class="font-semibold">x = c</span>.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md mb-6">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Contoh Soal:</h4>
+    <p class="mb-3">
+      Hitung sisa pembagian polinomial <code>P(x) = 2x³ - 3x² + 4x - 5</code> oleh <code>(x - 1)</code>.
+    </p>
+  </div>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Pembahasan:</h4>
+    <p>
+      Untuk mencari sisa pembagian, kita evaluasi <code>P(x)</code> pada <code>x = 1</code>:
+    </p>
+    <p class="my-2 font-mono text-lg">
+      P(1) = 2(1)³ - 3(1)² + 4(1) - 5 = 2 - 3 + 4 - 5 = -2
+    </p>
+    <p>
+      Jadi, sisa pembagian <code>P(x)</code> oleh <code>(x - 1)</code> adalah <span class="font-semibold">-2</span>.
+    </p>
+  </div>
+</div>
+<!-- 6b. Contoh Soal Teorema Sisa -->
+<div id="6b-Contoh-Teorema-Sisa" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">6b. Contoh Soal Teorema Sisa</h3>
+  <p class="text-lg mb-4 leading-relaxed">
+    Diketahui polinomial <span class="font-semibold">f(x)</span> memiliki sifat berikut:
+  </p>
+  <ul class="list-disc list-inside text-lg mb-6 text-white">
+    <li>Sisa pembagian <code>f(x)</code> oleh <code>(x - 2)</code> adalah <span class="font-semibold">4</span></li>
+    <li>Sisa pembagian <code>f(x)</code> oleh <code>(x + 2)</code> adalah <span class="font-semibold">-8</span></li>
+  </ul>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md mb-6">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Pertanyaan:</h4>
+    <p class="mb-3">
+      Tentukan sisa pembagian <code>f(x)</code> oleh <code>(x² - 4)</code>.
+    </p>
+  </div>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md">
+    <h4 class="text-2xl font-semibold mb-3 text-[#3bb78f]">Pembahasan:</h4>
+    <p>
+      Karena \((x^2 - 4) = (x - 2)(x + 2)\), sisa pembagian <code>f(x)</code> oleh \((x^2 - 4)\)adalah polinomial berderajat kurang dari 2, yaitu berbentuk:
+    </p>
+    <p class="mb-4 font-mono text-lg">
+      \[
+        R(x) = ax + b
+      \]
+    </p>
+    <p>
+      Dengan menggunakan teorema sisa, kita substitusi nilai \(x = 2\) dan \(x = -2\):
+    </p>
+<div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+    <ul class="list-disc list-inside mb-4 ">
+      <li>\(R(2) = 2a + b = f(2) = 4\)</li>
+      <li>\(R(-2) = -2a + b = f(-2) = -8\)</li>
+    </ul>
+</div>
+    <h4 class="text-xl font-semibold mb-2">Langkah 1: Bentuk sistem persamaan</h4>
+    <p class="mb-4 font-mono text-lg">
+      \[
+        \begin{cases}
+          2a + b = 4 \\
+          -2a + b = -8
+        \end{cases}
+      \]
+    </p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 2: Cari nilai \(a\) dan \(b\)</h4>
+    <p class="mb-4 font-mono text-lg">
+      Kurangkan persamaan kedua dari yang pertama:
+    </p>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        (2a + b) - (-2a + b) = 4 - (-8) \implies 4a = 12 \implies a = 3
+      \]
+    </div>
+    <p class="mb-4 font-mono text-lg">
+      Substitusikan \(a = 3\) ke persamaan pertama:
+    </p>
+   <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        2(3) + b = 4 \implies 6 + b = 4 \implies b = 4 - 6 = -2
+      \]
+    </div>
+
+    <h4 class="text-xl font-semibold mb-2">Kesimpulan:</h4>
+    <p>
+      Jadi, sisa pembagian <code>f(x)</code> oleh \((x^2 - 4)\)adalah:
+    </p>
+    <p class="font-mono text-xl font-bold">
+      \[
+        R(x) = 3x - 2
+      \]
+    </p>
+  </div>
+</div>
+
+
+  <!-- 7. Metode Partial Lengkap -->
+<div id="7-Metode-Partial" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">7. Metode Partial</h3>
+  <p class="text-lg leading-relaxed">
+    Metode Partial digunakan untuk memecah fungsi rasional menjadi pecahan sederhana (partial fractions), berguna dalam integral dan analisis aljabar.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md mt-4">
+    <h4 class="text-2xl font-semibold mb-4 text-[#3bb78f]">Contoh Soal:</h4>
+    <p class="mb-4 font-mono text-lg">
+      \[
+        \frac{2x + 3}{x^2 - 1} = \frac{A}{x - 1} + \frac{B}{x + 1}
+      \]
+    </p>
+    <p class="mb-4">Cari nilai <strong>A</strong> dan <strong>B</strong> sehingga persamaan tersebut benar.</p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 1: Faktorkan penyebut</h4>
+    <p class="mb-4">
+      \( x^2 - 1 = (x - 1)(x + 1) \), sehingga kita pisahkan menjadi dua pecahan sederhana.
+    </p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 2: Kalikan kedua ruas dengan penyebut bersama</h4>
+    <p class="mb-4 font-mono">
+      \[
+      2x + 3 = A(x + 1) + B(x - 1)
+      \]
+    </p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 3: Cari nilai A dan B dengan substitusi nilai x</h4>
+    <ul class="list-disc ml-6 mb-4">
+      <li>Untuk <code>x = 1</code>:
+        <p class="ml-4 font-mono">2(1) + 3 = A(1 + 1) + B(0) → 5 = 2A → A = 2.5</p>
+      </li>
+      <li>Untuk <code>x = -1</code>:
+        <p class="ml-4 font-mono">2(-1) + 3 = A(0) + B(-1 - 1) → 1 = -2B → B = -0.5</p>
+      </li>
+    </ul>
+
+    <h4 class="text-xl font-semibold mb-2">Kesimpulan:</h4>
+    <p>
+      Jadi,
+      \[
+        \frac{2x + 3}{x^2 - 1} = \frac{2.5}{x - 1} - \frac{0.5}{x + 1}
+      \]
+    </p>
+  </div>
+</div>
+<!-- 7b. Metode Partial: Penyebut (x-1)(x^2+2) -->
+<div id="7b-Metode-Partial" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">7b. Metode Partial: Penyebut (x - 1)(x^2 + 2)</h3>
+  <p class="text-lg leading-relaxed mb-4">
+    Jika penyebut merupakan hasil perkalian faktor linear dan kuadrat irreducible, bentuk partial fraction adalah kombinasi pecahan dengan penyebut masing-masing faktor.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md">
+    <h4 class="text-2xl font-semibold mb-4 text-[#3bb78f]">Contoh Soal:</h4>
+    <div class="overflow-x-auto whitespace-nowrap text-sm sm:text-base font-mono mb-4">
+      \[
+        \frac{3x^2 + 5x + 2}{(x - 1)(x^2 + 2)} = \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 2}
+      \]
+    </div>
+
+    <p class="mb-4">Tentukan nilai <strong>A</strong>, <strong>B</strong>, dan <strong>C</strong>.</p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 1: Bentuk partial fraction</h4>
+    <p class="mb-4">
+      Bentuk pecahan parsial adalah:
+      \[
+        \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 2}
+      \]
+    </p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 2: Kalikan kedua ruas dengan penyebut</h4>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        3x^2 + 5x + 2 = A(x^2 + 2) + (Bx + C)(x - 1)
+      \]
+    </div>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 3: Kembangkan ruas kanan</h4>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        3x^2 + 5x + 2 = A x^2 + 2A + B x^2 - B x + C x - C
+      \]
+    </div>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 4: Gabungkan suku sejenis</h4>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        3x^2 + 5x + 2 = (A + B) x^2 + (-B + C) x + (2A - C)
+      \]
+    </div>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 5: Samakan koefisien</h4>
+    <ul class="list-disc ml-6 mb-4 space-y-2 text-sm sm:text-base font-mono">
+      <li>Koefisien \(x^2\): \(3 = A + B\)</li>
+      <li>Koefisien \(x\): \(5 = -B + C\)</li>
+      <li>Konstanta: \(2 = 2A - C\)</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 6: Selesaikan sistem persamaan</h4>
+    <p class="mb-4">Dari persamaan di atas:</p>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        \begin{cases}
+          3 = A + B \\
+          5 = -B + C \\
+          2 = 2A - C
+        \end{cases}
+      \]
+    </div>
+
+    <p class="mb-4">Dengan substitusi:</p>
+    <ul class="list-disc ml-6 mb-4 space-y-2 text-sm sm:text-base font-mono">
+      <li>\(B = 3 - A\)</li>
+      <li>\(5 = -(3 - A) + C \Rightarrow C = 8 - A\)</li>
+      <li><div class="overflow-x-auto whitespace-nowrap text-sm sm:text-base">
+  <p class="math">
+\(2 = 2A - (8 - A) \Rightarrow 3A = 10 \Rightarrow A = \frac{10}{3}\)</p></div></li>
+      <li>\(B = 3 - \frac{10}{3} = -\frac{1}{3}\)</li>
+      <li>\(C = 8 - \frac{10}{3} = \frac{14}{3}\)</li>
+    </ul>
+
+    <h4 class="text-xl font-semibold mb-2">Kesimpulan:</h4>
+    <div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+      \[
+        \frac{3x^2 + 5x + 2}{(x - 1)(x^2 + 2)} = \frac{\frac{10}{3}}{x - 1} + \frac{-\frac{1}{3}x + \frac{14}{3}}{x^2 + 2}
+      \]
+    </div>
+  </div>
+</div>
+<!-- 7c. Metode Partial dengan Penyebut (x-1)(x+1)^2 -->
+<div id="7c-Metode-Partial" class="mb-10 bg-gradient-to-r from-[#3bb78f] to-[#4dd4a3] text-white p-6 rounded-xl shadow-lg">
+  <h3 class="text-3xl font-bold mb-4">7c. Metode Partial: Penyebut dengan Pangkat</h3>
+  <p class="text-lg leading-relaxed mb-4">
+    Jika penyebut mengandung faktor pangkat, misal \((x - 1)(x + 1)^2\), bentuk partial fractions harus mencakup pecahan untuk setiap pangkat tersebut.
+  </p>
+
+  <div class="bg-white text-gray-800 rounded-lg p-4 shadow-md">
+    <h4 class="text-2xl font-semibold mb-4 text-[#3bb78f]">Contoh Soal:</h4>
+   <div class="overflow-x-auto whitespace-nowrap text-sm sm:text-base">
+  <p class="math">
+    \[
+      \frac{3x^2 + 5x + 2}{(x - 1)(x + 1)^2} = \frac{A}{x - 1} + \frac{B}{x + 1} + \frac{C}{(x + 1)^2}
+    \]
+  </p>
+</div>
+
+    <p class="mb-4">Tentukan nilai <strong>A</strong>, <strong>B</strong>, dan <strong>C</strong>.</p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 1: Bentuk partial fraction lengkap</h4>
+    <p class="mb-4">
+      Karena ada faktor \((x+1)^2\), kita buat dua pecahan: satu untuk pangkat 1 dan satu untuk pangkat 2.
+    </p>
+
+    <h4 class="text-xl font-semibold mb-2">Langkah 2: Kalikan kedua ruas dengan penyebut</h4>
+<div class="overflow-x-auto whitespace-nowrap mb-4 text-sm sm:text-base font-mono">
+  \[
+    3x^2 + 5x + 2 = A(x + 1)^2 + B(x - 1)(x + 1) + C(x - 1)
+  \]
+</div>
+
+<h4 class="text-xl font-semibold mb-2">Langkah 3: Substitusi nilai x untuk cari A, B, C</h4>
+<ul class="list-disc ml-6 mb-4 space-y-2 text-sm sm:text-base font-mono">
+  <li><strong>Untuk x = 1:</strong>
+    <div class="ml-4 whitespace-nowrap overflow-x-auto">
+      \(3(1)^2 + 5(1) + 2 = A(1 + 1)^2 + B(0) + C(0)\) → \(3 + 5 + 2 = A \times 4\) → \(10 = 4A\) → \(A = \frac{10}{4} = 2.5\)
+    </div>
+  </li>
+  <li><strong>Untuk x = -1:</strong>
+    <div class="ml-4 whitespace-nowrap overflow-x-auto">
+      \(3(-1)^2 + 5(-1) + 2 = A(0) + B(-1 - 1)(0) + C(-1 - 1)\) → \(3 - 5 + 2 = C \times (-2)\) → \(0 = -2C\) → \(C = 0\)
+    </div>
+  </li>
+</ul>
+
+<h4 class="text-xl font-semibold mb-2">Langkah 4: Cari B dengan substitusi nilai x lain</h4>
+<p class="mb-4">
+  Pilih nilai lain, misal <code>x = 0</code>:
+</p>
+<div class="font-mono mb-4 space-y-2 text-sm sm:text-base">
+  <div class="whitespace-nowrap overflow-x-auto">
+    \(3(0)^2 + 5(0) + 2 = A(0 + 1)^2 + B(0 - 1)(0 + 1) + C(0 - 1)\)
+  </div>
+  <div class="whitespace-nowrap overflow-x-auto">
+    \(2 = A(1)^2 + B(-1)(1) + C(-1)\)
+  </div>
+  <div class="whitespace-nowrap overflow-x-auto">
+    \(2 = A - B - C\)
+  </div>
+</div>
+<p>
+  Dengan \(A = 2.5\) dan \(C = 0\), maka:
+</p>
+<div class="latex-container overflow-x-auto whitespace-nowrap text-sm sm:text-base font-mono mb-4">
+  
+    \[
+      2 = 2.5 - B - 0 \implies B = 2.5 - 2 = 0.5
+    \]
+  </p>
+</div>
+
+<h4 class="text-xl font-semibold mb-2">Kesimpulan:</h4>
+<div class="latex-container overflow-x-auto whitespace-nowrap text-sm sm:text-base font-mono mb-4">
+  \[
+    \frac{3x^2 + 5x + 2}{(x - 1)(x + 1)^2} = \frac{2.5}{x - 1} + \frac{0.5}{x + 1} + \frac{0}{(x + 1)^2} = \frac{2.5}{x - 1} + \frac{0.5}{x + 1}
+  \]
+</div>
+<p>
+  Karena \(C = 0\), suku terakhir hilang.
+</p>
+
+
+
+
+</div>
+
+
+
+    <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const screenWidth = window.innerWidth;
+
+    const visibleLeft = "0px";
+    const hiddenLeft = screenWidth < 768 ? "-80%" : "-250px";
+    const visibleWidth = screenWidth < 768 ? "80%" : "250px";
+
+    if (sidebar.style.left === visibleLeft) {
+      sidebar.style.left = hiddenLeft;
+    } else {
+      sidebar.style.left = visibleLeft;
+      sidebar.style.width = visibleWidth;
+    }
+  }
+</script>
+
+<script>
+  function checkLogin() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    // Akun yang sudah disediakan
+    const validAccounts = [
+      { username: "admin", password: "12345" },
+      { username: "user1", password: "abcde" },
+      { username: "Diza MTSN 1 Brebes 7", password: "semangatbelajar45" },
+    ];
+
+    const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
+
+    if (found) {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("content22").classList.remove("hidden");
+    } else {
+      document.getElementById("errorMsg").innerText = "Username atau password salah!";
+    }
+  }
+</script>
+
+</body>
+</html>
