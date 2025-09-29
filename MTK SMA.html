@@ -7521,6 +7521,1587 @@ gambar:'https://i.imgur.com/xeJ7ACG.png',
 
       }
     },
+'Biologi': {
+  bab: {
+    'Pewarisan Sifat': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Pewarisan Sifat</h2>
+    <p>
+      Pada bab ini, siswa akan mempelajari bagaimana sifat diturunkan dari orang tua ke anak 
+      melalui gen, kromosom, dan hukum Mendel. Topik juga mencakup pewarisan golongan darah, 
+      buta warna, serta contoh-contoh kasus nyata dalam kehidupan sehari-hari.
+    </p>
+
+    <h3 class="text-lg font-semibold mt-4">1. Pengertian Pewarisan Sifat</h3>
+    <p>
+      Pewarisan sifat adalah proses penurunan ciri-ciri dari induk ke keturunannya 
+      melalui <b>gen</b>. Gen merupakan unit pewarisan yang terdapat di dalam kromosom, 
+      terletak di inti sel. Sifat yang diwariskan dapat berupa bentuk fisik 
+      (misalnya tinggi badan, warna kulit, golongan darah) maupun sifat tertentu 
+      seperti kemampuan indera.
+    </p>
+
+    <h3 class="text-lg font-semibold mt-4">2. Hukum Mendel</h3>
+    <p>
+      Gregor Mendel dikenal sebagai Bapak Genetika karena eksperimennya dengan kacang ercis. 
+      Ia menemukan dua hukum dasar dalam pewarisan sifat:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li><b>Hukum I (Segregasi):</b> Setiap individu memiliki sepasang alel untuk suatu sifat, 
+          dan alel tersebut akan memisah secara bebas ketika pembentukan gamet.</li>
+      <li><b>Hukum II (Asortasi Bebas):</b> Alel untuk sifat yang berbeda diwariskan secara bebas 
+          satu sama lain, sehingga kombinasi sifat dapat bervariasi.</li>
+    </ul>
+
+    <h3 class="text-lg font-semibold mt-4">3. Pewarisan Golongan Darah</h3>
+<p>
+  Golongan darah manusia ditentukan oleh keberadaan antigen A atau B pada permukaan sel darah merah. 
+  Alel yang berperan adalah <b>IA</b>, <b>IB</b>, dan <b>i</b>. 
+  Kombinasi ketiga alel ini menghasilkan 4 golongan darah:
+</p>
+<ul class="list-disc ml-6 mb-4">
+  <li><b>IAIA atau IAi → Golongan darah A</b></li>
+  <li><b>IBIB atau IBi → Golongan darah B</b></li>
+  <li><b>IAIB → Golongan darah AB</b> (kodominan)</li>
+  <li><b>ii → Golongan darah O</b></li>
+</ul>
+
+<!-- Tabel kecocokan tanpa Rh -->
+<h4 class="text-md font-semibold mt-4">Tabel Kecocokan Donor &amp; Penerima (tanpa Rh)</h4>
+<div class="overflow-auto mb-6">
+  <table class="min-w-full border-collapse text-left">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border px-3 py-2">Golongan Darah</th>
+        <th class="border px-3 py-2">Dapat Donor ke</th>
+        <th class="border px-3 py-2">Dapat Menerima dari</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-3 py-2 font-medium">O</td>
+        <td class="border px-3 py-2">A, B, AB, O</td>
+        <td class="border px-3 py-2">O</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">A</td>
+        <td class="border px-3 py-2">A, AB</td>
+        <td class="border px-3 py-2">A, O</td>
+      </tr>
+      <tr>
+        <td class="border px-3 py-2 font-medium">B</td>
+        <td class="border px-3 py-2">B, AB</td>
+        <td class="border px-3 py-2">B, O</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">AB</td>
+        <td class="border px-3 py-2">AB</td>
+        <td class="border px-3 py-2">A, B, AB, O</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="text-sm mb-4">
+  Penjelasan singkat: Tanpa mempertimbangkan faktor Rh, donor O universal (dapat mendonorkan darah ke semua golongan) 
+  karena tidak memiliki antigen A maupun B. Penerima AB dapat menerima dari semua golongan karena memiliki antigen A dan B.
+</p>
+
+<!-- Tabel kecocokan dengan Rh -->
+<h4 class="text-md font-semibold mt-4">Tabel Kecocokan Donor &amp; Penerima (dengan Rh)</h4>
+<div class="overflow-auto">
+  <table class="min-w-full border-collapse text-left text-sm">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border px-3 py-2">Golongan Darah</th>
+        <th class="border px-3 py-2">Dapat Donor ke</th>
+        <th class="border px-3 py-2">Dapat Menerima dari</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-3 py-2 font-medium">O−</td>
+        <td class="border px-3 py-2">Semua golongan</td>
+        <td class="border px-3 py-2">O−</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">O+</td>
+        <td class="border px-3 py-2">O+, A+, B+, AB+</td>
+        <td class="border px-3 py-2">O−, O+</td>
+      </tr>
+      <tr>
+        <td class="border px-3 py-2 font-medium">A−</td>
+        <td class="border px-3 py-2">A−, A+, AB−, AB+</td>
+        <td class="border px-3 py-2">A−, O−</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">A+</td>
+        <td class="border px-3 py-2">A+, AB+</td>
+        <td class="border px-3 py-2">A−, A+, O−, O+</td>
+      </tr>
+      <tr>
+        <td class="border px-3 py-2 font-medium">B−</td>
+        <td class="border px-3 py-2">B−, B+, AB−, AB+</td>
+        <td class="border px-3 py-2">B−, O−</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">B+</td>
+        <td class="border px-3 py-2">B+, AB+</td>
+        <td class="border px-3 py-2">B−, B+, O−, O+</td>
+      </tr>
+      <tr>
+        <td class="border px-3 py-2 font-medium">AB−</td>
+        <td class="border px-3 py-2">AB−, AB+</td>
+        <td class="border px-3 py-2">A−, B−, AB−, O−</td>
+      </tr>
+      <tr class="bg-gray-50">
+        <td class="border px-3 py-2 font-medium">AB+</td>
+        <td class="border px-3 py-2">AB+</td>
+        <td class="border px-3 py-2">Semua golongan</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="text-sm">
+  Penjelasan singkat:
+  <ul class="list-disc ml-6">
+    <li><b>O− (O negatif)</b> adalah donor universal—dapat diberikan ke semua golongan &amp; Rh.</li>
+    <li><b>Rh+</b> (positif) dapat menerima darah Rh+ atau Rh−.</li>
+    <li><b>Rh−</b> (negatif) hanya dapat menerima darah Rh− untuk mencegah reaksi terhadap antigen Rh.</li>
+    <li>Contoh: <b>A+</b> dapat menerima dari <b>A+, A−, O+, O−</b>; namun <b>A−</b> hanya dari <b>A−, O−</b>.</li>
+  </ul>
+</p>
+
+
+    <h3 class="text-lg font-semibold mt-4">4. Pewarisan Sifat Buta Warna</h3>
+    <p>
+      Buta warna merupakan contoh sifat <b>terpaut kromosom seks (X-linked recessive)</b>. 
+      Gen buta warna terdapat pada kromosom X. Karena laki-laki memiliki kromosom XY, 
+      jika kromosom X mereka membawa alel buta warna maka sifat tersebut langsung tampak. 
+      Perempuan (XX) baru akan buta warna jika kedua kromosom X-nya membawa alel buta warna.
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li><b>X<sup>C</sup>X<sup>C</sup> → Perempuan normal</b></li>
+      <li><b>X<sup>C</sup>X<sup>c</sup> → Perempuan normal carrier (pembawa)</b></li>
+      <li><b>X<sup>c</sup>X<sup>c</sup> → Perempuan buta warna</b></li>
+      <li><b>X<sup>C</sup>Y → Laki-laki normal</b></li>
+      <li><b>X<sup>c</sup>Y → Laki-laki buta warna</b></li>
+    </ul>
+
+    <h3 class="text-lg font-semibold mt-4">5. Contoh Kasus</h3>
+    <p class="mb-2"><b>Kasus 1 (Golongan Darah):</b></p>
+    <p>
+      Seorang ibu bergolongan darah A (genotipe IAi) menikah dengan ayah bergolongan darah B (genotipe IBi). 
+      Kemungkinan golongan darah anak mereka adalah:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li>IA dari ibu + IB dari ayah → Golongan darah AB</li>
+      <li>IA dari ibu + i dari ayah → Golongan darah A</li>
+      <li>i dari ibu + IB dari ayah → Golongan darah B</li>
+      <li>i dari ibu + i dari ayah → Golongan darah O</li>
+    </ul>
+    <p>
+      Jadi, anak dapat memiliki keempat golongan darah (A, B, AB, O).
+    </p>
+
+    <p class="mb-2"><b>Kasus 2 (Buta Warna):</b></p>
+    <p>
+      Seorang ayah normal (X<sup>C</sup>Y) menikah dengan ibu carrier (X<sup>C</sup>X<sup>c</sup>). 
+      Peluang anak mereka adalah:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li>25% anak perempuan normal (X<sup>C</sup>X<sup>C</sup>)</li>
+      <li>25% anak perempuan carrier (X<sup>C</sup>X<sup>c</sup>)</li>
+      <li>25% anak laki-laki normal (X<sup>C</sup>Y)</li>
+      <li>25% anak laki-laki buta warna (X<sup>c</sup>Y)</li>
+    </ul>
+    <p>
+      Dari kasus ini, terlihat bahwa laki-laki lebih berisiko mengalami buta warna dibandingkan perempuan.
+    </p>
+  `
+,
+
+      video: ['ouDcvX4fgHw'], 
+      soal: [
+{
+  id: 'ps1',
+  tipe: 'pg',
+  tanya: 'Siapakah ilmuwan yang dikenal sebagai Bapak Genetika dengan eksperimen tanaman kacang ercis?',
+  opsi: [
+    'Charles Darwin',
+    'Gregor Mendel',
+    'Robert Hooke',
+    'Louis Pasteur'
+  ],
+  kunci: 1,
+  bahas: `Gregor Mendel dikenal sebagai Bapak Genetika karena percobaannya dengan kacang ercis menghasilkan Hukum Mendel I dan II.`
+},
+{
+  id: 'ps2',
+  tipe: 'pg',
+  tanya: 'Jika ayah bergolongan darah O dan ibu bergolongan darah AB, maka kemungkinan golongan darah anak adalah...',
+  opsi: [
+    'A dan B',
+    'A dan O',
+    'B dan AB',
+    'A, B, AB, dan O'
+  ],
+  kunci: 0,
+  bahas: `Ayah O (ii), ibu AB (IAIB). Kombinasi hanya menghasilkan IAi (A) dan IBi (B).`
+},
+{
+  id: 'ps3',
+  tipe: 'pg',
+  tanya: 'Mengapa laki-laki lebih sering mengalami buta warna dibandingkan perempuan?',
+  opsi: [
+    'Karena laki-laki lebih sering terpapar cahaya',
+    'Karena laki-laki hanya memiliki satu kromosom X',
+    'Karena perempuan memiliki dua kromosom Y',
+    'Karena gen buta warna terdapat pada kromosom Y'
+  ],
+  kunci: 1,
+  bahas: `Gen buta warna terletak di kromosom X. Laki-laki hanya punya satu X, sehingga jika membawa alel buta warna langsung tampak.`
+},
+{
+  id: 'ps5',
+  tipe: 'pg',
+  tanya: 'Seorang pria bergolongan darah A (IAi) menikah dengan wanita bergolongan darah B (IBi). Kemungkinan anaknya bergolongan darah O jika...',
+  opsi: [
+    'Mewarisi IA dan IB',
+    'Mewarisi i dari ayah dan i dari ibu',
+    'Mewarisi IA dari ayah dan i dari ibu',
+    'Mewarisi IB dari ayah dan IA dari ibu'
+  ],
+  kunci: 1,
+  bahas: `Golongan darah O hanya terbentuk jika genotipe anak ii. Itu terjadi bila anak mendapat i dari ayah (IAi) dan i dari ibu (IBi).`
+},
+{
+  id: 'ps6',
+  tipe: 'cb',
+  tanya: 'Manakah genotipe yang dapat menghasilkan golongan darah A?',
+  opsi: [
+    'IAIA',
+    'IAi',
+    'IBi',
+    'ii'
+  ],
+  kunci: [0,1],
+  bahas: `Golongan darah A dihasilkan oleh genotipe IAIA atau IAi.`
+},
+{
+  id: 'ps7',
+  tipe: 'pg',
+  tanya: 'Alelnya manakah yang bersifat resesif dalam pewarisan golongan darah ABO?',
+  opsi: [
+    'IA',
+    'IB',
+    'i',
+    'Semua dominan'
+  ],
+  kunci: 2,
+  bahas: `Alel i bersifat resesif terhadap IA dan IB.`
+},
+{
+  id: 'ps8',
+  tipe: 'bs',
+  tanya: 'Tentukan benar (✔️) atau salah (❌) dari pernyataan berikut mengenai golongan darah:',
+  opsi: [
+    'Golongan darah AB menunjukkan sifat kodominan.',
+    'Golongan darah O terbentuk jika genotipe seseorang adalah ii.',
+    'Golongan darah A hanya bisa muncul dari genotipe IAIA.',
+    'Golongan darah B dapat muncul dari genotipe IBi maupun IBIB.'
+  ],
+  kunci: [true, true, false, true],
+  bahas: `✅ AB kodominan karena IA dan IB sama-sama terekspresi. ✅ O hanya muncul jika genotipe ii. ❌ A bisa IAIA atau IAi, jadi tidak hanya IAIA. ✅ B bisa dari IBi maupun IBIB.`
+},
+{
+  id: 'ps9',
+  tipe: 'pg',
+  tanya: 'Seorang ibu bergolongan darah A (IAi) dan ayah bergolongan darah A (IAi). Peluang anak bergolongan darah O adalah...',
+  opsi: [
+    '0%',
+    '25%',
+    '50%',
+    '75%'
+  ],
+  kunci: 1,
+  bahas: `Persilangan IAi x IAi menghasilkan IAIA, IAi, IAi, ii. Jadi peluang ii (O) adalah 25%.`
+},
+{
+  id: 'ps10',
+  tipe: 'pg',
+  tanya: 'Jika ayah bergolongan darah AB dan ibu bergolongan darah AB, maka anaknya mungkin bergolongan darah...',
+  opsi: [
+    'A, B, AB',
+    'A, B, AB, O',
+    'Hanya AB',
+    'Hanya O'
+  ],
+  kunci: 0,
+  bahas: `IAIB x IAIB → kemungkinan genotipe IAIA (A), IBIB (B), IAIB (AB). Tidak ada ii sehingga O tidak mungkin.`
+},
+{
+  id: 'ps11',
+  tipe: 'cb',
+  tanya: 'Pilih semua kemungkinan golongan darah anak dari ayah B (IBi) dan ibu O (ii).',
+  opsi: [
+    'A',
+    'B',
+    'AB',
+    'O'
+  ],
+  kunci: [1,3],
+  bahas: `IBi x ii → kombinasi IBi (B) dan ii (O).`
+},
+{
+  id: 'ps12',
+  tipe: 'pg',
+  tanya: 'Ayah bergolongan darah AB, ibu bergolongan darah A (IAi). Golongan darah anak yang tidak mungkin adalah...',
+  opsi: [
+    'A',
+    'B',
+    'AB',
+    'O'
+  ],
+  kunci: 3,
+  bahas: `Tidak mungkin menghasilkan ii, sehingga anak tidak bisa bergolongan darah O.`
+},
+{
+  id: 'ps13',
+  tipe: 'bs',
+  tanya: 'Tentukan pernyataan berikut tentang pewarisan sifat yang benar (✔️) atau salah (❌):',
+  opsi: [
+    'Golongan darah AB dapat menerima darah dari semua golongan dalam sistem ABO.',
+    'Golongan darah O disebut universal recipient.',
+    'Buta warna diturunkan melalui kromosom Y.',
+    'Jika ayah buta warna dan ibu carrier, maka kemungkinan anak laki-laki buta warna adalah 50%.',
+    'AleI IA dan IB bersifat kodominan.'
+  ],
+  kunci: [true, false, false, true, true],
+  bahas: `✅ AB = universal recipient, ❌ Universal recipient adalah AB, bukan O. ❌ Buta warna terpaut kromosom X, bukan Y. ✅ Ayah XcY, ibu (XCXc), maka peluang anak laki-laki buta warna 50%. ✅ IA dan IB sama-sama diekspresikan → kodominan.`
+},
+{
+  id: 'ps14',
+  tipe: 'pg',
+  tanya: 'Seorang anak bergolongan darah O, ayahnya bergolongan darah A, dan ibunya bergolongan darah B. Bagaimana kemungkinan genotipe orang tuanya?',
+  opsi: [
+    'Ayah IAIA, Ibu IBIB',
+    'Ayah IAi, Ibu IBi',
+    'Ayah IAIA, Ibu IBi',
+    'Ayah IAi, Ibu IBIB'
+  ],
+  kunci: 1,
+  bahas: `Anak O (ii) hanya mungkin jika kedua orang tua menyumbang i. Jadi ayah IAi dan ibu IBi.`
+},
+{
+  id: 'ps15',
+  tipe: 'cb',
+  tanya: 'Ayah bergolongan darah AB dan ibu bergolongan darah O. Manakah kemungkinan golongan darah anaknya?',
+  opsi: [
+    'A',
+    'B',
+    'AB',
+    'O'
+  ],
+  kunci: [0,1],
+  bahas: `IAIB x ii → menghasilkan IAi (A) atau IBi (B). Tidak mungkin AB atau O.`
+},
+{
+  id: 'ps16',
+  tipe: 'pg',
+  tanya: 'Di sebuah keluarga, ayah golongan darah B, ibu golongan darah A, dan anak pertama AB. Anak kedua bergolongan darah O. Genotipe orang tua adalah...',
+  opsi: [
+    'Ayah IBIB, Ibu IAIA',
+    'Ayah IBi, Ibu IAi',
+    'Ayah IBIB, Ibu IAi',
+    'Ayah IBi, Ibu IAIA'
+  ],
+  kunci: 1,
+  bahas: `Anak O berarti kedua ortu membawa alel i. Anak AB berarti ortu juga membawa IA dan IB. Jadi genotipe ayah IBi, ibu IAi.`
+},
+{
+  id: 'ps17',
+  tipe: 'bs',
+  tanya: 'Tentukan benar (✔️) atau salah (❌) dari pernyataan berikut mengenai persilangan golongan darah:',
+  opsi: [
+    'Jika pria AB menikah dengan wanita O, anak bisa bergolongan darah AB.',
+    'Jika pria AB menikah dengan wanita O, anak hanya mungkin bergolongan darah A atau B.',
+    'Pria bergolongan darah AB memiliki genotipe IAIB.',
+    'Wanita bergolongan darah O memiliki genotipe ii.'
+  ],
+  kunci: [false, true, true, true],
+  bahas: '❌ AB (IAIB) × O (ii) → anak IAi (A) atau IBi (B), tidak mungkin AB. ✅ Kombinasi hanya menghasilkan golongan darah A atau B. ✅ AB selalu IAIB. ✅ O selalu ii.'
+},
+{
+  id: 'ps18',
+  tipe: 'pg',
+  tanya: 'Seorang pria bergolongan darah AB menikah dengan wanita bergolongan darah O. Analisislah kemungkinan golongan darah anak mereka!',
+  opsi: [
+    'Hanya golongan darah AB',
+    'Golongan darah A atau B',
+    'Golongan darah A, B, dan AB',
+    'Semua golongan darah (A, B, AB, O)'
+  ],
+  kunci: 1,
+  bahas: 'AB (IAIB) × O (ii) menghasilkan IAi (A) atau IBi (B). Tidak mungkin AB atau O.'
+},
+{
+  id: 'ps19',
+  tipe: 'cb',
+  tanya: 'Seorang ayah buta warna (XcY) menikah dengan ibu normal carrier (XCXc). Tentukan kemungkinan fenotipe anak mereka!',
+  opsi: [
+    'Anak laki-laki normal',
+    'Anak laki-laki buta warna',
+    'Anak perempuan normal',
+    'Anak perempuan carrier',
+    'Anak perempuan buta warna'
+  ],
+  kunci: [false, true, true, true, true],
+  bahas: 'Persilangan XcY × XCXc → anak laki-laki: XcY (buta warna), XCY (normal). Anak perempuan: XCXc (carrier), XcXc (buta warna). Jadi mungkin laki-laki buta warna, perempuan normal, carrier, dan buta warna.'
+},
+{
+  id: 'ps20',
+  tipe: 'pg',
+  tanya: 'Pada bunga merah (MM) disilangkan dengan bunga putih (mm), seluruh F₁ berwarna merah muda (Mm). Jika sesama F₁ disilangkan, berapakah rasio fenotipe F₂?',
+  opsi: [
+    '1 merah : 2 merah muda : 1 putih',
+    '3 merah : 1 putih',
+    '2 merah muda : 2 putih',
+    'semua merah muda'
+  ],
+  kunci: 0,
+  bahas: 'Kasus incomplete dominance. Persilangan Mm × Mm menghasilkan MM (merah), Mm (merah muda), mm (putih) dengan rasio fenotipe 1:2:1.'
+},
+{
+  id: 'ps21',
+  tipe: 'bs',
+  tanya: 'Analisis benar (✔️) atau salah (❌) dari pernyataan berikut:',
+  opsi: [
+    'Golongan darah AB hanya dapat menerima donor dari AB.',
+    'Seorang perempuan carrier buta warna bisa menurunkan sifat buta warna ke anak laki-laki.',
+    'Pada kasus bunga merah dan putih, warna merah muda pada F₁ adalah contoh dominansi sempurna.',
+    'Jika kedua orang tua bergolongan darah heterozigot A (IAi), maka ada kemungkinan anak bergolongan darah O.'
+  ],
+  kunci: [false, true, false, true],
+  bahas: '❌ AB adalah universal recipient, bisa menerima dari semua golongan. ✅ Carrier (XCXc) dapat menurunkan Xc ke anak laki-laki sehingga buta warna. ❌ Merah muda F₁ adalah incomplete dominance, bukan dominansi sempurna. ✅ IAi × IAi bisa menghasilkan ii (O).'
+},
+{
+  id: 'ps22',
+  tipe: 'pg',
+  tanya: 'Seorang ibu bergolongan darah A heterozigot (IAi) menikah dengan ayah bergolongan darah B heterozigot (IBi). Golongan darah apa saja yang mungkin muncul pada anak-anak mereka?',
+  opsi: [
+    'Hanya A dan B',
+    'A, B, AB, dan O',
+    'A, B, dan AB',
+    'Hanya O'
+  ],
+  kunci: 1,
+  bahas: 'IAi × IBi → kombinasi IAIB (AB), IAi (A), IBi (B), ii (O). Jadi semua kemungkinan golongan darah bisa muncul.'
+},
+{
+  id: 'ps23',
+  tipe: 'pg',
+  tanya: 'Seorang wanita Rh− menikah dengan pria Rh+. Jika gen Rh+ bersifat dominan (R), tentukan kemungkinan anak-anak mereka bila sang pria heterozigot (Rr).',
+  opsi: [
+    '100% Rh+',
+    '50% Rh+, 50% Rh−',
+    '75% Rh+, 25% Rh−',
+    '100% Rh−'
+  ],
+  kunci: 1,
+  bahas: 'Persilangan Rr × rr menghasilkan 50% Rr (Rh+) dan 50% rr (Rh−).'
+},
+{
+  id: 'ps24',
+  tipe: 'cb',
+  tanya: 'Pilih pernyataan yang benar mengenai pewarisan buta warna:',
+  opsi: [
+    'Buta warna diwariskan melalui kromosom X.',
+    'Pria lebih sering mengalami buta warna dibanding wanita.',
+    'Wanita buta warna pasti mewarisi gen buta warna dari ayah dan ibunya.',
+    'Ayah buta warna selalu menurunkan sifat buta warna kepada anak laki-laki.',
+    'Ibu carrier bisa menurunkan sifat buta warna kepada anak laki-laki.'
+  ],
+  kunci: [true, true, true, false, true],
+  bahas: 'Buta warna X-linked; pria lebih sering terkena; wanita buta warna harus mendapat gen dari ayah dan ibu; ayah tidak menurunkan ke anak laki-laki; ibu carrier bisa menurunkan ke anak laki-laki.'
+},
+{
+  id: 'ps25',
+  tipe: 'pg',
+  tanya: 'Pada bunga merah (RR) × putih (rr) dihasilkan F₁ berwarna merah muda (Rr). Jika F₁ disilangkan dengan bunga merah (RR), tentukan rasio fenotipe F₂!',
+  opsi: [
+    '1 merah : 1 merah muda',
+    '2 merah : 1 putih',
+    '3 merah : 1 putih',
+    'semua merah muda'
+  ],
+  kunci: 0,
+  bahas: 'Rr × RR menghasilkan 50% RR (merah) dan 50% Rr (merah muda). Rasio = 1 merah : 1 merah muda.'
+},
+{
+  id: 'ps26',
+  tipe: 'bs',
+  tanya: 'Tentukan benar (✔️) atau salah (❌):',
+  opsi: [
+    'Golongan darah O bisa mendonorkan ke semua golongan.',
+    'Seorang ibu Rh− yang mengandung anak Rh+ berpotensi mengalami masalah kehamilan.',
+    'Buta warna adalah contoh pewarisan sifat autosomal dominan.',
+    'Fenomena bunga merah × putih menghasilkan merah muda merupakan contoh kodominansi.'
+  ],
+  kunci: [true, true, false, false],
+  bahas: 'O = universal donor; inkompatibilitas Rh bisa berbahaya; buta warna adalah X-linked resesif, bukan autosomal dominan; merah muda F₁ adalah incomplete dominance, bukan kodominansi.'
+},
+{
+  id: 'ps27',
+  tipe: 'pg',
+  tanya: 'Seorang pria bergolongan darah A (IAIA) menikah dengan wanita bergolongan darah B (IBIB). Bagaimana golongan darah anak-anak mereka?',
+  opsi: [
+    'Semua AB',
+    'A dan B',
+    'Semua O',
+    'A, B, AB'
+  ],
+  kunci: 0,
+  bahas: 'IAIA × IBIB menghasilkan semua anak IAIB (AB).'
+},
+{
+  id: 'ps28',
+  tipe: 'cb',
+  tanya: 'Seorang ayah normal (XY) menikah dengan ibu carrier buta warna (X^C X^c). Pilih kemungkinan anak mereka:',
+  opsi: [
+    'Anak laki-laki normal',
+    'Anak laki-laki buta warna',
+    'Anak perempuan normal',
+    'Anak perempuan carrier',
+    'Anak perempuan buta warna'
+  ],
+  kunci: [true, true, true, true, false],
+  bahas: 'XY × X^C X^c → anak laki-laki: normal atau buta warna; anak perempuan: normal atau carrier; tidak ada anak perempuan buta warna karena ayah normal.'
+},
+{
+  id: 'ps29',
+  tipe: 'pg',
+  tanya: 'Jika bunga merah muda (Rr) disilangkan dengan bunga putih (rr), berapakah rasio fenotipe yang dihasilkan?',
+  opsi: [
+    '1 merah muda : 1 putih',
+    '2 merah : 2 putih',
+    '3 merah : 1 putih',
+    'semua merah muda'
+  ],
+  kunci: 0,
+  bahas: 'Rr × rr menghasilkan 50% Rr (merah muda) dan 50% rr (putih). Rasio = 1 merah muda : 1 putih.'
+}
+      ]
+    },
+'Genetika': {
+    materi: `
+    <h2 class="text-xl font-bold mb-2">Genetika</h2>
+    <p>
+      Genetika adalah cabang biologi yang mempelajari pewarisan sifat dari satu generasi ke generasi berikutnya. 
+      Topik utama dalam genetika meliputi peran kromosom, gen, DNA dan RNA, serta proses sintesis protein.
+    </p>
+
+    <h3 class="text-lg font-semibold mt-4">1. Kromosom sebagai Pembawa Gen</h3>
+    <p>
+      Kromosom adalah struktur berbentuk batang yang terdapat di dalam inti sel, 
+      tersusun dari DNA dan protein histon. Kromosom berfungsi sebagai pembawa informasi genetik 
+      yang diwariskan dari orang tua ke keturunannya. 
+      Pada manusia terdapat <b>46 kromosom (23 pasang)</b>, yang terdiri dari:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li>22 pasang autosom (mengatur sifat-sifat tubuh)</li>
+      <li>1 pasang kromosom seks (XX pada perempuan, XY pada laki-laki)</li>
+    </ul>
+
+    <h3 class="text-lg font-semibold mt-4">2. Gen sebagai Unit Pewarisan Sifat</h3>
+    <p>
+      Gen adalah segmen DNA pada kromosom yang mengandung instruksi untuk membentuk protein tertentu. 
+      Gen merupakan unit pewarisan sifat terkecil. 
+      Sifat-sifat yang diwariskan (seperti warna rambut, bentuk wajah, dan golongan darah) 
+      ditentukan oleh susunan gen yang dimiliki seseorang.
+    </p>
+
+    <h3 class="text-lg font-semibold mt-4">3. DNA dan RNA sebagai Materi Genetik</h3>
+    <p>
+      DNA (Deoxyribonucleic Acid) adalah materi genetik utama yang menyimpan informasi 
+      untuk mengatur fungsi dan sifat makhluk hidup. Struktur DNA berupa <b>double helix</b> 
+      yang terdiri atas pasangan basa nitrogen:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li>Adenin (A) berpasangan dengan Timin (T)</li>
+      <li>Sitosin (C) berpasangan dengan Guanin (G)</li>
+    </ul>
+    <p>
+      RNA (Ribonucleic Acid) berperan dalam menerjemahkan informasi dari DNA menjadi protein. 
+      Jenis-jenis RNA:
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li><b>mRNA (messenger RNA)</b> → membawa kode genetik dari DNA ke ribosom</li>
+      <li><b>tRNA (transfer RNA)</b> → membawa asam amino ke ribosom</li>
+      <li><b>rRNA (ribosomal RNA)</b> → menyusun bagian dari ribosom tempat sintesis protein berlangsung</li>
+    </ul>
+
+    <h3 class="text-lg font-semibold mt-4">4. Proses Sintesis Protein</h3>
+<p class="mb-2">
+  Sintesis protein adalah proses pembentukan protein berdasarkan informasi genetik yang terdapat dalam DNA. 
+  Protein yang dihasilkan sangat penting karena berperan sebagai enzim, hormon, antibodi, serta penyusun struktur sel. 
+  Proses ini berlangsung dalam dua tahap utama, yaitu <b>transkripsi</b> dan <b>translasi</b>.
+</p>
+
+<ul class="list-disc ml-6 mb-4">
+  <li>
+    <b>Transkripsi:</b> 
+    <ul class="list-[circle] ml-6 mt-1">
+      <li>Terjadi di dalam inti sel (nukleus).</li>
+      <li>DNA membuka diri (unwinding) pada bagian gen tertentu yang berisi kode protein.</li>
+      <li>Enzim RNA polimerase membaca salah satu untai DNA dan menyusun molekul <b>mRNA</b> komplementer.</li>
+      <li>mRNA yang terbentuk membawa salinan informasi genetik keluar dari inti menuju sitoplasma.</li>
+    </ul>
+  </li>
+  <li class="mt-2">
+    <b>Translasi:</b> 
+    <ul class="list-[circle] ml-6 mt-1">
+      <li>Terjadi di ribosom (yang bisa berada bebas di sitoplasma atau menempel pada retikulum endoplasma kasar).</li>
+      <li>mRNA dibaca secara berurutan dalam triplet basa yang disebut <b>kodon</b>.</li>
+      <li>Setiap kodon akan dikenali oleh <b>tRNA</b> yang membawa asam amino tertentu.</li>
+      <li>Asam amino dirangkai satu per satu sesuai urutan kodon hingga terbentuk rantai polipeptida.</li>
+      <li>Polipeptida kemudian mengalami pelipatan dan modifikasi menjadi protein fungsional.</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="mb-2">
+  Selain dua tahap utama tersebut, terdapat proses tambahan yang penting:
+</p>
+<ul class="list-disc ml-6 mb-4">
+  <li><b>Splicing:</b> Pada organisme eukariotik, mRNA awal (pre-mRNA) akan dipotong untuk membuang intron (bagian non-coding) dan menyambungkan ekson (bagian coding).</li>
+  <li>
+  <b>Inisiasi, Elongasi, Terminasi:</b> Dalam translasi terdapat tiga fase penting yang terjadi secara berurutan:
+  <ul class="list-[circle] ml-6 mt-1">
+    <li>
+      <b>Inisiasi:</b>
+      <ul class="list-[square] ml-6 mt-1">
+        <li>Proses dimulai ketika subunit kecil ribosom menempel pada ujung 5’ mRNA.</li>
+        <li>Ribosom mencari kodon awal (<b>AUG</b>) yang merupakan sinyal mulai translasi.</li>
+        <li>tRNA khusus yang membawa asam amino <b>metionin</b> masuk dan berikatan dengan kodon AUG.</li>
+        <li>Subunit besar ribosom kemudian bergabung, membentuk ribosom lengkap yang siap memulai translasi.</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <b>Elongasi:</b>
+      <ul class="list-[square] ml-6 mt-1">
+        <li>Ribosom memiliki tiga tempat penting: <b>A-site</b> (tempat masuk tRNA baru), <b>P-site</b> (tempat tRNA membawa rantai asam amino), dan <b>E-site</b> (tempat keluarnya tRNA kosong).</li>
+        <li>tRNA berikutnya membawa asam amino sesuai kodon mRNA yang sedang dibaca.</li>
+        <li>Enzim ribosom membentuk ikatan peptida antara asam amino lama dan baru.</li>
+        <li>Ribosom bergeser satu kodon ke depan (translokasi), sehingga rantai polipeptida makin panjang.</li>
+        <li>Proses ini berulang hingga seluruh mRNA terbaca.</li>
+      </ul>
+    </li>
+    <li class="mt-2">
+      <b>Terminasi:</b>
+      <ul class="list-[square] ml-6 mt-1">
+        <li>Ketika ribosom mencapai <b>kodon stop</b> (UAA, UAG, atau UGA), tidak ada tRNA yang sesuai dengan kodon ini.</li>
+        <li>Protein khusus yang disebut <b>faktor terminasi</b> menempel pada ribosom.</li>
+        <li>Rantai polipeptida dilepaskan dari ribosom.</li>
+        <li>Subunit ribosom terpisah kembali, siap digunakan untuk translasi berikutnya.</li>
+      </ul>
+    </li>
+  </ul>
+</li>
+</ul>
+
+<p>
+  Hasil akhir sintesis protein adalah terbentuknya protein dengan fungsi spesifik, 
+  seperti enzim untuk mempercepat reaksi biokimia, hormon sebagai pengatur metabolisme, 
+  atau antibodi untuk sistem pertahanan tubuh.
+</p>
+
+<h3 class="text-lg font-semibold mt-4">5. Tabel Kodon mRNA dan Asam Amino</h3>
+<div class="overflow-x-auto my-4">
+  <table class="table-auto border border-gray-400 w-full text-sm">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="border border-gray-400 px-2 py-1">Asam Amino</th>
+        <th class="border border-gray-400 px-2 py-1">Kodon mRNA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="border px-2 py-1">Fenilalanin (Phe)</td><td class="border px-2 py-1">UUU, UUC</td></tr>
+      <tr><td class="border px-2 py-1">Leusin (Leu)</td><td class="border px-2 py-1">UUA, UUG, CUU, CUC, CUA, CUG</td></tr>
+      <tr><td class="border px-2 py-1">Isoleusin (Ile)</td><td class="border px-2 py-1">AUU, AUC, AUA</td></tr>
+      <tr><td class="border px-2 py-1">Metionin (Met) — Start</td><td class="border px-2 py-1">AUG</td></tr>
+      <tr><td class="border px-2 py-1">Valin (Val)</td><td class="border px-2 py-1">GUU, GUC, GUA, GUG</td></tr>
+      <tr><td class="border px-2 py-1">Serin (Ser)</td><td class="border px-2 py-1">UCU, UCC, UCA, UCG, AGU, AGC</td></tr>
+      <tr><td class="border px-2 py-1">Prolin (Pro)</td><td class="border px-2 py-1">CCU, CCC, CCA, CCG</td></tr>
+      <tr><td class="border px-2 py-1">Treonin (Thr)</td><td class="border px-2 py-1">ACU, ACC, ACA, ACG</td></tr>
+      <tr><td class="border px-2 py-1">Alanin (Ala)</td><td class="border px-2 py-1">GCU, GCC, GCA, GCG</td></tr>
+      <tr><td class="border px-2 py-1">Tirosin (Tyr)</td><td class="border px-2 py-1">UAU, UAC</td></tr>
+      <tr><td class="border px-2 py-1">Histidin (His)</td><td class="border px-2 py-1">CAU, CAC</td></tr>
+      <tr><td class="border px-2 py-1">Glutamin (Gln)</td><td class="border px-2 py-1">CAA, CAG</td></tr>
+      <tr><td class="border px-2 py-1">Asparagin (Asn)</td><td class="border px-2 py-1">AAU, AAC</td></tr>
+      <tr><td class="border px-2 py-1">Lisina (Lys)</td><td class="border px-2 py-1">AAA, AAG</td></tr>
+      <tr><td class="border px-2 py-1">Aspartat (Asp)</td><td class="border px-2 py-1">GAU, GAC</td></tr>
+      <tr><td class="border px-2 py-1">Glutamat (Glu)</td><td class="border px-2 py-1">GAA, GAG</td></tr>
+      <tr><td class="border px-2 py-1">Sistein (Cys)</td><td class="border px-2 py-1">UGU, UGC</td></tr>
+      <tr><td class="border px-2 py-1">Triptofan (Trp)</td><td class="border px-2 py-1">UGG</td></tr>
+      <tr><td class="border px-2 py-1">Arginin (Arg)</td><td class="border px-2 py-1">CGU, CGC, CGA, CGG, AGA, AGG</td></tr>
+      <tr><td class="border px-2 py-1">Glisin (Gly)</td><td class="border px-2 py-1">GGU, GGC, GGA, GGG</td></tr>
+      <tr><td class="border px-2 py-1"><b>Stop</b></td><td class="border px-2 py-1">UAA, UAG, UGA</td></tr>
+    </tbody>
+  </table>
+</div>
+    `,
+    video: ['pRLzqHAWTcs','2ks9fiBBTuA','tzRjsstgnJc'],
+ 
+    soal: [
+      {
+    id: 'sp1',
+    tipe: 'pg',
+    tanya: 'Jika DNA sense adalah 5’ – ATG GAA TTT TGC TAA – 3’, maka mRNA hasil transkripsi adalah ...',
+    opsi: [
+      '5’ – UAC CUU AAA ACG AUU – 3’',
+      '5’ – AUG GAA UUU UGC UAA – 3’',
+      '3’ – UAC CUU AAA ACG AUU – 5’',
+      '3’ – AUG GAA UUU UGC UAA – 5’'
+    ],
+    kunci: 1,
+    bahas: `
+      <p><b>Penjelasan:</b> mRNA disintesis dari rantai DNA antisense dengan mengganti T menjadi U.
+      Hasilnya adalah 5’ – AUG GAA UUU UGC UAA – 3’.</p>
+    `
+  },
+  {
+    id: 'sp2',
+    tipe: 'pg',
+    tanya: 'Kodon start pada mRNA 5’ – AUG GAA UUU UGC UAA – 3’ adalah ...',
+    opsi: [
+      'GAA',
+      'UUU',
+      'UGC',
+      'AUG'
+    ],
+    kunci: 3,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon start selalu AUG, yang mengkode asam amino metionin dan 
+      menjadi awal translasi.</p>
+    `
+  },
+  {
+    id: 'sp3',
+    tipe: 'pg',
+    tanya: 'Antikodon yang berpasangan dengan kodon GAA pada mRNA adalah ...',
+    opsi: [
+      'CUU',
+      'UUC',
+      'GAA',
+      'AAG'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon GAA pada mRNA akan berpasangan dengan antikodon CUU pada tRNA.</p>
+    `
+  },
+  {
+    id: 'sp4',
+    tipe: 'pg',
+    tanya: 'Urutan asam amino yang terbentuk dari mRNA 5’ – AUG GAA UUU UGC UAA – 3’ adalah ...',
+    opsi: [
+      'Metionin – Glutamat – Fenilalanin – Sistein',
+      'Metionin – Glisin – Tirosin – Valin',
+      'Leusin – Glutamat – Alanin – Stop',
+      'Metionin – Alanin – Valin – Stop'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> Penerjemahan kodon:
+      AUG = Metionin, GAA = Glutamat, UUU = Fenilalanin, UGC = Sistein, UAA = Stop.
+      Jadi urutannya adalah Metionin – Glutamat – Fenilalanin – Sistein.</p>
+    `
+  },
+{
+    id: 'sp5',
+    tipe: 'pg',
+    tanya: 'Proses pembentukan mRNA dari DNA disebut ...',
+    opsi: [
+      'Translasi',
+      'Replikasi',
+      'Transkripsi',
+      'Transformasi'
+    ],
+    kunci: 2,
+    bahas: `
+      <p><b>Penjelasan:</b> Proses pembentukan mRNA dari DNA disebut <b>transkripsi</b>, terjadi di dalam inti sel.</p>
+    `
+  },
+  {
+    id: 'sp6',
+    tipe: 'pg',
+    tanya: 'Kodon start pada mRNA 5’ – AUG GAA UUU UGC UAA – 3’ adalah ...',
+    opsi: [
+      'GAA',
+      'UUU',
+      'UGC',
+      'AUG'
+    ],
+    kunci: 3,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon start selalu AUG, yang mengkode asam amino metionin dan 
+      menjadi awal translasi.</p>
+    `
+  },
+  {
+    id: 'sp7',
+    tipe: 'pg',
+    tanya: 'Antikodon yang berpasangan dengan kodon GAA pada mRNA adalah ...',
+    opsi: [
+      'CUU',
+      'UUC',
+      'GAA',
+      'AAG'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon GAA pada mRNA akan berpasangan dengan antikodon CUU pada tRNA.</p>
+    `
+  },
+  {
+    id: 'sp8',
+    tipe: 'pg',
+    tanya: 'Urutan asam amino dari mRNA 5’ – AUG GAA UUU UGC UAA – 3’ adalah ...',
+    opsi: [
+      'Metionin – Glutamat – Fenilalanin – Sistein',
+      'Metionin – Glisin – Tirosin – Valin',
+      'Leusin – Glutamat – Alanin – Stop',
+      'Metionin – Alanin – Valin – Stop'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> AUG = Metionin, GAA = Glutamat, UUU = Fenilalanin, UGC = Sistein, UAA = Stop.
+      Jadi urutannya adalah Metionin – Glutamat – Fenilalanin – Sistein.</p>
+    `
+  },
+
+  // ====== Soal CB ======
+  {
+    id: 'sp9',
+    tipe: 'cb',
+    tanya: 'Pilihlah pernyataan yang benar tentang sintesis protein:',
+    opsi: [
+      'Transkripsi terjadi di ribosom',
+      'tRNA membawa asam amino sesuai dengan kodon mRNA',
+      'Translasi terjadi di sitoplasma',
+      'Kodon stop menandai akhir translasi'
+    ],
+    kunci: [1,2,3],
+    bahas: `
+      ❌ Transkripsi terjadi di inti sel, bukan ribosom.  
+      ✅ tRNA membawa asam amino sesuai kodon.  
+      ✅ Translasi berlangsung di ribosom (sitoplasma).  
+      ✅ Kodon stop menghentikan translasi.`
+  },
+  {
+    id: 'sp10',
+    tipe: 'cb',
+    tanya: 'Manakah pernyataan berikut yang benar tentang kodon?',
+    opsi: [
+      'AUG berfungsi sebagai kodon start',
+      'UAA, UAG, dan UGA berfungsi sebagai kodon stop',
+      'Setiap kodon dapat menyandi lebih dari satu asam amino',
+      'Kode genetik bersifat universal'
+    ],
+    kunci: [0,1,3],
+    bahas: `
+      ✅ AUG = start codon (Metionin).  
+      ✅ UAA, UAG, UGA = stop codon.  
+      ❌ Satu kodon hanya menyandi 1 asam amino.  
+      ✅ Kode genetik bersifat universal.`
+  },
+
+  // ====== Soal BS ======
+  {
+    id: 'sp11',
+    tipe: 'bs',
+    tanya: 'Tentukan benar (✔️) atau salah (❌) dari pernyataan berikut:',
+    opsi: [
+      'Transkripsi terjadi di ribosom.',
+      'tRNA membawa asam amino sesuai antikodonnya.',
+      'Kodon stop menandai akhir translasi.',
+      'Metionin selalu menjadi asam amino pertama dalam sintesis protein.'
+    ],
+    kunci: [false, true, true, true],
+    bahas: `
+      ❌ Transkripsi terjadi di inti sel.  
+      ✅ tRNA membawa asam amino.  
+      ✅ Kodon stop mengakhiri translasi.  
+      ✅ AUG = Metionin sebagai asam amino pertama.`
+  },
+  {
+    id: 'sp12',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) mengenai sintesis protein:',
+    opsi: [
+      'DNA langsung diterjemahkan menjadi protein.',
+      'mRNA adalah salinan gen yang akan diterjemahkan.',
+      'Setiap asam amino dibawa oleh tRNA.',
+      'Polipeptida terbentuk dari ikatan peptida antar asam amino.'
+    ],
+    kunci: [false, true, true, true],
+    bahas: `
+      ❌ DNA tidak langsung diterjemahkan, harus jadi mRNA dulu.  
+      ✅ mRNA adalah salinan gen.  
+      ✅ tRNA membawa asam amino.  
+      ✅ Asam amino dihubungkan dengan ikatan peptida membentuk polipeptida.`
+  },
+ {
+    id: 'sp13',
+    tipe: 'pg',
+    tanya: 'Jika DNA sense adalah 5’ – ATG GAA TTT – 3’, maka urutan mRNA hasil transkripsi adalah ...',
+    opsi: [
+      '5’ – UAC CUU AAA – 3’',
+      '5’ – AUG GAA UUU – 3’',
+      '5’ – TAC CTT AAA – 3’',
+      '5’ – ATG GAA TTT – 3’'
+    ],
+    kunci: 1,
+    bahas: `
+      <p><b>Penjelasan:</b> mRNA sama dengan DNA sense, tetapi T diganti dengan U.  
+      Jadi: ATG GAA TTT → AUG GAA UUU.</p>
+    `
+  },
+  {
+    id: 'sp14',
+    tipe: 'pg',
+    tanya: 'Kodon pertama (start) dari mRNA 5’ – AUG GAA UUU – 3’ adalah ...',
+    opsi: [
+      'AUG',
+      'GAA',
+      'UUU',
+      'CUU'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon pertama adalah AUG, berfungsi sebagai start codon dan menyandi Metionin.</p>
+    `
+  },
+  {
+    id: 'sp15',
+    tipe: 'pg',
+    tanya: 'Antikodon tRNA yang berpasangan dengan kodon GAA adalah ...',
+    opsi: [
+      'CUU',
+      'UUC',
+      'AAG',
+      'UUU'
+    ],
+    kunci: 0,
+    bahas: `
+      <p><b>Penjelasan:</b> Kodon GAA pada mRNA → antikodon CUU pada tRNA.</p>
+    `
+  },
+
+  // ===== Soal CB =====
+  {
+    id: 'sp16',
+    tipe: 'cb',
+    tanya: 'Dari mRNA 5’ – AUG GAA UUU – 3’, manakah asam amino yang benar?',
+    opsi: [
+      'AUG → Metionin',
+      'GAA → Glutamat',
+      'UUU → Fenilalanin',
+      'UUU → Alanin'
+    ],
+    kunci: [0,1,2],
+    bahas: `
+      ✅ AUG = Metionin (Start).  
+      ✅ GAA = Glutamat.  
+      ✅ UUU = Fenilalanin.  
+      ❌ UUU bukan Alanin.`
+  },
+  {
+    id: 'sp17',
+    tipe: 'cb',
+    tanya: 'Manakah urutan antikodon yang benar dari mRNA 5’ – AUG GAA UUU – 3’?',
+    opsi: [
+      'UAC – CUU – AAA',
+      'UAC – GAA – UUU',
+      'AUG – CUU – UUU',
+      'UAC – CUU – UUC'
+    ],
+    kunci: [0],
+    bahas: `
+      <p><b>Penjelasan:</b> Antikodon adalah komplemen kodon:  
+      AUG → UAC, GAA → CUU, UUU → AAA.</p>
+    `
+  },
+
+  // ===== Soal BS =====
+  {
+    id: 'sp18',
+    tipe: 'bs',
+    tanya: 'Tentukan benar (✔️) atau salah (❌) dari pernyataan berikut:',
+    opsi: [
+      'DNA sense 5’ – ATG GAA TTT – 3’ menghasilkan mRNA 5’ – AUG GAA UUU – 3’.',
+      'Kodon AUG selalu menyandi asam amino Glisin.',
+      'Antikodon CUU berpasangan dengan kodon GAA.',
+      'Asam amino yang dihasilkan: Metionin – Glutamat – Fenilalanin.'
+    ],
+    kunci: [true, false, true, true],
+    bahas: `
+      ✅ ATG → AUG.  
+      ❌ AUG menyandi Metionin, bukan Glisin.  
+      ✅ GAA berpasangan dengan CUU.  
+      ✅ Asam amino: Met – Glu – Phe.`
+  },
+  {
+    id: 'sp19',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) mengenai kode genetik:',
+    opsi: [
+      'Satu kodon dapat menyandi lebih dari satu asam amino.',
+      'Kode genetik bersifat universal.',
+      'Kodon stop tidak menyandi asam amino apapun.',
+      'Kodon start adalah AUG.'
+    ],
+    kunci: [false, true, true, true],
+    bahas: `
+      ❌ Satu kodon hanya untuk satu asam amino.  
+      ✅ Kode genetik bersifat universal.  
+      ✅ Stop codon (UAA, UAG, UGA) tidak menyandi asam amino.  
+      ✅ Start codon adalah AUG (Metionin).`
+  },
+
+  // ===== Tambahan Soal PG & CB =====
+  {
+    id: 'sp20',
+    tipe: 'pg',
+    tanya: 'Jika mRNA adalah 5’ – AUG UUU GGC UAA – 3’, maka asam amino yang terbentuk adalah ...',
+    opsi: [
+      'Metionin – Fenilalanin – Glisin',
+      'Metionin – Glutamat – Alanin',
+      'Fenilalanin – Glisin – Stop',
+      'Metionin – Alanin – Stop'
+    ],
+    kunci: 0,
+    bahas: `
+      AUG = Metionin,  
+      UUU = Fenilalanin,  
+      GGC = Glisin,  
+      UAA = Stop.`
+  },
+  {
+    id: 'sp21',
+    tipe: 'cb',
+    tanya: 'Dari rantai DNA sense 5’ – ATG TTT GGC TAA – 3’, pilihlah hasil yang benar:',
+    opsi: [
+      'mRNA = 5’ – AUG UUU GGC UAA – 3’',
+      'Kodon = AUG – UUU – GGC – UAA',
+      'Antikodon = UAC – AAA – CCG – AUU',
+      'Asam amino = Met – Phe – Gly – Stop'
+    ],
+    kunci: [0,1,2,3],
+    bahas: `
+      ✅ DNA sense ditranskripsi jadi AUG UUU GGC UAA.  
+      ✅ Kodon dibaca per 3 basa.  
+      ✅Antikodon : UAC – AAA – CCG – AUU.  
+      ✅ Asam amino: Met – Phe – Gly – Stop.`
+  },
+  {
+    id: 'sp22',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) mengenai sintesis protein berikut:',
+    opsi: [
+      'Transkripsi DNA → mRNA terjadi di inti sel.',
+      'Translasi mRNA → protein terjadi di ribosom.',
+      'Antikodon terdapat pada mRNA.',
+      'Ikatan peptida terbentuk antar asam amino.'
+    ],
+    kunci: [true, true, false, true],
+    bahas: `
+      ✅ Transkripsi di inti.  
+      ✅ Translasi di ribosom.  
+      ❌ Antikodon ada pada tRNA, bukan mRNA.  
+      ✅ Ikatan peptida menyatukan asam amino.`
+  },
+{
+    id: 'sp23',
+    tipe: 'pg',
+    tanya: 'Jika DNA sense adalah 5’ – TAC GCT TTT – 3’, maka urutan mRNA hasil transkripsi adalah ...',
+    opsi: [
+      '5’ – AUG CGA AAA – 3’',
+      '5’ – UAC GCU UUU – 3’',
+      '5’ – ATG GCT TTT – 3’',
+      '5’ – AUG GCU AAA – 3’'
+    ],
+    kunci: 0,
+    bahas: `DNA sense TAC GCT TTT → mRNA AUG CGA AAA (T diganti U).`
+  },
+  {
+    id: 'sp24',
+    tipe: 'pg',
+    tanya: 'Kodon UUU pada mRNA akan menyandi asam amino ...',
+    opsi: [
+      'Glutamat',
+      'Fenilalanin',
+      'Metionin',
+      'Alanina'
+    ],
+    kunci: 1,
+    bahas: `UUU = Fenilalanin.`
+  },
+  {
+    id: 'sp25',
+    tipe: 'pg',
+    tanya: 'Jika kodon mRNA adalah GCU, maka antikodon tRNA yang tepat adalah ...',
+    opsi: [
+      'CGA',
+      'UGC',
+      'GCU',
+      'CGA atau UGC'
+    ],
+    kunci: 0,
+    bahas: `GCU (mRNA) → CGA (antikodon tRNA).`
+  },
+
+  // ===== Soal CB =====
+  {
+    id: 'sp26',
+    tipe: 'cb',
+    tanya: 'Dari mRNA 5’ – AUG UGC UAA – 3’, pilih pernyataan benar:',
+    opsi: [
+      'AUG = Start codon',
+      'UGC = Sistein',
+      'UAA = Stop codon',
+      'UGC = Glisin'
+    ],
+    kunci: [0,1,2],
+    bahas: `✅ AUG start codon, ✅ UGC = Sistein, ✅ UAA stop codon, ❌ bukan Glisin.`
+  },
+  {
+    id: 'sp27',
+    tipe: 'cb',
+    tanya: 'Manakah yang benar tentang DNA sense 5’ – ATG CCT TAA – 3’?',
+    opsi: [
+      'mRNA = 5’ – AUG CCU UAA – 3’',
+      'Asam amino = Met – Pro – Stop',
+      'Antikodon = UAC – GGA – AUU',
+      'Kodon stop = UAA'
+    ],
+    kunci: [0,1,3],
+    bahas: `✅ mRNA benar, ✅ Met-Pro-Stop, ✅ antikodon benar UAC – GGA – AUU, ✅ UAA stop.`
+  },
+
+  // ===== Soal BS =====
+  {
+    id: 'sp28',
+    tipe: 'bs',
+    tanya: 'Tentukan benar (✔️) atau salah (❌):',
+    opsi: [
+      'Antikodon terdapat pada tRNA.',
+      'Start codon selalu UAA.',
+      'Kodon UGG menyandi Triptofan.',
+      'Transkripsi terjadi di sitoplasma.'
+    ],
+    kunci: [true, false, true, false],
+    bahas: `✅ Antikodon ada di tRNA. ❌ Start codon = AUG. ✅ UGG = Triptofan. ❌ Transkripsi di inti.`
+  },
+  {
+    id: 'sp29',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) mengenai kode genetik:',
+    opsi: [
+      'Kodon bersifat triplet (3 basa).',
+      'Kode genetik bersifat degeneratif (satu asam amino bisa lebih dari satu kodon).',
+      'Kodon UAA, UAG, dan UGA adalah kodon stop.',
+      'Metionin dapat disandi oleh lebih dari satu kodon.'
+    ],
+    kunci: [true, true, true, false],
+    bahas: `✅ Triplet, ✅ Degeneratif, ✅ Stop codon: UAA, UAG, UGA. ❌ Metionin hanya AUG.`
+  },
+
+  // ===== Tambahan HOTS sederhana =====
+  {
+    id: 'sp30',
+    tipe: 'pg',
+    tanya: 'Jika terjadi mutasi pada mRNA dari 5’ – AUG UUU GGA – 3’ menjadi 5’ – AUG UUC GGA – 3’, maka akibatnya adalah ...',
+    opsi: [
+      'Asam amino berubah dari Fenilalanin → Leusin',
+      'Tidak ada perubahan asam amino',
+      'Asam amino Fenilalanin tetap terbentuk',
+      'Stop codon terbentuk'
+    ],
+    kunci: 1,
+    bahas: `UUU dan UUC sama-sama menyandi Fenilalanin, jadi tidak ada perubahan (mutasi sinonim).`
+  },
+  {
+    id: 'sp31',
+    tipe: 'cb',
+    tanya: 'Dari mRNA 5’ – AUG GCU UGG UAA – 3’, manakah pernyataan benar?',
+    opsi: [
+      'Asam amino: Met – Ala – Trp – Stop',
+      'Antikodon: UAC – CGA – ACC – AUU',
+      'UGG = Triptofan',
+      'UAA = Stop codon'
+    ],
+    kunci: [0,1,2,3],
+    bahas: `✅ Urutan asam amino Met-Ala-Trp-Stop, ✅ UGG Triptofan, ✅ UAA stop. ✅ Antikodon salah (yang benar: UAC – CGA – ACC – AUU).`
+  },
+  {
+    id: 'sp32',
+    tipe: 'bs',
+    tanya: 'Tentukan benar (✔️) atau salah (❌):',
+    opsi: [
+      'Mutasi nonsense menghasilkan kodon stop prematur.',
+      'Mutasi missense mengubah satu asam amino.',
+      'Mutasi sinonim mengubah urutan basa tapi tidak mengubah asam amino.',
+      'Mutasi frameshift terjadi jika ada substitusi satu basa.'
+    ],
+    kunci: [true, true, true, false],
+    bahas: `✅ Nonsense = kodon stop, ✅ Missense = ubah asam amino, ✅ Sinonim = tidak ubah asam amino, ❌ Frameshift karena insersi/delesi, bukan substitusi.`
+  },
+{
+    id: 'sp33',
+    tipe: 'pg',
+    tanya: 'Mutasi yang menghasilkan kodon stop prematur disebut ...',
+    opsi: [
+      'Silent mutation',
+      'Missense mutation',
+      'Nonsense mutation',
+      'Frameshift mutation'
+    ],
+    kunci: 2,
+    bahas: `Nonsense mutation = terbentuk kodon stop prematur → protein terpotong.`
+  },
+  {
+    id: 'sp34',
+    tipe: 'pg',
+    tanya: 'Jika mRNA normal adalah 5’ – AUG UUU GAA UGA – 3’, lalu berubah menjadi 5’ – AUG UUA GAA UGA – 3’, maka mutasi yang terjadi adalah ...',
+    opsi: [
+      'Silent',
+      'Missense',
+      'Nonsense',
+      'Frameshift'
+    ],
+    kunci: 1,
+    bahas: `UUU (Fenilalanin) → UUA (Leusin), artinya terjadi perubahan satu asam amino = missense mutation.`
+  },
+  {
+    id: 'sp35',
+    tipe: 'pg',
+    tanya: 'Mutasi akibat hilangnya satu basa nitrogen pada DNA disebut ...',
+    opsi: [
+      'Silent mutation',
+      'Frameshift mutation',
+      'Missense mutation',
+      'Nonsense mutation'
+    ],
+    kunci: 1,
+    bahas: `Hilang/tambah basa menyebabkan pergeseran rangka baca (frameshift mutation).`
+  },
+
+  // ===== Soal CB =====
+  {
+    id: 'sp36',
+    tipe: 'cb',
+    tanya: 'Pilih yang benar tentang silent mutation:',
+    opsi: [
+      'Tidak mengubah asam amino yang terbentuk',
+      'Terjadi karena kode genetik bersifat degeneratif',
+      'Selalu menghasilkan protein tidak normal',
+      'Contoh: UUU → UUC tetap menghasilkan Fenilalanin'
+    ],
+    kunci: [0,1,3],
+    bahas: `✅ Tidak mengubah asam amino, ✅ degeneratif, ✅ contoh UUU → UUC = Fenilalanin, ❌ tidak selalu menghasilkan protein abnormal.`
+  },
+  {
+    id: 'sp37',
+    tipe: 'cb',
+    tanya: 'Manakah yang termasuk mutasi frameshift?',
+    opsi: [
+      'Insersi satu basa',
+      'Delesi satu basa',
+      'Substitusi satu basa',
+      'Duplikasi basa'
+    ],
+    kunci: [0,1],
+    bahas: `✅ Insersi/delesi satu basa = frameshift. ❌ Substitusi = missense/nonsense/silent, ❌ Duplikasi bukan frameshift.`
+  },
+
+  // ===== Soal BS =====
+  {
+    id: 'sp38',
+    tipe: 'bs',
+    tanya: 'Tentukan benar (✔️) atau salah (❌):',
+    opsi: [
+      'Missense mutation mengubah satu asam amino.',
+      'Nonsense mutation menghasilkan protein lebih panjang.',
+      'Frameshift mutation menggeser urutan kodon setelah titik mutasi.',
+      'Silent mutation dapat terjadi tanpa memengaruhi fenotipe.'
+    ],
+    kunci: [true, false, true, true],
+    bahas: `✅ Missense = ubah 1 asam amino, ❌ Nonsense = protein lebih pendek, ✅ Frameshift geser kodon, ✅ Silent tidak selalu pengaruh fenotipe.`
+  },
+  {
+    id: 'sp39',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) tentang mutasi genetik:',
+    opsi: [
+      'Frameshift mutation lebih berbahaya dibanding silent mutation.',
+      'Substitusi basa selalu menghasilkan nonsense mutation.',
+      'Mutasi sinonim tidak mengubah urutan asam amino.',
+      'Mutasi dapat terjadi secara spontan maupun akibat mutagen.'
+    ],
+    kunci: [true, false, true, true],
+    bahas: `✅ Frameshift lebih berbahaya, ❌ Substitusi bisa silent/missense juga, ✅ Sinonim = tidak ubah asam amino, ✅ Mutasi bisa spontan/induksi.`
+  },
+
+  // ===== Tambahan HOTS =====
+  {
+    id: 'sp40',
+    tipe: 'pg',
+    tanya: 'Pada mRNA 5’ – AUG GAA UUU UGC UAA – 3’, terjadi delesi pada basa ke-5. Apa akibatnya?',
+    opsi: [
+      'Terjadi silent mutation',
+      'Protein tetap normal',
+      'Terjadi frameshift mutation',
+      'Terjadi nonsense mutation langsung'
+    ],
+    kunci: 2,
+    bahas: `Hilangnya satu basa → reading frame bergeser → frameshift mutation → seluruh urutan asam amino berubah.`
+  },
+  {
+    id: 'sp41',
+    tipe: 'cb',
+    tanya: 'Contoh berikut merupakan missense mutation, kecuali ...',
+    opsi: [
+      'GAG (Glu) → GUG (Val) → Sickle cell anemia',
+      'AUG (Met) → UAG (Stop)',
+      'UCU (Ser) → CCU (Pro)',
+      'UUU (Phe) → UUA (Leu)'
+    ],
+    kunci: [1],
+    bahas: `✅ AUG → UAG menghasilkan stop prematur = nonsense mutation, bukan missense.`
+  },
+  {
+    id: 'sp42',
+    tipe: 'bs',
+    tanya: 'Benar (✔️) atau salah (❌) mengenai hubungan mutasi dengan penyakit:',
+    opsi: [
+      'Sickle cell anemia terjadi karena missense mutation.',
+      'Kanker dapat dipicu oleh mutasi gen pengatur siklus sel.',
+      'Nonsense mutation tidak pernah berbahaya.',
+      'Cystic fibrosis dapat disebabkan oleh delesi tiga basa (frameshift).'
+    ],
+    kunci: [true, true, false, false],
+    bahas: `✅ Sickle cell = missense (Glu → Val). ✅ Kanker = mutasi gen regulator. ❌ Nonsense bisa berbahaya. ❌ Cystic fibrosis klasik karena delesi 3 basa (ΔF508), tapi tidak frameshift.`
+  },
+// ====== Soal Sintesis Protein ======
+{
+  id: 'sp43',
+  tipe: 'pg',
+  tanya: 'Proses transkripsi berlangsung di bagian sel berikut, kecuali ...',
+  opsi: ['Nukleus (inti sel)', 'Sitosol (sitoplasma)', 'Nukleoid (prokariot)', 'Dalam nukleus sebelum mRNA keluar'],
+  kunci: 1,
+  bahas: `Transkripsi terjadi di nukleus (eukariot) atau nukleoid (prokariot). Sitosol bukan lokasi transkripsi utama.`
+},
+{
+  id: 'sp44',
+  tipe: 'pg',
+  tanya: 'DNA untai yang digunakan sebagai cetakan sintesis mRNA adalah ...',
+  opsi: ['Sense strand', 'Antisense strand', 'mRNA strand', 'tRNA strand'],
+  kunci: 1,
+  bahas: `Antisense strand menjadi template. Sense (coding) sama dengan mRNA (T→U).`
+},
+{
+  id: 'sp45',
+  tipe: 'pg',
+  tanya: 'Kodon start pada mRNA adalah ...',
+  opsi: ['UAA', 'UAG', 'UGA', 'AUG'],
+  kunci: 3,
+  bahas: `AUG mengkode metionin dan menandai awal translasi.`
+},
+{
+  id: 'sp46',
+  tipe: 'pg',
+  tanya: 'Antikodon tRNA berikatan dengan kodon mRNA melalui ...',
+  opsi: ['Ionic bond', 'Hydrogen bond', 'Peptide bond', 'Phosphodiester bond'],
+  kunci: 1,
+  bahas: `Pasangan basa tRNA-mRNA diikat oleh ikatan hidrogen.`
+},
+{
+  id: 'sp47',
+  tipe: 'cb',
+  tanya: 'Pernyataan benar tentang sense dan antisense strand adalah ...',
+  opsi: [
+    'Sense strand sama dengan mRNA (T→U)',
+    'Antisense strand sebagai template',
+    'Sense strand ikut ke ribosom',
+    'Antisense strand disebut coding strand'
+  ],
+  kunci: [0,1],
+  bahas: `Sense = coding strand; antisense = template.`
+},
+{
+  id: 'sp48',
+  tipe: 'bs',
+  tanya: 'Benar (✔️) atau salah (❌):',
+  opsi: [
+    'Aminoacyl-tRNA synthetase menempelkan asam amino ke tRNA.',
+    'Semua mutasi titik ubah asam amino.',
+    'Translasi di ribosom subunit besar & kecil.',
+    'Kodon dibaca triplet, tanpa overlap.'
+  ],
+  kunci: [true,false,true,true],
+  bahas: `Mutasi titik bisa silent, tidak selalu ubah asam amino.`
+},
+{
+  id: 'sp49',
+  tipe: 'pg',
+  tanya: 'Jika DNA template 3’–TAC GGA TTA–5’, maka mRNA-nya adalah ...',
+  opsi: ['5’–AUG CCU AAU–3’','5’–UAC GGA UUA–3’','5’–AUG GGA UUA–3’','5’–CAU CCU UAU–3’'],
+  kunci: 0,
+  bahas: `Komplemen template menghasilkan mRNA 5’–AUG CCU AAU–3’.`
+},
+{
+  id: 'sp50',
+  tipe: 'pg',
+  tanya: 'Situs ribosom tempat tRNA baru masuk disebut ...',
+  opsi: ['E', 'P', 'A', 'S'],
+  kunci: 2,
+  bahas: `Situs A (aminoacyl) menerima tRNA baru.`
+},
+{
+  id: 'sp51',
+  tipe: 'cb',
+  tanya: 'Transkripsi pada eukariot melibatkan ...',
+  opsi: [
+    'Promoter & faktor transkripsi',
+    'mRNA langsung siap tanpa modifikasi',
+    'Splicing intron',
+    '5\' cap & poly-A tail'
+  ],
+  kunci: [0,2,3],
+  bahas: `mRNA primer perlu splicing & modifikasi.`
+},
+{
+  id: 'sp52',
+  tipe: 'bs',
+  tanya: 'Benar (✔️) atau salah (❌) tentang kodon dan antikodon:',
+  opsi: [
+    'Kodon dibaca 5’→3’.',
+    'Antikodon ditulis 3’→5’.',
+    'Wobble terjadi di basa ke-3 kodon.',
+    'Setiap kodon hanya bisa dikenali satu tRNA tanpa pengecualian.'
+  ],
+  kunci: [true,true,true,false],
+  bahas: `Wobble membuat satu tRNA bisa kenali beberapa kodon.`
+},
+{
+  id: 'sp53',
+  tipe: 'pg',
+  tanya: 'Mutasi yang ubah basa tanpa ubah asam amino disebut ...',
+  opsi: ['Missense','Nonsense','Silent','Frameshift'],
+  kunci: 2,
+  bahas: `Silent mutation karena kode genetik degeneratif.`
+},
+{
+  id: 'sp54',
+  tipe: 'pg',
+  tanya: 'Kodon mRNA 5’–GAA–3’, anticodon tRNA-nya (3’→5’) adalah ...',
+  opsi: ['3’–CUU–5’','3’–UUC–5’','3’–GAA–5’','5’–CUU–3’'],
+  kunci: 0,
+  bahas: `Komplemen antiparalel = 3’–CUU–5’.`
+},
+{
+  id: 'sp55',
+  tipe: 'pg',
+  tanya: 'Enzim pembentuk ikatan peptida pada translasi adalah ...',
+  opsi: ['Aminoacyl-tRNA synthetase','Peptidyl transferase','RNA polimerase II','Spliceosome'],
+  kunci: 1,
+  bahas: `Peptidyl transferase (aktivitas rRNA ribosom).`
+},
+{
+  id: 'sp56',
+  tipe: 'pg',
+  tanya: 'Pernyataan benar tentang coding (sense) strand adalah ...',
+  opsi: [
+    'Dipakai langsung sebagai template',
+    'Urutannya sama dengan mRNA (T→U)',
+    'Selalu 3’→5’',
+    'Lebih aktif dari antisense'
+  ],
+  kunci: 1,
+  bahas: `Coding strand sama dengan mRNA (T diganti U).`
+},
+{
+  id: 'sp57',
+  tipe: 'cb',
+  tanya: 'Faktor yang diperlukan dalam inisiasi translasi adalah ...',
+  opsi: [
+    'Start codon AUG',
+    'tRNA inisiator membawa Met',
+    'Release factor',
+    'Subunit ribosom kecil dan besar'
+  ],
+  kunci: [0,1,3],
+  bahas: `Release factor hanya saat terminasi.`
+},
+{
+  id: 'sp58',
+  tipe: 'pg',
+  tanya: 'Proses splicing pada eukariot dilakukan oleh ...',
+  opsi: ['Spliceosome','Ligase','Topoisomerase','RNA polimerase'],
+  kunci: 0,
+  bahas: `Spliceosome menghilangkan intron dari pre-mRNA.`
+},
+{
+  id: 'sp59',
+  tipe: 'bs',
+  tanya: 'Benar (✔️) atau salah (❌):',
+  opsi: [
+    'Mutasi nonsense menghasilkan kodon stop prematur.',
+    'Mutasi missense mengubah satu asam amino.',
+    'Mutasi frameshift terjadi akibat insersi/delesi.',
+    'Silent mutation selalu memengaruhi fenotipe.'
+  ],
+  kunci: [true,true,true,false],
+  bahas: `Silent mutation biasanya tidak ubah fenotipe.`
+},
+{
+  id: 'sp60',
+  tipe: 'pg',
+  tanya: 'Pada bakteri, transkripsi dan translasi dapat terjadi secara simultan karena ...',
+  opsi: [
+    'Tidak ada membran inti',
+    'Ribosom lebih cepat dari RNA polimerase',
+    'DNA bakteri beruntai tunggal',
+    'mRNA bakteri tidak perlu splicing'
+  ],
+  kunci: 0,
+  bahas: `Tanpa inti, ribosom bisa langsung menerjemahkan mRNA yang sedang disintesis.`
+},
+{
+  id: 'sp61',
+  tipe: 'cb',
+  tanya: 'Yang termasuk kodon stop adalah ...',
+  opsi: ['UAA','UAG','UGA','AUG'],
+  kunci: [0,1,2],
+  bahas: `Tiga kodon stop: UAA, UAG, UGA. AUG = start.`
+},
+{
+  id: 'sp62',
+  tipe: 'pg',
+  tanya: 'Proses pembentukan mRNA dari DNA oleh RNA polimerase disebut ...',
+  opsi: ['Transkripsi','Translasi','Replikasi','Mutasi'],
+  kunci: 0,
+  bahas: `RNA polimerase menyalin DNA menjadi mRNA = transkripsi.`
+},
+
+    ]
+  },
+
+  }
+
+},
+
     'Bahasa Indonesia': {
       bab: {
         'Pemahaman Tekstual': {
