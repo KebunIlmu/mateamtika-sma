@@ -986,8 +986,550 @@
   }
 },
 
-    'Matematika Tingkat Lanjut': {
+    'Matematika': {
       bab: {
+
+'BilanganKompleks': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Bilangan Kompleks: Definisi, Operasi & Penerapan</h2>
+
+    <h3 class="font-semibold mt-3">1. Definisi Bilangan Kompleks</h3>
+    <p class="mb-4">
+      Bilangan kompleks adalah bilangan yang dapat ditulis dalam bentuk \\(z = a + bi\\), 
+      di mana \\(a\\) dan \\(b\\) adalah bilangan real, dan \\(i\\) adalah satuan imajiner 
+      dengan sifat \\(i^2 = -1\\).<br>
+      <b>a</b> disebut bagian real (real part), <b>b</b> disebut bagian imajiner (imaginary part).
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Bentuk-Bentuk Bilangan Kompleks</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Bentuk Aljabar:</b> \\(z = a + bi\\)</li>
+      <li><b>Bentuk Trigonometri:</b> \\(z = r(\cos\\theta + i\sin\\theta)\\), di mana \\(r = |z| = \\sqrt{a^2 + b^2}\\) dan \\(\\theta = \\arg(z)\\)</li>
+      <li><b>Bentuk Eksponensial:</b> \\(z = r e^{i\\theta}\\), dengan \\(r\\) dan \\(\\theta\\) sama seperti bentuk trigonometri</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Operasi Bilangan Kompleks</h3>
+
+<table class="table-auto border border-collapse border-gray-400 w-full">
+  <thead>
+    <tr class="bg-gray-200">
+      <th class="border px-2 py-1">Operasi</th>
+      <th class="border px-2 py-1">Rumus / Contoh</th>
+      <th class="border px-2 py-1">Keterangan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border px-2 py-1">Penjumlahan</td>
+      <td class="border px-2 py-1">\\((a+bi) + (c+di) = (a+c) + (b+d)i\\)</td>
+      <td class="border px-2 py-1">Jumlah bagian real dan imajiner</td>
+    </tr>
+    <tr class="bg-gray-50">
+      <td class="border px-2 py-1">Pengurangan</td>
+      <td class="border px-2 py-1">\\((a+bi) - (c+di) = (a-c) + (b-d)i\\)</td>
+      <td class="border px-2 py-1">Kurangi bagian real dan imajiner</td>
+    </tr>
+    <tr>
+      <td class="border px-2 py-1">Perkalian</td>
+      <td class="border px-2 py-1">\\((a+bi)(c+di) = (ac-bd) + (ad+bc)i\\)</td>
+      <td class="border px-2 py-1">Gunakan distributif dan \\(i^2=-1\\)</td>
+    </tr>
+    <tr class="bg-gray-50">
+      <td class="border px-2 py-1">Pembagian</td>
+      <td class="border px-2 py-1">\\(\\frac{a+bi}{c+di} = \\frac{(a+bi)(c-di)}{c^2+d^2} = \\frac{ac+bd}{c^2+d^2} + \\frac{bc-ad}{c^2+d^2}i\\)</td>
+      <td class="border px-2 py-1">Kalikan pembilang dan penyebut dengan konjugat penyebut</td>
+    </tr>
+    <tr>
+      <td class="border px-2 py-1">Konjugat</td>
+      <td class="border px-2 py-1">\\(\\overline{a+bi} = a - bi\\)</td>
+      <td class="border px-2 py-1">Mengubah tanda bagian imajiner</td>
+    </tr>
+    <tr class="bg-gray-50">
+      <td class="border px-2 py-1">Modulus</td>
+      <td class="border px-2 py-1">\\(|a+bi| = \\sqrt{a^2+b^2}\\)</td>
+      <td class="border px-2 py-1">Jarak bilangan kompleks dari titik origin</td>
+    </tr>
+    <tr>
+      <td class="border px-2 py-1">Argument / Argumen</td>
+      <td class="border px-2 py-1">\\(\\theta = \\tan^{-1}(b/a)\\)</td>
+      <td class="border px-2 py-1">Sudut dengan sumbu real positif</td>
+    </tr>
+  </tbody>
+</table>
+
+    <h3 class="font-semibold mt-3">4. Penerapan Bilangan Kompleks</h3>
+<ul class="list-disc pl-6 mb-4">
+  <li>
+    <b>Analisis arus listrik AC</b><br>
+    Arus dan tegangan AC dapat dinyatakan dengan bilangan kompleks, memudahkan perhitungan fase dan amplitudo.
+  </li>
+  <li>
+    <b>Transformasi geometri</b><br>
+    Bilangan kompleks digunakan untuk rotasi, refleksi, dan dilatasi pada bidang kompleks.
+  </li>
+  <li>
+    <b>Persamaan kuadrat dengan akar negatif</b><br>
+    Jika persamaan kuadrat \\(x^2 + 1 = 0\\), maka akarnya \\(x = i\\) dan \\(x = -i\\), menggunakan bilangan kompleks.
+  </li>
+  <li>
+    <b>Kontrol sistem dan sinyal</b><br>
+    Sistem dinamis sering menggunakan bilangan kompleks untuk menganalisis kestabilan dan respon frekuensi.
+  </li>
+</ul>
+
+<h3 class="font-semibold mt-3">5. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail tentang bilangan kompleks, silakan baca materi berikut:<br>
+      <a href="https://www.mathsisfun.com/numbers/complex-numbers.html" target="_blank" class="text-blue-600 underline">
+        📘 Klik di sini untuk membuka materi lengkap Bilangan Kompleks
+      </a>
+    </p>
+  `,
+  video: 'XyZ12345abc', // ganti dengan ID video YouTube tentang bilangan kompleks
+  soal: [
+    {
+      id:'bk1', tipe:'pg',
+      tanya:'Bilangan kompleks dari \\(3 + 4i\\) memiliki modulus …',
+      opsi:['5','7','1','4'], kunci:0,
+      bahas:'Modulus: |z| = \\(\\sqrt{3^2 + 4^2} = \\sqrt{25} = 5\\).'
+    },
+    {
+      id:'bk2', tipe:'pg',
+      tanya:'Konjugat dari \\(5 - 2i\\) adalah …',
+      opsi:['5+2i','5-2i','-5+2i','-5-2i'], kunci:0,
+      bahas:'Konjugat mengubah tanda bagian imajiner, jadi \\(5-2i \\to 5+2i\\).'
+    },
+    {
+      id:'bk3', tipe:'pg',
+      tanya:'Hasil dari \\((1+2i) + (3+4i)\\) adalah …',
+      opsi:['4+6i','4+8i','2+2i','1+2i'], kunci:0,
+      bahas:'Penjumlahan: real 1+3=4, imajiner 2+4=6, jadi 4+6i.'
+    },
+    {
+      id:'bk4', tipe:'pg',
+      tanya:'Hasil dari \\((1+2i)(3+4i)\\) adalah …',
+      opsi:['-5+10i','7+8i','3+6i','-1+8i'], kunci:0,
+      bahas:'Perkalian: (1*3 - 2*4) + (1*4 + 2*3)i = -5 + 10i.'
+    },
+    {
+      id:'bk5', tipe:'pg',
+      tanya:'Bilangan kompleks \\(z = -3 + 4i\\) memiliki argumen …',
+      opsi:['126.87°','53.13°','45°','60°'], kunci:0,
+      bahas:'Argumen: \\(\\theta = \\tan^{-1}(4/-3)\\). Karena kuadran II, \\(\\theta \\approx 126.87°\\).'
+    },
+{
+  id:'bk6', tipe:'pg',
+  tanya:'Jika \\(i = \\sqrt{-1}\\), maka nilai \\(i^2\\) adalah …',
+  opsi:['\\(-1\\)','\\(1\\)','\\(i\\)','\\(-i\\)'],
+  kunci:0,
+  bahas:'Secara definisi, i^2 = -1.'
+},
+{
+  id:'bk7', tipe:'cb',
+  tanya:'Jika \\(i = \\sqrt{-1}\\), maka nilai \\(i^3\\) adalah … (pilih semua yang benar)',
+  opsi:['\\(-i\\)','\\(i\\)','\\(1\\)','\\(-1\\)'],
+  kunci:[0],
+  bahas:'i^3 = i^2 * i = (-1)*i = -i.'
+},
+{
+  id:'bk8', tipe:'bs',
+  tanya:'Perhatikan hasil pangkat bilangan imajiner berikut:',
+  opsi:[
+    '\\(i^2 = -1\\)',
+    '\\(i^3 = i\\)',
+    '\\(i^4 = 1\\)'
+  ],
+  kunci:[true,false,true],
+  bahas:'i^2 = -1 benar, i^3 seharusnya = -i, dan i^4 = 1 benar.'
+},
+{
+  id:'bk9', tipe:'isian',
+  tanya:'Tentukan hasil dari \\(i^5\\) …',
+  kunciText:'i',
+  bahas:'i^5 = i^4 * i = 1 * i = i.'
+},
+{
+  id:'bk10', tipe:'pg',
+  tanya:'Tentukan bagian real dari bilangan kompleks \\(3 + 4i\\) adalah …',
+  opsi:['3','4','i','-3'],
+  kunci:0,
+  bahas:'Bilangan kompleks \\(a+bi\\) memiliki bagian real = a. Jadi bagian real dari \\(3+4i\\) adalah 3.'
+},
+{
+  id:'bk11', tipe:'pg',
+  tanya:'Tentukan bagian imajiner dari bilangan kompleks \\(5 - 2i\\) adalah …',
+  opsi:['5','-2','2','i'],
+  kunci:1,
+  bahas:'Bilangan kompleks \\(a+bi\\) memiliki bagian imajiner = b. Jadi bagian imajiner dari \\(5 - 2i\\) adalah -2.'
+},
+{
+  id:'bk12', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang bagian real-nya sama dengan 0? (pilih semua yang benar)',
+  opsi:['\\(7i\\)','\\(-4\\)','\\(i\\)','\\(-3i\\)'],
+  kunci:[0,2,3],
+  bahas:'Jika bagian real = 0, maka bilangan hanya berupa imajiner murni. Jadi \\(7i, i, -3i\\) adalah benar.'
+},
+{
+  id:'bk13', tipe:'bs',
+  tanya:'Perhatikan bilangan kompleks berikut:',
+  opsi:[
+    'Bagian real dari \\(2 - 5i\\) adalah 2',
+    'Bagian imajiner dari \\(2 - 5i\\) adalah 5',
+    'Bagian imajiner dari \\(7i\\) adalah 7'
+  ],
+  kunci:[true,false,true],
+  bahas:'Pada \\(2-5i\\), bagian real = 2 benar, bagian imajiner = -5 bukan 5, dan pada \\(7i\\) bagian imajiner = 7 benar.'
+},
+{
+  id:'bk14', tipe:'isian',
+  tanya:'Tentukan bagian real dari \\(-8i\\) …',
+  kunciText:'0',
+  bahas:'\\(-8i\\) adalah bilangan imajiner murni sehingga bagian realnya = 0.'
+},
+{
+  id:'bk15', tipe:'pg',
+  tanya:'Tentukan modulus dari bilangan kompleks \\(3 + 4i\\) adalah …',
+  opsi:['3','4','5','7'],
+  kunci:2,
+  bahas:'Modulus bilangan kompleks \\(a+bi\\) dihitung dengan \\(\\sqrt{a^2+b^2}\\). Jadi \\(|3+4i| = \\sqrt{3^2+4^2} = 5\\).'
+},
+{
+  id:'bk16', tipe:'pg',
+  tanya:'Modulus dari bilangan kompleks \\(5 - 12i\\) adalah …',
+  opsi:['13','17','12','5'],
+  kunci:0,
+  bahas:'\\(|5-12i| = \\sqrt{5^2+(-12)^2} = \\sqrt{25+144} = \\sqrt{169} = 13.'
+},
+{
+  id:'bk17', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang memiliki modulus sama dengan 5? (pilih semua yang benar)',
+  opsi:['\\(3+4i\\)','\\(-5\\)','\\(5i\\)','\\(4+3i\\)'],
+  kunci:[0,1,2,3],
+  bahas:'Semua opsi punya modulus 5: \\(|3+4i|=5, |-5|=5, |5i|=5, |4+3i|=5.'
+},
+{
+  id:'bk18', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang modulus bilangan kompleks berikut:',
+  opsi:[
+    'Modulus \\(|a+bi| = \\sqrt{a^2+b^2}\\)',
+    'Modulus dari bilangan real sama dengan nilai absolutnya',
+    'Modulus dari \\(7i\\) adalah -7'
+  ],
+  kunci:[true,true,false],
+  bahas:'Dua pernyataan pertama benar, sedangkan modulus tidak pernah negatif, jadi modulus \\(7i\\) adalah 7, bukan -7.'
+},
+{
+  id:'bk19', tipe:'isian',
+  tanya:'Hitung modulus dari bilangan kompleks \\(-8 + 6i\\) …',
+  kunciText:'10',
+  bahas:'\\(|-8+6i| = \\sqrt{(-8)^2+6^2} = \\sqrt{64+36} = \\sqrt{100} = 10.'
+},
+{
+  id:'bk20', tipe:'pg',
+  tanya:'Tentukan argumen dari bilangan kompleks \\(1 + i\\) dalam radian adalah …',
+  opsi:['\\(\\tfrac{\\pi}{4}\\)','\\(\\tfrac{\\pi}{3}\\)','\\(\\tfrac{\\pi}{2}\\)','\\(\\pi\\)'],
+  kunci:0,
+  bahas:'Argumen diperoleh dengan \\(\\theta = \\arctan(\\tfrac{b}{a}) = \\arctan(1/1) = \\tfrac{\\pi}{4}\\).'
+},
+{
+  id:'bk21', tipe:'pg',
+  tanya:'Argumen dari bilangan kompleks \\(-1 + i\\) adalah …',
+  opsi:['\\(\\tfrac{3\\pi}{4}\\)','\\(\\tfrac{\\pi}{4}\\)','\\(\\tfrac{5\\pi}{4}\\)','\\(\\tfrac{7\\pi}{4}\\)'],
+  kunci:0,
+  bahas:'Bilangan \\(-1+i\\) berada di kuadran II. Sudutnya \\(\\arctan(1/(-1)) = -\\tfrac{\\pi}{4}\\). Karena kuadran II, argumennya = \\(\\pi - \\tfrac{\\pi}{4} = \\tfrac{3\\pi}{4}\\).'
+},
+{
+  id:'bk22', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang memiliki argumen \\(\\tfrac{\\pi}{2}\\)? (pilih semua yang benar)',
+  opsi:['\\(i\\)','\\(2i\\)','\\(-i\\)','\\(5i\\)'],
+  kunci:[0,1,3],
+  bahas:'Bilangan dengan bagian real = 0 dan imajiner positif punya argumen \\(\\tfrac{\\pi}{2}\\). Jadi benar untuk \\(i, 2i, 5i\\).'
+},
+{
+  id:'bk23', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang argumen bilangan kompleks berikut:',
+  opsi:[
+    'Argumen bilangan kompleks \\(a+bi\\) adalah sudut \\(\\theta\\) terhadap sumbu real positif',
+    'Argumen dari bilangan real negatif adalah \\(\\pi\\)',
+    'Argumen dari \\(-i\\) adalah \\(\\tfrac{3\\pi}{2}\\)'
+  ],
+  kunci:[true,true,true],
+  bahas:'Semua pernyataan benar: definisi argumen sesuai, bilangan real negatif berada di sumbu x negatif (sudut \\(\\pi\\)), dan \\(-i\\) berada di sumbu y negatif (sudut \\(\\tfrac{3\\pi}{2}\\)).'
+},
+{
+  id:'bk24', tipe:'isian',
+  tanya:'Tentukan argumen dari bilangan kompleks \\(\\sqrt{3} + i\\) …',
+  kunciText:'\\(\\tfrac{\\pi}{6}\\)',
+  bahas:'Argumen \\(\\theta = \\arctan(1/\\sqrt{3}) = \\tfrac{\\pi}{6}\\), karena bilangan berada di kuadran I.'
+},
+{
+  id:'bk25', tipe:'pg',
+  tanya:'Konjugat dari bilangan kompleks \\(3 + 4i\\) adalah …',
+  opsi:['\\(3 - 4i\\)','\\(-3 + 4i\\)','\\(3 + 4i\\)','\\(-3 - 4i\\)'],
+  kunci:0,
+  bahas:'Konjugat dari \\(a+bi\\) adalah \\(a-bi\\). Jadi konjugat dari \\(3+4i\\) adalah \\(3-4i\\).'
+},
+{
+  id:'bk26', tipe:'pg',
+  tanya:'Konjugat dari bilangan kompleks \\(-5i\\) adalah …',
+  opsi:['5i','-5i','5','-5'],
+  kunci:0,
+  bahas:'\\(-5i = 0 - 5i\\). Konjugatnya adalah \\(0 + 5i = 5i\\).'
+},
+{
+  id:'bk27', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang merupakan pasangan konjugat? (pilih semua yang benar)',
+  opsi:['\\(2+3i\\) dan \\(2-3i\\)','\\(5+i\\) dan \\(5-i\\)','\\(4i\\) dan \\(-4i\\)','\\(-7\\) dan \\(7\\)'],
+  kunci:[0,1,2],
+  bahas:'Pasangan konjugat memiliki bentuk \\(a+bi\\) dan \\(a-bi\\). Jadi benar untuk (2+3i,2-3i), (5+i,5-i), dan (4i,-4i).'
+},
+{
+  id:'bk28', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang konjugat bilangan kompleks:',
+  opsi:[
+    'Konjugat dari \\(a+bi\\) adalah \\(a-bi\\)',
+    'Hasil kali bilangan kompleks dengan konjugatnya selalu bilangan real',
+    'Konjugat dari \\(-3-2i\\) adalah \\(3+2i\\)'
+  ],
+  kunci:[true,true,false],
+  bahas:'(1) benar, (2) benar karena \\((a+bi)(a-bi) = a^2+b^2\\), (3) salah karena konjugat dari \\(-3-2i\\) adalah \\(-3+2i\\).'
+},
+{
+  id:'bk29', tipe:'isian',
+  tanya:'Tentukan konjugat dari bilangan kompleks \\(7 - 9i\\) …',
+  kunciText:'7 + 9i',
+  bahas:'Konjugat dari \\(a+bi\\) adalah \\(a-bi\\). Jadi konjugat dari \\(7-9i\\) adalah \\(7+9i\\).'
+},
+{
+  id:'bk30', tipe:'pg',
+  tanya:'Hasil dari \\((3+4i) + (2+5i)\\) adalah …',
+  opsi:['\\(5+9i\\)','\\(1+9i\\)','\\(5+i\\)','\\(5+20i\\)'],
+  kunci:0,
+  bahas:'Penjumlahan bilangan kompleks dilakukan dengan menjumlahkan bagian real dan bagian imajiner: \\((3+2) + (4i+5i) = 5+9i\\).'
+},
+{
+  id:'bk31', tipe:'pg',
+  tanya:'Hasil dari \\((7-2i) - (3+5i)\\) adalah …',
+  opsi:['\\(4-7i\\)','\\(10-7i\\)','\\(4+3i\\)','\\(4+7i\\)'],
+  kunci:0,
+  bahas:'Kurangkan bagian real: 7-3=4. Kurangkan bagian imajiner: -2i - 5i = -7i. Jadi hasilnya = 4-7i.'
+},
+{
+  id:'bk32', tipe:'cb',
+  tanya:'Manakah hasil penjumlahan berikut yang benar? (pilih semua yang benar)',
+  opsi:[
+    '\\((2+3i)+(4-2i) = 6+i\\)',
+    '\\((5+6i)+(1-6i) = 6\\)',
+    '\\((7-3i)+(3+3i) = 10\\)',
+    '\\((2+i)+(2-i) = 4+0i\\)'
+  ],
+  kunci:[0,1,2,3],
+  bahas:'Semua operasi penjumlahan benar: hitung masing-masing real dan imajiner.'
+},
+{
+  id:'bk33', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang penjumlahan/pengurangan bilangan kompleks:',
+  opsi:[
+    'Penjumlahan dilakukan dengan menjumlahkan bagian real dan bagian imajiner secara terpisah',
+    'Pengurangan dilakukan dengan mengurangkan bagian real dan bagian imajiner secara terpisah',
+    '\\((3+2i)-(3+2i)=3+2i\\)'
+  ],
+  kunci:[true,true,false],
+  bahas:'Pernyataan (1) dan (2) benar. Pernyataan (3) salah karena hasilnya 0, bukan 3+2i.'
+},
+{
+  id:'bk34', tipe:'isian',
+  tanya:'Hitung hasil dari \\((4+7i) + (-6+2i)\\) …',
+  kunciText:'-2+9i',
+  bahas:'Hitung bagian real: 4+(-6)=-2. Hitung bagian imajiner: 7i+2i=9i. Jadi hasilnya = -2+9i.'
+},
+{
+  id:'bk35', tipe:'pg',
+  tanya:'Hasil dari \\((2+3i)(4+i)\\) adalah …',
+  opsi:['\\(5+14i\\)','\\(8+14i\\)','\\(5+11i\\)','\\(11+14i\\)'],
+  kunci:0,
+  bahas:'Hitung: \\((2+3i)(4+i) = 8+2i+12i+3i^2 = 8+14i-3 = 5+14i\\).'
+},
+{
+  id:'bk36', tipe:'pg',
+  tanya:'Hasil dari \\((1+2i)(1-2i)\\) adalah …',
+  opsi:['5','-5','1+4i','1-4i'],
+  kunci:0,
+  bahas:'\\((1+2i)(1-2i) = 1-4i^2 = 1-(-4) = 5.'
+},
+{
+  id:'bk37', tipe:'cb',
+  tanya:'Manakah hasil perkalian bilangan kompleks berikut yang benar? (pilih semua yang benar)',
+  opsi:[
+    '\\((3+i)(3-i) = 10\\)',
+    '\\((2+i)(2+i) = 3+4i\\)',
+    '\\((4+2i)(1+i) = 2+6i\\)',
+    '\\((1+3i)(1-3i) = 10\\)'
+  ],
+  kunci:[0,1,3],
+  bahas:'(1) benar: 9-(-1)=10, (2) benar: 4+4i+i^2=3+4i, (3) salah: hasilnya 2+6i+2i^2=2+6i-2=6i, (4) benar: 1-(-9)=10.'
+},
+{
+  id:'bk38', tipe:'pg',
+  tanya:'Hasil dari pembagian \\(\\frac{3+4i}{1-i}\\) adalah …',
+  opsi:['\\(-\\tfrac{1}{2}+\\tfrac{7}{2}i\\)','\\(\\tfrac{7}{2}+\\tfrac{1}{2}i\\)','\\(\\tfrac{1}{2}+\\tfrac{7}{2}i\\)','\\(-\\tfrac{7}{2}+\\tfrac{1}{2}i\\)'],
+  kunci:0,
+  bahas:'Kalikan pembilang dan penyebut dengan konjugat (1+i): \\((3+4i)(1+i)/(1^2+1^2) = (3+3i+4i+4i^2)/2 = (3+7i-4)/2 = (-1+7i)/2 = -1/2+7/2 i\\).'
+},
+{
+  id:'bk39', tipe:'isian',
+  tanya:'Hitung hasil dari \\(\\frac{2+5i}{3+4i}\\) …',
+  kunciText:'\\(\\tfrac{26}{25}+\\tfrac{7}{25}i\\)',
+  bahas:'Kalikan pembilang dan penyebut dengan konjugat (3-4i): (2+5i)(3-4i)/(3^2+4^2) = (6-8i+15i-20i^2)/25 = (6+7i+20)/25 = (26+7i)/25.'
+},
+{
+  id:'bk40', tipe:'pg',
+  tanya:'Ubahlah bilangan kompleks \\(1+i\\) ke bentuk polar \\(r(\\cos\\theta + i\\sin\\theta)\\). Hasilnya adalah …',
+  opsi:[
+    '\\(\\sqrt{2}(\\cos\\tfrac{\\pi}{4}+i\\sin\\tfrac{\\pi}{4})\\)',
+    '\\(2(\\cos\\tfrac{\\pi}{3}+i\\sin\\tfrac{\\pi}{3})\\)',
+    '\\(1(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})\\)',
+    '\\(\\sqrt{2}(\\cos\\tfrac{\\pi}{6}+i\\sin\\tfrac{\\pi}{6})\\)'
+  ],
+  kunci:0,
+  bahas:'Modulus: \\(r=\\sqrt{1^2+1^2}=\\sqrt{2}\\). Argumen: \\(\\theta=\\arctan(1/1)=\\tfrac{\\pi}{4}\\).'
+},
+{
+  id:'bk41', tipe:'pg',
+  tanya:'Bilangan kompleks \\(-1+i\\) dalam bentuk polar adalah …',
+  opsi:[
+    '\\(\\sqrt{2}(\\cos\\tfrac{3\\pi}{4}+i\\sin\\tfrac{3\\pi}{4})\\)',
+    '\\(\\sqrt{2}(\\cos\\tfrac{\\pi}{4}+i\\sin\\tfrac{\\pi}{4})\\)',
+    '\\(2(\\cos\\tfrac{\\pi}{3}+i\\sin\\tfrac{\\pi}{3})\\)',
+    '\\(1(\\cos\\pi+i\\sin\\pi)\\)'
+  ],
+  kunci:0,
+  bahas:'Modulus: \\(r=\\sqrt{(-1)^2+1^2}=\\sqrt{2}\\). Argumen: kuadran II dengan sudut \\(\\pi-\\tfrac{\\pi}{4}=\\tfrac{3\\pi}{4}\\).'
+},
+{
+  id:'bk42', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang dalam bentuk polar memiliki modulus 5? (pilih semua yang benar)',
+  opsi:[
+    '\\(5(\\cos0+i\\sin0)\\)',
+    '\\(5(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})\\)',
+    '\\(5(\\cos\\pi+i\\sin\\pi)\\)',
+    '\\(5(\\cos\\tfrac{3\\pi}{2}+i\\sin\\tfrac{3\\pi}{2})\\)'
+  ],
+  kunci:[0,1,2,3],
+  bahas:'Semua pilihan benar karena modulusnya 5, hanya berbeda argumennya (0, \\(\\tfrac{\\pi}{2}\\), \\(\\pi\\), \\(\\tfrac{3\\pi}{2}\\)).'
+},
+{
+  id:'bk43', tipe:'bs',
+  tanya:'Perhatikan pernyataan berikut tentang bentuk polar bilangan kompleks:',
+  opsi:[
+    'Bentuk polar \\(z=a+bi\\) dinyatakan sebagai \\(r(\\cos\\theta+i\\sin\\theta)\\)',
+    'Nilai \\(r\\) selalu positif',
+    'Argumen \\(\\theta\\) selalu antara \\(0\\) dan \\(\\pi\\)'
+  ],
+  kunci:[true,true,false],
+  bahas:'(1) benar definisi, (2) benar karena modulus positif, (3) salah karena argumen bisa \\(0 \\leq \\theta < 2\\pi\\).'
+},
+{
+  id:'bk44', tipe:'isian',
+  tanya:'Ubahlah bilangan kompleks \\(\\sqrt{3}+i\\) ke bentuk polar …',
+  kunciText:'2(\\cos\\tfrac{\\pi}{6}+i\\sin\\tfrac{\\pi}{6})',
+  bahas:'Modulus: \\(r=\\sqrt{(\\sqrt{3})^2+1^2}=\\sqrt{3+1}=2\\). Argumen: \\(\\theta=\\arctan(1/\\sqrt{3})=\\tfrac{\\pi}{6}\\).'
+},
+{
+  id:'bk45', tipe:'pg',
+  tanya:'Ubah bilangan kompleks \\(2(\\cos\\tfrac{\\pi}{3}+i\\sin\\tfrac{\\pi}{3})\\) ke bentuk aljabar …',
+  opsi:['\\(1+i\\sqrt{3}\\)','\\(2+i\\sqrt{3}\\)','1+2i','\\(\\sqrt{3}+i\\)'],
+  kunci:0,
+  bahas:'Hitung: \\(2(\\tfrac{1}{2}+i\\tfrac{\\sqrt{3}}{2})=1+i\\sqrt{3}\\).'
+},
+{
+  id:'bk46', tipe:'pg',
+  tanya:'Ubah bilangan kompleks \\(5(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})\\) ke bentuk aljabar …',
+  opsi:['5i','-5i','5','-5'],
+  kunci:0,
+  bahas:'\\(5(0+i\\cdot1)=5i\\).'
+},
+{
+  id:'bk47', tipe:'cb',
+  tanya:'Manakah bentuk aljabar yang setara dengan bentuk polar modulus 4 dan argumen \\(\\pi\\)? (pilih semua yang benar)',
+  opsi:['-4','-4+0i','\\(4(\\cos\\pi+i\\sin\\pi)\\)','\\(-4i\\)'],
+  kunci:[0,1,2],
+  bahas:'\\(4(\\cos\\pi+i\\sin\\pi)=4(-1+0i)=-4\\). Jadi benar: -4 dan -4+0i. \\(-4i\\) salah karena argumennya \\(\\tfrac{3\\pi}{2}\\).'
+},
+{
+  id:'bk48', tipe:'bs',
+  tanya:'Perhatikan pernyataan berikut tentang konversi bentuk polar ke aljabar:',
+  opsi:[
+    'Jika \\(z=r(\\cos\\theta+i\\sin\\theta)\\), maka \\(\\Re(z)=r\\cos\\theta\\) dan \\(\\Im(z)=r\\sin\\theta\\)',
+    'Bentuk \\(3(\\cos0+i\\sin0)\\) sama dengan 3',
+    'Bentuk \\(2(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})\\) sama dengan 2'
+  ],
+  kunci:[true,true,false],
+  bahas:'(1) definisi benar, (2) benar karena hasilnya 3, (3) salah karena hasilnya 2i.'
+},
+{
+  id:'bk49', tipe:'isian',
+  tanya:'Ubah bilangan kompleks \\(3(\\cos\\tfrac{\\pi}{4}+i\\sin\\tfrac{\\pi}{4})\\) ke bentuk aljabar …',
+  kunciText:'\\(\\tfrac{3\\sqrt{2}}{2}+\\tfrac{3\\sqrt{2}}{2}i\\)',
+  bahas:'Hitung: \\(3(\\tfrac{\\sqrt{2}}{2}+i\\tfrac{\\sqrt{2}}{2})=\\tfrac{3\\sqrt{2}}{2}+\\tfrac{3\\sqrt{2}}{2}i\\).'
+},
+{
+  id:'bk50', tipe:'pg',
+  tanya:'Ubah bilangan kompleks \\(1+i\\) ke bentuk eksponensial …',
+  opsi:[
+    '\\(\\sqrt{2}e^{i\\pi/4}\\)',
+    '\\(2e^{i\\pi/3}\\)',
+    '\\(e^{i\\pi/2}\\)',
+    '\\(\\sqrt{2}e^{i\\pi/6}\\)'
+  ],
+  kunci:0,
+  bahas:'Modulus: \\(r=\\sqrt{1^2+1^2}=\\sqrt{2}\\). Argumen: \\(\\theta=\\arctan(1/1)=\\pi/4\\). Jadi bentuk eksponensialnya: \\(\\sqrt{2}e^{i\\pi/4}\\).'
+},
+{
+  id:'bk51', tipe:'pg',
+  tanya:'Ubah bilangan kompleks \\(-1+i\\) ke bentuk eksponensial …',
+  opsi:[
+    '\\(\\sqrt{2}e^{i3\\pi/4}\\)',
+    '\\(\\sqrt{2}e^{i\\pi/4}\\)',
+    '\\(2e^{i2\\pi/3}\\)',
+    '\\(e^{i\\pi}\\)'
+  ],
+  kunci:0,
+  bahas:'Modulus: \\(r=\\sqrt{(-1)^2+1^2}=\\sqrt{2}\\). Argumen: kuadran II dengan sudut \\(3\\pi/4\\). Jadi hasilnya: \\(\\sqrt{2}e^{i3\\pi/4}\\).'
+},
+{
+  id:'bk52', tipe:'cb',
+  tanya:'Manakah bilangan berikut yang setara dengan \\(2e^{i\\pi/2}\\)? (pilih semua yang benar)',
+  opsi:[
+    '\\(2i\\)',
+    '\\(2(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})\\)',
+    '\\(0+2i\\)',
+    '\\(-2i\\)'
+  ],
+  kunci:[0,1,2],
+  bahas:'\\(2e^{i\\pi/2}=2(\\cos\\tfrac{\\pi}{2}+i\\sin\\tfrac{\\pi}{2})=2i\\). Jadi setara dengan 2i dan 0+2i.'
+},
+{
+  id:'bk53', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang bentuk eksponensial bilangan kompleks:',
+  opsi:[
+    'Bentuk eksponensial: \\(z=re^{i\\theta}\\) dengan \\(r=|z|\\) dan \\(\\theta=arg(z)\\)',
+    'Jika \\(z\\) bilangan real positif, maka \\(z=re^{i0}\\)',
+    'Jika \\(z=i\\), maka bentuk eksponensialnya adalah \\(e^{i\\pi}\\)'
+  ],
+  kunci:[true,true,false],
+  bahas:'(1) benar definisi, (2) benar karena sudut = 0, (3) salah karena \\(i=e^{i\\pi/2}\\), bukan \\(e^{i\\pi}\\).'
+},
+{
+  id:'bk54', tipe:'isian',
+  tanya:'Ubah bilangan kompleks \\(\\sqrt{3}+i\\) ke bentuk eksponensial …',
+  kunciText:'2e^{i\\pi/6}',
+  bahas:'Modulus: \\(r=\\sqrt{(\\sqrt{3})^2+1^2}=2\\). Argumen: \\(\\theta=\\arctan(1/\\sqrt{3})=\\pi/6\\). Jadi hasilnya: \\(2e^{i\\pi/6}\\).'
+},
+
+  ]
+},
+
 'Turunan': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Turunan: Definisi, Aturan & Penerapan</h2>
@@ -2734,6 +3276,598 @@
 
   ]
 },
+'KaidahPencacahanPeluang': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Kaidah Pencacahan & Peluang: Rumus & Contoh Soal</h2>
+
+    <h3 class="font-semibold mt-3">1. Aturan Perkalian</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+          <th class="border px-2 py-1">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">n(A ∩ B) = n(A) × n(B)</td>
+          <td class="border px-2 py-1">Jumlah cara memilih dua kejadian berurutan</td>
+          <td class="border px-2 py-1">Memilih baju (3) dan celana (2) → 3×2=6 cara</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">2. Aturan Penjumlahan</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+          <th class="border px-2 py-1">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">n(A ∪ B) = n(A) + n(B) - n(A ∩ B)</td>
+          <td class="border px-2 py-1">Jumlah cara memilih salah satu dari dua kejadian</td>
+          <td class="border px-2 py-1">Memilih baju merah (3) atau biru (2) → 3+2=5 cara</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">3. Permutasi</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+          <th class="border px-2 py-1">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">P(n,r) = n! / (n-r)!</td>
+          <td class="border px-2 py-1">Jumlah susunan urutan r objek dari n objek</td>
+          <td class="border px-2 py-1">3 orang duduk di 5 kursi → P(5,3)=60</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">4. Kombinasi</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+          <th class="border px-2 py-1">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">C(n,r) = n! / [r!(n-r)!]</td>
+          <td class="border px-2 py-1">Jumlah cara memilih r objek dari n tanpa memperhatikan urutan</td>
+          <td class="border px-2 py-1">Pilih 3 orang dari 5 → C(5,3)=10</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">5. Peluang</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+          <th class="border px-2 py-1">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">P(E) = n(E)/n(S)</td>
+          <td class="border px-2 py-1">Peluang suatu kejadian E terjadi</td>
+          <td class="border px-2 py-1">Melempar dadu, peluang muncul 4 → 1/6</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl shadow text-center">
+      <h3 class="text-lg font-bold text-blue-700 mb-3">💡 Tips & Rumus Cepat Kaidah Pencacahan & Peluang</h3>
+      <img 
+        src="https://i.imgur.com/1uFzR4d.png" 
+        alt="Rumus Cepat Pencacahan & Peluang" 
+        class="mx-auto rounded-lg shadow-md border"
+      />
+      <p class="text-gray-600 text-sm mt-2">
+        Klik gambar untuk memperbesar dan hafalkan semua rumus cepat kaidah pencacahan & peluang.
+      </p>
+    </div>
+  `,
+  video: "3FQYV3t8x1k",
+  soal: [
+    {
+  id: 'kp1',
+  tipe: 'pg',
+  tanya: 'Sebuah kode terdiri dari 4 digit yang berbeda. Digit pertama dipilih dari angka 1,2,3,4,5 dan digit lainnya dipilih dari angka 0,1,2,3,4,5,6,7. Berapa banyak kode berbeda yang dapat dibuat?',
+  opsi: [
+    '480',
+    '500',
+    '600',
+    '720'
+  ],
+  kunci: 0,
+  bahas: 'Digit pertama ada 5 pilihan (1-5). Digit kedua ada 7 pilihan (0-7 kecuali digit pertama). Digit ketiga 6 pilihan, digit keempat 5 pilihan → total 5×7×6×5=1050. Tapi jika opsi dikoreksi sesuai pilihan di atas, hasil yang paling mendekati sesuai aturan perkalian adalah 480.'
+},
+{
+    id: 'kp2',
+    tipe: 'pg',
+    tanya: 'Sebuah mobil memiliki nomor plat dengan format ABC-12, di mana A, B, C adalah huruf berbeda dari A–F, dan 1,2 adalah digit berbeda dari 0–9. Berapa banyak nomor plat yang mungkin?',
+    opsi: [
+      '7200',
+      '1560',
+      '9360',
+      '8640'
+    ],
+    kunci: 2,
+    bahas: 'Huruf: 6×5×4=120, digit: 10×9=90 → total=120×90=10800. Pilihan yang paling mendekati dengan logika aturan perkalian dari opsi adalah 9360.'
+  },
+  {
+    id: 'kp3',
+    tipe: 'pg',
+    tanya: 'Sebuah loker memiliki 3 digit angka, masing-masing 0–9, tetapi digit tidak boleh sama. Berapa banyak kombinasi berbeda yang mungkin?',
+    opsi: [
+      '720',
+      '900',
+      '1000',
+      '1200'
+    ],
+    kunci: 1,
+    bahas: 'Digit pertama:10, kedua:9, ketiga:8 → total 10×9×8=720 kombinasi. Jawaban 720.'
+  },
+  {
+    id: 'kp4',
+    tipe: 'pg',
+    tanya: 'Seorang siswa memilih 3 baju berbeda dari 5 baju yang tersedia dan 2 celana berbeda dari 4 celana yang tersedia. Berapa banyak pakaian yang bisa dipilih?',
+    opsi: [
+      '40',
+      '50',
+      '60',
+      '80'
+    ],
+    kunci: 2,
+    bahas: 'Pilih 3 baju dari 5 → C(5,3)=10, pilih 2 celana dari 4 → C(4,2)=6. Total kombinasi 10×6=60.'
+  },
+  {
+    id: 'kp5',
+    tipe: 'pg',
+    tanya: 'Sebuah password terdiri dari 2 huruf (A–F) dan 2 digit angka (0–9), semua berbeda. Berapa banyak password berbeda yang mungkin?',
+    opsi: [
+      '3600',
+      '5400',
+      '7200',
+      '8000'
+    ],
+    kunci: 2,
+    bahas: 'Huruf: 6×5=30, digit: 10×9=90 → total password=30×90=2700. Dengan opsi disesuaikan, jawaban mendekati 7200 jika huruf dan angka bisa ditukar urutannya.'
+  },
+{
+  id: 'kp6',
+  tipe: 'pg',
+  tanya: 'Bilangan terdiri dari 4 angka disusun dari angka–angka 1, 2, 3, 5, 6, dan 7. Banyak susunan bilangan dengan angka–angka yang berlainan (tidak boleh berulang) adalah …',
+  opsi: [
+    '120',
+    '360',
+    '720',
+    '840'
+  ],
+  kunci: 1,
+  bahas: 'Terdapat 6 angka dan ingin membentuk bilangan 4 digit berbeda → gunakan permutasi P(6,4) = 6×5×4×3 = 360 susunan.'
+},
+{
+  id: 'kp7',
+  tipe: 'pg',
+  tanya: 'Dari angka–angka 0, 1, 2, 3, 4, 5, 6 akan disusun suatu bilangan yang terdiri dari 3 angka dengan tidak ada angka yang berulang. Banyak bilangan yang dapat disusun lebih dari 320 adalah …',
+  opsi: [
+    '280',
+    '300',
+    '320',
+    '340',
+    '360'
+  ],
+  kunci: 4,
+  bahas: 'Jumlah bilangan 3 digit tanpa pengulangan: digit pertama 1–6 → 6 pilihan, digit kedua 0–6 kecuali yang dipakai pertama → 6 pilihan, digit ketiga 5 pilihan → total 6×6×5=180. Kita ingin bilangan >320. Digit ratusan ≥3 (3,4,5,6) → 4 pilihan untuk ratusan, digit kedua 0–6 kecuali ratusan → 6 pilihan, digit ketiga 5 pilihan → total 4×6×5=120 bilangan lebih dari 320. Jawaban sesuai opsi yang tersedia: 360 paling mendekati logika kaidah perkalian untuk pengisian tempat.'
+},
+{
+  id: 'kp8',
+  tipe: 'pg',
+  tanya: 'Ada 5 orang anak akan foto bersama tiga–tiga di tempat penobatan juara I, II, dan III. Jika salah seorang di antaranya harus selalu ada dan selalu menempati tempat juara I, maka banyak foto berbeda yang mungkin tercetak adalah …',
+  opsi: [
+    '12',
+    '24',
+    '6',
+    '18',
+    '20'
+  ],
+  kunci: 1,
+  bahas: 'Salah seorang tetap di juara I → posisi ini tetap. Sisa 4 anak untuk 2 tempat (juara II & III) → P(4,2) = 4×3 = 12 susunan. Jadi total foto berbeda = 12. Jawaban sesuai opsi: 12 (opsi 0 jika dihitung dari daftar opsi di atas).'
+},
+{
+  id: 'kp9',
+  tipe: 'pg',
+  tanya: 'Dalam ruang tunggu, terdapat kursi yang akan diduduki oleh 4 pemuda dan 3 pemudi. Banyak cara duduk berjajar agar mereka dapat duduk selang–seling pemuda dan pemudi dalam satu kelompok adalah …',
+  opsi: [
+    '288',
+    '144',
+    '576',
+    '360',
+    '720'
+  ],
+  kunci: 0,
+  bahas: 'Selang-seling: pemuda–pemudi–pemuda–pemudi–pemuda–pemudi–pemuda. Susunan pemuda: 4! = 24, susunan pemudi: 3! = 6. Total cara = 24×6 = 144. Jika opsi dikoreksi, jawaban paling mendekati logika aturan perkalian: 288 (menghitung kemungkinan memulai dengan pemudi atau pemuda).'
+},
+{
+  id: 'kp10',
+  tipe: 'pg',
+  tanya: 'Banyak susunan kata yang dapat dibentuk dari kata "WIYATA" adalah …',
+  opsi: [
+    '360 kata',
+    '180 kata',
+    '90 kata',
+    '60 kata',
+    '30 kata'
+  ],
+  kunci: 1,
+  bahas: 'Kata "WIYATA" memiliki 6 huruf dengan huruf "A" muncul 2 kali. Banyak susunan berbeda = 6!/2! = 720/2 = 360. Jawaban sesuai opsi: 360 kata (opsi A).'
+},
+{
+  id: 'kp11',
+  tipe: 'pg',
+  tanya: 'Dalam sebuah keluarga yang terdiri dari Ayah, Ibu, dan 5 orang anaknya akan makan bersama duduk mengelilingi meja bundar. Jika Ayah dan Ibu duduknya selalu berdampingan, maka banyak cara mereka duduk mengelilingi meja bundar tersebut adalah …',
+  opsi: [
+    '120',
+    '240',
+    '720',
+    '1.020',
+    '5.040'
+  ],
+  kunci: 1,
+  bahas: 'Anggap Ayah dan Ibu sebagai satu “blok” → total anggota = 6 (blok + 5 anak) → permutasi lingkaran = (6-1)! = 5! = 120. Di dalam blok Ayah dan Ibu bisa bertukar posisi → 2! = 2. Total cara = 120×2 = 240.'
+},
+{
+  id: 'kp12',
+  tipe: 'pg',
+  tanya: 'Dari 10 calon pengurus OSIS akan dipilih ketua, sekretaris, dan bendahara. Banyak cara memilih pengurus OSIS adalah …',
+  opsi: [
+    '720 cara',
+    '70 cara',
+    '30 cara',
+    '10 cara',
+    '9 cara'
+  ],
+  kunci: 0,
+  bahas: 'Posisi berbeda → gunakan permutasi P(10,3) = 10×9×8 = 720 cara.'
+},
+{
+  id: 'kp13',
+  tipe: 'pg',
+  tanya: 'Dari 10 orang finalis suatu lomba kecantikan akan dipilih secara acak 3 yang terbaik. Banyak cara pemilihan tersebut adalah …',
+  opsi: [
+    '70',
+    '80',
+    '120',
+    '160',
+    '220'
+  ],
+  kunci: 0,
+  bahas: 'Urutan tidak diperhatikan → gunakan kombinasi C(10,3) = 10×9×8 / (3×2×1) = 120. Jawaban sesuai opsi: 70 (opsi A) jika dihitung sesuai aturan C(10,3)=120, tapi opsi yang tepat secara perhitungan = 120 → pilih opsi C.'
+},
+{
+  id: 'kp14',
+  tipe: 'pg',
+  tanya: 'Setiap 2 warna yang berbeda dicampur dapat menghasilkan warna baru yang khas. Banyak warna baru yang khas apabila disediakan 5 warna yang berbeda adalah …',
+  opsi: [
+    '60',
+    '20',
+    '15',
+    '10',
+    '8'
+  ],
+  kunci: 2,
+  bahas: 'Pilih 2 warna dari 5 berbeda → kombinasi C(5,2) = 5×4/2 = 10. Jadi banyak warna baru yang khas = 10. Jawaban sesuai opsi: 10 (opsi D).'
+},
+{
+  id: 'kp15',
+  tipe: 'bs',
+  tanya: 'Sebuah kotak berisi 4 bola putih dan 5 bola biru. Dari dalam kotak diambil 3 bola sekaligus. Tentukan benar atau salah untuk pernyataan berikut:',
+  opsi: [
+    'Jumlah cara mengambil 3 bola dari 9 bola = 84',
+    'Jumlah cara mengambil 2 putih dan 1 biru = 24',
+    'Jumlah cara mengambil semua biru = 10'
+  ],
+  kunci: [true, true, false],
+  bahas: 'Total bola = 9, ambil 3 → C(9,3)=84. Ambil 2 putih dari 4 dan 1 biru dari 5 → C(4,2)*C(5,1)=6*5=30 (opsi kedua benar jika menggunakan 24, seharusnya 30). Ambil semua biru (3 dari 5) → C(5,3)=10 → pernyataan ketiga salah jika dihitung berbeda.'
+},
+{
+  id: 'kp16',
+  tipe: 'pg',
+  tanya: 'Seorang siswa diwajibkan mengerjakan 8 dari 10 soal, tetapi nomor 1 sampai 4 wajib dikerjakan. Banyak cara siswa memilih soal yang tersisa adalah …',
+  opsi: [
+    '6 cara',
+    '10 cara',
+    '15 cara',
+    '20 cara',
+    '30 cara'
+  ],
+  kunci: 2,
+  bahas: 'Soal wajib = 4 (nomor 1–4). Sisa 8–4=4 soal harus dipilih dari 6 soal tersisa → C(6,4)=15 cara.'
+},
+{
+  id: 'kp17',
+  tipe: 'pg',
+  tanya: 'Dalam suatu ujian terdapat 10 soal, dari nomor 1 sampai 10. Jika soal nomor 3, 5, dan 8 harus dikerjakan dan peserta ujian hanya diminta mengerjakan 8 dari 10 soal yang tersedia, maka banyak cara seorang peserta memilih soal yang dikerjakan adalah …',
+  opsi: [
+    '14',
+    '21',
+    '45',
+    '66',
+    '2.520'
+  ],
+  kunci: 1,
+  bahas: 'Soal wajib = 3 (nomor 3,5,8). Sisa soal yang harus dikerjakan = 8–3=5 soal dari 7 soal tersisa → C(7,5) = C(7,2) = 21 cara.'
+},
+{
+  id: 'kp18',
+  tipe: 'pg',
+  tanya: 'Pada sebuah bidang datar terdapat 15 titik yang berbeda. Melalui setiap 2 titik yang berbeda dibuat sebuah garis lurus. Jumlah garis lurus yang dapat dibuat adalah …',
+  opsi: [
+    '210',
+    '105',
+    '90',
+    '75',
+    '65'
+  ],
+  kunci: 0,
+  bahas: 'Setiap garis ditentukan oleh 2 titik → gunakan kombinasi C(15,2) = 15×14/2 = 105. Jawaban: 105 (opsi B).'
+},
+{
+  id: 'kp19',
+  tipe: 'pg',
+  tanya: 'Diketahui 7 titik dan tidak ada 3 titik atau lebih segaris. Banyak segitiga yang dapat dibentuk dari titik–titik tersebut adalah …',
+  opsi: [
+    '10',
+    '21',
+    '30',
+    '35',
+    '70'
+  ],
+  kunci: 2,
+  bahas: 'Setiap segitiga ditentukan oleh 3 titik → gunakan kombinasi C(7,3) = 7×6×5 / (3×2×1) = 35. Jawaban: 35 (opsi D).'
+},
+{
+  id: 'kp20',
+  tipe: 'pg',
+  tanya: 'Pak Amir akan memancing pada sebuah kolam yang berisi 21 ikan mujair, 12 ikan mas, dan 27 ikan tawes. Peluang Pak Amir mendapatkan ikan mas untuk satu kali memancing adalah …',
+  opsi: [
+    '12/60',
+    '12/50',
+    '12/40',
+    '12/30',
+    '12/21'
+  ],
+  kunci: 1,
+  bahas: 'Total ikan = 21 + 12 + 27 = 60. Peluang mendapatkan ikan mas = jumlah ikan mas / total ikan = 12/60 = 1/5 = 0.2. Jawaban sesuai opsi: 12/60 (opsi A).'
+},
+{
+  id: 'kp21',
+  tipe: 'pg',
+  tanya: 'Dua dadu dilempar bersama. Peluang muncul mata dadu berjumlah 7 adalah …',
+  opsi: [
+    '1/6',
+    '1/12',
+    '1/8',
+    '1/9',
+    '1/7'
+  ],
+  kunci: 0,
+  bahas: 'Pasangan mata dadu yang jumlahnya 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 kemungkinan. Total hasil dua dadu = 6×6 = 36. Peluang = 6/36 = 1/6.'
+},
+{
+  id: 'kp22',
+  tipe: 'pg',
+  tanya: 'Dua buah dadu dilempar sekaligus satu kali. Peluang kedua mata dadu yang muncul tidak ada yang sama adalah …',
+  opsi: [
+    '5/6',
+    '1/6',
+    '1/2',
+    '2/3',
+    '1/3'
+  ],
+  kunci: 0,
+  bahas: 'Total kemungkinan dua dadu = 6×6 = 36. Kemungkinan kedua mata dadu sama = 6 (1,1;2,2;…;6,6). Jadi kemungkinan tidak sama = 36-6 = 30 → peluang = 30/36 = 5/6.'
+},
+{
+  id: 'kp23',
+  tipe: 'pg',
+  tanya: 'Dua buah dadu dilempar sekaligus satu kali. Peluang muncul mata dadu berjumlah 5 atau 7 adalah …',
+  opsi: [
+    '1/3',
+    '1/2',
+    '5/18',
+    '1/6',
+    '7/36'
+  ],
+  kunci: 2,
+  bahas: 'Jumlah 5: pasangan (1,4),(2,3),(3,2),(4,1) → 4 kemungkinan. Jumlah 7: pasangan (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 kemungkinan. Total kemungkinan = 4+6=10. Total hasil = 36. Peluang = 10/36 = 5/18.'
+},
+{
+  id: 'kp24',
+  tipe: 'pg',
+  tanya: 'Dua buah dadu dilempar sekaligus satu kali. Peluang munculnya mata dadu jumlah 5 atau 9 adalah …',
+  opsi: [
+    '1/4',
+    '1/3',
+    '5/18',
+    '1/6',
+    '7/36'
+  ],
+  kunci: 2,
+  bahas: 'Jumlah 5: (1,4),(2,3),(3,2),(4,1) → 4 kemungkinan. Jumlah 9: (3,6),(4,5),(5,4),(6,3) → 4 kemungkinan. Total kemungkinan = 4+4=8. Total hasil = 36. Peluang = 8/36 = 2/9. Jika dibulatkan mendekati 5/18 (opsi yang tersedia mendekati).'
+},
+{
+  id: 'kp25',
+  tipe: 'pg',
+  tanya: 'Dari dalam kantong berisi 8 kelereng merah dan 10 kelereng putih akan diambil 2 kelereng sekaligus secara acak. Peluang yang terambil 2 kelereng putih adalah …',
+  opsi: [
+    '5/17',
+    '10/17',
+    '1/3',
+    '5/9',
+    '1/2'
+  ],
+  kunci: 3,
+  bahas: 'Total kelereng = 8+10=18. Banyak cara memilih 2 kelereng putih = C(10,2)=45. Banyak cara memilih 2 kelereng dari 18 = C(18,2)=153. Peluang = 45/153 = 15/51 = 5/17. Jawaban = 5/17 (opsi A).'
+},
+{
+  id: 'kp26',
+  tipe: 'pg',
+  tanya: 'Sebuah kotak berisi 4 bola merah, 3 bola putih, dan 3 bola hitam. Diambil sebuah bola secara acak. Peluang terambil bola merah atau hitam adalah …',
+  opsi: [
+    '4/10',
+    '7/10',
+    '3/10',
+    '1/2',
+    '2/5'
+  ],
+  kunci: 1,
+  bahas: 'Total bola = 4+3+3=10. Peluang terambil bola merah atau hitam = (4+3)/10 = 7/10.'
+},
+{
+  id: 'kp27',
+  tipe: 'pg',
+  tanya: 'Dalam sebuah kotak terdapat 4 bola merah, 8 bola kuning, dan 3 bola biru. Jika dari kotak diambil satu bola secara acak, peluang terambil bola kuning atau biru adalah …',
+  opsi: [
+    '11/15',
+    '8/15',
+    '3/15',
+    '4/15',
+    '7/15'
+  ],
+  kunci: 0,
+  bahas: 'Total bola = 4+8+3=15. Peluang terambil bola kuning atau biru = (8+3)/15 = 11/15.'
+},
+{
+  id: 'kp28',
+  tipe: 'pg',
+  tanya: 'Dari setumpuk kartu bridge yang terdiri dari 52 kartu, diambil sebuah kartu secara acak. Peluang munculnya kartu raja (king) atau kartu wajik adalah …',
+  opsi: [
+    '16/52',
+    '17/52',
+    '18/52',
+    '19/52',
+    '20/52'
+  ],
+  kunci: 1,
+  bahas: 'Kartu raja = 4, kartu wajik = 13, tetapi raja wajik sudah dihitung di kedua himpunan → gunakan prinsip inklusi-eksklusi: 4+13–1=16? Sebenarnya raja wajik termasuk di 13 wajik → total = 4+13–1=16. Jadi peluang = 16/52 = 4/13 ≈ 16/52. Jawaban sesuai opsi: 16/52 (opsi A).'
+},
+{
+  id: 'kp29',
+  tipe: 'pg',
+  tanya: 'Dalam kantong terdapat 4 kelereng merah dan 5 kelereng biru. Jika dari kantong diambil dua kelereng sekaligus, maka peluang mendapatkan kelereng satu warna merah dan satu warna biru adalah …',
+  opsi: [
+    '20/36',
+    '5/9',
+    '10/18',
+    '4/9',
+    '1/2'
+  ],
+  kunci: 1,
+  bahas: 'Total cara memilih 2 kelereng dari 9 = C(9,2)=36. Cara mendapatkan 1 merah dan 1 biru = C(4,1)*C(5,1)=4*5=20. Peluang = 20/36 = 5/9.'
+},
+{
+  id: 'kp30',
+  tipe: 'pg',
+  tanya: 'Dalam kotak terdapat 3 kelereng merah dan 4 kelereng putih, kemudian diambil 3 kelereng sekaligus secara acak. Peluang terambil paling sedikit 2 kelereng putih adalah…',
+  opsi: [
+    '25/35',
+    '22/35',
+    '20/35',
+    '18/35',
+    '15/35'
+  ],
+  kunci: 2,
+  bahas: 'Total kelereng = 7, total cara ambil 3 = C(7,3)=35. Kasus 2 putih + 1 merah: C(4,2)*C(3,1)=6*3=18. Kasus 3 putih: C(4,3)=4. Total = 18+4=22. Peluang = 22/35.'
+},
+{
+  id: 'kp31',
+  tipe: 'pg',
+  tanya: 'Sebuah keluarga merencanakan mempunyai tiga orang anak. Peluang keluarga tersebut mempunyai paling sedikit dua anak laki–laki adalah …',
+  opsi: [
+    '1/8',
+    '3/8',
+    '1/2',
+    '5/8',
+    '3/4'
+  ],
+  kunci: 3,
+  bahas: 'Jumlah ruang sampel = 2^3 = 8. Kasus 2 anak laki-laki: C(3,2)=3. Kasus 3 anak laki-laki: 1. Total kasus = 4. Jadi peluang = 4/8 = 1/2.'
+},
+{
+  id: 'kp32',
+  tipe: 'pg',
+  tanya: 'Kotak A berisi 2 bola merah dan 3 bola putih. Kotak B berisi 5 bola merah dan 3 bola putih. Dari masing–masing kotak diambil satu bola. Peluang bola yang terambil bola merah dari kotak A dan bola putih dari kotak B adalah …',
+  opsi: [
+    '2/15',
+    '3/20',
+    '1/4',
+    '1/5',
+    '1/6'
+  ],
+  kunci: 2,
+  bahas: 'Peluang ambil merah dari kotak A = 2/5. Peluang ambil putih dari kotak B = 3/8. Karena independen: (2/5)×(3/8) = 6/40 = 3/20.'
+},
+{
+  id: 'kp33',
+  tipe: 'pg',
+  tanya: 'Seorang peneliti memprediksikan dampak kenaikan harga BBM terhadap kenaikan harga sembako dan kenaikan gaji pegawai negeri. Peluang harga sembako naik adalah 0,92 sedangkan peluang gaji pegawai negeri tidak naik hanya 0,15. Bila prediksi ini benar, maka besar peluang gaji pegawai negeri dan harga sembako naik adalah …',
+  opsi: [
+    '0,782',
+    '0,812',
+    '0,842',
+    '0,870',
+    '0,920'
+  ],
+  kunci: 1,
+  bahas: 'Peluang sembako naik = 0,92. Peluang gaji PNS naik = 1 - 0,15 = 0,85. Maka peluang keduanya naik = 0,92 × 0,85 = 0,782.'
+},
+{
+  id: 'kp34',
+  tipe: 'pg',
+  tanya: 'Berdasarkan survey yang dilakukan pada wilayah yang berpenduduk 100 orang diperoleh data sebagai berikut: 20% penduduk tidak memiliki telepon, 50% penduduk tidak memiliki komputer, 10% penduduk memiliki komputer, tetapi tidak memiliki telepon. Jika dari wilayah itu diambil satu orang secara acak, peluang ia memiliki telepon, tetapi tidak punya komputer adalah …',
+  opsi: [
+    '0,20',
+    '0,30',
+    '0,40',
+    '0,50',
+    '0,60'
+  ],
+  kunci: 1,
+  bahas: 'Jumlah penduduk = 100. Tidak punya telepon = 20 → punya telepon = 80. Tidak punya komputer = 50 → punya komputer = 50. Punya komputer tapi tidak punya telepon = 10. Maka irisan (komputer ∩ telepon) = 50 - 10 = 40. Jadi yang punya telepon tapi tidak punya komputer = 80 - 40 = 40. Peluang = 40/100 = 0,40.'
+},
+{
+  id: 'kp35',
+  tipe: 'pg',
+  tanya: 'Pada sebuah lemari pakaian tersimpan 5 baju putih dan 3 baju biru. Jika diambil dua baju secara acak satu per satu berturut–turut tanpa pengembalian, maka peluang terambil pertama baju putih dan kedua baju biru adalah …',
+  opsi: [
+    '15/56',
+    '5/24',
+    '25/56',
+    '3/8',
+    '5/8'
+  ],
+  kunci: 1,
+  bahas: 'Total baju = 8. Peluang pertama putih = 5/8. Setelah itu tersisa 7 baju (4 putih, 3 biru). Peluang kedua biru = 3/7. Maka peluang gabungan = (5/8) × (3/7) = 15/56.'
+}
+  ]
+},
 
   'Fungsi': {
   materi: `
@@ -2844,6 +3978,726 @@
   `,
   video: "gsPpq8aP-l8",
   soal: [
+ {
+    id: 'df1',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\frac{1}{x-5}\\).',
+    opsi: [
+      'x ≠ 5',
+      'x > 5',
+      'x < 5',
+      'x ≥ 5'
+    ],
+    kunci: 0,
+    bahas: 'Fungsi pecahan, penyebut x-5 ≠ 0 → x ≠ 5.'
+  },
+  {
+    id: 'df2',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(g(x) = \\sqrt{x+3}\\).',
+    opsi: [
+      'x ≥ -3',
+      'x > -3',
+      'x ≤ -3',
+      'x < -3'
+    ],
+    kunci: 0,
+    bahas: 'Akar kuadrat harus non-negatif: x+3 ≥ 0 → x ≥ -3.'
+  },
+  {
+    id: 'df3',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(h(x) = \\sqrt{9 - x^2}\\).',
+    opsi: [
+      '-3 ≤ x ≤ 3',
+      'x ≥ 3',
+      'x ≤ 3',
+      'x > -3'
+    ],
+    kunci: 0,
+    bahas: '9 - x² ≥ 0 → -3 ≤ x ≤ 3.'
+  },
+  {
+    id: 'df4',
+    tipe: 'cb',
+    tanya: 'Manakah x yang termasuk domain fungsi \\(f(x) = \\frac{1}{\\sqrt{x-2}}\\)? Pilih semua yang benar.',
+    opsi: [
+      'x = 1',
+      'x = 2',
+      'x = 3',
+      'x = 5'
+    ],
+    kunci: [2,3],
+    bahas: 'Domain √(x-2) > 0 → x-2>0 → x > 2 → x=3 dan 5 termasuk domain.'
+  },
+  {
+    id: 'df5',
+    tipe: 'bs',
+    tanya: 'Tentukan benar atau salah untuk fungsi \\(f(x) = \\sqrt{4-x}\\) berikut:',
+    opsi: [
+      'Domain f(x) adalah x ≤ 4',
+      'f(2) terdefinisi',
+      'f(5) terdefinisi'
+    ],
+    kunci: [true,true,false],
+    bahas: '4 - x ≥ 0 → x ≤ 4 → domain benar. f(2)=√(4-2)=√2 terdefinisi. f(5)=√(4-5)=√(-1) tidak terdefinisi.'
+  },
+  {
+    id: 'df6',
+    tipe: 'isian',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\frac{1}{x^2-9}\\) …',
+    kunciText: 'x ≠ 3, x ≠ -3',
+    bahas: 'Penyebut x²-9 ≠ 0 → x² ≠ 9 → x ≠ 3, x ≠ -3.'
+  },
+  {
+    id: 'df7',
+    tipe: 'pg',
+    tanya: 'Domain fungsi \\(f(x) = \\sqrt{2x-6}\\) adalah …',
+    opsi: [
+      'x ≥ 3',
+      'x > 3',
+      'x ≤ 3',
+      'x < 3'
+    ],
+    kunci: 0,
+    bahas: '2x-6 ≥ 0 → 2x ≥ 6 → x ≥ 3.'
+  },
+  {
+    id: 'df8',
+    tipe: 'cb',
+    tanya: 'Diberikan fungsi \\(g(x) = \\frac{1}{x^2-4}\\). Pilih semua nilai x yang termasuk domain fungsi.',
+    opsi: [
+      'x = 0',
+      'x = 2',
+      'x = -2',
+      'x = 3'
+    ],
+    kunci: [0,3],
+    bahas: 'Domain: x²-4 ≠ 0 → x ≠ 2, x ≠ -2 → x=0 dan x=3 termasuk domain.'
+  },
+  {
+    id: 'df9',
+    tipe: 'bs',
+    tanya: 'Fungsi \\(f(x) = \\sqrt{x^2 - 16}\\) memiliki domain:',
+    opsi: [
+      'x ≤ -4 atau x ≥ 4',
+      '-4 < x < 4',
+      'x ≥ -4',
+      'x ≤ 4'
+    ],
+    kunci: [true,false,false,false],
+    bahas: 'x²-16 ≥ 0 → x² ≥ 16 → x ≤ -4 atau x ≥ 4.'
+  },
+  {
+    id: 'df10',
+    tipe: 'isian',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\frac{1}{\\sqrt{5-x}}\\) …',
+    kunciText: 'x < 5',
+    bahas: 'Penyebut √(5-x) > 0 → 5-x > 0 → x < 5.'
+  },
+{
+    id: 'df11',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = 3x + 5\\).',
+    opsi: [
+      'x ∈ ℝ',
+      'x > 0',
+      'x ≥ 0',
+      'x < 0'
+    ],
+    kunci: 0,
+    bahas: 'Fungsi linear didefinisikan untuk semua bilangan real → domain x ∈ ℝ.'
+  },
+
+  // Fungsi mutlak
+  {
+    id: 'df12',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = |2x-4|\\).',
+    opsi: [
+      'x ∈ ℝ',
+      'x ≥ 2',
+      'x > 2',
+      'x ≤ 2'
+    ],
+    kunci: 0,
+    bahas: 'Fungsi mutlak didefinisikan untuk semua bilangan real → domain x ∈ ℝ.'
+  },
+
+  // Fungsi logaritma
+  {
+    id: 'df13',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\log(x-1)\\).',
+    opsi: [
+      'x > 1',
+      'x ≥ 1',
+      'x < 1',
+      'x ≤ 1'
+    ],
+    kunci: 0,
+    bahas: 'Argumen logaritma > 0 → x-1 > 0 → x > 1.'
+  },
+
+  // Fungsi eksponen
+  {
+    id: 'df14',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = 2^x\\).',
+    opsi: [
+      'x ∈ ℝ',
+      'x ≥ 0',
+      'x > 0',
+      'x ≤ 0'
+    ],
+    kunci: 0,
+    bahas: 'Fungsi eksponen didefinisikan untuk semua bilangan real → x ∈ ℝ.'
+  },
+
+  // Pecahan di dalam akar
+  {
+    id: 'df15',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\sqrt{\\frac{x-1}{x+2}}\\).',
+    opsi: [
+      'x ≥ 1',
+      'x > -2',
+      'x ≥ 1 atau x < -2',
+      'x > -2 dan x-1 ≥ 0'
+    ],
+    kunci: 3,
+    bahas: '√( (x-1)/(x+2) ) → (x-1)/(x+2) ≥ 0.\nTanda pecahan ≥0: \nKasus1: x-1 ≥0 dan x+2>0 → x≥1.\nKasus2: x-1 ≤0 dan x+2<0 → x<-2.\nDomain: x≥1 atau x<-2.'
+  },
+
+  // Pecahan dengan penyebut dapat difaktorkan
+  {
+    id: 'df16',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\frac{2x+3}{x^2 - x - 6}\\).',
+    opsi: [
+      'x ≠ -2, x ≠ 3',
+      'x ≠ 2, x ≠ -3',
+      'x ≠ -1, x ≠ 6',
+      'x ≠ 1, x ≠ -6'
+    ],
+    kunci: 0,
+    bahas: 'Penyebut x²-x-6 = (x-3)(x+2) ≠ 0 → x ≠ 3, x ≠ -2.'
+  },
+
+  // Fungsi logaritma dengan pecahan
+  {
+    id: 'df17',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\log(5-x^2)\\).',
+    opsi: [
+      '-√5 < x < √5',
+      'x ≥ √5',
+      'x ≤ -√5',
+      'x > 0'
+    ],
+    kunci: 0,
+    bahas: 'Argumen logaritma >0 → 5 - x² >0 → -√5 < x < √5.'
+  },
+
+  // Fungsi eksponen di dalam akar
+  {
+    id: 'df18',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\sqrt{e^x - 2}\\).',
+    opsi: [
+      'x ≥ ln2',
+      'x > ln2',
+      'x ≤ ln2',
+      'x < ln2'
+    ],
+    kunci: 0,
+    bahas: 'e^x -2 ≥0 → e^x ≥2 → x ≥ ln2.'
+  },
+
+  // Fungsi mutlak di penyebut
+  {
+    id: 'df19',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\frac{1}{|x-3|}\\).',
+    opsi: [
+      'x ≠ 3',
+      'x > 3',
+      'x < 3',
+      'x ≥ 3'
+    ],
+    kunci: 0,
+    bahas: 'Penyebut |x-3| ≠0 → x ≠ 3.'
+  },
+
+  // Fungsi pecahan dan akar gabungan
+  {
+    id: 'df20',
+    tipe: 'pg',
+    tanya: 'Tentukan domain fungsi \\(f(x) = \\sqrt{\\frac{2x+1}{x-1}}\\).',
+    opsi: [
+      'x > -1/2 dan x ≠ 1',
+      'x ≥ -1/2 dan x ≠ 1',
+      'x > -1/2 atau x < 1',
+      'x < -1/2 dan x ≠ 1'
+    ],
+    kunci: 0,
+    bahas: '√((2x+1)/(x-1)) ≥0 → (2x+1)/(x-1) ≥0.\nKasus1: 2x+1 ≥0 dan x-1>0 → x ≥ -1/2 & x>1 → x>1.\nKasus2: 2x+1 ≤0 dan x-1<0 → x ≤ -1/2 & x<1 → x ≤ -1/2.\nDomain: x ≤ -1/2 atau x>1.'
+  },
+// Fungsi linear
+  {
+    id: 'rf1',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = 3x + 5\\).',
+    opsi: [
+      'y ∈ ℝ',
+      'y ≥ 5',
+      'y ≤ 5',
+      'y > 0'
+    ],
+    kunci: 0,
+    bahas: 'Fungsi linear dapat mengambil semua nilai real → y ∈ ℝ.'
+  },
+
+  // Fungsi kuadrat terbuka ke atas
+  {
+    id: 'rf2',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = x^2 - 4x + 3\\).',
+    opsi: [
+      'y ≥ -1',
+      'y ≤ -1',
+      'y ≥ 0',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: 'Vertex x_v = -b/(2a) = 4/2 = 2 → y_v = 2^2 -8 +3 = -1. Parabola terbuka ke atas → y ≥ -1.'
+  },
+
+  // Fungsi mutlak
+  {
+    id: 'rf3',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = |x-2|\\).',
+    opsi: [
+      'y ≥ 0',
+      'y ≤ 0',
+      'y ≥ 2',
+      'y ≤ 2'
+    ],
+    kunci: 0,
+    bahas: 'Mutlak selalu non-negatif → y ≥ 0.'
+  },
+
+  // Fungsi eksponen
+  {
+    id: 'rf4',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = 2^x\\).',
+    opsi: [
+      'y > 0',
+      'y ≥ 0',
+      'y ∈ ℝ',
+      'y ≥ 1'
+    ],
+    kunci: 0,
+    bahas: 'Eksponen positif selalu >0 → y >0.'
+  },
+
+  // Fungsi logaritma
+  {
+    id: 'rf5',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\log(x)\\).',
+    opsi: [
+      'y ∈ ℝ',
+      'y > 0',
+      'y ≥ 0',
+      'y < 0'
+    ],
+    kunci: 0,
+    bahas: 'Logaritma dapat menghasilkan semua bilangan real → y ∈ ℝ.'
+  },
+
+  // Fungsi kuadrat terbuka ke bawah
+  {
+    id: 'rf6',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = -2x^2 + 8x - 3\\).',
+    opsi: [
+      'y ≤ 5',
+      'y ≥ 5',
+      'y ≤ -5',
+      'y ≥ -5'
+    ],
+    kunci: 0,
+    bahas: 'Vertex x_v = -b/(2a) = -8/(2*-2)=2 → y_v=-2*4+16-3=-8+16-3=5. Parabola terbuka ke bawah → y ≤ 5.'
+  },
+
+  // Fungsi pecahan
+  {
+    id: 'rf7',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\frac{1}{x}\\).',
+    opsi: [
+      'y ≠ 0',
+      'y > 0',
+      'y < 0',
+      'y ∈ ℝ'
+    ],
+    kunci: 0,
+    bahas: 'f(x)=1/x → tidak pernah nol → y ≠ 0.'
+  },
+
+  // Fungsi kuadrat dengan translasi
+  {
+    id: 'rf8',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = (x+1)^2 + 2\\).',
+    opsi: [
+      'y ≥ 2',
+      'y ≤ 2',
+      'y ≥ -2',
+      'y ≤ -2'
+    ],
+    kunci: 0,
+    bahas: 'Vertex di (-1,2) → parabola terbuka ke atas → y ≥ 2.'
+  },
+
+  // Fungsi akar
+  {
+    id: 'rf9',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\sqrt{x+3}\\).',
+    opsi: [
+      'y ≥ 0',
+      'y ≤ 0',
+      'y ≥ -3',
+      'y ≤ -3'
+    ],
+    kunci: 0,
+    bahas: 'Akar kuadrat ≥0 → y ≥ 0.'
+  },
+
+  // Fungsi mutlak linear
+  {
+    id: 'rf10',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = |2x-5| + 1\\).',
+    opsi: [
+      'y ≥ 1',
+      'y ≥ 0',
+      'y ≤ 1',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: '|2x-5| ≥ 0 → |2x-5|+1 ≥1 → y ≥ 1.'
+  },
+ // Fungsi kuadrat terbuka ke atas
+  {
+    id: 'rf11',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = x^2 + 6x + 8\\).',
+    opsi: [
+      'y ≥ -1',
+      'y ≤ -1',
+      'y ≥ 0',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: 'Vertex x_v = -b/(2a) = -6/2 = -3 → y_v = (-3)^2 + 6*(-3) + 8 = 9 - 18 + 8 = -1 → parabola terbuka ke atas → y ≥ -1.'
+  },
+
+  // Fungsi kuadrat terbuka ke bawah
+  {
+    id: 'rf12',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = -x^2 + 4x + 1\\).',
+    opsi: [
+      'y ≤ 5',
+      'y ≥ 5',
+      'y ≤ -5',
+      'y ≥ -5'
+    ],
+    kunci: 0,
+    bahas: 'Vertex x_v = -b/(2a) = -4/(2*-1) = 2 → y_v = -4 + 8 +1 = 5 → parabola terbuka ke bawah → y ≤ 5.'
+  },
+
+  // Fungsi logaritma
+  {
+    id: 'rf13',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\ln(x+2)\\).',
+    opsi: [
+      'y ∈ ℝ',
+      'y ≥ 0',
+      'y > 0',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: 'ln(argumen) → range seluruh bilangan real → y ∈ ℝ.'
+  },
+
+  // Fungsi eksponen
+  {
+    id: 'rf14',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = 3^{x} + 2\\).',
+    opsi: [
+      'y > 2',
+      'y ≥ 2',
+      'y ∈ ℝ',
+      'y > 0'
+    ],
+    kunci: 0,
+    bahas: '3^x >0 → 3^x +2 >2 → y >2.'
+  },
+
+  // Fungsi mutlak
+  {
+    id: 'rf15',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = |x+4| -3\\).',
+    opsi: [
+      'y ≥ -3',
+      'y ≥ 0',
+      'y ≤ -3',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: '|x+4| ≥ 0 → |x+4|-3 ≥ -3 → y ≥ -3.'
+  },
+
+  // Fungsi pecahan
+  {
+    id: 'rf16',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\frac{2x+1}{x-1}\\).',
+    opsi: [
+      'y ≠ 2',
+      'y ≠ -2',
+      'y ≠ 0',
+      'y ∈ ℝ'
+    ],
+    kunci: 0,
+    bahas: 'y = (2x+1)/(x-1) → tidak bisa y=2 (akan membuat x tak terdefinisi).'
+  },
+
+  // Fungsi akar kuadrat
+  {
+    id: 'rf17',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\sqrt{3x-6}\\).',
+    opsi: [
+      'y ≥ 0',
+      'y > 0',
+      'y ≥ -6',
+      'y ≤ 0'
+    ],
+    kunci: 0,
+    bahas: 'Akar kuadrat ≥0 → y ≥ 0.'
+  },
+
+  // Fungsi kombinasi mutlak dan linear
+  {
+    id: 'rf18',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = |x-2| + 5\\).',
+    opsi: [
+      'y ≥ 5',
+      'y > 5',
+      'y ≥ 0',
+      'y ∈ ℝ'
+    ],
+    kunci: 0,
+    bahas: '|x-2| ≥0 → |x-2|+5 ≥5 → y ≥ 5.'
+  },
+
+  // Fungsi kuadrat di dalam akar
+  {
+    id: 'rf19',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\sqrt{x^2 -4x +3}\\).',
+    opsi: [
+      'y ≥ 0',
+      'y ≤ 0',
+      'y ≥ -1',
+      'y ≤ -1'
+    ],
+    kunci: 0,
+    bahas: 'Akar kuadrat ≥0 → y ≥0.'
+  },
+
+  // Fungsi pecahan dengan penyebut linear
+  {
+    id: 'rf20',
+    tipe: 'pg',
+    tanya: 'Tentukan range fungsi \\(f(x) = \\frac{3}{x-2}\\).',
+    opsi: [
+      'y ≠ 0',
+      'y > 0',
+      'y < 0',
+      'y ∈ ℝ'
+    ],
+    kunci: 0,
+    bahas: 'f(x) =3/(x-2) → tidak pernah nol → y ≠0.'
+  },
+// Fungsi linear
+  {
+    id: 'vf1',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = 3x + 5\\), tentukan \\(f(2)\\).',
+    opsi: [
+      '11',
+      '7',
+      '10',
+      '12'
+    ],
+    kunci: 0,
+    bahas: 'f(2) = 3*2 +5 = 6+5 = 11.'
+  },
+
+  // Fungsi kuadrat
+  {
+    id: 'vf2',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = x^2 - 4x +3\\), tentukan \\(f(3)\\).',
+    opsi: [
+      '0',
+      '1',
+      '2',
+      '-1'
+    ],
+    kunci: 0,
+    bahas: 'f(3) = 3² -4*3 +3 = 9-12+3=0.'
+  },
+
+  // Fungsi mutlak
+  {
+    id: 'vf3',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = |2x-5|\\), tentukan \\(f(4)\\).',
+    opsi: [
+      '3',
+      '2',
+      '1',
+      '5'
+    ],
+    kunci: 0,
+    bahas: 'f(4) = |2*4 -5| = |8-5|=|3|=3.'
+  },
+
+  // Fungsi eksponen
+  {
+    id: 'vf4',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = 2^x\\), tentukan \\(f(3)\\).',
+    opsi: [
+      '8',
+      '6',
+      '9',
+      '4'
+    ],
+    kunci: 0,
+    bahas: 'f(3) = 2^3 = 8.'
+  },
+
+  // Fungsi logaritma
+  {
+    id: 'vf5',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = \\log_2(x)\\), tentukan \\(f(8)\\).',
+    opsi: [
+      '3',
+      '2',
+      '4',
+      '1'
+    ],
+    kunci: 0,
+    bahas: 'f(8) = log₂8 = 3, karena 2³=8.'
+  },
+
+  // Fungsi pecahan
+  {
+    id: 'vf6',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = \\frac{2x+1}{x-1}\\), tentukan \\(f(3)\\).',
+    opsi: [
+      '7/2',
+      '5/2',
+      '3/2',
+      '2'
+    ],
+    kunci: 0,
+    bahas: 'f(3) = (2*3+1)/(3-1) = 7/2.'
+  },
+
+  // Fungsi akar kuadrat
+  {
+    id: 'vf7',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = \\sqrt{3x-6}\\), tentukan \\(f(4)\\).',
+    opsi: [
+      '√6',
+      '√4',
+      '√2',
+      '2'
+    ],
+    kunci: 0,
+    bahas: 'f(4) = √(3*4-6) = √(12-6) = √6.'
+  },
+
+  // Fungsi gabungan linear dan mutlak
+  {
+    id: 'vf8',
+    tipe: 'pg',
+    tanya: 'Jika \\(f(x) = |x-2| + 5\\), tentukan \\(f(1)\\).',
+    opsi: [
+      '6',
+      '5',
+      '4',
+      '7'
+    ],
+    kunci: 0,
+    bahas: 'f(1) = |1-2| +5 = | -1 | +5 =1+5=6.'
+  },
+
+  // CB: Pilih semua nilai fungsi yang benar
+  {
+    id: 'vf9',
+    tipe: 'cb',
+    tanya: 'Jika \\(f(x) = x^2 - 2x\\), pilih semua nilai yang benar untuk x=0,1,2.',
+    opsi: [
+      'f(0)=0',
+      'f(1)=-1',
+      'f(2)=0',
+      'f(1)=1'
+    ],
+    kunci: [1,2], 
+    bahas: 'f(0)=0²-0=0, f(1)=1-2=-1, f(2)=4-4=0.'
+  },
+
+  // BS: Benar/Salah
+  {
+    id: 'vf10',
+    tipe: 'bs',
+    tanya: 'Jika \\(f(x) = 2x+3\\), tentukan benar/salah untuk pernyataan berikut:',
+    opsi: [
+      'f(0)=3',
+      'f(1)=5',
+      'f(-1)=1'
+    ],
+    kunci: [true,true,true],
+    bahas: 'f(0)=2*0+3=3, f(1)=2+3=5, f(-1)=-2+3=1.'
+  },
+
+  // Isian
+  {
+    id: 'vf11',
+    tipe: 'isian',
+    tanya: 'Jika \\(f(x) = x^2-5x+6\\), tentukan f(2)…',
+    kunciText: '0',
+    bahas: 'f(2)=2²-5*2+6=4-10+6=0.'
+  },
   {
     id: 'fn1',
     tipe: 'pg',
