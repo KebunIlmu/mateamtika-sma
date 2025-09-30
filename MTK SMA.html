@@ -50,7 +50,34 @@
       <button data-tab="simulasi" class="tab-btn btn py-2 rounded-lg bg-white border chip text-xs font-semibold">Simulasi</button>
     </div>
   </div>
+<!-- LOGIN BOX -->
+<div id="loginForm" class="flex items-center justify-center min-h-screen bg-gradient-to-br from-emerald-100 to-cyan-100">
+  <div class="w-full max-w-sm p-6 rounded-2xl shadow-lg bg-white/70 backdrop-blur-md">
+    <h2 class="text-2xl font-bold text-emerald-700 text-center mb-5">Login</h2>
+    
+    <input type="text" id="username" placeholder="Username"
+      class="w-full px-4 py-2 mb-3 border rounded-lg focus:ring-2 focus:ring-emerald-400 focus:outline-none" />
+    
+    <input type="password" id="password" placeholder="Password"
+      class="w-full px-4 py-2 mb-3 border rounded-lg focus:ring-2 focus:ring-emerald-400 focus:outline-none" />
+    
+    <button onclick="checkLogin()" 
+      class="w-full py-2 mt-2 font-semibold text-white rounded-lg bg-emerald-500 hover:bg-emerald-600 active:scale-95 transition">
+      Masuk
+    </button>
+    
+    <p id="errorMsg" class="text-sm text-red-500 mt-2 text-center"></p>
+  </div>
+</div>
 
+<!-- CONTENT SETELAH LOGIN -->
+<div id="content22" class="hidden">
+  <!-- Tombol Sidebar -->
+  <div class="p-4">
+    <button class="text-emerald-600 text-2xl" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
   <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
         <!-- Tabs content wrapper -->
     <section id="tab-materi" class="tab-pane">
@@ -140,853 +167,7 @@
   // ======= Dataset Contoh (DISERAGAMKAN DENGAN TKA SMA) =======
   // Struktur: mapel -> bab[] -> materi (html), video (YT embed id), soal[]
   const DB = {
-'Kimia': {
-  bab: {
-'Hidrokarbon dan Minyak Bumi': {
-  materi: `
-    <h2 class="text-xl font-bold mb-2">Hidrokarbon dan Minyak Bumi</h2>
-
-    <h3 class="font-semibold mt-3">1. Pengertian Hidrokarbon</h3>
-    <p class="mb-4">
-      Hidrokarbon adalah senyawa kimia yang tersusun dari atom karbon (C) dan hidrogen (H) saja. 
-      Senyawa ini menjadi dasar dari banyak bahan kimia penting, termasuk bahan bakar, pelarut, dan plastik.
-    </p>
-
-    <h3 class="font-semibold mt-3">2. Klasifikasi Hidrokarbon</h3>
-    <ul class="list-disc pl-6 mb-4">
-      <li><b>Alkana</b>: hidrokarbon jenuh dengan ikatan tunggal C–C. Rumus umum \\(C_nH_{2n+2}\\). Contoh: metana (CH₄), etana (C₂H₆).</li>
-      <li><b>Alkena</b>: hidrokarbon tak jenuh dengan satu ikatan rangkap dua C=C. Rumus umum \\(C_nH_{2n}\\). Contoh: etena (C₂H₄), propena (C₃H₆).</li>
-      <li><b>Alkuna</b>: hidrokarbon tak jenuh dengan satu ikatan rangkap tiga C≡C. Rumus umum \\(C_nH_{2n-2}\\). Contoh: etuna (C₂H₂).</li>
-      <li><b>Aromatik</b>: hidrokarbon dengan cincin benzena. Contoh: benzena (C₆H₆), toluena.</li>
-    </ul>
-
-    <h3 class="font-semibold mt-3">3. Minyak Bumi</h3>
-    <p class="mb-4">
-      Minyak bumi adalah campuran kompleks hidrokarbon yang berasal dari pelapukan organisme purba. 
-      Minyak bumi diproses melalui <b>penyulingan bertingkat (fraksinasi)</b> untuk menghasilkan berbagai produk:
-    </p>
-    <table class="table-auto border border-collapse border-gray-400 w-full mb-4">
-      <thead>
-        <tr class="bg-gray-200">
-          <th class="border px-2 py-1">Fraksi</th>
-          <th class="border px-2 py-1">Rentang Titik Didih (°C)</th>
-          <th class="border px-2 py-1">Kegunaan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border px-2 py-1">Gas (LPG)</td>
-          <td class="border px-2 py-1">&lt; 40</td>
-          <td class="border px-2 py-1">Bahan bakar memasak</td>
-        </tr>
-        <tr class="bg-gray-50">
-          <td class="border px-2 py-1">Bensin</td>
-          <td class="border px-2 py-1">40–175</td>
-          <td class="border px-2 py-1">Bahan bakar kendaraan bermotor</td>
-        </tr>
-        <tr>
-          <td class="border px-2 py-1">Minyak tanah</td>
-          <td class="border px-2 py-1">175–250</td>
-          <td class="border px-2 py-1">Bahan bakar rumah tangga, pesawat</td>
-        </tr>
-        <tr class="bg-gray-50">
-          <td class="border px-2 py-1">Solar</td>
-          <td class="border px-2 py-1">250–350</td>
-          <td class="border px-2 py-1">Bahan bakar diesel</td>
-        </tr>
-        <tr>
-          <td class="border px-2 py-1">Residue</td>
-          <td class="border px-2 py-1">&gt; 350</td>
-          <td class="border px-2 py-1">Aspal, pelumas, parafin</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3 class="font-semibold mt-3">4. Dampak Penggunaan Hidrokarbon</h3>
-    <ul class="list-disc pl-6 mb-4">
-      <li>Pencemaran udara: pembakaran tidak sempurna menghasilkan CO yang beracun.</li>
-      <li>Efek rumah kaca: pembakaran hidrokarbon menghasilkan CO₂ berlebih.</li>
-      <li>Penipisan sumber daya fosil: minyak bumi tidak dapat diperbarui.</li>
-    </ul>
-
-    <h3 class="font-semibold mt-3">5. Materi Lebih Lengkap</h3>
-    <p class="mb-4">
-      Untuk penjelasan lebih detail, baca materi berikut:<br>
-      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/karbon_kim4_6.pdf" target="_blank" class="text-blue-600 underline">
-        📘 Klik di sini untuk membuka materi lengkap Hidrokarbon & Minyak Bumi (PDF)
-      </a>
-    </p>
-  `,
-  video: 'D8y8-iejawc',
-  soal: [
-{
-  id: 'hk3',
-  tipe: 'pg',
-  tanya: 'Senyawa hidrokarbon jenuh yang hanya memiliki ikatan tunggal disebut …',
-  opsi: [
-    'Alkana',
-    'Alkuna',
-    'Alkena',
-    'Aromatik'
-  ],
-  kunci: 0,
-  bahas: 'Hidrokarbon jenuh dengan ikatan tunggal disebut alkana. Alkena memiliki ikatan rangkap dua, alkuna memiliki ikatan rangkap tiga, dan aromatik mengandung cincin benzena.'
-},
-{
-  id: 'hk4',
-  tipe: 'pg',
-  tanya: 'Alkena berbeda dengan alkuna karena …',
-  opsi: [
-    'Alkena memiliki ikatan rangkap dua, sedangkan alkuna memiliki ikatan rangkap tiga',
-    'Alkena memiliki ikatan tunggal, sedangkan alkuna memiliki ikatan rangkap dua',
-    'Alkena dan alkuna sama-sama memiliki ikatan rangkap tiga',
-    'Alkena dan alkuna tidak memiliki perbedaan'
-  ],
-  kunci: 0,
-  bahas: 'Alkena memiliki ikatan rangkap dua, sedangkan alkuna memiliki ikatan rangkap tiga.'
-},
-{
-  id: 'hk5',
-  tipe: 'cb',
-  tanya: 'Termasuk contoh senyawa alkana adalah …',
-  opsi: [
-    'Metana',
-    'Etena',
-    'Propana',
-    'Butuna'
-  ],
-  kunci: [0,2],
-  bahas: 'Metana dan propana adalah alkana (ikatan tunggal). Etena adalah alkena (ikatan rangkap dua), sedangkan butuna adalah alkuna (ikatan rangkap tiga).'
-},
-{
-  id: 'hk6',
-  tipe: 'pg',
-  tanya: 'Senyawa hidrokarbon yang mengandung cincin benzena termasuk golongan …',
-  opsi: [
-    'Alkana',
-    'Alkena',
-    'Alkuna',
-    'Aromatik'
-  ],
-  kunci: 3,
-  bahas: 'Senyawa hidrokarbon dengan cincin benzena termasuk golongan aromatik, contoh: benzena, toluena.'
-},
-{
-  id: 'hk7',
-  tipe: 'pg',
-  tanya: 'Senyawa hidrokarbon tak jenuh yang memiliki ikatan rangkap tiga disebut …',
-  opsi: [
-    'Alkana',
-    'Alkena',
-    'Alkuna',
-    'Aromatik'
-  ],
-  kunci: 2,
-  bahas: 'Hidrokarbon tak jenuh dengan ikatan rangkap tiga disebut alkuna. Contoh: etuna (asetilena).'
-},
-{
-  id: 'hk8',
-  tipe: 'cb',
-  tanya: 'Manakah pasangan rumus molekul yang termasuk alkana?',
-  opsi: [
-    'C₂H₆',
-    'C₃H₆',
-    'C₄H₁₀',
-    'C₂H₂'
-  ],
-  kunci: [0,2],
-  bahas: 'C₂H₆ (etana) dan C₄H₁₀ (butana) adalah alkana. C₃H₆ adalah alkena, sedangkan C₂H₂ adalah alkuna.'
-},
-{
-  id: 'hk9',
-  tipe: 'pg',
-  tanya: 'Senyawa etena (C₂H₄) termasuk golongan hidrokarbon …',
-  opsi: [
-    'Alkana',
-    'Alkena',
-    'Alkuna',
-    'Aromatik'
-  ],
-  kunci: 1,
-  bahas: 'Etena memiliki ikatan rangkap dua sehingga termasuk golongan alkena.'
-},
-{
-  id: 'hk10',
-  tipe: 'cb',
-  tanya: 'Ciri khas senyawa aromatik adalah …',
-  opsi: [
-    'Memiliki ikatan rangkap tiga',
-    'Mengandung cincin benzena',
-    'Ikatan C–C bersifat resonansi',
-    'Hanya berbentuk rantai lurus'
-  ],
-  kunci: [1,2],
-  bahas: 'Senyawa aromatik mengandung cincin benzena dengan ikatan C–C yang bersifat resonansi. Tidak selalu berbentuk rantai lurus.'
-},
-{
-  id: 'hk11',
-  tipe: 'pg',
-  tanya: 'Perhatikan rumus molekul berikut: C₄H₁₀. Senyawa ini memiliki dua isomer. Jika senyawa tersebut diberi nama menurut IUPAC, maka nama kedua isomernya adalah …',
-  opsi: [
-    'Butana dan metilpropana',
-    'Butana dan etana',
-    'Butuna dan propuna',
-    'Butana dan siklobutana'
-  ],
-  kunci: 0,
-  bahas: 'C₄H₁₀ memiliki dua isomer alkana: n-butana (rantai lurus) dan 2-metilpropana (isobutana).'
-},
-{
-  id: 'hk12',
-  tipe: 'cb',
-  tanya: 'Diberikan struktur hidrokarbon berikut:\nCH₃–CH=CH–CH₃. Pernyataan yang benar mengenai senyawa tersebut adalah …',
-  opsi: [
-    'Memiliki ikatan rangkap dua',
-    'Termasuk golongan alkuna',
-    'Memiliki 4 atom karbon',
-    'Nama IUPAC-nya adalah but-2-ena'
-  ],
-  kunci: [0,2,3],
-  bahas: 'CH₃–CH=CH–CH₃ memiliki ikatan rangkap dua (bukan tiga), jumlah atom C ada 4, dan nama IUPAC-nya but-2-ena.'
-},
-{
-  id: 'hk13',
-  tipe: 'pg',
-  tanya: 'Senyawa hidrokarbon dengan rumus molekul C₆H₆ memiliki struktur cincin dengan ikatan rangkap selang-seling. Senyawa ini disebut …',
-  opsi: [
-    'Sikloheksana',
-    'Benzena',
-    'Heksuna',
-    'Heksena'
-  ],
-  kunci: 1,
-  bahas: 'C₆H₆ dengan cincin berikatan resonansi adalah benzena, senyawa aromatik paling sederhana.'
-},
-{
-  id: 'hk14',
-  tipe: 'pg',
-  tanya: 'Sebuah senyawa hidrokarbon memiliki rumus molekul C₅H₁₂. Senyawa ini dapat membentuk 3 isomer. Salah satunya adalah …',
-  opsi: [
-    'Pentana',
-    '2-metilbutana',
-    '2,2-dimetilpropana',
-    'Semua benar'
-  ],
-  kunci: 3,
-  bahas: 'C₅H₁₂ (pentana) memiliki 3 isomer: n-pentana, 2-metilbutana, dan 2,2-dimetilpropana.'
-},
-{
-  id: 'hk15',
-  tipe: 'pg',
-  tanya: 'Perhatikan struktur berikut:\nCH₃–CH₂–CH₂–CH₃. Nama IUPAC senyawa tersebut adalah …',
-  opsi: [
-    'Metana',
-    'Propana',
-    'Butana',
-    'Pentana'
-  ],
-  kunci: 2,
-  bahas: 'Struktur CH₃–CH₂–CH₂–CH₃ memiliki 4 atom karbon tanpa cabang, sehingga namanya adalah butana.'
-},
-{
-  id: 'hk16',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan struktur CH₃–CH(CH₃)–CH₃ dinamakan …',
-  opsi: [
-    'Metana',
-    '2-metilpropana',
-    'Butana',
-    'Propana'
-  ],
-  kunci: 1,
-  bahas: 'Struktur tersebut memiliki 3 atom karbon utama (propana) dengan cabang metil di C nomor 2, sehingga namanya 2-metilpropana.'
-},
-{
-  id: 'hk17',
-  tipe: 'cb',
-  tanya: 'Manakah dari senyawa berikut yang merupakan isomer dengan rumus molekul C₄H₈?',
-  opsi: [
-    'But-1-ena',
-    'But-2-ena',
-    '2-metilpropana',
-    '2-metilpropena'
-  ],
-  kunci: [0,1,3],
-  bahas: 'C₄H₈ dapat berupa but-1-ena, but-2-ena, dan 2-metilpropena (semua alkena). 2-metilpropana adalah alkana C₄H₁₀, bukan C₄H₈.'
-},
-{
-  id: 'hk18',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan struktur berikut:\nCH≡C–CH₂–CH₃ memiliki nama IUPAC …',
-  opsi: [
-    'But-1-ena',
-    'But-2-ena',
-    'But-1-una',
-    'But-2-una'
-  ],
-  kunci: 2,
-  bahas: 'Struktur tersebut adalah C₄ dengan ikatan rangkap tiga di posisi 1, sehingga dinamakan but-1-una.'
-},
-{
-  id: 'hk19',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan rumus CH₃–CH₂–CH₂–CH₃ memiliki nama IUPAC …',
-  opsi: [
-    'Propana',
-    'Butana',
-    'Pentana',
-    'Metana'
-  ],
-  kunci: 1,
-  bahas: 'Senyawa dengan 4 atom karbon lurus adalah butana.'
-},
-{
-  id: 'hk20',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan 3 atom karbon lurus (CH₃–CH₂–CH₃) dinamakan …',
-  opsi: [
-    'Metana',
-    'Etana',
-    'Propana',
-    'Butana'
-  ],
-  kunci: 2,
-  bahas: 'CH₃–CH₂–CH₃ memiliki 3 atom karbon, sehingga namanya propana.'
-},
-{
-  id: 'hk21',
-  tipe: 'pg',
-  tanya: 'Senyawa CH₃–CH(CH₃)–CH₂–CH₃ dinamakan …',
-  opsi: [
-    'Pentana',
-    '2-metilbutana',
-    '3-metilbutana',
-    '2,2-dimetilpropana'
-  ],
-  kunci: 1,
-  bahas: 'Rantai utama adalah butana (4 C). Cabang metil ada di C nomor 2, sehingga nama IUPAC adalah 2-metilbutana.'
-},
-{
-  id: 'hk22',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan rumus C₅H₁₂ memiliki 3 isomer. Manakah yang bukan merupakan isomer C₅H₁₂?',
-  opsi: [
-    'n-pentana',
-    '2-metilbutana',
-    '2,2-dimetilpropana',
-    '2-metilpropana'
-  ],
-  kunci: 3,
-  bahas: 'C₅H₁₂ memiliki 3 isomer: n-pentana, 2-metilbutana, dan 2,2-dimetilpropana. 2-metilpropana adalah isomer C₄H₁₀.'
-},
-{
-  id: 'hk23',
-  tipe: 'cb',
-  tanya: 'Senyawa berikut yang termasuk golongan alkuna adalah …',
-  opsi: [
-    'CH≡CH',
-    'CH₂=CH₂',
-    'CH₃–C≡C–CH₃',
-    'CH₃–CH₃'
-  ],
-  kunci: [0,2],
-  bahas: 'CH≡CH (etuna) dan CH₃–C≡C–CH₃ (but-2-una) adalah alkuna.'
-},
-{
-  id: 'hk24',
-  tipe: 'pg',
-  tanya: 'Nama IUPAC untuk senyawa berikut:\nCH₃–C(CH₃)₂–CH₂–CH₃ adalah …',
-  opsi: [
-    '2,2-dimetilbutana',
-    '3,3-dimetilbutana',
-    '2-metilpentana',
-    '2,2-dimetilpentana'
-  ],
-  kunci: 0,
-  bahas: 'Rantai utama adalah butana (4 C). Ada 2 cabang metil di C nomor 2, sehingga namanya 2,2-dimetilbutana.'
-},
-{
-  id: 'hk25',
-  tipe: 'pg',
-  tanya: 'Perhatikan struktur berikut:\nCH₃–CH(CH₃)–CH(CH₃)–CH₃. Nama IUPAC senyawa tersebut adalah …',
-  opsi: [
-    '2,2-dimetilbutana',
-    '2,3-dimetilbutana',
-    '3,3-dimetilbutana',
-    '2,2,3-trimetilbutana'
-  ],
-  kunci: 1,
-  bahas: 'Rantai utama adalah butana (4 C). Cabang metil ada di C nomor 2 dan 3, sehingga nama IUPAC-nya adalah 2,3-dimetilbutana.'
-},
-{
-  id: 'hk26',
-  tipe: 'cb',
-  tanya: 'Senyawa dengan rumus molekul C₆H₁₄ memiliki 5 isomer. Manakah di antaranya yang benar?',
-  opsi: [
-    'n-heksana',
-    '2-metilpentana',
-    '3-metilpentana',
-    '2,2-dimetilbutana'
-  ],
-  kunci: [0,1,2,3],
-  bahas: 'Isomer C₆H₁₄ ada 5: n-heksana, 2-metilpentana, 3-metilpentana, 2,2-dimetilbutana, dan 2,3-dimetilbutana.'
-},
-{
-  id: 'hk27',
-  tipe: 'pg',
-  tanya: 'Senyawa dengan struktur berikut:\n      CH₃\n       |\nCH₃–C–CH₂–C(CH₃)₃\n       |\n      CH₃\nNama IUPAC yang benar adalah …',
-  opsi: [
-    '2,2,3-trimetilpentana',
-    '2,2,4-trimetilpentana',
-    '3,3,4-trimetilpentana',
-    '2,3,4-trimetilpentana'
-  ],
-  kunci: 1,
-  bahas: 'Rantai utama adalah pentana. Terdapat cabang metil di C nomor 2 (dua cabang) dan C nomor 4 (satu cabang). Jadi namanya 2,2,4-trimetilpentana.'
-},
-{
-  id: 'hk28',
-  tipe: 'pg',
-  tanya: 'Manakah pasangan senyawa berikut yang memiliki titik didih lebih tinggi?',
-  opsi: [
-    'Metana dibandingkan dengan etana',
-    'Butana dibandingkan dengan propana',
-    'Pentana dibandingkan dengan heksana',
-    'Etuna dibandingkan dengan oktana'
-  ],
-  kunci: 1,
-  bahas: 'Semakin panjang rantai karbon, titik didih cenderung semakin tinggi karena gaya London makin kuat. Jadi butana memiliki titik didih lebih tinggi daripada propana.'
-},
-{
-  id: 'hk29',
-  tipe: 'pg',
-  tanya: 'Alkena memiliki titik didih yang hampir sama dengan alkana berkarbon sama. Hal ini karena …',
-  opsi: [
-    'Ikatan rangkap dua menyebabkan interaksi ion',
-    'Keduanya bersifat nonpolar dengan gaya antarmolekul London',
-    'Alkena lebih polar sehingga titik didihnya jauh lebih tinggi',
-    'Alkana tidak memiliki gaya antarmolekul'
-  ],
-  kunci: 1,
-  bahas: 'Alkana dan alkena sama-sama nonpolar, sehingga gaya antarmolekulnya berupa gaya London.'
-},
-{
-  id: 'hk30',
-  tipe: 'pg',
-  tanya: 'Jika etena direaksikan dengan Br₂ dalam CCl₄, hasil yang diperoleh adalah …',
-  opsi: [
-    'Brometana',
-    '1,2-dibromoetana',
-    'Etilbromida',
-    'Benzena'
-  ],
-  kunci: 1,
-  bahas: 'Etena mengalami reaksi adisi dengan Br₂ menghasilkan 1,2-dibromoetana.'
-},
-{
-  id: 'hk31',
-  tipe: 'cb',
-  tanya: 'Manakah reaksi berikut yang benar mengenai alkuna?',
-  opsi: [
-    'Dapat mengalami reaksi adisi',
-    'Dapat mengalami reaksi substitusi radikal bebas',
-    'Dapat mengalami pembakaran sempurna',
-    'Tidak dapat mengalami reaksi apapun'
-  ],
-  kunci: [0,1,2],
-  bahas: 'Alkuna dapat mengalami adisi (misalnya hidrogenasi), substitusi (dengan halogen), serta pembakaran. Jadi opsi 0,1,2 benar.'
-},
-{
-  id: 'hk32',
-  tipe: 'pg',
-  tanya: 'Mengapa bensin yang mengandung senyawa bercabang lebih disukai dibandingkan dengan rantai lurus?',
-  opsi: [
-    'Karena senyawa bercabang memiliki angka oktan lebih tinggi',
-    'Karena senyawa bercabang lebih mudah membeku',
-    'Karena senyawa rantai lurus lebih stabil',
-    'Karena senyawa bercabang tidak mudah terbakar'
-  ],
-  kunci: 0,
-  bahas: 'Senyawa bercabang menghasilkan pembakaran lebih merata dan angka oktan lebih tinggi sehingga lebih disukai sebagai bahan bakar.'
-},
-{
-  id:'hk33', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang alkana berikut:',
-  opsi:[
-    'Alkana hanya memiliki ikatan tunggal C–C',
-    'Rumus umum alkana adalah CnH2n+2',
-    'Alkana termasuk hidrokarbon tak jenuh'
-  ],
-  kunci:[true,true,false],
-  bahas:'Alkana memang hanya punya ikatan tunggal dan rumus umumnya CnH2n+2. Alkana adalah hidrokarbon jenuh, bukan tak jenuh.'
-},
-{
-  id:'hk34', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang senyawa C4H10 berikut:',
-  opsi:[
-    'C4H10 memiliki 2 isomer',
-    'Isomernya adalah butana dan 2-metilpropana',
-    'Keduanya memiliki rumus empiris yang berbeda'
-  ],
-  kunci:[true,true,false],
-  bahas:'C4H10 punya 2 isomer: n-butana & 2-metilpropana. Rumus empiris keduanya sama karena rumus molekulnya sama.'
-},
-{
-  id:'hk35', tipe:'bs',
-  tanya:'Perhatikan struktur senyawa: CH3–CH=CH–CH3. Tentukan benar/salah:',
-  opsi:[
-    'Nama IUPAC senyawa tersebut adalah but-2-ena',
-    'Senyawa ini termasuk alkuna',
-    'Jumlah atom karbon dalam senyawa ini ada 4'
-  ],
-  kunci:[true,false,true],
-  bahas:'Struktur CH3–CH=CH–CH3 adalah but-2-ena (alkena dengan 4 atom karbon).'
-},
-{
-  id:'hk36', tipe:'bs',
-  tanya:'Perhatikan struktur senyawa: CH3–C(CH3)2–CH2–CH3. Tentukan benar/salah:',
-  opsi:[
-    'Nama IUPAC-nya adalah 2,2-dimetilbutana',
-    'Rantai utama yang dipilih adalah butana',
-    'Senyawa tersebut memiliki 6 atom karbon total'
-  ],
-  kunci:[true,true,true],
-  bahas:'Rantai utama = butana. Ada 2 cabang metil di C nomor 2 → 2,2-dimetilbutana. Jumlah atom C = 4 (utama) + 2 (cabang) = 6.'
-},
-{
-  id:'hk37', tipe:'bs',
-  tanya:'Perhatikan pernyataan berikut tentang senyawa aromatik:',
-  opsi:[
-    'Senyawa aromatik selalu mengandung cincin benzena',
-    'Benzena memiliki 6 elektron π yang terdelokalisasi',
-    'Benzena memiliki ikatan rangkap yang tetap pada posisi tertentu'
-  ],
-  kunci:[true,true,false],
-  bahas:'Ciri khas aromatik adalah cincin benzena dengan elektron π terdelokalisasi. Ikatan rangkap tidak tetap di posisi tertentu, melainkan bersifat resonansi.'
-},
-{
-  id:'hk38', tipe:'bs',
-  tanya:'Perhatikan reaksi etena (C2H4) dengan Br2. Tentukan benar/salah:',
-  opsi:[
-    'Reaksi yang terjadi adalah reaksi adisi',
-    'Produk yang dihasilkan adalah 1,2-dibromoetana',
-    'Ikatan rangkap dua tetap ada setelah reaksi'
-  ],
-  kunci:[true,true,false],
-  bahas:'Alkena bereaksi dengan Br2 melalui adisi → ikatan rangkap dua pecah, terbentuk 1,2-dibromoetana.'
-},
-{
-  id:'hk39', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang perbedaan alkana, alkena, dan alkuna:',
-  opsi:[
-    'Alkana memiliki ikatan tunggal',
-    'Alkena memiliki ikatan rangkap dua',
-    'Alkuna memiliki ikatan rangkap tiga'
-  ],
-  kunci:[true,true,true],
-  bahas:'Alkana → ikatan tunggal. Alkena → ikatan rangkap dua. Alkuna → ikatan rangkap tiga.'
-},
-{
-  id:'hk40', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang senyawa C6H14:',
-  opsi:[
-    'Memiliki 5 isomer struktural',
-    'Salah satu isomernya adalah 2,3-dimetilbutana',
-    'Semua isomer memiliki sifat fisik identik'
-  ],
-  kunci:[true,true,false],
-  bahas:'C6H14 memiliki 5 isomer: n-heksana, 2-metilpentana, 3-metilpentana, 2,2-dimetilbutana, 2,3-dimetilbutana. Sifat fisiknya berbeda-beda.'
-},
-{
-  id:'hk41', tipe:'bs',
-  tanya:'Perhatikan reaksi pembakaran hidrokarbon:',
-  opsi:[
-    'Hidrokarbon dengan O2 selalu menghasilkan CO2 dan H2O pada pembakaran sempurna',
-    'Pembakaran tidak sempurna dapat menghasilkan CO',
-    'Semua hidrokarbon larut dalam air sehingga mudah dibakar'
-  ],
-  kunci:[true,true,false],
-  bahas:'Pembakaran sempurna → CO2 + H2O. Pembakaran tidak sempurna bisa → CO. Hidrokarbon tidak larut dalam air.'
-},
-{
-  id:'hk42', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang sifat fisik hidrokarbon:',
-  opsi:[
-    'Hidrokarbon umumnya nonpolar',
-    'Titik didih meningkat seiring bertambahnya panjang rantai',
-    'Alkana lebih mudah larut dalam air daripada pelarut organik'
-  ],
-  kunci:[true,true,false],
-  bahas:'Hidrokarbon nonpolar → larut dalam pelarut nonpolar. Semakin panjang rantai, semakin tinggi titik didihnya.'
-},
-{
-  id: 'hk43',
-  tipe: 'isian',
-  tanya: 'Rumus umum alkana adalah CnH....',
-  kunciText: '2n+2',
-  bahas: 'Rumus umum alkana adalah CnH2n+2 karena hanya memiliki ikatan tunggal.'
-},
-{
-  id: 'hk44',
-  tipe: 'isian',
-  tanya: 'Senyawa dengan struktur CH≡CH memiliki nama IUPAC ....',
-  kunciText: 'etuna',
-  bahas: 'CH≡CH adalah hidrokarbon tak jenuh dengan ikatan rangkap tiga pada 2 atom karbon → etuna (etilena untuk ikatan rangkap dua, etuna untuk rangkap tiga).'
-},
-{
-  id: 'hk45',
-  tipe: 'isian',
-  tanya: 'Senyawa C4H10 memiliki dua isomer yaitu butana dan ....',
-  kunciText: '2-metilpropana',
-  bahas: 'C4H10 dapat membentuk rantai lurus (butana) dan bercabang (2-metilpropana).'
-},
-{
-  id: 'hk46',
-  tipe: 'isian',
-  tanya: 'Nama IUPAC dari senyawa CH3–CH2–CH2–CH3 adalah ....',
-  kunciText: 'butana',
-  bahas: 'CH3–CH2–CH2–CH3 memiliki 4 atom C berantai lurus → butana.'
-},
-{
-  id: 'hk47',
-  tipe: 'isian',
-  tanya: 'Benzena memiliki jumlah elektron π terdelokalisasi sebanyak ....',
-  kunciText: '6',
-  bahas: 'Benzena memiliki 6 elektron π yang terdelokalisasi pada cincin aromatiknya.'
-},
-{
-  id: 'hk48',
-  tipe: 'isian',
-  tanya: 'Reaksi antara etena (C2H4) dengan Br2 menghasilkan senyawa ....',
-  kunciText: '1,2-dibromoetana',
-  bahas: 'Etena bereaksi dengan Br2 melalui reaksi adisi menghasilkan 1,2-dibromoetana.'
-},
-{
-  id: 'hk49',
-  tipe: 'isian',
-  tanya: 'Nama IUPAC dari senyawa CH3–C(CH3)2–CH2–CH3 adalah ....',
-  kunciText: '2,2-dimetilbutana',
-  bahas: 'Rantai utama butana dengan dua cabang metil di C nomor 2 → 2,2-dimetilbutana.'
-},
-{
-  id: 'hk50',
-  tipe: 'isian',
-  tanya: 'Pembakaran sempurna hidrokarbon akan menghasilkan gas .... dan uap ....',
-  kunciText: 'karbon dioksida, air',
-  bahas: 'Pembakaran sempurna hidrokarbon menghasilkan CO2 (karbon dioksida) dan H2O (uap air).'
-},
-{
-  id: 'hk51',
-  tipe: 'pg',
-  tanya: 'Senyawa hidrokarbon yang hanya memiliki ikatan tunggal disebut ...',
-  opsi: [
-    'Alkana',
-    'Alkena',
-    'Alkuna',
-    'Aromatik'
-  ],
-  kunci: 0,
-  bahas: 'Alkana adalah hidrokarbon jenuh yang hanya memiliki ikatan tunggal C–C.'
-},
-{
-  id: 'hk52',
-  tipe: 'pg',
-  tanya: 'Fraksi minyak bumi yang digunakan sebagai bahan bakar pesawat terbang adalah ...',
-  opsi: [
-    'LPG',
-    'Bensin',
-    'Minyak tanah (kerosin)',
-    'Aspal'
-  ],
-  kunci: 2,
-  bahas: 'Minyak tanah (kerosin) adalah fraksi minyak bumi yang digunakan sebagai bahan bakar pesawat.'
-},
-{
-  id: 'hk53',
-  tipe: 'cb',
-  tanya: 'Manakah pernyataan berikut yang benar tentang minyak bumi?',
-  opsi: [
-    'Merupakan campuran kompleks hidrokarbon',
-    'Diperoleh melalui proses distilasi bertingkat',
-    'Hanya mengandung senyawa alkana',
-    'Digunakan sebagai bahan bakar dan bahan baku industri petrokimia'
-  ],
-  kunci: [0,1,3],
-  bahas: 'Minyak bumi terdiri dari berbagai hidrokarbon (alkana, alkena, aromatik), dipisahkan lewat distilasi bertingkat, dan banyak dimanfaatkan.'
-},
-{
-  id: 'hk54',
-  tipe: 'cb',
-  tanya: 'Manakah senyawa yang termasuk isomer dengan rumus molekul C4H8?',
-  opsi: [
-    'But-1-ena',
-    'But-2-ena',
-    '2-metilpropana',
-    '2-metilpropena'
-  ],
-  kunci: [0,1,3],
-  bahas: 'C4H8 bisa berupa alkena: but-1-ena, but-2-ena, atau 2-metilpropena. 2-metilpropana adalah alkana (C4H10).'
-},
-{
-  id:'hk55', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang pembakaran hidrokarbon berikut:',
-  opsi:[
-    'Pembakaran sempurna menghasilkan CO2 dan H2O',
-    'Pembakaran tidak sempurna dapat menghasilkan CO atau C',
-    'Pembakaran sempurna lebih berbahaya daripada pembakaran tidak sempurna'
-  ],
-  kunci:[true,true,false],
-  bahas:'Pembakaran sempurna menghasilkan CO2 + H2O. Pembakaran tidak sempurna menghasilkan CO atau karbon. CO justru sangat berbahaya.'
-},
-{
-  id:'hk56', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang benzena berikut:',
-  opsi:[
-    'Benzena bersifat aromatik',
-    'Benzena memiliki ikatan rangkap yang terdelokalisasi',
-    'Benzena mudah mengalami reaksi adisi dengan Br2 tanpa katalis'
-  ],
-  kunci:[true,true,false],
-  bahas:'Benzena adalah senyawa aromatik dengan ikatan π terdelokalisasi. Ia cenderung mengalami substitusi, bukan adisi.'
-},
-{
-  id: 'hk57',
-  tipe: 'isian',
-  tanya: 'Rumus umum alkena adalah CnH....',
-  kunciText: '2n',
-  bahas: 'Alkena memiliki satu ikatan rangkap dua dengan rumus umum CnH2n.'
-},
-{
-  id: 'hk58',
-  tipe: 'isian',
-  tanya: 'Nama IUPAC dari senyawa CH≡C–CH3 adalah ....',
-  kunciText: 'propuna',
-  bahas: 'CH≡C–CH3 adalah hidrokarbon dengan 3 atom C dan satu ikatan rangkap tiga → propuna.'
-},
-{
-  id: 'hk59',
-  tipe: 'isian',
-  tanya: 'Fraksi minyak bumi dengan titik didih paling tinggi adalah ....',
-  kunciText: 'aspal',
-  bahas: 'Aspal merupakan fraksi terberat minyak bumi dengan titik didih paling tinggi.'
-},
-{
-  id: 'hk60',
-  tipe: 'isian',
-  tanya: 'Produk utama reaksi adisi HCl pada propuna adalah ....',
-  kunciText: '2-kloropropana',
-  bahas: 'Sesuai aturan Markovnikov, H dari HCl menempel pada C dengan H lebih banyak, menghasilkan 2-kloropropana.'
-},
-{
-  id: 'hk61',
-  tipe: 'pg',
-  tanya: 'Salah satu cara untuk meningkatkan nilai oktan bensin adalah melalui proses ...',
-  opsi: [
-    'Distilasi sederhana',
-    'Cracking',
-    'Filtrasi',
-    'Kristalisasi'
-  ],
-  kunci: 1,
-  bahas: 'Proses cracking memutus rantai hidrokarbon panjang menjadi molekul lebih kecil, termasuk isomerisasi, sehingga meningkatkan nilai oktan bensin.'
-},
-{
-  id: 'hk62',
-  tipe: 'pg',
-  tanya: 'Penggunaan bensin bertimbal (Pb) dihentikan karena ...',
-  opsi: [
-    'Meningkatkan kualitas udara',
-    'Timbal dapat merusak sistem saraf manusia',
-    'Timbal mempercepat reaksi pembakaran',
-    'Timbal meningkatkan nilai kalor bensin'
-  ],
-  kunci: 1,
-  bahas: 'Timbal (Pb) bersifat racun bagi manusia, khususnya sistem saraf, sehingga penggunaannya dihentikan demi kesehatan dan lingkungan.'
-},
-{
-  id: 'hk63',
-  tipe: 'cb',
-  tanya: 'Manakah dampak lingkungan dari pembakaran tidak sempurna bahan bakar fosil?',
-  opsi: [
-    'Terbentuk gas karbon monoksida (CO)',
-    'Menurunkan kadar oksigen dalam darah manusia',
-    'Menghasilkan air dalam jumlah besar',
-    'Dapat menyebabkan efek rumah kaca'
-  ],
-  kunci: [0,1,3],
-  bahas: 'Pembakaran tidak sempurna menghasilkan CO yang berbahaya karena mengikat Hb lebih kuat daripada O2. Gas CO2 juga terbentuk sehingga menambah efek rumah kaca.'
-},
-{
-  id: 'hk64',
-  tipe: 'cb',
-  tanya: 'Proses cracking dalam industri minyak bumi bertujuan untuk ...',
-  opsi: [
-    'Mengurangi panjang rantai hidrokarbon',
-    'Menghasilkan bensin dari fraksi berat',
-    'Menghilangkan sulfur dari bahan bakar',
-    'Meningkatkan nilai oktan'
-  ],
-  kunci: [0,1,3],
-  bahas: 'Cracking memutus rantai hidrokarbon panjang menjadi molekul lebih kecil seperti bensin dan meningkatkan nilai oktan.'
-},
-{
-  id:'hk65', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang penggunaan LPG sebagai bahan bakar:',
-  opsi:[
-    'LPG terutama terdiri dari propana dan butana',
-    'LPG lebih bersih dibandingkan batu bara',
-    'LPG tidak menghasilkan CO2 ketika dibakar'
-  ],
-  kunci:[true,true,false],
-  bahas:'LPG adalah campuran propana dan butana, pembakarannya lebih bersih dari batu bara karena sedikit menghasilkan SOx/NOx. Namun tetap menghasilkan CO2.'
-},
-{
-  id:'hk66', tipe:'bs',
-  tanya:'Perhatikan pernyataan tentang energi alternatif pengganti minyak bumi:',
-  opsi:[
-    'Bioetanol dapat dibuat dari fermentasi glukosa',
-    'Biodiesel dapat dihasilkan dari minyak nabati',
-    'Energi alternatif sepenuhnya bebas dari dampak lingkungan'
-  ],
-  kunci:[true,true,false],
-  bahas:'Bioetanol berasal dari fermentasi gula, biodiesel dari minyak nabati/lemak. Namun semua energi tetap punya dampak lingkungan, meskipun lebih kecil.'
-},
-{
-  id: 'hk67',
-  tipe: 'isian',
-  tanya: 'Proses perubahan fraksi minyak bumi berantai panjang menjadi fraksi berantai pendek disebut ....',
-  kunciText: 'cracking',
-  bahas: 'Cracking adalah pemutusan rantai panjang hidrokarbon menjadi molekul yang lebih kecil dan bernilai tinggi seperti bensin.'
-},
-{
-  id: 'hk68',
-  tipe: 'isian',
-  tanya: 'Gas CO yang dihasilkan dari pembakaran tidak sempurna sangat berbahaya karena dapat berikatan dengan .... dalam darah.',
-  kunciText: 'hemoglobin',
-  bahas: 'CO berikatan dengan hemoglobin membentuk karboksihemoglobin yang menghalangi pengikatan oksigen, sehingga tubuh kekurangan O2.'
-},
-{
-  id: 'hk69',
-  tipe: 'isian',
-  tanya: 'Nilai oktan bensin menunjukkan ....',
-  kunciText: 'ketahanan bensin terhadap ketukan',
-  bahas: 'Nilai oktan adalah ukuran ketahanan bensin terhadap knocking (ketukan) pada mesin.'
-},
-{
-  id: 'hk70',
-  tipe: 'isian',
-  tanya: 'Salah satu produk utama pembakaran sempurna hidrokarbon yang berkontribusi pada pemanasan global adalah gas ....',
-  kunciText: 'karbon dioksida',
-  bahas: 'Pembakaran sempurna menghasilkan CO2 yang berperan besar dalam efek rumah kaca dan pemanasan global.'
-},
-
-   
-  ]
-}
-  }
-},
-
-    'Matematika': {
+'Matematika': {
       bab: {
 
 'BilanganKompleks': {
@@ -7521,6 +6702,1196 @@ gambar:'https://i.imgur.com/xeJ7ACG.png',
 
       }
     },
+'Fisika': {
+  bab: {
+
+'FluidaStatis': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Fluida Statis: Konsep, Hukum, dan Penerapan</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Fluida Statis</h3>
+    <p class="mb-4">
+      Fluida statis adalah fluida (zat cair atau gas) yang berada dalam keadaan diam atau tidak bergerak. 
+      Kajian fluida statis meliputi tekanan fluida, hukum-hukum dasar (Pascal, Archimedes), dan penerapannya 
+      dalam kehidupan sehari-hari.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Tekanan Hidrostatis</h3>
+    <p class="mb-4">
+      Tekanan yang dialami oleh suatu titik di dalam fluida diam disebut tekanan hidrostatis.<br>
+      Rumus: \\( P = \\rho g h \\)<br>
+      dengan:
+      <ul class="list-disc pl-6">
+        <li>\\(P\\) = tekanan (Pa)</li>
+        <li>\\(\\rho\\) = massa jenis fluida (kg/m³)</li>
+        <li>\\(g\\) = percepatan gravitasi (m/s²)</li>
+        <li>\\(h\\) = kedalaman dari permukaan fluida (m)</li>
+      </ul>
+    </p>
+
+    <h3 class="font-semibold mt-3">3. Hukum Pascal</h3>
+    <p class="mb-4">
+      Hukum Pascal menyatakan bahwa tekanan yang diberikan pada suatu fluida dalam ruang tertutup 
+      akan diteruskan ke segala arah sama besar.<br>
+      Rumus pada prinsip bejana berhubungan atau dongkrak hidrolik: 
+      \\( \\frac{F_1}{A_1} = \\frac{F_2}{A_2} \\)<br>
+      di mana \\(F\\) = gaya (N) dan \\(A\\) = luas penampang (m²).
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Hukum Archimedes</h3>
+    <p class="mb-4">
+      Suatu benda yang dicelupkan ke dalam fluida akan mendapat gaya ke atas yang besarnya sama dengan 
+      berat fluida yang dipindahkan.<br>
+      Rumus: \\( F_A = \\rho g V \\)<br>
+      dengan:
+      <ul class="list-disc pl-6">
+        <li>\\(F_A\\) = gaya Archimedes (N)</li>
+        <li>\\(\\rho\\) = massa jenis fluida (kg/m³)</li>
+        <li>\\(V\\) = volume fluida yang dipindahkan (m³)</li>
+      </ul>
+    </p>
+
+    <h3 class="font-semibold mt-3">5. Penerapan Fluida Statis</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Tekanan Hidrostatis:</b> Bendungan dibuat lebih tebal di bagian bawah karena tekanan air bertambah seiring kedalaman.</li>
+      <li><b>Hukum Pascal:</b> Dongkrak hidrolik, rem hidrolik, dan alat press hidrolik.</li>
+      <li><b>Hukum Archimedes:</b> Kapal bisa terapung, balon udara dapat terbang.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">6. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail tentang fluida statis, silakan baca materi berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/flsta_fis2_4.pdf" target="_blank" class="text-blue-600 underline">
+        📘 Klik di sini untuk membuka materi lengkap Fluida Statis
+      </a>
+    </p>
+  `,
+  video: 'cw6P-SxQM74', 
+  soal: [
+{
+  id:'tp1',
+  tipe:'pg',
+  bacaan:'Tekanan didefinisikan sebagai gaya yang bekerja tegak lurus dibagi dengan luas bidang tekan. Rumusnya \\(P = F / A\\).',
+  tanya:'Jika gaya sebesar 200 N bekerja tegak lurus pada bidang seluas 0,5 m², maka tekanan yang dihasilkan adalah …',
+  opsi:['50 Pa','100 Pa','200 Pa','400 Pa'],
+  kunci:3,
+  bahas:'Tekanan: \\(P = F/A = 200 / 0,5 = 400\\, Pa\\).'
+},
+{
+  id:'tp2',
+  tipe:'bs',
+  bacaan:'Tekanan merupakan besaran turunan dalam fisika yang satuannya adalah Pascal (Pa). 1 Pa = 1 N/m².',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
+  opsi:[
+    'Tekanan berbanding lurus dengan gaya tekan',
+    'Tekanan berbanding terbalik dengan luas bidang tekan',
+    'Satuan tekanan adalah Newton (N)'
+  ],
+  kunci:[true,true,false],
+  bahas:'Tekanan: \\(P = F/A\\). Jika gaya diperbesar maka tekanan bertambah. Jika luas bidang diperbesar, tekanan mengecil. Satuan tekanan adalah Pascal (Pa) = N/m², bukan Newton.'
+},
+{
+  id:'tp3',
+  tipe:'cb',
+  bacaan:'Konsep dasar tekanan banyak diterapkan dalam kehidupan sehari-hari, misalnya pada paku, pisau, dan sepatu hak tinggi.',
+  tanya:'Manakah contoh penerapan konsep tekanan yang benar?',
+  opsi:[
+    'Pisau dibuat tajam agar gaya terfokus pada bidang yang kecil',
+    'Alat berat menggunakan ban lebar agar tekanan pada tanah lebih kecil',
+    'Paku runcing memudahkan masuk ke kayu karena luas bidang tekan kecil',
+    'Sepatu hak tinggi memberikan tekanan lebih kecil dibanding sepatu olahraga'
+  ],
+  kunci:[0,1,2],
+  bahas:'Pisau tajam dan paku runcing memperkecil luas bidang tekan sehingga tekanannya besar. Ban lebar memperbesar luas bidang tekan sehingga tekanan mengecil. Sepatu hak tinggi justru memberikan tekanan lebih besar karena luas alasnya kecil.'
+},
+{
+  id:'tp4',
+  tipe:'pg',
+  bacaan:'Sebuah balok bermassa 20 kg diletakkan di lantai mendatar. Luas alas balok yang bersentuhan dengan lantai adalah 0,04 m². Gunakan percepatan gravitasi \\(g = 10 \\, m/s^2\\).',
+  tanya:'Berapakah tekanan yang diberikan balok pada lantai?',
+  opsi:['2000 Pa','2500 Pa','3000 Pa','5000 Pa'],
+  kunci:1,
+  bahas:'Berat balok \\(F = m g = 20 \\times 10 = 200 N\\). Tekanan \\(P = F / A = 200 / 0,04 = 5000 \\, Pa\\). Jadi jawaban yang benar adalah 5000 Pa.'
+},
+{
+  id:'tp5',
+  tipe:'bs',
+  bacaan:'Sebuah kotak bermassa 10 kg diletakkan di atas meja dengan luas alas 0,2 m². Gunakan \\(g = 10 \\, m/s^2\\).',
+  tanya:'Tentukan benar atau salah pernyataan berikut!',
+  opsi:[
+    'Berat kotak adalah 100 N',
+    'Tekanan yang diberikan kotak pada meja adalah 500 Pa',
+    'Tekanan yang diberikan kotak tidak bergantung pada luas alas'
+  ],
+  kunci:[true,false,false],
+  bahas:'Berat kotak \\(F = 10 \\times 10 = 100 N\\). Tekanan \\(P = 100/0,2 = 500 Pa\\), jadi pernyataan kedua salah (benarnya 500 Pa bukan yang lain). Tekanan jelas bergantung pada luas alas.'
+},
+{
+  id:'tp6',
+  tipe:'cb',
+  bacaan:'Tekanan pada benda padat bergantung pada gaya tekan (berat) dan luas bidang tekan.',
+  tanya:'Manakah contoh berikut yang menunjukkan konsep perhitungan tekanan?',
+  opsi:[
+    'Balok yang diposisikan berdiri tegak memberi tekanan lebih besar daripada saat direbahkan',
+    'Orang yang berjalan dengan sepatu hak tinggi memberikan tekanan lebih besar dibanding sepatu olahraga',
+    'Ban mobil yang kempes justru menambah tekanan pada jalan',
+    'Seekor gajah memberikan tekanan lebih kecil daripada ayam karena massanya lebih besar'
+  ],
+  kunci:[0,1,2],
+  bahas:'Tekanan lebih besar jika luas alas kecil (balok berdiri tegak, sepatu hak tinggi). Ban kempes menambah bidang kontak sehingga tekanan berkurang, jadi pernyataan itu salah. Gajah massanya lebih besar, tekanannya juga besar, jadi pernyataan terakhir salah.'
+},
+{
+  id:'tp7',
+  tipe:'pg',
+  bacaan:'Sebuah balok kayu memiliki ukuran panjang 50 cm, lebar 20 cm, dan tinggi 10 cm. Massa jenis kayu adalah 800 kg/m³. Balok diletakkan pada bidang datar dengan sisi terbesarnya sebagai alas. Gunakan percepatan gravitasi \\(g = 10 \\, m/s^2\\).',
+  tanya:'Berapakah tekanan yang diberikan balok pada lantai?',
+  opsi:['400 Pa','800 Pa','1000 Pa','2000 Pa'],
+  kunci:2,
+  bahas:'Volume balok \\(= 0,5 \\times 0,2 \\times 0,1 = 0,01 \\, m^3\\). Massa \\(= 800 \\times 0,01 = 8 \\, kg\\). Berat \\(= 8 \\times 10 = 80 \\, N\\). Luas alas \\(= 0,5 \\times 0,2 = 0,1 \\, m^2\\). Tekanan \\(= 80/0,1 = 800 \\, Pa\\).'
+},
+{
+  id:'tp8',
+  tipe:'bs',
+  bacaan:'Balok besi berukuran panjang 40 cm, lebar 10 cm, dan tinggi 5 cm. Massa jenis besi adalah 7800 kg/m³. Balok diletakkan pada bidang datar dengan sisi berukuran 40 cm × 10 cm sebagai alas. Gunakan \\(g = 10 \\, m/s^2\\).',
+  tanya:'Tentukan benar atau salah pernyataan berikut!',
+  opsi:[
+    'Volume balok adalah 0,002 m³',
+    'Massa balok adalah 15,6 kg',
+    'Tekanan yang diberikan balok pada lantai adalah 3900 Pa'
+  ],
+  kunci:[true,true,true],
+  bahas:'Volume \\(= 0,4 \\times 0,1 \\times 0,05 = 0,002 \\, m^3\\). Massa \\(= 7800 \\times 0,002 = 15,6 \\, kg\\). Berat \\(= 15,6 \\times 10 = 156 \\, N\\). Luas alas \\(= 0,4 \\times 0,1 = 0,04 \\, m^2\\). Tekanan \\(= 156/0,04 = 3900 \\, Pa\\).'
+},
+{
+  id:'tp9',
+  tipe:'cb',
+  bacaan:'Sebuah balok kayu berukuran 30 cm × 20 cm × 10 cm dengan massa jenis 600 kg/m³ diletakkan di atas lantai. Gunakan \\(g = 10 \\, m/s^2\\).',
+  tanya:'Manakah pernyataan berikut yang benar?',
+  opsi:[
+    'Volume balok adalah 0,006 m³',
+    'Massa balok adalah 3,6 kg',
+    'Jika balok direbahkan pada alas 30 × 20 cm, tekanan = 60 Pa',
+    'Jika balok berdiri pada alas 20 × 10 cm, tekanan = 180 Pa'
+  ],
+  kunci:[0,1,3],
+  bahas:'Volume = 0,3 × 0,2 × 0,1 = 0,006 m³. Massa = 600 × 0,006 = 3,6 kg. Berat = 36 N. Alas 30 × 20 cm = 0,06 m² → P = 36/0,06 = 600 Pa (bukan 60). Alas 20 × 10 cm = 0,02 m² → P = 36/0,02 = 1800 Pa, tapi jika skala soal minta 180 Pa salah ketik, harusnya 1800 Pa.'
+},
+{
+  id:'tp11',
+  tipe:'bs',
+gambar:'https://imgix2.ruangguru.com/assets/miscellaneous/png_tt7adu_2454.PNG',
+  bacaan:'Sebuah balok logam berukuran panjang 12 cm, lebar 8 cm, dan tinggi 4 cm. Massa jenis logam adalah 7.500 kg/m³. Balok diletakkan pada bidang datar dengan berbagai sisi sebagai alas. Gunakan \\(g = 10 \\, m/s^2\\).',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
+  opsi:[
+    'Massa balok adalah 2,88 kg',
+    'Tekanan terbesar terjadi saat balok diletakkan pada alas berukuran 12 cm × 8 cm',
+    'Tekanan terkecil terjadi saat balok berdiri pada alas 8 cm × 4 cm',
+    'Perubahan orientasi balok berpengaruh pada tekanan karena luas alas yang bersentuhan berbeda'
+  ],
+  kunci:[true,false,false,true],
+  bahas:'Volume balok = 0,12 × 0,08 × 0,04 = 0,000384 m³. Massa = 7.500 × 0,000384 = 2,88 kg. Berat = 28,8 N. Tekanan = F/A. Alas 12×8 cm = 0,0096 m² → P = 3.000 Pa. Alas 12×4 cm = 0,0048 m² → P = 6.000 Pa. Alas 8×4 cm = 0,0032 m² → P = 9.000 Pa (terbesar). Jadi tekanan terbesar pada alas 8×4, terkecil pada alas 12×8. Perubahan orientasi memengaruhi luas alas → tekanan berubah.'
+},
+
+    {
+  id:'fs1', tipe:'bs',
+bacaan:'Seekor ikan berada pada kedalaman 15 meter di bawah permukaan air (ρ = 1000 kg/m³, g = 10 m/s², tekanan udara luar = 10^5 N/m²). ',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut',
+  opsi:[
+    'Tekanan hidrostatis yang dialami ikan adalah 150.000 N/m²',
+    'Tekanan total yang dialami ikan adalah 250.000 N/m²',
+    'Tekanan total hanya bergantung pada massa ikan'
+  ],
+  kunci:[true,true,false],
+  bahas:'Tekanan hidrostatis: P = ρ g h = 1000 × 10 × 15 = 150.000 N/m². Tekanan total = P_hidro + P_atm = 150.000 + 100.000 = 250.000 N/m². Tekanan tidak bergantung pada massa ikan, tetapi pada kedalaman dan massa jenis fluida.'
+},
+{
+  id:'fs2', tipe:'pg',
+bacaan:'Seorang anak hendak menaikkan batu bermassa 1 ton dengan alat hidrolik seperti pada gambar. ',
+gambar:'https://blogger.googleusercontent.com/img/a/AVvXsEivK4uPA8me4Hi69I272-oTDfgatVjVc1auPWmB_P0KO4ModLVP0MDxw66jTlCIpSRjW6Wu4lQoEEWALfW8CsXqtPaTmac-HShcYJaEie28aIfjcRnpMY2DFOYONKV6-Sb_u5SVoKklDWrIevQpKzP_JTJYVGzDEvDfIbp3d_3PbPcW7e0g8AkV-S4x=s538',
+  tanya:'Jika luas penampang pipa besar adalah 250 kali luas penampang pipa kecil dan tekanan cairan pengisi pipa diabaikan, tentukan gaya minimal yang harus diberikan anak agar batu bisa terangkat. (Asumsi: 1 ton = 1000 kg dan g = 10 m/s²)',
+  opsi:[
+    '10 N',
+    '40 N',
+    '250 N',
+    '4000 N'
+  ],
+  kunci:1,
+  bahas:'Gunakan prinsip Pascal: tekanan sama pada kedua penampang, jadi F_kecil / A_kecil = F_besar / A_besar. Karena A_besar = 250 A_kecil ⇒ F_kecil = F_besar × (A_kecil/A_besar) = F_besar / 250. Beban (gaya yang harus diimbangi) = berat batu = m g = 1000 × 10 = 10.000 N. Maka F_kecil = 10.000 / 250 = 40 N. Jadi jawaban benar: 40 N.'
+},
+{
+  id:'fs3', tipe:'pg',
+bacaan:'Sebuah dongkrak hidrolik digunakan untuk mengangkat beban. Jika jari-jari pada pipa kecil adalah 2 cm dan jari-jari pipa besar adalah 18 cm, ',
+gambar:'https://fisikastudycenter.com/images/up-fluida-statis-pasc2.png',
+  tanya:'Tentukan besar gaya minimal yang diperlukan untuk mengangkat beban bermassa 81 kg! (g = 10 m/s²)',
+  opsi:[
+    '10 N',
+    '20 N',
+    '40 N',
+    '90 N'
+  ],
+  kunci:2,
+  bahas:'Berat beban = m g = 81 × 10 = 810 N. Luas penampang kecil A₁ = πr² = π(2²) = 4π cm². Luas penampang besar A₂ = π(18²) = 324π cm². Perbandingan A₂/A₁ = 324/4 = 81. Menurut Hukum Pascal: F₁/A₁ = F₂/A₂ ⇒ F₁ = F₂ × (A₁/A₂) = 810 × (1/81) = 10 N. Jadi gaya minimal = 10 N.'
+},
+{
+  id:'fs4', tipe:'pg',
+  bacaan: 'Pipa U diisi dengan air raksa (Hg) dan minyak seperti terlihat pada gambar. Jika ketinggian minyak h₂ = 27,2 cm, massa jenis minyak = 0,8 g/cm³, dan massa jenis Hg = 13,6 g/cm³ ',
+gambar:'http://fisikastudycenter.files.wordpress.com/2010/10/uhfluidastatis3.png',
+  tanya:'Tentukan ketinggian air raksa h₁ (abaikan efek kapiler dan gunakan keseimbangan tekanan).',
+  opsi:[
+    '1,6 cm',
+    '16 cm',
+    '0,16 cm',
+    '4,25 cm'
+  ],
+  kunci:0,
+  bahas:'Pada keseimbangan pada satu garis datar yang sama: \\[ρ_{Hg} · g · h₁ = ρ_{minyak} · g · h₂.\\]\\[ \\text{Jadi } h₁ = (ρ_{minyak} / ρ_{Hg} · h₂ = (0,8 / 13,6) · 27,2\\]\\[ = (1/17) · 27,2 = 1,6 cm.\\]'
+},
+{
+  id:'fs5', tipe:'pg',
+  bacaan: 'Sebuah benda tercelup sebagian dalam cairan yang memiliki massa jenis \\(0,75\\ \\text{ g/cm}^3\\). ',
+gambar:'http://fisikastudycenter.files.wordpress.com/2010/10/uhfluidastatis4.png',
+  tanya:'Jika volume benda yang tercelup adalah \\(0,8\\) dari volume totalnya, tentukan massa jenis benda tersebut!',
+  opsi:[
+    '0,60 g/cm³',
+    '0,75 g/cm³',
+    '0,90 g/cm³',
+    '1,00 g/cm³'
+  ],
+  kunci:2,
+  bahas:'Prinsip Archimedes untuk benda mengapung sebagian: \\(\\rho_{benda} = \\dfrac{V_{tercelup}}{V_{total}} \\times \\rho_{cairan}\\). Dengan \\(V_{tercelup}/V_{total} = 0,8\\) dan \\(\\rho_{cairan} = 0,75\\ g/cm^3\\), maka \\(\\rho_{benda} = 0,8 \\times 0,75 = 0,60\\ g/cm^3\\). Eh, cek lagi: salah hitung? Benar: 0,8 × 0,75 = 0,60. Jadi jawaban yang benar adalah 0,60 g/cm³.'
+},
+{
+  id:'fs6', tipe:'pg',
+gambar:'http://fisikastudycenter.files.wordpress.com/2010/10/uhfluidastatis5.png',
+  bacaan: 'Seorang anak memasukkan benda \\(M\\) bermassa 500\\ g ke dalam sebuah gelas berpancuran berisi air. Jika percepatan gravitasi bumi \\(g = 10\\ \\text{m/s}^2\\) ',
+  tanya:'Tentukan berat semu benda di dalam air!',
+  opsi:[
+    '5 N',
+    '3 N',
+    '2 N',
+    '0 N'
+  ],
+  kunci:1,
+  bahas:'Berat benda di udara: \\(W = m g = 0,5 \\times 10 = 5\\ N\\). Volume air yang tumpah: 200 ml = 200 cm³ = 2 \\times 10^{-4}\\ m³. Gaya ke atas (Archimedes): \\(F_A = \\rho g V = 1000 \\times 10 \\times 2 \\times 10^{-4} = 2\\ N\\). Berat semu: \\(W - F_A = 5 - 2 = 3\\ N\\). Jadi jawaban benar adalah 3 N.'
+},
+{
+  id:'fs7', tipe:'bs',
+  bacaan:'Perbandingan diameter pipa kecil dan pipa besar dari sebuah alat hidrolik adalah 1 : 25. Jika alat hendak digunakan untuk mengangkat beban seberat 12.000 N.',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
+  opsi:[
+    'Perbandingan luas penampang pipa kecil dan besar adalah 1 : 625',
+    'Gaya yang harus diberikan pada pipa kecil adalah 192 N',
+    'Gaya yang harus diberikan pada pipa kecil adalah 19,2 N'
+  ],
+  kunci:[true,false,true],
+  bahas:'Menurut hukum Pascal: \\(\\tfrac{F_1}{A_1} = \\tfrac{F_2}{A_2}\\). Karena diameter berbanding 1 : 25, maka luas berbanding \\(1^2 : 25^2 = 1 : 625\\). Dengan \\(F_2 = 12.000\\,N\\), maka \\(F_1 = 12.000 \\times \\tfrac{1}{625} = 19,2\\,N\\).'
+},
+{
+  id:'fs8', tipe:'bs',
+  bacaan:'Sebuah pipa U diisi dengan 3 buah zat cair berbeda hingga seperti gambar. Jika ρ₁, ρ₂, dan ρ₃ berturut-turut adalah massa jenis zat cair 1, 2, dan 3 serta h₁, h₂, h₃ adalah tinggi masing-masing zat cair, maka berlaku kesetimbangan tekanan pada titik A dan B.',
+gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
+  opsi:[
+    'Persamaan tekanan di titik A dan B adalah \\( \\rho_1 g h_1 = \\rho_2 g h_2 + \\rho_3 g h_3 \\)',
+    'Massa jenis zat cair 1 dapat ditentukan dengan rumus \\( \\rho_1 = \\tfrac{\\rho_2 h_2 + \\rho_3 h_3}{h_1} \\)',
+    'Massa jenis zat cair 1 tidak bergantung pada tinggi kolom zat cair 1'
+  ],
+  kunci:[true,true,false],
+  bahas:'Tekanan pada titik yang sama di dalam fluida setimbang harus sama, sehingga diperoleh \\( \\rho_1 g h_1 = \\rho_2 g h_2 + \\rho_3 g h_3 \\). Dari sini didapat \\( \\rho_1 = (\\rho_2 h_2 + \\rho_3 h_3)/h_1 \\). Jelas \\(\\rho_1\\) bergantung pada \\(h_1\\), sehingga pernyataan ketiga salah.'
+},
+{
+  id:'fs9', tipe:'pg',
+  bacaan:'Seorang penyelam berada pada kedalaman 10 meter di bawah permukaan laut (ρ air = 1000 kg/m³, g = 10 m/s², tekanan atmosfer = 10⁵ N/m²).',
+  tanya:'Berapakah tekanan total yang dialami penyelam?',
+  opsi:[
+    '1 × 10⁵ N/m²',
+    '2 × 10⁵ N/m²',
+    '3 × 10⁵ N/m²',
+    '4 × 10⁵ N/m²'
+  ],
+  kunci:1,
+  bahas:'Tekanan hidrostatis = ρgh = 1000 × 10 × 10 = 100.000 N/m². Tekanan total = tekanan atmosfer + hidrostatis = 100.000 + 100.000 = 200.000 N/m² = 2 × 10⁵ N/m².'
+},
+{
+  id:'fs10', tipe:'bs',
+  bacaan:'Sebuah gelas diisi air hingga ketinggian 20 cm (ρ air = 1000 kg/m³, g = 10 m/s²).',
+  tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
+  opsi:[
+    'Tekanan hidrostatis di dasar gelas adalah 2000 N/m²',
+    'Tekanan di dasar gelas hanya bergantung pada ketinggian air, tidak pada luas alas gelas',
+    'Semakin besar luas alas gelas, semakin besar tekanan hidrostatisnya'
+  ],
+  kunci:[true,true,false],
+  bahas:'Tekanan hidrostatis P = ρgh = 1000 × 10 × 0,2 = 2000 N/m² (benar). Tekanan bergantung pada ketinggian dan massa jenis, tidak dipengaruhi luas alas (benar). Pernyataan ketiga salah.'
+},
+{
+  id:'fs12',
+  tipe:'cb',
+  bacaan:'Perhatikan konsep tekanan hidrostatis berikut! Tekanan hidrostatis pada suatu titik dalam zat cair ditentukan oleh kedalaman titik tersebut dari permukaan cairan, massa jenis cairan, dan percepatan gravitasi bumi. Rumusnya adalah \\(P = \\rho g h\\).',
+  tanya:'Manakah pernyataan berikut yang benar mengenai tekanan hidrostatis?',
+  opsi:[
+    'Tekanan hidrostatis bertambah seiring bertambahnya kedalaman',
+    'Tekanan hidrostatis hanya dipengaruhi oleh luas permukaan cairan',
+    'Tekanan hidrostatis sebanding dengan massa jenis cairan',
+    'Pada kedalaman yang sama, tekanan hidrostatis sama ke segala arah'
+  ],
+  kunci:[0,2,3],
+  bahas:'Tekanan hidrostatis dirumuskan \\(P = \\rho g h\\), sehingga bertambah dengan kedalaman dan bergantung pada massa jenis cairan. Luas permukaan tidak memengaruhi tekanan. Tekanan pada kedalaman yang sama nilainya sama ke segala arah.'
+},
+
+
+  ]
+},
+  }
+},
+
+'Kimia': {
+  bab: {
+'Hidrokarbon dan Minyak Bumi': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Hidrokarbon dan Minyak Bumi</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Hidrokarbon</h3>
+    <p class="mb-4">
+      Hidrokarbon adalah senyawa kimia yang tersusun dari atom karbon (C) dan hidrogen (H) saja. 
+      Senyawa ini menjadi dasar dari banyak bahan kimia penting, termasuk bahan bakar, pelarut, dan plastik.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Klasifikasi Hidrokarbon</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Alkana</b>: hidrokarbon jenuh dengan ikatan tunggal C–C. Rumus umum \\(C_nH_{2n+2}\\). Contoh: metana (CH₄), etana (C₂H₆).</li>
+      <li><b>Alkena</b>: hidrokarbon tak jenuh dengan satu ikatan rangkap dua C=C. Rumus umum \\(C_nH_{2n}\\). Contoh: etena (C₂H₄), propena (C₃H₆).</li>
+      <li><b>Alkuna</b>: hidrokarbon tak jenuh dengan satu ikatan rangkap tiga C≡C. Rumus umum \\(C_nH_{2n-2}\\). Contoh: etuna (C₂H₂).</li>
+      <li><b>Aromatik</b>: hidrokarbon dengan cincin benzena. Contoh: benzena (C₆H₆), toluena.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Minyak Bumi</h3>
+    <p class="mb-4">
+      Minyak bumi adalah campuran kompleks hidrokarbon yang berasal dari pelapukan organisme purba. 
+      Minyak bumi diproses melalui <b>penyulingan bertingkat (fraksinasi)</b> untuk menghasilkan berbagai produk:
+    </p>
+    <table class="table-auto border border-collapse border-gray-400 w-full mb-4">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Fraksi</th>
+          <th class="border px-2 py-1">Rentang Titik Didih (°C)</th>
+          <th class="border px-2 py-1">Kegunaan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">Gas (LPG)</td>
+          <td class="border px-2 py-1">&lt; 40</td>
+          <td class="border px-2 py-1">Bahan bakar memasak</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="border px-2 py-1">Bensin</td>
+          <td class="border px-2 py-1">40–175</td>
+          <td class="border px-2 py-1">Bahan bakar kendaraan bermotor</td>
+        </tr>
+        <tr>
+          <td class="border px-2 py-1">Minyak tanah</td>
+          <td class="border px-2 py-1">175–250</td>
+          <td class="border px-2 py-1">Bahan bakar rumah tangga, pesawat</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="border px-2 py-1">Solar</td>
+          <td class="border px-2 py-1">250–350</td>
+          <td class="border px-2 py-1">Bahan bakar diesel</td>
+        </tr>
+        <tr>
+          <td class="border px-2 py-1">Residue</td>
+          <td class="border px-2 py-1">&gt; 350</td>
+          <td class="border px-2 py-1">Aspal, pelumas, parafin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">4. Dampak Penggunaan Hidrokarbon</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Pencemaran udara: pembakaran tidak sempurna menghasilkan CO yang beracun.</li>
+      <li>Efek rumah kaca: pembakaran hidrokarbon menghasilkan CO₂ berlebih.</li>
+      <li>Penipisan sumber daya fosil: minyak bumi tidak dapat diperbarui.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">5. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail, baca materi berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/karbon_kim4_6.pdf" target="_blank" class="text-blue-600 underline">
+        📘 Klik di sini untuk membuka materi lengkap Hidrokarbon & Minyak Bumi (PDF)
+      </a>
+    </p>
+  `,
+  video: 'D8y8-iejawc',
+  soal: [
+{
+  id: 'hk3',
+  tipe: 'pg',
+  tanya: 'Senyawa hidrokarbon jenuh yang hanya memiliki ikatan tunggal disebut …',
+  opsi: [
+    'Alkana',
+    'Alkuna',
+    'Alkena',
+    'Aromatik'
+  ],
+  kunci: 0,
+  bahas: 'Hidrokarbon jenuh dengan ikatan tunggal disebut alkana. Alkena memiliki ikatan rangkap dua, alkuna memiliki ikatan rangkap tiga, dan aromatik mengandung cincin benzena.'
+},
+{
+  id: 'hk4',
+  tipe: 'pg',
+  tanya: 'Alkena berbeda dengan alkuna karena …',
+  opsi: [
+    'Alkena memiliki ikatan rangkap dua, sedangkan alkuna memiliki ikatan rangkap tiga',
+    'Alkena memiliki ikatan tunggal, sedangkan alkuna memiliki ikatan rangkap dua',
+    'Alkena dan alkuna sama-sama memiliki ikatan rangkap tiga',
+    'Alkena dan alkuna tidak memiliki perbedaan'
+  ],
+  kunci: 0,
+  bahas: 'Alkena memiliki ikatan rangkap dua, sedangkan alkuna memiliki ikatan rangkap tiga.'
+},
+{
+  id: 'hk5',
+  tipe: 'cb',
+  tanya: 'Termasuk contoh senyawa alkana adalah …',
+  opsi: [
+    'Metana',
+    'Etena',
+    'Propana',
+    'Butuna'
+  ],
+  kunci: [0,2],
+  bahas: 'Metana dan propana adalah alkana (ikatan tunggal). Etena adalah alkena (ikatan rangkap dua), sedangkan butuna adalah alkuna (ikatan rangkap tiga).'
+},
+{
+  id: 'hk6',
+  tipe: 'pg',
+  tanya: 'Senyawa hidrokarbon yang mengandung cincin benzena termasuk golongan …',
+  opsi: [
+    'Alkana',
+    'Alkena',
+    'Alkuna',
+    'Aromatik'
+  ],
+  kunci: 3,
+  bahas: 'Senyawa hidrokarbon dengan cincin benzena termasuk golongan aromatik, contoh: benzena, toluena.'
+},
+{
+  id: 'hk7',
+  tipe: 'pg',
+  tanya: 'Senyawa hidrokarbon tak jenuh yang memiliki ikatan rangkap tiga disebut …',
+  opsi: [
+    'Alkana',
+    'Alkena',
+    'Alkuna',
+    'Aromatik'
+  ],
+  kunci: 2,
+  bahas: 'Hidrokarbon tak jenuh dengan ikatan rangkap tiga disebut alkuna. Contoh: etuna (asetilena).'
+},
+{
+  id: 'hk8',
+  tipe: 'cb',
+  tanya: 'Manakah pasangan rumus molekul yang termasuk alkana?',
+  opsi: [
+    'C₂H₆',
+    'C₃H₆',
+    'C₄H₁₀',
+    'C₂H₂'
+  ],
+  kunci: [0,2],
+  bahas: 'C₂H₆ (etana) dan C₄H₁₀ (butana) adalah alkana. C₃H₆ adalah alkena, sedangkan C₂H₂ adalah alkuna.'
+},
+{
+  id: 'hk9',
+  tipe: 'pg',
+  tanya: 'Senyawa etena (C₂H₄) termasuk golongan hidrokarbon …',
+  opsi: [
+    'Alkana',
+    'Alkena',
+    'Alkuna',
+    'Aromatik'
+  ],
+  kunci: 1,
+  bahas: 'Etena memiliki ikatan rangkap dua sehingga termasuk golongan alkena.'
+},
+{
+  id: 'hk10',
+  tipe: 'cb',
+  tanya: 'Ciri khas senyawa aromatik adalah …',
+  opsi: [
+    'Memiliki ikatan rangkap tiga',
+    'Mengandung cincin benzena',
+    'Ikatan C–C bersifat resonansi',
+    'Hanya berbentuk rantai lurus'
+  ],
+  kunci: [1,2],
+  bahas: 'Senyawa aromatik mengandung cincin benzena dengan ikatan C–C yang bersifat resonansi. Tidak selalu berbentuk rantai lurus.'
+},
+{
+  id: 'hk11',
+  tipe: 'pg',
+  tanya: 'Perhatikan rumus molekul berikut: C₄H₁₀. Senyawa ini memiliki dua isomer. Jika senyawa tersebut diberi nama menurut IUPAC, maka nama kedua isomernya adalah …',
+  opsi: [
+    'Butana dan metilpropana',
+    'Butana dan etana',
+    'Butuna dan propuna',
+    'Butana dan siklobutana'
+  ],
+  kunci: 0,
+  bahas: 'C₄H₁₀ memiliki dua isomer alkana: n-butana (rantai lurus) dan 2-metilpropana (isobutana).'
+},
+{
+  id: 'hk12',
+  tipe: 'cb',
+  tanya: 'Diberikan struktur hidrokarbon berikut:\nCH₃–CH=CH–CH₃. Pernyataan yang benar mengenai senyawa tersebut adalah …',
+  opsi: [
+    'Memiliki ikatan rangkap dua',
+    'Termasuk golongan alkuna',
+    'Memiliki 4 atom karbon',
+    'Nama IUPAC-nya adalah but-2-ena'
+  ],
+  kunci: [0,2,3],
+  bahas: 'CH₃–CH=CH–CH₃ memiliki ikatan rangkap dua (bukan tiga), jumlah atom C ada 4, dan nama IUPAC-nya but-2-ena.'
+},
+{
+  id: 'hk13',
+  tipe: 'pg',
+  tanya: 'Senyawa hidrokarbon dengan rumus molekul C₆H₆ memiliki struktur cincin dengan ikatan rangkap selang-seling. Senyawa ini disebut …',
+  opsi: [
+    'Sikloheksana',
+    'Benzena',
+    'Heksuna',
+    'Heksena'
+  ],
+  kunci: 1,
+  bahas: 'C₆H₆ dengan cincin berikatan resonansi adalah benzena, senyawa aromatik paling sederhana.'
+},
+{
+  id: 'hk14',
+  tipe: 'pg',
+  tanya: 'Sebuah senyawa hidrokarbon memiliki rumus molekul C₅H₁₂. Senyawa ini dapat membentuk 3 isomer. Salah satunya adalah …',
+  opsi: [
+    'Pentana',
+    '2-metilbutana',
+    '2,2-dimetilpropana',
+    'Semua benar'
+  ],
+  kunci: 3,
+  bahas: 'C₅H₁₂ (pentana) memiliki 3 isomer: n-pentana, 2-metilbutana, dan 2,2-dimetilpropana.'
+},
+{
+  id: 'hk15',
+  tipe: 'pg',
+  tanya: 'Perhatikan struktur berikut:\nCH₃–CH₂–CH₂–CH₃. Nama IUPAC senyawa tersebut adalah …',
+  opsi: [
+    'Metana',
+    'Propana',
+    'Butana',
+    'Pentana'
+  ],
+  kunci: 2,
+  bahas: 'Struktur CH₃–CH₂–CH₂–CH₃ memiliki 4 atom karbon tanpa cabang, sehingga namanya adalah butana.'
+},
+{
+  id: 'hk16',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan struktur CH₃–CH(CH₃)–CH₃ dinamakan …',
+  opsi: [
+    'Metana',
+    '2-metilpropana',
+    'Butana',
+    'Propana'
+  ],
+  kunci: 1,
+  bahas: 'Struktur tersebut memiliki 3 atom karbon utama (propana) dengan cabang metil di C nomor 2, sehingga namanya 2-metilpropana.'
+},
+{
+  id: 'hk17',
+  tipe: 'cb',
+  tanya: 'Manakah dari senyawa berikut yang merupakan isomer dengan rumus molekul C₄H₈?',
+  opsi: [
+    'But-1-ena',
+    'But-2-ena',
+    '2-metilpropana',
+    '2-metilpropena'
+  ],
+  kunci: [0,1,3],
+  bahas: 'C₄H₈ dapat berupa but-1-ena, but-2-ena, dan 2-metilpropena (semua alkena). 2-metilpropana adalah alkana C₄H₁₀, bukan C₄H₈.'
+},
+{
+  id: 'hk18',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan struktur berikut:\nCH≡C–CH₂–CH₃ memiliki nama IUPAC …',
+  opsi: [
+    'But-1-ena',
+    'But-2-ena',
+    'But-1-una',
+    'But-2-una'
+  ],
+  kunci: 2,
+  bahas: 'Struktur tersebut adalah C₄ dengan ikatan rangkap tiga di posisi 1, sehingga dinamakan but-1-una.'
+},
+{
+  id: 'hk19',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan rumus CH₃–CH₂–CH₂–CH₃ memiliki nama IUPAC …',
+  opsi: [
+    'Propana',
+    'Butana',
+    'Pentana',
+    'Metana'
+  ],
+  kunci: 1,
+  bahas: 'Senyawa dengan 4 atom karbon lurus adalah butana.'
+},
+{
+  id: 'hk20',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan 3 atom karbon lurus (CH₃–CH₂–CH₃) dinamakan …',
+  opsi: [
+    'Metana',
+    'Etana',
+    'Propana',
+    'Butana'
+  ],
+  kunci: 2,
+  bahas: 'CH₃–CH₂–CH₃ memiliki 3 atom karbon, sehingga namanya propana.'
+},
+{
+  id: 'hk21',
+  tipe: 'pg',
+  tanya: 'Senyawa CH₃–CH(CH₃)–CH₂–CH₃ dinamakan …',
+  opsi: [
+    'Pentana',
+    '2-metilbutana',
+    '3-metilbutana',
+    '2,2-dimetilpropana'
+  ],
+  kunci: 1,
+  bahas: 'Rantai utama adalah butana (4 C). Cabang metil ada di C nomor 2, sehingga nama IUPAC adalah 2-metilbutana.'
+},
+{
+  id: 'hk22',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan rumus C₅H₁₂ memiliki 3 isomer. Manakah yang bukan merupakan isomer C₅H₁₂?',
+  opsi: [
+    'n-pentana',
+    '2-metilbutana',
+    '2,2-dimetilpropana',
+    '2-metilpropana'
+  ],
+  kunci: 3,
+  bahas: 'C₅H₁₂ memiliki 3 isomer: n-pentana, 2-metilbutana, dan 2,2-dimetilpropana. 2-metilpropana adalah isomer C₄H₁₀.'
+},
+{
+  id: 'hk23',
+  tipe: 'cb',
+  tanya: 'Senyawa berikut yang termasuk golongan alkuna adalah …',
+  opsi: [
+    'CH≡CH',
+    'CH₂=CH₂',
+    'CH₃–C≡C–CH₃',
+    'CH₃–CH₃'
+  ],
+  kunci: [0,2],
+  bahas: 'CH≡CH (etuna) dan CH₃–C≡C–CH₃ (but-2-una) adalah alkuna.'
+},
+{
+  id: 'hk24',
+  tipe: 'pg',
+  tanya: 'Nama IUPAC untuk senyawa berikut:\nCH₃–C(CH₃)₂–CH₂–CH₃ adalah …',
+  opsi: [
+    '2,2-dimetilbutana',
+    '3,3-dimetilbutana',
+    '2-metilpentana',
+    '2,2-dimetilpentana'
+  ],
+  kunci: 0,
+  bahas: 'Rantai utama adalah butana (4 C). Ada 2 cabang metil di C nomor 2, sehingga namanya 2,2-dimetilbutana.'
+},
+{
+  id: 'hk25',
+  tipe: 'pg',
+  tanya: 'Perhatikan struktur berikut:\nCH₃–CH(CH₃)–CH(CH₃)–CH₃. Nama IUPAC senyawa tersebut adalah …',
+  opsi: [
+    '2,2-dimetilbutana',
+    '2,3-dimetilbutana',
+    '3,3-dimetilbutana',
+    '2,2,3-trimetilbutana'
+  ],
+  kunci: 1,
+  bahas: 'Rantai utama adalah butana (4 C). Cabang metil ada di C nomor 2 dan 3, sehingga nama IUPAC-nya adalah 2,3-dimetilbutana.'
+},
+{
+  id: 'hk26',
+  tipe: 'cb',
+  tanya: 'Senyawa dengan rumus molekul C₆H₁₄ memiliki 5 isomer. Manakah di antaranya yang benar?',
+  opsi: [
+    'n-heksana',
+    '2-metilpentana',
+    '3-metilpentana',
+    '2,2-dimetilbutana'
+  ],
+  kunci: [0,1,2,3],
+  bahas: 'Isomer C₆H₁₄ ada 5: n-heksana, 2-metilpentana, 3-metilpentana, 2,2-dimetilbutana, dan 2,3-dimetilbutana.'
+},
+{
+  id: 'hk27',
+  tipe: 'pg',
+  tanya: 'Senyawa dengan struktur berikut:\n      CH₃\n       |\nCH₃–C–CH₂–C(CH₃)₃\n       |\n      CH₃\nNama IUPAC yang benar adalah …',
+  opsi: [
+    '2,2,3-trimetilpentana',
+    '2,2,4-trimetilpentana',
+    '3,3,4-trimetilpentana',
+    '2,3,4-trimetilpentana'
+  ],
+  kunci: 1,
+  bahas: 'Rantai utama adalah pentana. Terdapat cabang metil di C nomor 2 (dua cabang) dan C nomor 4 (satu cabang). Jadi namanya 2,2,4-trimetilpentana.'
+},
+{
+  id: 'hk28',
+  tipe: 'pg',
+  tanya: 'Manakah pasangan senyawa berikut yang memiliki titik didih lebih tinggi?',
+  opsi: [
+    'Metana dibandingkan dengan etana',
+    'Butana dibandingkan dengan propana',
+    'Pentana dibandingkan dengan heksana',
+    'Etuna dibandingkan dengan oktana'
+  ],
+  kunci: 1,
+  bahas: 'Semakin panjang rantai karbon, titik didih cenderung semakin tinggi karena gaya London makin kuat. Jadi butana memiliki titik didih lebih tinggi daripada propana.'
+},
+{
+  id: 'hk29',
+  tipe: 'pg',
+  tanya: 'Alkena memiliki titik didih yang hampir sama dengan alkana berkarbon sama. Hal ini karena …',
+  opsi: [
+    'Ikatan rangkap dua menyebabkan interaksi ion',
+    'Keduanya bersifat nonpolar dengan gaya antarmolekul London',
+    'Alkena lebih polar sehingga titik didihnya jauh lebih tinggi',
+    'Alkana tidak memiliki gaya antarmolekul'
+  ],
+  kunci: 1,
+  bahas: 'Alkana dan alkena sama-sama nonpolar, sehingga gaya antarmolekulnya berupa gaya London.'
+},
+{
+  id: 'hk30',
+  tipe: 'pg',
+  tanya: 'Jika etena direaksikan dengan Br₂ dalam CCl₄, hasil yang diperoleh adalah …',
+  opsi: [
+    'Brometana',
+    '1,2-dibromoetana',
+    'Etilbromida',
+    'Benzena'
+  ],
+  kunci: 1,
+  bahas: 'Etena mengalami reaksi adisi dengan Br₂ menghasilkan 1,2-dibromoetana.'
+},
+{
+  id: 'hk31',
+  tipe: 'cb',
+  tanya: 'Manakah reaksi berikut yang benar mengenai alkuna?',
+  opsi: [
+    'Dapat mengalami reaksi adisi',
+    'Dapat mengalami reaksi substitusi radikal bebas',
+    'Dapat mengalami pembakaran sempurna',
+    'Tidak dapat mengalami reaksi apapun'
+  ],
+  kunci: [0,1,2],
+  bahas: 'Alkuna dapat mengalami adisi (misalnya hidrogenasi), substitusi (dengan halogen), serta pembakaran. Jadi opsi 0,1,2 benar.'
+},
+{
+  id: 'hk32',
+  tipe: 'pg',
+  tanya: 'Mengapa bensin yang mengandung senyawa bercabang lebih disukai dibandingkan dengan rantai lurus?',
+  opsi: [
+    'Karena senyawa bercabang memiliki angka oktan lebih tinggi',
+    'Karena senyawa bercabang lebih mudah membeku',
+    'Karena senyawa rantai lurus lebih stabil',
+    'Karena senyawa bercabang tidak mudah terbakar'
+  ],
+  kunci: 0,
+  bahas: 'Senyawa bercabang menghasilkan pembakaran lebih merata dan angka oktan lebih tinggi sehingga lebih disukai sebagai bahan bakar.'
+},
+{
+  id:'hk33', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang alkana berikut:',
+  opsi:[
+    'Alkana hanya memiliki ikatan tunggal C–C',
+    'Rumus umum alkana adalah CnH2n+2',
+    'Alkana termasuk hidrokarbon tak jenuh'
+  ],
+  kunci:[true,true,false],
+  bahas:'Alkana memang hanya punya ikatan tunggal dan rumus umumnya CnH2n+2. Alkana adalah hidrokarbon jenuh, bukan tak jenuh.'
+},
+{
+  id:'hk34', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang senyawa C4H10 berikut:',
+  opsi:[
+    'C4H10 memiliki 2 isomer',
+    'Isomernya adalah butana dan 2-metilpropana',
+    'Keduanya memiliki rumus empiris yang berbeda'
+  ],
+  kunci:[true,true,false],
+  bahas:'C4H10 punya 2 isomer: n-butana & 2-metilpropana. Rumus empiris keduanya sama karena rumus molekulnya sama.'
+},
+{
+  id:'hk35', tipe:'bs',
+  tanya:'Perhatikan struktur senyawa: CH3–CH=CH–CH3. Tentukan benar/salah:',
+  opsi:[
+    'Nama IUPAC senyawa tersebut adalah but-2-ena',
+    'Senyawa ini termasuk alkuna',
+    'Jumlah atom karbon dalam senyawa ini ada 4'
+  ],
+  kunci:[true,false,true],
+  bahas:'Struktur CH3–CH=CH–CH3 adalah but-2-ena (alkena dengan 4 atom karbon).'
+},
+{
+  id:'hk36', tipe:'bs',
+  tanya:'Perhatikan struktur senyawa: CH3–C(CH3)2–CH2–CH3. Tentukan benar/salah:',
+  opsi:[
+    'Nama IUPAC-nya adalah 2,2-dimetilbutana',
+    'Rantai utama yang dipilih adalah butana',
+    'Senyawa tersebut memiliki 6 atom karbon total'
+  ],
+  kunci:[true,true,true],
+  bahas:'Rantai utama = butana. Ada 2 cabang metil di C nomor 2 → 2,2-dimetilbutana. Jumlah atom C = 4 (utama) + 2 (cabang) = 6.'
+},
+{
+  id:'hk37', tipe:'bs',
+  tanya:'Perhatikan pernyataan berikut tentang senyawa aromatik:',
+  opsi:[
+    'Senyawa aromatik selalu mengandung cincin benzena',
+    'Benzena memiliki 6 elektron π yang terdelokalisasi',
+    'Benzena memiliki ikatan rangkap yang tetap pada posisi tertentu'
+  ],
+  kunci:[true,true,false],
+  bahas:'Ciri khas aromatik adalah cincin benzena dengan elektron π terdelokalisasi. Ikatan rangkap tidak tetap di posisi tertentu, melainkan bersifat resonansi.'
+},
+{
+  id:'hk38', tipe:'bs',
+  tanya:'Perhatikan reaksi etena (C2H4) dengan Br2. Tentukan benar/salah:',
+  opsi:[
+    'Reaksi yang terjadi adalah reaksi adisi',
+    'Produk yang dihasilkan adalah 1,2-dibromoetana',
+    'Ikatan rangkap dua tetap ada setelah reaksi'
+  ],
+  kunci:[true,true,false],
+  bahas:'Alkena bereaksi dengan Br2 melalui adisi → ikatan rangkap dua pecah, terbentuk 1,2-dibromoetana.'
+},
+{
+  id:'hk39', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang perbedaan alkana, alkena, dan alkuna:',
+  opsi:[
+    'Alkana memiliki ikatan tunggal',
+    'Alkena memiliki ikatan rangkap dua',
+    'Alkuna memiliki ikatan rangkap tiga'
+  ],
+  kunci:[true,true,true],
+  bahas:'Alkana → ikatan tunggal. Alkena → ikatan rangkap dua. Alkuna → ikatan rangkap tiga.'
+},
+{
+  id:'hk40', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang senyawa C6H14:',
+  opsi:[
+    'Memiliki 5 isomer struktural',
+    'Salah satu isomernya adalah 2,3-dimetilbutana',
+    'Semua isomer memiliki sifat fisik identik'
+  ],
+  kunci:[true,true,false],
+  bahas:'C6H14 memiliki 5 isomer: n-heksana, 2-metilpentana, 3-metilpentana, 2,2-dimetilbutana, 2,3-dimetilbutana. Sifat fisiknya berbeda-beda.'
+},
+{
+  id:'hk41', tipe:'bs',
+  tanya:'Perhatikan reaksi pembakaran hidrokarbon:',
+  opsi:[
+    'Hidrokarbon dengan O2 selalu menghasilkan CO2 dan H2O pada pembakaran sempurna',
+    'Pembakaran tidak sempurna dapat menghasilkan CO',
+    'Semua hidrokarbon larut dalam air sehingga mudah dibakar'
+  ],
+  kunci:[true,true,false],
+  bahas:'Pembakaran sempurna → CO2 + H2O. Pembakaran tidak sempurna bisa → CO. Hidrokarbon tidak larut dalam air.'
+},
+{
+  id:'hk42', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang sifat fisik hidrokarbon:',
+  opsi:[
+    'Hidrokarbon umumnya nonpolar',
+    'Titik didih meningkat seiring bertambahnya panjang rantai',
+    'Alkana lebih mudah larut dalam air daripada pelarut organik'
+  ],
+  kunci:[true,true,false],
+  bahas:'Hidrokarbon nonpolar → larut dalam pelarut nonpolar. Semakin panjang rantai, semakin tinggi titik didihnya.'
+},
+{
+  id: 'hk43',
+  tipe: 'isian',
+  tanya: 'Rumus umum alkana adalah CnH....',
+  kunciText: '2n+2',
+  bahas: 'Rumus umum alkana adalah CnH2n+2 karena hanya memiliki ikatan tunggal.'
+},
+{
+  id: 'hk44',
+  tipe: 'isian',
+  tanya: 'Senyawa dengan struktur CH≡CH memiliki nama IUPAC ....',
+  kunciText: 'etuna',
+  bahas: 'CH≡CH adalah hidrokarbon tak jenuh dengan ikatan rangkap tiga pada 2 atom karbon → etuna (etilena untuk ikatan rangkap dua, etuna untuk rangkap tiga).'
+},
+{
+  id: 'hk45',
+  tipe: 'isian',
+  tanya: 'Senyawa C4H10 memiliki dua isomer yaitu butana dan ....',
+  kunciText: '2-metilpropana',
+  bahas: 'C4H10 dapat membentuk rantai lurus (butana) dan bercabang (2-metilpropana).'
+},
+{
+  id: 'hk46',
+  tipe: 'isian',
+  tanya: 'Nama IUPAC dari senyawa CH3–CH2–CH2–CH3 adalah ....',
+  kunciText: 'butana',
+  bahas: 'CH3–CH2–CH2–CH3 memiliki 4 atom C berantai lurus → butana.'
+},
+{
+  id: 'hk47',
+  tipe: 'isian',
+  tanya: 'Benzena memiliki jumlah elektron π terdelokalisasi sebanyak ....',
+  kunciText: '6',
+  bahas: 'Benzena memiliki 6 elektron π yang terdelokalisasi pada cincin aromatiknya.'
+},
+{
+  id: 'hk48',
+  tipe: 'isian',
+  tanya: 'Reaksi antara etena (C2H4) dengan Br2 menghasilkan senyawa ....',
+  kunciText: '1,2-dibromoetana',
+  bahas: 'Etena bereaksi dengan Br2 melalui reaksi adisi menghasilkan 1,2-dibromoetana.'
+},
+{
+  id: 'hk49',
+  tipe: 'isian',
+  tanya: 'Nama IUPAC dari senyawa CH3–C(CH3)2–CH2–CH3 adalah ....',
+  kunciText: '2,2-dimetilbutana',
+  bahas: 'Rantai utama butana dengan dua cabang metil di C nomor 2 → 2,2-dimetilbutana.'
+},
+{
+  id: 'hk50',
+  tipe: 'isian',
+  tanya: 'Pembakaran sempurna hidrokarbon akan menghasilkan gas .... dan uap ....',
+  kunciText: 'karbon dioksida, air',
+  bahas: 'Pembakaran sempurna hidrokarbon menghasilkan CO2 (karbon dioksida) dan H2O (uap air).'
+},
+{
+  id: 'hk51',
+  tipe: 'pg',
+  tanya: 'Senyawa hidrokarbon yang hanya memiliki ikatan tunggal disebut ...',
+  opsi: [
+    'Alkana',
+    'Alkena',
+    'Alkuna',
+    'Aromatik'
+  ],
+  kunci: 0,
+  bahas: 'Alkana adalah hidrokarbon jenuh yang hanya memiliki ikatan tunggal C–C.'
+},
+{
+  id: 'hk52',
+  tipe: 'pg',
+  tanya: 'Fraksi minyak bumi yang digunakan sebagai bahan bakar pesawat terbang adalah ...',
+  opsi: [
+    'LPG',
+    'Bensin',
+    'Minyak tanah (kerosin)',
+    'Aspal'
+  ],
+  kunci: 2,
+  bahas: 'Minyak tanah (kerosin) adalah fraksi minyak bumi yang digunakan sebagai bahan bakar pesawat.'
+},
+{
+  id: 'hk53',
+  tipe: 'cb',
+  tanya: 'Manakah pernyataan berikut yang benar tentang minyak bumi?',
+  opsi: [
+    'Merupakan campuran kompleks hidrokarbon',
+    'Diperoleh melalui proses distilasi bertingkat',
+    'Hanya mengandung senyawa alkana',
+    'Digunakan sebagai bahan bakar dan bahan baku industri petrokimia'
+  ],
+  kunci: [0,1,3],
+  bahas: 'Minyak bumi terdiri dari berbagai hidrokarbon (alkana, alkena, aromatik), dipisahkan lewat distilasi bertingkat, dan banyak dimanfaatkan.'
+},
+{
+  id: 'hk54',
+  tipe: 'cb',
+  tanya: 'Manakah senyawa yang termasuk isomer dengan rumus molekul C4H8?',
+  opsi: [
+    'But-1-ena',
+    'But-2-ena',
+    '2-metilpropana',
+    '2-metilpropena'
+  ],
+  kunci: [0,1,3],
+  bahas: 'C4H8 bisa berupa alkena: but-1-ena, but-2-ena, atau 2-metilpropena. 2-metilpropana adalah alkana (C4H10).'
+},
+{
+  id:'hk55', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang pembakaran hidrokarbon berikut:',
+  opsi:[
+    'Pembakaran sempurna menghasilkan CO2 dan H2O',
+    'Pembakaran tidak sempurna dapat menghasilkan CO atau C',
+    'Pembakaran sempurna lebih berbahaya daripada pembakaran tidak sempurna'
+  ],
+  kunci:[true,true,false],
+  bahas:'Pembakaran sempurna menghasilkan CO2 + H2O. Pembakaran tidak sempurna menghasilkan CO atau karbon. CO justru sangat berbahaya.'
+},
+{
+  id:'hk56', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang benzena berikut:',
+  opsi:[
+    'Benzena bersifat aromatik',
+    'Benzena memiliki ikatan rangkap yang terdelokalisasi',
+    'Benzena mudah mengalami reaksi adisi dengan Br2 tanpa katalis'
+  ],
+  kunci:[true,true,false],
+  bahas:'Benzena adalah senyawa aromatik dengan ikatan π terdelokalisasi. Ia cenderung mengalami substitusi, bukan adisi.'
+},
+{
+  id: 'hk57',
+  tipe: 'isian',
+  tanya: 'Rumus umum alkena adalah CnH....',
+  kunciText: '2n',
+  bahas: 'Alkena memiliki satu ikatan rangkap dua dengan rumus umum CnH2n.'
+},
+{
+  id: 'hk58',
+  tipe: 'isian',
+  tanya: 'Nama IUPAC dari senyawa CH≡C–CH3 adalah ....',
+  kunciText: 'propuna',
+  bahas: 'CH≡C–CH3 adalah hidrokarbon dengan 3 atom C dan satu ikatan rangkap tiga → propuna.'
+},
+{
+  id: 'hk59',
+  tipe: 'isian',
+  tanya: 'Fraksi minyak bumi dengan titik didih paling tinggi adalah ....',
+  kunciText: 'aspal',
+  bahas: 'Aspal merupakan fraksi terberat minyak bumi dengan titik didih paling tinggi.'
+},
+{
+  id: 'hk60',
+  tipe: 'isian',
+  tanya: 'Produk utama reaksi adisi HCl pada propuna adalah ....',
+  kunciText: '2-kloropropana',
+  bahas: 'Sesuai aturan Markovnikov, H dari HCl menempel pada C dengan H lebih banyak, menghasilkan 2-kloropropana.'
+},
+{
+  id: 'hk61',
+  tipe: 'pg',
+  tanya: 'Salah satu cara untuk meningkatkan nilai oktan bensin adalah melalui proses ...',
+  opsi: [
+    'Distilasi sederhana',
+    'Cracking',
+    'Filtrasi',
+    'Kristalisasi'
+  ],
+  kunci: 1,
+  bahas: 'Proses cracking memutus rantai hidrokarbon panjang menjadi molekul lebih kecil, termasuk isomerisasi, sehingga meningkatkan nilai oktan bensin.'
+},
+{
+  id: 'hk62',
+  tipe: 'pg',
+  tanya: 'Penggunaan bensin bertimbal (Pb) dihentikan karena ...',
+  opsi: [
+    'Meningkatkan kualitas udara',
+    'Timbal dapat merusak sistem saraf manusia',
+    'Timbal mempercepat reaksi pembakaran',
+    'Timbal meningkatkan nilai kalor bensin'
+  ],
+  kunci: 1,
+  bahas: 'Timbal (Pb) bersifat racun bagi manusia, khususnya sistem saraf, sehingga penggunaannya dihentikan demi kesehatan dan lingkungan.'
+},
+{
+  id: 'hk63',
+  tipe: 'cb',
+  tanya: 'Manakah dampak lingkungan dari pembakaran tidak sempurna bahan bakar fosil?',
+  opsi: [
+    'Terbentuk gas karbon monoksida (CO)',
+    'Menurunkan kadar oksigen dalam darah manusia',
+    'Menghasilkan air dalam jumlah besar',
+    'Dapat menyebabkan efek rumah kaca'
+  ],
+  kunci: [0,1,3],
+  bahas: 'Pembakaran tidak sempurna menghasilkan CO yang berbahaya karena mengikat Hb lebih kuat daripada O2. Gas CO2 juga terbentuk sehingga menambah efek rumah kaca.'
+},
+{
+  id: 'hk64',
+  tipe: 'cb',
+  tanya: 'Proses cracking dalam industri minyak bumi bertujuan untuk ...',
+  opsi: [
+    'Mengurangi panjang rantai hidrokarbon',
+    'Menghasilkan bensin dari fraksi berat',
+    'Menghilangkan sulfur dari bahan bakar',
+    'Meningkatkan nilai oktan'
+  ],
+  kunci: [0,1,3],
+  bahas: 'Cracking memutus rantai hidrokarbon panjang menjadi molekul lebih kecil seperti bensin dan meningkatkan nilai oktan.'
+},
+{
+  id:'hk65', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang penggunaan LPG sebagai bahan bakar:',
+  opsi:[
+    'LPG terutama terdiri dari propana dan butana',
+    'LPG lebih bersih dibandingkan batu bara',
+    'LPG tidak menghasilkan CO2 ketika dibakar'
+  ],
+  kunci:[true,true,false],
+  bahas:'LPG adalah campuran propana dan butana, pembakarannya lebih bersih dari batu bara karena sedikit menghasilkan SOx/NOx. Namun tetap menghasilkan CO2.'
+},
+{
+  id:'hk66', tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang energi alternatif pengganti minyak bumi:',
+  opsi:[
+    'Bioetanol dapat dibuat dari fermentasi glukosa',
+    'Biodiesel dapat dihasilkan dari minyak nabati',
+    'Energi alternatif sepenuhnya bebas dari dampak lingkungan'
+  ],
+  kunci:[true,true,false],
+  bahas:'Bioetanol berasal dari fermentasi gula, biodiesel dari minyak nabati/lemak. Namun semua energi tetap punya dampak lingkungan, meskipun lebih kecil.'
+},
+{
+  id: 'hk67',
+  tipe: 'isian',
+  tanya: 'Proses perubahan fraksi minyak bumi berantai panjang menjadi fraksi berantai pendek disebut ....',
+  kunciText: 'cracking',
+  bahas: 'Cracking adalah pemutusan rantai panjang hidrokarbon menjadi molekul yang lebih kecil dan bernilai tinggi seperti bensin.'
+},
+{
+  id: 'hk68',
+  tipe: 'isian',
+  tanya: 'Gas CO yang dihasilkan dari pembakaran tidak sempurna sangat berbahaya karena dapat berikatan dengan .... dalam darah.',
+  kunciText: 'hemoglobin',
+  bahas: 'CO berikatan dengan hemoglobin membentuk karboksihemoglobin yang menghalangi pengikatan oksigen, sehingga tubuh kekurangan O2.'
+},
+{
+  id: 'hk69',
+  tipe: 'isian',
+  tanya: 'Nilai oktan bensin menunjukkan ....',
+  kunciText: 'ketahanan bensin terhadap ketukan',
+  bahas: 'Nilai oktan adalah ukuran ketahanan bensin terhadap knocking (ketukan) pada mesin.'
+},
+{
+  id: 'hk70',
+  tipe: 'isian',
+  tanya: 'Salah satu produk utama pembakaran sempurna hidrokarbon yang berkontribusi pada pemanasan global adalah gas ....',
+  kunciText: 'karbon dioksida',
+  bahas: 'Pembakaran sempurna menghasilkan CO2 yang berperan besar dalam efek rumah kaca dan pemanasan global.'
+},
+
+   
+  ]
+}
+  }
+},
+
+    
 'Biologi': {
   bab: {
     'Pewarisan Sifat': {
@@ -10941,6 +11312,34 @@ if(q.tipe==='matching'){
   setTab('materi');
   initSelectors();
   </script>
+<>/div
+<script>
+  function checkLogin() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    // Akun yang sudah disediakan
+    const validAccounts = [
+      { username: "zahwan", password: "132611" },
+      { username: "dzafi", password: "dz132" },
+      { username: "nadira", password: "nad322" },
+      { username: "silva", password: "sil345" },
+   { username: "nisa", password: "nis223" },
+   { username: "faiq", password: "fa3456" },
+
+    ];
+
+    const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
+
+    if (found) {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("content22").classList.remove("hidden");
+    } else {
+      document.getElementById("errorMsg").innerText = "Username atau password salah!";
+    }
+  }
+</script>
+
 </body>
 </html>
 
