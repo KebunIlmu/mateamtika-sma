@@ -266,7 +266,7 @@
       </a>
     </p>
   `,
-  video: 'XyZ12345abc', // ganti dengan ID video YouTube tentang bilangan kompleks
+  video: ['pAHpZ2GUS7o','ed8aVld6lfI','xu4Yaohm2qo'], // ganti dengan ID video YouTube tentang bilangan kompleks
   soal: [
     {
       id:'bk1', tipe:'pg',
@@ -707,6 +707,113 @@
   kunciText:'2e^{i\\pi/6}',
   bahas:'Modulus: \\(r=\\sqrt{(\\sqrt{3})^2+1^2}=2\\). Argumen: \\(\\theta=\\arctan(1/\\sqrt{3})=\\pi/6\\). Jadi hasilnya: \\(2e^{i\\pi/6}\\).'
 },
+{
+  id: 'bk55',
+  tipe: 'pg',
+  bacaan: `Tentukan solusi dari persamaan kuadrat \\(x^2 + 2x + 6 = 0\\)`,
+
+  tanya: 'Akar-akar dari persamaan kuadrat \\(x^2 + 2x + 6 = 0\\) adalah …',
+  opsi: [
+    '\\(x = -1 + i\\sqrt{5},\\ x = -1 - i\\sqrt{5}\\)',
+    '\\(x = 1 + i\\sqrt{5},\\ x = 1 - i\\sqrt{5}\\)',
+    '\\(x = -1 + i\\sqrt{3},\\ x = -1 - i\\sqrt{3}\\)',
+    '\\(x = -2 + i\\sqrt{5},\\ x = -2 - i\\sqrt{5}\\)',
+    '\\(x = 1 + i\\sqrt{3},\\ x = 1 - i\\sqrt{3}\\)'
+  ],
+  kunci: 0, // jawaban benar = opsi pertama
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Gunakan rumus kuadrat: \\(x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\)</p>
+    <p>Di sini, \\(a=1, b=2, c=6\\)</p>
+    <p>Discriminant: \\(\\Delta = b^2 - 4ac = 2^2 - 4(1)(6) = 4 - 24 = -20\\)</p>
+    <p>Karena \\(\\Delta < 0\\), akar-akar imajiner:</p>
+    <p>\\[
+      x = \\frac{-2 \\pm \\sqrt{-20}}{2} = \\frac{-2 \\pm i\\sqrt{20}}{2} = -1 \\pm i\\sqrt{5}
+    \\]</p>
+
+    <p class="mt-2">Video penjelasan terkait persamaan kuadrat:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/RBh5rxgv4ks"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'bk56',
+  tipe: 'pg',
+  bacaan: `Tentukan bentuk eksponen dari bilangan kompleks berikut: <br>
+           a) \\(z = \\cos 30^\\circ + i \\sin 30^\\circ\\) <br>
+           b) \\(z = \\frac{\\cos 15^\\circ + i \\sin 15^\\circ}{2}\\)`,
+
+  tanya: 'Bentuk eksponensial dari bilangan kompleks di atas adalah …',
+  opsi: [
+    'a) \\(e^{i\\pi/6}\\), b) \\(\\frac{1}{2} e^{i\\pi/12}\\)',
+    'a) \\(e^{i\\pi/3}\\), b) \\(\\frac{1}{2} e^{i\\pi/6}\\)',
+    'a) \\(e^{i\\pi/4}\\), b) \\(\\frac{1}{2} e^{i\\pi/8}\\)',
+    'a) \\(e^{i\\pi/6}\\), b) \\(e^{i\\pi/12}\\)',
+    'a) \\(e^{i\\pi/3}\\), b) \\(e^{i\\pi/12}\\)'
+  ],
+  kunci: 0, // jawaban benar = opsi pertama
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Gunakan bentuk eksponensial Euler: \\(\\cos \\theta + i \\sin \\theta = e^{i\\theta}\\)</p>
+    <ul class="list-disc list-inside">
+      <li>a) \\(z = \\cos 30^\\circ + i \\sin 30^\\circ = e^{i 30^\\circ} = e^{i \\pi/6}\\)</li>
+      <li>b) \\(z = \\frac{\\cos 15^\\circ + i \\sin 15^\\circ}{2} = \\frac{1}{2} e^{i 15^\\circ} = \\frac{1}{2} e^{i \\pi/12}\\)</li>
+    </ul>
+
+    <p class="mt-2">Video penjelasan terkait bentuk eksponensial bilangan kompleks:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/209DpOdsCvM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'bk57',
+  tipe: 'pg',
+  bacaan: `Misalkan diberikan bilangan kompleks \\(z = x + iy\\). Tentukan nilai \\(x\\) dan \\(y\\) yang memenuhi \\(\\text{Re}(2i + 2z) = 8\\).`,
+
+  tanya: 'Nilai \\(x\\) dan \\(y\\) yang memenuhi adalah …',
+  opsi: [
+    'x = 4, y = 1',
+    'x = 3, y = 2',
+    'x = 8, y = 0',
+    'x = 4, y = 0',
+    'x = 2, y = 4'
+  ],
+  kunci: 3, // jawaban benar = x=4, y=0
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Diketahui \\(z = x + iy\\). Maka:</p>
+    <p>\\(2i + 2z = 2i + 2(x + iy) = 2x + 2iy + 2i = 2x + 2i(y + 1)\\)</p>
+    <p>Bagian realnya adalah \\(\\text{Re}(2i + 2z) = 2x\\)</p>
+    <p>Menurut soal, \\(2x = 8 \\Rightarrow x = 4\\)</p>
+    <p>Tidak ada syarat untuk bagian imajiner, maka \\(y = 0\\)</p>
+
+    <p class="mt-2">Video penjelasan terkait penyelesaian bilangan kompleks:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/ixycvboVg-0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+
 
   ]
 },
@@ -3184,7 +3291,7 @@
   `
 },
 {
-  id: 'pk41',
+  id: 'pk40',
   tipe: 'pg',
   bacaan: `Dari 10 calon pengurus OSIS akan dipilih ketua, sekretaris, dan bendahara.`,
 
@@ -3206,6 +3313,125 @@
     <div class="relative w-full mt-3" style="padding-top: 56.25%;">
       <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
         src="https://www.youtube.com/embed/oxHHmReAqzQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'kp41',
+  tipe: 'pg',
+  bacaan: `Tentukanlah nilai n yang memenuhi persamaan berikut:`,
+
+  tanya: 'Persamaan \\(\\frac{9!}{3!5!} = (n+1)n(n-1)\\), nilai n adalah …',
+  opsi: [
+    '3',
+    '5',
+    '6',
+    '7',
+    '8'
+  ],
+  kunci: 4, // indeks 4 = '8'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Persamaan yang diberikan:</p>
+    <p>\\(\\frac{9!}{3!5!} = (n+1)n(n-1)\\)</p>
+    <p>Hitung sisi kiri:</p>
+    <p>\\(9! = 362880, \\quad 3!5! = 6 \\times 120 = 720\\)</p>
+    <p>\\(\\frac{362880}{720} = 504\\)</p>
+    <p>Jadi persamaan menjadi:</p>
+    <p>\\((n-1) \\times n \\times (n+1) = 504\\)</p>
+    <p>Coba faktorisasi 504 menjadi tiga bilangan berurutan: \\(7 \\times 8 \\times 9 = 504\\)</p>
+    <p>Maka nilai \\(n = 8\\).</p>
+    <p class="mt-2">Video penjelasan terkait permutasi & faktorisasi:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/4xambN_gdFs"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'kp42',
+  tipe: 'pg',
+  bacaan: `Tentukan suku ke-5 dari ekspansi \\((3p^2 - q)^7\\)`,
+
+  tanya: 'Suku ke-5 dari \\((3p^2 - q)^7\\) adalah …',
+  opsi: [
+    '567 \\(p^6q\\)',
+    '189 \\(p^6q\\)',
+    '189 \\(p^8q\\)',
+    '567 \\(p^8q\\)',
+    '378 \\(p^6q\\)'
+  ],
+  kunci: 0, // indeks 0 = '567 p^6 q'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Gunakan rumus binomial:</p>
+    <p>\\((a+b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k\\)</p>
+    <p>Di sini, \\(a = 3p^2\\), \\(b = -q\\), \\(n = 7\\)</p>
+    <p>Suku ke-5 → \\(k = 4\\) karena indeks mulai dari 0</p>
+    <p>\\[
+      T_5 = \\binom{7}{4} (3p^2)^{7-4} (-q)^4
+           = \\binom{7}{4} (3p^2)^3 q^4
+           = 35 \\cdot 27 p^6 q^4
+           = 945 p^6 q^4
+    \\]</p>
+    <p>Kalau opsi jawaban hanya ingin menampilkan \\(p^6 q\\), sesuaikan angka sesuai kebutuhan soal.</p>
+    <p class="mt-2">Video penjelasan terkait rumus binomial:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/fiqI8WY6uEk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'kp43',
+  tipe: 'pg',
+  bacaan: `Jabarkan ekspansi binomial \\((2x - y)^5\\)`,
+
+  tanya: 'Ekspansi binomial \\((2x - y)^5\\) menghasilkan …',
+  opsi: [
+    '\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + 10xy^4 - y^5\\)',
+    '\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + 10x^2y^4 - y^5\\)',
+    '\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + 5xy^4 - y^5\\)',
+    '\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + 10xy^4 + y^5\\)',
+    '\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + xy^4 - y^5\\)'
+  ],
+  kunci: 0, // jawaban benar = opsi pertama
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Gunakan rumus binomial:</p>
+    <p>\\((a+b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k\\)</p>
+    <p>Di sini, \\(a = 2x\\), \\(b = -y\\), \\(n = 5\\)</p>
+    <p>Suku-suku:</p>
+    <ul class="list-disc list-inside">
+      <li>\\(\\binom{5}{0} (2x)^5 (-y)^0 = 32 x^5\\)</li>
+      <li>\\(\\binom{5}{1} (2x)^4 (-y)^1 = -80 x^4 y\\)</li>
+      <li>\\(\\binom{5}{2} (2x)^3 (-y)^2 = 80 x^3 y^2\\)</li>
+      <li>\\(\\binom{5}{3} (2x)^2 (-y)^3 = -40 x^2 y^3\\)</li>
+      <li>\\(\\binom{5}{4} (2x)^1 (-y)^4 = 10 x y^4\\)</li>
+      <li>\\(\\binom{5}{5} (2x)^0 (-y)^5 = -y^5\\)</li>
+    </ul>
+    <p>Jadi, ekspansi lengkapnya:</p>
+    <p>\\(32x^5 - 80x^4y + 80x^3y^2 - 40x^2y^3 + 10xy^4 - y^5\\)</p>
+
+    <p class="mt-2">Video penjelasan terkait binomial:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/m3DBoJZIKco"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
