@@ -12137,29 +12137,72 @@ if(q.tipe==='matching'){
 </div>
 <script>
   function checkLogin() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
 
-    // Akun yang sudah disediakan
-    const validAccounts = [
-      { username: "zahwan", password: "132611" },
-      { username: "dzafi", password: "dz132" },
-      { username: "nadira", password: "nad322" },
-      { username: "silva", password: "sil345" },
-   { username: "nisa", password: "nis223" },
-   { username: "faiq", password: "fa3456" },
+  // data akun + kadaluwarsa
+  const validAccounts = [
+    { username: "zahwan", password: "132611", expire: "2025-10-23T00:00:00" },
+    { username: "dzafi", password: "dz132", expire: "2025-12-31T23:59:59" },
+    { username: "nadira", password: "nad322", expire: "2025-11-30T23:59:59" },
+    { username: "silva", password: "sil345", expire: "2025-10-31T23:59:59" },
+    { username: "nisa", password: "nis223", expire: "2025-10-25T23:59:59" },
+    { username: "faiq", password: "fa3456", expire: "2025-10-28T23:59:59" },
+  ];
 
-    ];
+  const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
 
-    const found = validAccounts.find(acc => acc.username === user && acc.password === pass);
-
-    if (found) {
-      document.getElementById("loginForm").style.display = "none";
-      document.getElementById("content22").classList.remove("hidden");
-    } else {
-      document.getElementById("errorMsg").innerText = "Username atau password salah!";
-    }
+  if (!found) {
+    document.getElementById("errorMsg").innerText = "Username atau password salah!";
+    return;
   }
+
+  const now = new Date();
+  const expireDate = new Date(found.expire);
+
+  if (now > expireDate) {
+    document.getElementById("errorMsg").innerText = "Akun sudah kadaluwarsa!";
+    return;
+  }
+
+  // login berhasil
+  localStorage.setItem('loggedInUser', JSON.stringify({ username: user }));
+  showContent();
+}
+
+function checkSession() {
+  const data = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
+  if (!data) return;
+
+  // cek tanggal kadaluwarsa akun
+  const accounts = [
+    { username: "zahwan", expire: "2025-08-30T12:42:00" },
+    { username: "dzafi", expire: "2025-12-31T23:59:59" },
+    { username: "nadira", expire: "2025-11-30T23:59:59" },
+    { username: "silva", expire: "2025-10-31T23:59:59" },
+    { username: "nisa", expire: "2025-10-25T23:59:59" },
+    { username: "faiq", expire: "2025-10-28T23:59:59" },
+  ];
+
+  const acc = accounts.find(a => a.username === data.username);
+  if (!acc || new Date() > new Date(acc.expire)) {
+    localStorage.removeItem('loggedInUser');
+    document.getElementById("loginForm").style.display = "flex";
+    document.getElementById("content22").classList.add("hidden");
+    return;
+  }
+
+  showContent();
+}
+
+function showContent() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("content22").classList.remove("hidden");
+}
+
+// cek saat halaman dimuat
+checkSession();
+
 </script>
 
 </body>
