@@ -3046,7 +3046,175 @@
   ],
   kunci: 1,
   bahas: 'Total baju = 8. Peluang pertama putih = 5/8. Setelah itu tersisa 7 baju (4 putih, 3 biru). Peluang kedua biru = 3/7. Maka peluang gabungan = (5/8) × (3/7) = 15/56.'
-}
+},
+{
+  id: 'kp36',
+  tipe: 'pg',
+  bacaan: `Kotak A berisi 2 bola merah dan 3 bola putih. Kotak B berisi 5 bola merah dan 3 bola putih. Dari masing-masing kotak diambil satu bola secara acak.`,
+
+  tanya: 'Peluang bola yang terambil adalah bola merah dari kotak A dan bola putih dari kotak B adalah…',
+  opsi: [
+    '1740',
+    '3/20',
+    '3/8',
+    '2/5',
+    '31/40'
+  ],
+  kunci: 1, // indeks 1 = '3/20'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Peluang terambil bola merah dari kotak A = 2/5</p>
+    <p>Peluang terambil bola putih dari kotak B = 3/8</p>
+    <p>Peluang kedua kejadian terjadi bersama = (2/5) × (3/8) = 6/40 = 3/20</p>
+    <p class="mt-2">Video penjelasan peluang:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/EDQRa7Haw90"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'kp37',
+  tipe: 'pg',
+  bacaan: `Dua dadu dilempar secara bersamaan.`,
+
+  tanya: 'Peluang muncul mata dadu pertama 3 dan mata dadu kedua 5 adalah…',
+  opsi: [
+    '6/36',
+    '5/36',
+    '4/36',
+    '3/36',
+    '1/36'
+  ],
+  kunci: 4, // indeks 4 = '1/36'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Peluang muncul mata dadu pertama 3 = 1/6</p>
+    <p>Peluang muncul mata dadu kedua 5 = 1/6</p>
+    <p>Peluang keduanya terjadi bersamaan = (1/6) × (1/6) = 1/36</p>
+    <p class="mt-2">Video penjelasan peluang dengan dua dadu:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/w6rSZaY0-kQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'pk38',
+  tipe: 'pg',
+  bacaan: `Sebuah keluarga merencanakan mempunyai tiga orang anak.`,
+
+  tanya: 'Peluang keluarga tersebut mempunyai paling sedikit dua anak laki-laki adalah…',
+  opsi: [
+    '1/8',
+    '1/3',
+    '3/8',
+    '1/2',
+    '3/4'
+  ],
+  kunci: 3, // indeks 4 = '3/4'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Misalkan peluang anak laki-laki (L) = 1/2 dan anak perempuan (P) = 1/2.</p>
+    <p>Ruang sampel untuk 3 anak: {LLL, LLP, LPL, LPP, PLL, PLP, PPL, PPP} → 8 kemungkinan</p>
+    <p>Yang memiliki paling sedikit 2 laki-laki: LLL, LLP, LPL, PLL → 6 kombinasi?? mari hitung:</p>
+    <ul class="list-disc list-inside">
+      <li>LLL (3 laki-laki)</li>
+      <li>LLP (2 laki-laki)</li>
+      <li>LPL (2 laki-laki)</li>
+      <li>PLL (2 laki-laki)</li>
+    </ul>
+    <p>Total 4 kombinasi dari 8 kemungkinan → peluang = 4/8 = 1/2</p>
+    <p><b>Jadi jawaban yang benar adalah D. 1/2</b></p>
+    <p class="mt-2">Video penjelasan terkait peluang anak laki-laki dan perempuan:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/EiFv-hjyirQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},  
+{
+  id: 'kp39',
+  tipe: 'pg',
+  bacaan: `Dari 36 siswa di sebuah kelas, 20 siswa suka olahraga renang, 15 siswa suka olahraga basket, dan 10 siswa tidak suka kedua-duanya.`,
+
+  tanya: 'Jika dipilih seorang siswa secara acak, peluang terpilih siswa yang suka kedua jenis olahraga tersebut adalah …',
+  opsi: [
+    '1/4',
+    '9/26',
+    '5/18',
+    '1/5',
+    '1/9'
+  ],
+  kunci: 0, // indeks 2 = '5/18'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Total siswa = 36</p>
+    <p>Siswa yang tidak suka kedua-duanya = 10 → siswa yang suka minimal satu = 36 - 10 = 26</p>
+    <p>Gunakan prinsip inklusi-eksklusi:</p>
+    <p>|Renang ∩ Basket| = |Renang| + |Basket| - |Renang ∪ Basket|</p>
+    <p>|Renang ∩ Basket| = 20 + 15 - 26 = 9 siswa</p>
+    <p>Peluang siswa yang suka kedua jenis olahraga = 9 / 36 = 1/4 → hmm kita cek opsi</p>
+    <p>Opsi paling mendekati perhitungan 9/36 = 1/4 → jawaban yang benar adalah A. 1/4</p>
+    <p class="mt-2">Video penjelasan terkait soal peluang gabungan olahraga:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/KCVPwbF_GRE"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+{
+  id: 'pk41',
+  tipe: 'pg',
+  bacaan: `Dari 10 calon pengurus OSIS akan dipilih ketua, sekretaris, dan bendahara.`,
+
+  tanya: 'Banyak cara memilih pengurus OSIS adalah …',
+  opsi: [
+    '9 cara',
+    '10 cara',
+    '30 cara',
+    '70 cara',
+    '720 cara'
+  ],
+  kunci: 4, // indeks 4 = '720 cara'
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+    <p>Akan dipilih 3 jabatan berbeda (ketua, sekretaris, bendahara) dari 10 calon. Karena urutan penting, ini termasuk <b>permutasi</b>.</p>
+    <p>Banyak cara = P(10,3) = 10 × 9 × 8 = 720 cara.</p>
+    <p>Jadi jawaban yang benar adalah E. 720 cara.</p>
+    <p class="mt-2">Video penjelasan terkait permutasi:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/oxHHmReAqzQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
+},
+
   ]
 },
 
