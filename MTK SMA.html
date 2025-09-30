@@ -8460,7 +8460,64 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
   ],
   kunci: 0,
   bahas: 'Rr × rr menghasilkan 50% Rr (merah muda) dan 50% rr (putih). Rasio = 1 merah muda : 1 putih.'
+},
+{
+  id:'bio2',
+  tipe:'cb',
+  bacaan:`Salah satu ciri makhluk hidup adalah dapat berkembang biak. Pada perkembangbiakan makhluk hidup, terjadi pewarisan sifat dari induk terhadap keturunannya. Ilmu yang mempelajari tentang pewarisan sifat dinamakan genetika. Tokoh terkenal yang sudah tidak asing lagi adalah Gregor Johann Mendel yang dikenal sebagai Bapak Genetika. Mendel menemukan bahwa pewarisan sifat dari induk kepada keturunannya mengikuti suatu pola tertentu. Ia mengemukakan hukum pewarisan sifat (hereditas). Hukum Mendel terdapat dua, yaitu hukum I Mendel dan hukum II Mendel.
+Hukum I Mendel berkaitan dengan pemisahan gen sealel, dalam bahasa inggris disebut segregation of allelic genes. Peristiwa pemisahan alel ini terlihat ketika pembuatan gamet individu yang memiliki genotipe heterozigot, sehingga tiap gamet mengandung salah satu alel tersebut. Sementara itu, pada Hukum II, terjadi pembentukan sel kelamin (gamet), alel mengadakan kombinasi secara bebas sehingga sifat yang muncul dalam keturunannya beraneka ragam. Hukum ini berlaku untuk persilangan dengan dua sifat beda (dihibrid) atau lebih (polihibrid).
+Berikut adalah contoh persilangan dihibrid, yaitu persilangan antara kacang ercis biji bulat warna kuning dengan biji keriput warna hijau. Bulat dominan terhadap keriput, sedangkan kuning dominan terhadap hijau. Hasil keturunan yang kedua (F2) dari induk persilangan kedua (P2) disajikan pada tabel berikut. :
+\\(p_2 : \\quad  \\text{Biji bulat warna kuning}\\quad  ><\\quad \\text{ biji bulat warna kuning}\\)
+\\[BbKk\\quad \\quad \\quad BbKk\\]
+\\(Gamet : \\quad \\quad\\quad  \\text{BK,Bk,bK,bk}\\quad  \\quad \\quad \\text{BK,Bk,bK,bk}\\)`,
+tabel: [
+    ['', 'BK', 'Bk', 'bK','bk'],
+    ['BK', '\\[BBKK\\](bulat kuning)', '\\[BBKk\\](bulat kuning)', '\\[BbKK\\](bulat kuning)','\\[BbKk\\](bulat kuning)'],
+    ['Bk', '\\[BBKk\\](bulat kuning)', '\\[BBkk\\](bulat hijau)', '\\[BbKk\\](bulat kuning)','\\[Bbkk\\](bulat hijau)'],
+    ['bK', '\\[BbKK\\](bulat kuning)', '\\[BbKk\\](bulat kuning)', '\\[bbKK\\](keriput kuning)','\\[bbKk\\](keriput kuning)'],
+    ['bk', '\\[BbKk\\](bulat kuning)', '\\[Bbkk\\](bulat hijau)', '\\[bbKk\\](keriput kuning)','\\[bbkk\\](keriput hijau)']
+  ],
+
+  tanya:'Jika gamet bk tidak diikutsertakan, beri tanda centang (✔) pada pernyataan yang benar.',
+  opsi:[
+    'Peluang munculnya genotipe BBKk adalah 2/9',
+    'Peluang munculnya genotipe BbKk adalah 1/9',
+    'Peluang munculnya fenotipe bulat kuning adalah 4/9',
+    'Peluang munculnya fenotipe bulat hijau adalah 5/9',
+    'Peluang tidak muncul fenotip keriput kuning adalah 8/9'
+  ],
+  kunci:[0,4],
+  bahas:`
+    <p><b>Pembahasan:</b></p>
+    <p>Tabel persilangan (BK, Bk, bK) menghasilkan 9 kotak dengan frekuensi sebagai berikut:</p>
+    <ul class="list-disc list-inside">
+      <li>BBKK (1)</li>
+      <li>BBKk (2)</li>
+      <li>BbKK (2)</li>
+      <li>BBkk (1)</li>
+      <li>BbKk (2)</li>
+      <li>bbKK (1)</li>
+    </ul>
+    <p>
+      - Peluang <b>BBKk</b> = 2/9 (benar).<br>
+      - Peluang <b>BbKk</b> = 2/9 (salah).<br>
+      - Fenotip <b>bulat kuning</b> (= genotip dengan minimal satu B dan minimal satu K) muncul pada BBKK + BBKk + BbKK + BbKk = 1+2+2+2 = 7/9 → pernyataan "4/9" salah.<br>
+      - Fenotip <b>bulat hijau</b> = BBkk = 1/9 (salah).<br>
+      - Fenotip <b>keriput kuning</b> = bbKK = 1/9 → peluang tidak muncul keriput kuning = 1 - 1/9 = 8/9 (benar).
+    </p>
+    <p class="mt-2">Video penjelasan terkait hukum Mendel:</p>
+    <div class="relative w-full mt-3" style="padding-top: 56.25%;">
+      <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+        src="https://www.youtube.com/embed/346fj7SAc2s"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  `
 }
+
       ]
     },
 'Genetika': {
@@ -10843,6 +10900,30 @@ if(window.MathJax){
     teks.innerText = q.bacaan;
     body.appendChild(teks);
   }
+if (q.tabel) {
+  // Kalau hanya satu tabel (array 2D), bungkus jadi array agar konsisten
+  const tables = Array.isArray(q.tabel[0][0]) ? q.tabel : [q.tabel];
+
+  tables.forEach(t => {
+    const table = document.createElement('table');
+    table.className = 'my-3 border-collapse border border-gray-400 w-full max-w-md text-center';
+
+    t.forEach((row, i) => {
+      const tr = document.createElement('tr');
+      row.forEach((cell, j) => {
+        const el = i === 0 ? 'th' : 'td'; // baris pertama = header
+        const td = document.createElement(el);
+        td.textContent = cell;
+        td.className = 'border border-gray-400 px-2 py-1';
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    });
+
+    body.appendChild(table);
+  });
+}
+
 if(q.tanya){
     const pertanyaan = document.createElement('div');
     pertanyaan.className = 'text-base font-medium';
@@ -11087,7 +11168,8 @@ if(q.tanya){
 
   const bahas = document.createElement('div');
   bahas.className = 'mt-3 hidden p-3 rounded-lg bg-emerald-50 border border-emerald-100 text-sm';
-  bahas.textContent = q.bahas || 'Belum ada pembahasan.';
+  bahas.innerHTML = q.bahas || 'Belum ada pembahasan.';
+
 
   // ====== EVENT CEK JAWABAN ======
   btnCek.addEventListener('click',()=>{
@@ -11312,7 +11394,7 @@ if(q.tipe==='matching'){
   setTab('materi');
   initSelectors();
   </script>
-<>/div
+</div>
 <script>
   function checkLogin() {
     const user = document.getElementById("username").value;
