@@ -7210,6 +7210,125 @@ gambar:'https://i.imgur.com/xeJ7ACG.png',
     },
 'Fisika': {
   bab: {
+'Gerak Parabola': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Gerak Parabola</h2>
+
+    <p class="mb-4">
+      Untuk materi lengkap mengenai gerak parabola, silakan <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/parab_fis2_1.pdf" target="_blank" class="text-blue-600 underline">klik di sini</a>.
+    </p>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Gerak Parabola</h3>
+    <p class="mb-4">
+      Gerak parabola adalah gabungan dari gerak horizontal (GLB) dan gerak vertikal (GLBB) 
+      saat sebuah benda dilempar atau dilontarkan. Lintasan yang terbentuk berbentuk kurva parabola.  
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Komponen Gerak Parabola</h3>
+    <ul class="list-disc ml-6 mb-4">
+      <li><b>Gerak mendatar (horizontal)</b>: v_x = konstan (tanpa percepatan horizontal).</li>
+      <li><b>Gerak vertikal</b>: mengalami percepatan gravitasi (g), kecepatan berubah-ubah.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Rumus-Rumus Gerak Parabola</h3>
+    <p class="mb-4">
+      Bila kecepatan awal \\( v_0 \\) dan sudut elevasi \\( \\theta \\):  
+    </p>
+    <ul class="list-disc ml-6 mb-4">
+      <li>Komponen kecepatan awal: <br>
+        \\( v_{0x} = v_0 \\cos \\theta \\), <br>
+        \\( v_{0y} = v_0 \\sin \\theta \\)</li>
+      <li>Posisi (x, y) pada waktu t: <br>
+        \\( x = v_{0x} \\, t \\) <br>
+        \\( y = v_{0y} \\, t - \\tfrac{1}{2} g t^2 \\)</li>
+      <li>Kecepatan sesaat: <br>
+        \\( v_x = v_{0x} \\) (konstan) <br>
+        \\( v_y = v_{0y} - g \\, t \\)</li>
+      <li>Titik tertinggi: <br>
+        Waktu: \\( t_{maks} = \\tfrac{v_{0y}}{g} \\) <br>
+        Ketinggian maksimum: \\( h_{maks} = \\tfrac{(v_{0y})^2}{2g} \\)</li>
+      <li>Jangkauan horizontal maksimum: <br>
+        \\( R = \\tfrac{v_0^2 \\sin 2\\theta}{g} \\)</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">4. Ciri-Ciri & Catatan Penting</h3>
+    <ul class="list-disc ml-6 mb-4">
+      <li>Lintasan berbentuk parabola.</li>
+      <li>Gerak horizontal dan vertikal bekerja terpisah (independen).</li>
+      <li>Komponen vertikal dipengaruhi gravitasi, sedangkan horizontal tidak (jika hambatan udara diabaikan).</li>
+      <li>Tinggi maksimum terjadi saat kecepatan vertikal = 0.</li>
+      <li>Jangkauan maksimum terjadi jika sudut lempar = 45° (jika kondisi ideal).</li>
+    </ul>
+  `,
+  video: 'H1gK9yH4Z7g',
+  soal: [
+    {
+      id: 'gp1',
+      tipe: 'pg',
+      tanya: 'Sebuah bola dilempar dengan kecepatan awal 20 m/s dengan sudut elevasi 30°. Komponen kecepatan awal arah horizontal adalah …',
+      opsi: ['10 m/s', '15 m/s', '17,3 m/s', '20 m/s'],
+      kunci: 2,
+      bahas: 'Gunakan rumus \\( v_{0x} = v_0 \\cos \\theta = 20 \\times \\cos 30° = 20 \\times 0,866 = 17,32 \\text{ m/s} \\).'
+    },
+    {
+      id: 'gp2',
+      tipe: 'pg',
+      tanya: 'Sebuah benda dilempar ke atas dengan kecepatan awal 10 m/s dan sudut 45°. Jika percepatan gravitasi 10 m/s², maka tinggi maksimum yang dicapai benda adalah …',
+      opsi: ['2,5 m', '5 m', '10 m', '12,5 m'],
+      kunci: 1,
+      bahas: 'Rumus: \\( h_{maks} = \\tfrac{(v_0 \\sin \\theta)^2}{2g} = \\tfrac{(10 \\times 0,707)^2}{20} = \\tfrac{50}{20} = 2,5 \\text{ m} \\).'
+    },
+{
+  id: 'mtk15',
+  tipe: 'bs',
+gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFbAFaWSvdObKexNfiH_0w1F9s_cMOgPIFFo_mcPplXh7eJ-uK44ZUBNOFj6bQ6lLuNHSNyPjtM2GjhLQAHKZpV4lb2SsEzeCx1UAVMEQbYaWkRI_YIReRau_202BbWUj_w/s320/Screen+Shot+2021-10-09+at+20.51.08.jpg',
+  bacaan: 'Sebuah pesawat terbang SAR menjatuhkan sebuah paket logistik darurat kepada sekelompok penjelajah yang terdampar seperti ditunjukkan pada gambar di samping (Gambar 5.9 Sketsa soal). Pesawat terbang mendatar dengan kecepatan 40 m/s pada ketinggian 100 m di atas tanah. (Gunakan \\(g = 10\\ \\text{m/s}^2\\).) Sketsa pesawat menjatuhkan paket (Gambar 5.9',
+  tanya: 'Tentukan benar (B) atau salah (S) untuk setiap pernyataan berikut:',
+  opsi: [
+    '1. Waktu yang dibutuhkan logistik untuk mencapai tanah adalah 4,5 s.',
+    '2. Jarak horizontal dari titik pelepasan hingga tempat menyentuh tanah adalah 180 m.',
+    '3. Kecepatan paket sesaat sebelum menyentuh tanah lebih besar dari 40 m/s.'
+  ],
+  kunci: [false, true, true],
+  bahas: `
+    <p><b>Pembahasan:</b></p>
+
+    <p><b>Langkah 1 — Waktu jatuh:</b><br>
+    Gunakan persamaan gerak vertikal bebas: \\( h = \\tfrac{1}{2} g t^2 \\).<br>
+    Dengan \\( h = 100\\,\\text{m} \\) dan \\( g = 10\\,\\text{m/s}^2 \\):<br>
+    \\( 100 = \\tfrac{1}{2} \\times 10 \\times t^2 \\Rightarrow t^2 = 20 \\Rightarrow t = \\sqrt{20} \\approx 4{,}47\\ \\text{s}. \\)</p>
+
+    <p>Karena \\(4{,}47\\ \\text{s} \\neq 4{,}5\\ \\text{s}\\) (nilai lebih tepat ≈ 4,47 s), pernyataan 1 adalah <b>SALAH</b>.</p>
+
+    <p><b>Langkah 2 — Jarak horizontal (jangkauan):</b><br>
+    Komponen kecepatan horizontal adalah konstan: \\( v_x = 40\\ \\text{m/s} \\).<br>
+    Maka jarak horizontal saat menyentuh tanah:<br>
+    \\( x = v_x \\times t = 40 \\times 4{,}47 \\approx 178{,}9\\ \\text{m}. \\)</p>
+
+    <p>Dibulatkan ke nilai yang wajar menjadi ≈ 180 m, sehingga pernyataan 2 adalah <b>BENAR</b>.</p>
+
+    <p><b>Langkah 3 — Kecepatan sesaat sebelum menyentuh tanah:</b><br>
+    Komponen vertikal sebelum menyentuh tanah: \\( v_y = g t = 10 \\times 4{,}47 \\approx 44{,}7\\ \\text{m/s}. \\)<br>
+    Kecepatan total: \\( v = \\sqrt{v_x^2 + v_y^2} = \\sqrt{40^2 + 44{,}7^2} \\approx 59{,}9\\ \\text{m/s}. \\)</p>
+
+    <p>Karena \\(59{,}9\\ \\text{m/s} > 40\\ \\text{m/s}\\), pernyataan 3 adalah <b>BENAR</b>.</p>
+
+    <p><b>Kesimpulan:</b> Jawaban = [S, B, B]</p>
+
+    <br>
+    <p><b>Video Pembahasan:</b></p>
+    <iframe width="320" height="180"
+      src="https://www.youtube.com/embed/GRUfwvDo5BA"
+      title="Video Pembahasan"
+      frameborder="0" allowfullscreen
+      style="border-radius:8px; margin-top:6px;">
+    </iframe>
+  `
+},
+
+  ]
+},
+
 
 'FluidaStatis': {
   materi: `
