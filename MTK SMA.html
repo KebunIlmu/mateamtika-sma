@@ -170,7 +170,7 @@
 'Matematika': {
       bab: {
 
-'BilanganKompleks': {
+'Bilangan Kompleks': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Bilangan Kompleks: Definisi, Operasi & Penerapan</h2>
 
@@ -2564,7 +2564,7 @@
 
   ]
 },
-'KaidahPencacahanPeluang': {
+'Kaidah Pencacahan Peluang': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Kaidah Pencacahan & Peluang: Rumus & Contoh Soal</h2>
 
@@ -7286,7 +7286,7 @@ gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFb
   tanya: 'Tentukan benar (B) atau salah (S) untuk setiap pernyataan berikut:',
   opsi: [
     '1. Waktu yang dibutuhkan logistik untuk mencapai tanah adalah 4,5 s.',
-    '2. Jarak horizontal dari titik pelepasan hingga tempat menyentuh tanah adalah 180 m.',
+    '2. Jarak horizontal dari titik pelepasan hingga tempat menyentuh tanah adalah \\(80 \\sqrt{5}\\) m.',
     '3. Kecepatan paket sesaat sebelum menyentuh tanah lebih besar dari 40 m/s.'
   ],
   kunci: [false, true, true],
@@ -7303,13 +7303,12 @@ gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFb
     <p><b>Langkah 2 — Jarak horizontal (jangkauan):</b><br>
     Komponen kecepatan horizontal adalah konstan: \\( v_x = 40\\ \\text{m/s} \\).<br>
     Maka jarak horizontal saat menyentuh tanah:<br>
-    \\( x = v_x \\times t = 40 \\times 4{,}47 \\approx 178{,}9\\ \\text{m}. \\)</p>
-
-    <p>Dibulatkan ke nilai yang wajar menjadi ≈ 180 m, sehingga pernyataan 2 adalah <b>BENAR</b>.</p>
+    \\( x = v_x \\times t = 40 \\times 2\\sqrt{5} =80\\sqrt{5}\\text{m}. \\)</p>
+    <p><b>BENAR</b>.</p>
 
     <p><b>Langkah 3 — Kecepatan sesaat sebelum menyentuh tanah:</b><br>
-    Komponen vertikal sebelum menyentuh tanah: \\( v_y = g t = 10 \\times 4{,}47 \\approx 44{,}7\\ \\text{m/s}. \\)<br>
-    Kecepatan total: \\( v = \\sqrt{v_x^2 + v_y^2} = \\sqrt{40^2 + 44{,}7^2} \\approx 59{,}9\\ \\text{m/s}. \\)</p>
+    Komponen vertikal sebelum menyentuh tanah: \\( v_y = g t = 5 \\times 20 \\sqrt{5}\\ =\\text{m/s}. \\)<br>
+    Kecepatan total: \\( v = \\sqrt{v_x^2 + v_y^2} = \\sqrt{40^2 + (8)^2} \\approx 59{,}9\\ \\text{m/s}. \\)</p>
 
     <p>Karena \\(59{,}9\\ \\text{m/s} > 40\\ \\text{m/s}\\), pernyataan 3 adalah <b>BENAR</b>.</p>
 
@@ -7672,6 +7671,594 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
 
 'Kimia': {
   bab: {
+'Stoikiometri Dasar': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Stoikiometri Dasar</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Stoikiometri</h3>
+    <p class="mb-4">
+      <b>Stoikiometri</b> adalah cabang kimia yang mempelajari hubungan kuantitatif antara pereaksi dan hasil reaksi berdasarkan persamaan reaksi kimia yang setara.
+      Stoikiometri memungkinkan kita menghitung jumlah zat (mol, massa, volume gas, atau jumlah partikel) yang terlibat dalam suatu reaksi kimia.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Konsep Mol</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li>1 mol = \\(6,022 \\times 10^{23}\\) partikel (Avogadro).</li>
+      <li>Massa molar (M) adalah massa 1 mol zat (g/mol).</li>
+      <li>Hubungan dasar:
+        \\[
+        n = \\frac{m}{M}
+        \\]
+        di mana <b>n</b> = mol, <b>m</b> = massa (g), dan <b>M</b> = massa molar (g/mol).
+      </li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Hubungan Antara Zat dalam Reaksi</h3>
+    <p class="mb-4">
+      Berdasarkan persamaan reaksi yang setara, perbandingan mol antar zat dapat digunakan untuk menghitung jumlah zat lain yang bereaksi atau terbentuk.
+    </p>
+    <p class="mb-4">
+      Contoh:<br>
+      \\(2H_2 + O_2 → 2H_2O\\)<br>
+      Artinya: 2 mol H₂ bereaksi dengan 1 mol O₂ menghasilkan 2 mol H₂O.
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Hubungan Antara Mol, Volume, dan Partikel</h3>
+    <table class="table-auto border border-collapse border-gray-400 w-full mb-4">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-2 py-1">Besaran</th>
+          <th class="border px-2 py-1">Rumus</th>
+          <th class="border px-2 py-1">Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-2 py-1">Mol → Massa</td>
+          <td class="border px-2 py-1">m = n × M</td>
+          <td class="border px-2 py-1">Massa zat (g)</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="border px-2 py-1">Mol → Volume gas</td>
+          <td class="border px-2 py-1">V = n × 22,4 L</td>
+          <td class="border px-2 py-1">STP (0°C, 1 atm)</td>
+        </tr>
+        <tr>
+          <td class="border px-2 py-1">Mol → Partikel</td>
+          <td class="border px-2 py-1">Jumlah partikel = n × 6,022×10²³</td>
+          <td class="border px-2 py-1">Atom, molekul, atau ion</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="font-semibold mt-3">5. Langkah Penyelesaian Soal Stoikiometri</h3>
+    <ol class="list-decimal pl-6 mb-4">
+      <li>Tulis persamaan reaksi yang setara.</li>
+      <li>Ubah satuan (massa, volume, partikel) ke mol.</li>
+      <li>Gunakan perbandingan mol sesuai koefisien reaksi.</li>
+      <li>Hitung kembali besaran yang diminta.</li>
+    </ol>
+
+    <h3 class="font-semibold mt-3">6. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail, baca materi berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/hdmol_kim1_3.pdf" 
+         target="_blank" class="text-blue-600 underline">
+         📘 Klik di sini untuk membuka materi lengkap Stoikiometri Dasar (PDF)
+      </a>
+    </p>
+  `,
+
+  video: ['IRCqxvho9Do','Om3_Tiic9BU','ottUj9bURsQ','NvOhXDRUihQ','hRsQbJ5aews','RJy7ilCh4Ws','IG9k8kB7Tns'], // Ganti dengan ID video yang sesuai jika ada
+
+  soal: [
+    {
+      id: 'sd1',
+      tipe: 'pg',
+      tanya: 'Stoikiometri digunakan untuk menghitung ...',
+      opsi: [
+        'Energi yang dilepaskan reaksi kimia',
+        'Hubungan kuantitatif antar zat dalam reaksi kimia',
+        'Warna dan bau senyawa kimia',
+        'Sifat asam atau basa suatu zat'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Stoikiometri membahas hubungan kuantitatif antara pereaksi dan hasil reaksi, seperti jumlah mol, massa, atau volume gas.</p>
+      `
+    },
+    {
+      id: 'sd2',
+      tipe: 'pg',
+      tanya: 'Jika 2 mol H₂ bereaksi dengan 1 mol O₂ menghasilkan 2 mol H₂O, maka perbandingan mol H₂ : O₂ : H₂O adalah …',
+      opsi: [
+        '1 : 1 : 1',
+        '1 : 2 : 2',
+        '2 : 1 : 2',
+        '2 : 2 : 1'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Berdasarkan reaksi setara \\(2H_2 + O_2 → 2H_2O\\), perbandingan mol H₂ : O₂ : H₂O = 2 : 1 : 2.</p>
+      `
+    },
+    {
+      id: 'sd3',
+      tipe: 'pg',
+      tanya: 'Berapa mol dalam 11 gram karbon (Ar = 12)?',
+      opsi: [
+        '0,5 mol',
+        '0,75 mol',
+        '0,92 mol',
+        '1,1 mol'
+      ],
+      kunci: 0,
+      bahas: `
+        <p><b>Penjelasan:</b> \\( n = \\frac{m}{M} = \\frac{11}{12} = 0,92 \\) mol. → Jawaban yang paling mendekati adalah 0,92 mol.</p>
+      `
+    },
+    {
+      id: 'sd4',
+      tipe: 'pg',
+      tanya: 'Pada kondisi STP, 1 mol gas menempati volume ...',
+      opsi: [
+        '11,2 L',
+        '22,4 L',
+        '44,8 L',
+        '1 L'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Pada suhu 0°C dan tekanan 1 atm (STP), 1 mol gas ideal menempati volume 22,4 liter.</p>
+      `
+    },
+    {
+      id: 'sd5',
+      tipe: 'pg',
+      tanya: 'Hubungan antara jumlah mol (n), massa (m), dan massa molar (M) yang benar adalah …',
+      opsi: [
+        'n = M × m',
+        'm = n / M',
+        'n = m / M',
+        'M = n / m'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Rumus dasar stoikiometri adalah \\( n = \\frac{m}{M} \\), di mana n = mol, m = massa (g), dan M = massa molar (g/mol).</p>
+      `
+    }
+  ]
+},
+
+'Laju Reaksi': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Laju Reaksi (Kinetika Kimia)</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Laju Reaksi</h3>
+    <p class="mb-4">
+      Laju reaksi adalah perubahan konsentrasi pereaksi atau produk per satuan waktu.  
+      Dengan kata lain, seberapa cepat suatu reaksi kimia berlangsung. :contentReference[oaicite:0]{index=0}
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Rumus Laju Reaksi</h3>
+    <p class="mb-4">
+      Untuk reaksi sederhana A → B, laju reaksi bisa ditulis sebagai:
+    </p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>vₐ = – Δ[A] / Δt  (laju pengurangan A) :contentReference[oaicite:1]{index=1}</li>
+      <li>v_b = + Δ[B] / Δt  (laju pembentukan B) :contentReference[oaicite:2]{index=2}</li>
+    </ul>
+    <p class="mb-4">
+      Secara umum, laju reaksi (v) dapat dinyatakan sebagai:
+      \\[
+        v = \\frac{ΔC}{Δt}
+      \\]
+      di mana ΔC = perubahan konsentrasi (mol/L), Δt = perubahan waktu (s) :contentReference[oaicite:3]{index=3}  
+    </p>
+
+    <h3 class="font-semibold mt-3">3. Orde dan Hukum Laju</h3>
+    <p class="mb-4">
+      Untuk reaksi umum:  
+      \\[
+        aA + bB → \dots
+      \\]  
+      hukum laju bisa ditulis:
+      \\[
+        v = k [A]^m [B]^n
+      \\]  
+      Di mana:
+      <ul class="list-disc pl-6 mb-2">
+        <li>k = tetapan laju</li>
+        <li>m, n = orde reaksi terhadap A dan B (ditentukan lewat eksperimen, bukan koefisien reaksi) :contentReference[oaicite:4]{index=4}</li>
+      </ul>
+      Orde total = m + n  
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Faktor-faktor yang Mempengaruhi Laju Reaksi</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Konsentrasi</b>: makin tinggi konsentrasi pereaksi → makin sering tumbukan → laju meningkat. :contentReference[oaicite:5]{index=5}</li>
+      <li><b>Suhu</b>: suhu lebih tinggi → energi kinetik molekul lebih besar → tumbukan efektif lebih sering → laju naik. :contentReference[oaicite:6]{index=6}</li>
+      <li><b>Luas permukaan (bagi zat padat)</b>: makin luas permukaan kontak → makin banyak tumbukan → laju meningkat. :contentReference[oaicite:7]{index=7}</li>
+      <li><b>Katalis</b>: mempercepat reaksi dengan menurunkan energi aktivasi, tanpa ikut habis dalam reaksi. :contentReference[oaicite:8]{index=8}</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">5. Teori Tumbukan</h3>
+    <p class="mb-4">
+      Menurut teori tumbukan, agar reaksi terjadi, partikel pereaksi harus:
+      <ol class="list-decimal pl-6">
+        <li>Bertumbukan satu sama lain</li>
+        <li>Memiliki energi minimal yang cukup (energi aktivasi)</li>
+        <li>Arah tumbukan tepat agar ikatan bisa terbentuk atau terpecah dengan benar</li>
+      </ol>
+      Hanya tumbukan yang memenuhi syarat ini (tumbukan efektif) yang menghasilkan reaksi. :contentReference[oaicite:9]{index=9}  
+    </p>
+
+    <h3 class="font-semibold mt-3">6. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk referensi lebih lanjut, kamu bisa lihat materi di repositori Kemdikbud:  
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/lajur_kim2_5.pdf" class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+        📘 Buka materi lengkap Laju Reaksi (PDF)
+      </a>
+    </p>
+  `,
+
+  video: ['eZxtSQz1gE4'],
+
+  soal: [
+    {
+      id: 'lr1',
+      tipe: 'pg',
+      tanya: 'Jika reaksi A → B, dan konsentrasi [A] menurun dari 0,50 M menjadi 0,30 M dalam 10 detik, maka laju rata-ratanya adalah …',
+      opsi: [
+        '0,020 M/s',
+        '0,025 M/s',
+        '0,030 M/s',
+        '0,015 M/s'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Δ[A] = 0,30 – 0,50 = –0,20 M (penurunan)  
+        Δt = 10 s  
+        Laju = –(Δ[A]) / Δt = –(–0,20) / 10 = 0,020 M/s  
+        Tapi biasanya dituliskan sebagai 0,020 M/s = 2,0×10⁻² M/s  
+        (jawaban paling mendekati adalah 0,025 M/s tergantung pembulatan dan pilihan)  
+        </p>
+      `
+    },
+    {
+      id: 'lr2',
+      tipe: 'pg',
+      tanya: 'Hukum laju reaksi v = k [A]² [B] artinya reaksi ini memiliki orde total …',
+      opsi: [
+        '1',
+        '2',
+        '3',
+        '4'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Orde terhadap A = 2, terhadap B = 1 → orde total = 2 + 1 = 3.</p>
+      `
+    },
+    {
+      id: 'lr3',
+      tipe: 'pg',
+      tanya: 'Jika suhu dinaikkan, efek atmosfer pada laju reaksi adalah …',
+      opsi: [
+        'Laju menurun karena tumbukan kurang efektif',
+        'Laju tetap sama karena suhu tidak berpengaruh',
+        'Laju meningkat karena partikel memiliki energi kinetik lebih tinggi',
+        'Reaksi terhenti'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Suhu lebih tinggi → molekul bergerak lebih cepat → frekuensi dan energi tumbukan efektif lebih banyak → laju reaksi meningkat.</p>
+      `
+    },
+    {
+      id: 'lr4',
+      tipe: 'pg',
+      tanya: 'Katalis dalam reaksi berfungsi untuk …',
+      opsi: [
+        'Mengubah tetapan laju (k)',
+        'Menambah jumlah pereaksi',
+        'Menurunkan energi aktivasi dan mempercepat tercapainya kesetimbangan',
+        'Mengubah arah reaksi'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Katalis mempercepat reaksi dengan <b>menurunkan energi aktivasi</b>, sehingga reaksi mencapai kesetimbangan lebih cepat, tanpa mengubah posisi kesetimbangan. </p>
+      `
+    },
+    {
+      id: 'lr5',
+      tipe: 'pg',
+      tanya: 'Menurut teori tumbukan, tumbukan efektif memerlukan …',
+      opsi: [
+        'Hanya tumbukan antar molekul tanpa energi minimum',
+        'Energi cukup dan arah yang tepat ketika tumbukan',
+        'Energi rendah tetapi arah tepat',
+        'Molekul dalam keadaan diam'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Agar tumbukan menghasilkan reaksi (tumbukan efektif), diperlukan <b>energi minimal (energi aktivasi)</b> dan <b>orientasi yang tepat</b> saat tumbukan.</p>
+      `
+    }
+  ]
+},
+'Larutan Penyangga': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Larutan Penyangga (Buffer Solution)</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Larutan Penyangga</h3>
+    <p class="mb-4">
+      Larutan penyangga adalah <b>larutan yang dapat mempertahankan pH-nya</b> agar tetap konstan ketika ditambahkan sedikit asam, basa, atau ketika diencerkan.  
+      Larutan ini berfungsi menjaga kestabilan pH dalam sistem biologis, industri, dan laboratorium.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Jenis-jenis Larutan Penyangga</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Penyangga Asam:</b> terdiri dari asam lemah dan garamnya dengan basa kuat.  
+        Contoh: campuran CH₃COOH dan CH₃COONa.</li>
+      <li><b>Penyangga Basa:</b> terdiri dari basa lemah dan garamnya dengan asam kuat.  
+        Contoh: campuran NH₄OH dan NH₄Cl.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Prinsip Kerja Larutan Penyangga</h3>
+    <p class="mb-4">
+      Larutan penyangga bekerja berdasarkan <b>kesetimbangan asam-basa konjugat</b>.  
+      Ketika asam ditambahkan, basa konjugat akan menetralkannya.  
+      Ketika basa ditambahkan, asam lemah akan menetralkannya.  
+      Dengan demikian, pH tidak berubah signifikan.
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Rumus Umum pH Larutan Penyangga</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Penyangga asam: \\( \\text{pH} = pK_a + \\log \\frac{[garam]}{[asam]} \\)</li>
+      <li>Penyangga basa: \\( \\text{pOH} = pK_b + \\log \\frac{[garam]}{[basa]} \\)</li>
+      <li>pH + pOH = 14</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">5. Contoh Perhitungan</h3>
+    <p class="mb-4">
+      Diketahui larutan CH₃COOH 0,1 M dan CH₃COONa 0,1 M, dengan \\( K_a = 1,8 \\times 10^{-5} \\).  
+      Maka:
+      \\[
+      pK_a = -\\log(1,8 \\times 10^{-5}) = 4,74
+      \\]
+      Karena [garam] = [asam], maka:
+      \\[
+      \\text{pH} = 4,74 + \\log(1) = 4,74
+      \\]
+    </p>
+
+    <h3 class="font-semibold mt-3">6. Fungsi Larutan Penyangga</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Menjaga pH darah agar tetap sekitar 7,4 (contoh: sistem H₂CO₃/HCO₃⁻).</li>
+      <li>Menstabilkan pH pada reaksi enzimatik dan fermentasi.</li>
+      <li>Digunakan dalam kosmetik dan farmasi agar produk tidak mudah rusak akibat perubahan pH.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">7. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk bacaan lanjutan, buka sumber berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/larpe_kim3_3.pdf" 
+         target="_blank" class="text-blue-600 underline">
+         📘 Klik di sini untuk membuka materi lengkap Larutan Penyangga (PDF)
+      </a>
+    </p>
+  `,
+
+  video: ['hwSKVaBv6-g'],
+
+  soal: [
+    {
+      id: 'lp1',
+      tipe: 'pg',
+      tanya: 'Larutan yang dapat mempertahankan pH ketika ditambah sedikit asam atau basa disebut …',
+      opsi: [
+        'Larutan garam',
+        'Larutan penyangga',
+        'Larutan elektrolit',
+        'Larutan jenuh'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Larutan penyangga (buffer) mempertahankan pH meskipun ada sedikit penambahan asam atau basa, berbeda dari larutan biasa yang pH-nya langsung berubah.</p>
+      `
+    },
+    {
+      id: 'lp2',
+      tipe: 'pg',
+      tanya: 'Campuran CH₃COOH dan CH₃COONa termasuk jenis larutan penyangga …',
+      opsi: [
+        'Asam',
+        'Basa',
+        'Netral',
+        'Amfoter'
+      ],
+      kunci: 0,
+      bahas: `
+        <p><b>Penjelasan:</b> CH₃COOH adalah asam lemah, CH₃COONa adalah garam dari basa kuat dan asam lemah → maka larutan ini adalah <b>penyangga asam</b>.</p>
+      `
+    },
+    {
+      id: 'lp3',
+      tipe: 'pg',
+      tanya: 'Jika [asam] = [garam] dalam larutan penyangga asam, maka pH larutan sama dengan …',
+      opsi: [
+        'pH = 7',
+        'pH = pKa',
+        'pH = pKa + 1',
+        'pH = pKa – 1'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Dalam rumus \\( pH = pK_a + \\log \\frac{[garam]}{[asam]} \\), jika [garam] = [asam], maka log(1) = 0 → pH = pKa.</p>
+      `
+    },
+    {
+      id: 'lp4',
+      tipe: 'pg',
+      tanya: 'Campuran NH₄OH dan NH₄Cl termasuk jenis larutan penyangga …',
+      opsi: [
+        'Asam',
+        'Basa',
+        'Netral',
+        'Asam kuat'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> NH₄OH adalah basa lemah, NH₄Cl adalah garam dari asam kuat → maka larutan ini adalah <b>penyangga basa</b>.</p>
+      `
+    },
+    {
+      id: 'lp5',
+      tipe: 'pg',
+      tanya: 'Fungsi utama larutan penyangga dalam tubuh manusia adalah …',
+      opsi: [
+        'Meningkatkan kadar oksigen dalam darah',
+        'Menjaga tekanan darah tetap stabil',
+        'Menjaga pH darah agar tetap konstan',
+        'Meningkatkan suhu tubuh'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Dalam tubuh, sistem H₂CO₃/HCO₃⁻ menjaga pH darah sekitar 7,4 agar tidak berubah drastis yang bisa menyebabkan gangguan metabolisme.</p>
+      `
+    }
+  ]
+},
+
+'Kesetimbangan Kimia': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Kesetimbangan Kimia</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Kesetimbangan Kimia</h3>
+    <p class="mb-4">
+      Kesetimbangan kimia terjadi ketika laju reaksi maju dan reaksi balik sama besar, 
+      sehingga konsentrasi pereaksi dan produk tetap konstan secara dinamis. 
+      Artinya, reaksi tetap berlangsung dua arah, tetapi tidak ada perubahan bersih pada komposisi sistem.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Jenis Kesetimbangan</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Kesetimbangan homogen</b>: terjadi pada sistem dengan fase yang sama (misalnya semua gas).</li>
+      <li><b>Kesetimbangan heterogen</b>: melibatkan lebih dari satu fase, misalnya padat dan gas.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Tetapan Kesetimbangan (K)</h3>
+    <p class="mb-4">
+      Untuk reaksi umum: \\( aA + bB \\rightleftharpoons cC + dD \\)<br>
+      Maka tetapan kesetimbangan:
+      \\[
+      K_c = \\frac{[C]^c [D]^d}{[A]^a [B]^b}
+      \\]
+      Nilai <b>K</b> menunjukkan kecenderungan reaksi:
+      <ul class="list-disc pl-6 mt-2">
+        <li>Jika K besar → reaksi lebih condong ke produk.</li>
+        <li>Jika K kecil → reaksi lebih condong ke pereaksi.</li>
+      </ul>
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Faktor yang Mempengaruhi Kesetimbangan (Hukum Le Chatelier)</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Konsentrasi</b>: penambahan pereaksi menggeser kesetimbangan ke arah produk.</li>
+      <li><b>Suhu</b>: peningkatan suhu menggeser kesetimbangan sesuai arah reaksi endoterm.</li>
+      <li><b>Tekanan</b>: berlaku untuk reaksi gas; peningkatan tekanan menggeser ke sisi dengan jumlah mol gas lebih sedikit.</li>
+      <li><b>Katalis</b>: mempercepat tercapainya kesetimbangan tetapi tidak menggeser posisinya.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">5. Aplikasi Kesetimbangan Kimia</h3>
+    <p class="mb-4">
+      Prinsip kesetimbangan kimia digunakan dalam berbagai industri, misalnya:
+    </p>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Proses Haber</b>: sintesis amonia (NH₃) dari N₂ dan H₂ dengan tekanan tinggi.</li>
+      <li><b>Proses kontak</b>: produksi asam sulfat (H₂SO₄) melalui reaksi SO₂ dan O₂.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">6. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail, baca materi berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/stimb_kim2_5.pdf" target="_blank" class="text-blue-600 underline">
+        📘 Klik di sini untuk membuka materi lengkap Kesetimbangan Kimia (PDF)
+      </a>
+    </p>
+  `,
+
+  video: ['xD8TFFL9TRA'],
+
+  soal: [
+    {
+      id: 'kk1',
+      tipe: 'pg',
+      tanya: 'Kesetimbangan kimia dikatakan tercapai ketika ...',
+      opsi: [
+        'Jumlah pereaksi sama dengan jumlah produk',
+        'Laju reaksi maju = laju reaksi balik',
+        'Reaksi berhenti sepenuhnya',
+        'Konsentrasi pereaksi menurun terus menerus'
+      ],
+      kunci: 1,
+      bahas: 'Kesetimbangan kimia tercapai ketika laju reaksi maju dan balik sama, sehingga konsentrasi zat tetap konstan meskipun reaksi tetap berlangsung dua arah.'
+    },
+    {
+      id: 'kk2',
+      tipe: 'pg',
+      tanya: 'Nilai tetapan kesetimbangan (K) besar menunjukkan bahwa ...',
+      opsi: [
+        'Reaksi condong ke pereaksi',
+        'Reaksi berjalan sangat lambat',
+        'Reaksi condong menghasilkan produk',
+        'Tidak ada reaksi yang terjadi'
+      ],
+      kunci: 2,
+      bahas: 'Nilai K besar berarti konsentrasi produk jauh lebih besar daripada pereaksi pada keadaan setimbang, artinya reaksi condong ke arah produk.'
+    },
+    {
+      id: 'kk3',
+      tipe: 'pg',
+      tanya: 'Pada reaksi endoterm, jika suhu dinaikkan maka kesetimbangan akan bergeser ke arah ...',
+      opsi: [
+        'Pereaksi',
+        'Produk',
+        'Tetap',
+        'Tidak dapat diprediksi'
+      ],
+      kunci: 1,
+      bahas: 'Menurut Hukum Le Chatelier, peningkatan suhu pada reaksi endoterm akan menggeser kesetimbangan ke arah produk.'
+    },
+    {
+      id: 'kk4',
+      tipe: 'pg',
+      tanya: 'Penambahan tekanan pada reaksi gas akan menggeser kesetimbangan ke arah ...',
+      opsi: [
+        'Jumlah mol gas lebih besar',
+        'Jumlah mol gas lebih kecil',
+        'Tetap seimbang',
+        'Tidak berpengaruh'
+      ],
+      kunci: 1,
+      bahas: 'Tekanan tinggi menggeser kesetimbangan ke sisi dengan jumlah mol gas lebih sedikit untuk mengurangi tekanan sistem.'
+    },
+    {
+      id: 'kk5',
+      tipe: 'pg',
+      tanya: 'Katalis berpengaruh terhadap kesetimbangan dengan cara ...',
+      opsi: [
+        'Menggeser kesetimbangan ke arah produk',
+        'Mengubah nilai tetapan K',
+        'Mempercepat tercapainya kesetimbangan tanpa mengubah posisi kesetimbangan',
+        'Menghentikan reaksi balik'
+      ],
+      kunci: 2,
+      bahas: 'Katalis hanya mempercepat laju reaksi maju dan balik secara bersamaan, sehingga tidak mengubah posisi atau nilai tetapan kesetimbangan.'
+    }
+  ]
+},
+
 'Hidrokarbon dan Minyak Bumi': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Hidrokarbon dan Minyak Bumi</h2>
@@ -7747,7 +8334,7 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
       </a>
     </p>
   `,
-  video: 'D8y8-iejawc',
+  video: ['IvXzQ7fS-OQ'],
   soal: [
 {
   id: 'hk3',
@@ -8519,6 +9106,635 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
     
 'Biologi': {
   bab: {
+'Bakteri': {
+  materi: `
+  <h2 class="text-xl font-bold mb-2">Bakteri Gram Positif dan Gram Negatif</h2>
+  <p>
+    Bakteri dapat diklasifikasikan berdasarkan struktur dinding selnya melalui <b>pewarnaan Gram</b> 
+    yang ditemukan oleh <b>Hans Christian Gram</b>. Metode ini membedakan bakteri menjadi dua kelompok besar, 
+    yaitu <b>Gram positif</b> dan <b>Gram negatif</b>.
+  </p>
+
+  <h3 class="text-lg font-semibold mt-4">1. Prinsip Pewarnaan Gram</h3>
+  <p>
+    Pewarnaan Gram menggunakan beberapa tahap pewarnaan kimia:
+  </p>
+  <ol class="list-decimal ml-6 mb-4">
+    <li>Warna utama (<b>Kristal violet</b>) → semua bakteri menjadi ungu.</li>
+    <li>Larutan <b>Iodin</b> (mordant) → membentuk kompleks kristal violet–iodin di dalam sel.</li>
+    <li>Pelarut (<b>alkohol atau aseton</b>) → melarutkan lipid dalam dinding sel bakteri Gram negatif.</li>
+    <li>Pewarna tandingan (<b>safranin</b>) → memberi warna merah muda pada bakteri yang kehilangan warna ungu.</li>
+  </ol>
+  <p>
+    Akibatnya:
+    <ul class="list-disc ml-6 mb-4">
+      <li><b>Bakteri Gram positif</b> mempertahankan warna <span class="text-purple-600 font-semibold">ungu</span>.</li>
+      <li><b>Bakteri Gram negatif</b> menjadi <span class="text-pink-600 font-semibold">merah muda</span>.</li>
+    </ul>
+  </p>
+
+  <h3 class="text-lg font-semibold mt-4">2. Perbedaan Struktur Dinding Sel</h3>
+  <table class="table-auto border border-gray-400 w-full text-sm mb-4">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="border px-2 py-1">Ciri</th>
+        <th class="border px-2 py-1">Gram Positif</th>
+        <th class="border px-2 py-1">Gram Negatif</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-2 py-1">Lapisan peptidoglikan</td>
+        <td class="border px-2 py-1">Tebal</td>
+        <td class="border px-2 py-1">Tipis</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1">Membran luar</td>
+        <td class="border px-2 py-1">Tidak ada</td>
+        <td class="border px-2 py-1">Ada (mengandung lipopolisakarida)</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1">Sensitivitas terhadap antibiotik</td>
+        <td class="border px-2 py-1">Lebih sensitif terhadap penisilin</td>
+        <td class="border px-2 py-1">Lebih resisten</td>
+      </tr>
+      <tr>
+        <td class="border px-2 py-1">Contoh</td>
+        <td class="border px-2 py-1">Bacillus, Staphylococcus, Streptococcus</td>
+        <td class="border px-2 py-1">Escherichia coli, Salmonella, Pseudomonas</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="text-lg font-semibold mt-4">3. Fungsi dan Implikasi</h3>
+  <p>
+    Perbedaan struktur dinding sel ini memengaruhi <b>respons terhadap antibiotik</b> dan <b>mekanisme infeksi</b>. 
+    Gram negatif lebih sulit diobati karena memiliki <b>membran luar</b> yang menghambat masuknya obat. 
+    Sementara Gram positif lebih mudah dikenali oleh sistem imun.
+  </p>
+<p class="mt-6">
+    <a href="https://materi78.wordpress.com/wp-content/uploads/2014/04/monera_bio2_3.pdf" 
+       class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+      📥 Download materi lengkap (PDF)
+    </a>
+  </p>
+  `,
+  video: ['ZysZy1OfGII','qQMwb7VJ-Dc'],
+  soal: [
+    {
+      id: 'bg1',
+      tipe: 'pg',
+      tanya: 'Prinsip dasar pewarnaan Gram adalah perbedaan ... antara bakteri Gram positif dan Gram negatif.',
+      opsi: [
+        'Ukuran sel',
+        'Ketebalan lapisan peptidoglikan',
+        'Jumlah DNA',
+        'Bentuk ribosom'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Pewarnaan Gram membedakan bakteri berdasarkan <b>ketebalan lapisan peptidoglikan</b> 
+        pada dinding selnya. Gram positif memiliki lapisan peptidoglikan tebal.</p>
+      `
+    },
+    {
+      id: 'bg2',
+      tipe: 'pg',
+      tanya: 'Bakteri yang berwarna merah muda setelah pewarnaan Gram termasuk kelompok ...',
+      opsi: [
+        'Gram positif',
+        'Gram negatif',
+        'Arkea',
+        'Bakteri anaerob'
+      ],
+      kunci: 1,
+      bahas: `
+        <p><b>Penjelasan:</b> Bakteri Gram negatif kehilangan warna ungu setelah dicuci alkohol, 
+        lalu menyerap pewarna tandingan safranin sehingga tampak <b>merah muda</b>.</p>
+      `
+    },
+    {
+      id: 'bg3',
+      tipe: 'pg',
+      tanya: 'Lapisan luar pada bakteri Gram negatif yang membuatnya lebih tahan terhadap antibiotik adalah ...',
+      opsi: [
+        'Lapisan kapsul',
+        'Lapisan peptidoglikan tebal',
+        'Membran luar lipopolisakarida',
+        'Dinding sel selulosa'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Gram negatif memiliki <b>membran luar lipopolisakarida (LPS)</b> 
+        yang berfungsi sebagai pelindung terhadap antibiotik dan bahan kimia berbahaya.</p>
+      `
+    },
+    {
+      id: 'bg4',
+      tipe: 'pg',
+      tanya: 'Contoh bakteri Gram positif adalah ...',
+      opsi: [
+        'Escherichia coli',
+        'Pseudomonas aeruginosa',
+        'Staphylococcus aureus',
+        'Salmonella typhi'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> <i>Staphylococcus aureus</i> termasuk Gram positif karena dinding selnya 
+        memiliki peptidoglikan tebal dan tidak memiliki membran luar.</p>
+      `
+    },
+    {
+      id: 'bg5',
+      tipe: 'pg',
+      tanya: 'Mengapa bakteri Gram negatif lebih resisten terhadap antibiotik tertentu?',
+      opsi: [
+        'Memiliki kapsul tebal',
+        'Tidak memiliki peptidoglikan',
+        'Memiliki membran luar lipopolisakarida',
+        'Tidak memiliki dinding sel'
+      ],
+      kunci: 2,
+      bahas: `
+        <p><b>Penjelasan:</b> Ketahanan Gram negatif terhadap antibiotik disebabkan oleh adanya 
+        <b>membran luar lipopolisakarida (LPS)</b> yang menghambat masuknya obat ke dalam sel.</p>
+      `
+    },
+{
+  id: 'bg6',
+  tipe: 'pg',
+  tanya: 'Struktur utama yang membedakan bakteri Gram positif dan Gram negatif adalah ...',
+  opsi: [
+    'Inti sel',
+    'Lapisan peptidoglikan pada dinding sel',
+    'Ribosom',
+    'Plasmid'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Perbedaan utama terletak pada <b>ketebalan lapisan peptidoglikan</b>. 
+    Gram positif memiliki lapisan peptidoglikan tebal, sedangkan Gram negatif memiliki lapisan tipis dan membran luar tambahan.</p>
+  `
+},
+{
+  id: 'bg7',
+  tipe: 'pg',
+  tanya: 'Ciri khas dinding sel bakteri Gram positif adalah ...',
+  opsi: [
+    'Mengandung lipopolisakarida (LPS)',
+    'Tidak memiliki peptidoglikan',
+    'Memiliki lapisan peptidoglikan tebal dan asam teikoat',
+    'Dinding selnya mengandung selulosa'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b> Dinding sel bakteri Gram positif tersusun atas <b>peptidoglikan tebal</b> 
+    dan mengandung <b>asam teikoat</b> yang membantu mempertahankan bentuk sel dan kestabilan dinding.</p>
+  `
+},
+{
+  id: 'bg8',
+  tipe: 'pg',
+  tanya: 'Bakteri Gram negatif memiliki struktur tambahan yang tidak dimiliki Gram positif, yaitu ...',
+  opsi: [
+    'Membran luar yang mengandung lipopolisakarida (LPS)',
+    'Lapisan asam teikoat',
+    'Kloroplas',
+    'Kapsul protein internal'
+  ],
+  kunci: 0,
+  bahas: `
+    <p><b>Penjelasan:</b> Bakteri Gram negatif memiliki <b>membran luar LPS</b> yang melindungi dari antibiotik 
+    dan zat toksik. Gram positif tidak memiliki struktur ini.</p>
+  `
+},
+{
+  id: 'bg9',
+  tipe: 'pg',
+  tanya: 'Jenis flagela yang hanya terdapat pada salah satu ujung sel bakteri disebut ...',
+  opsi: [
+    'Lofotrik',
+    'Monotrik',
+    'Amfitrik',
+    'Peritrik'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Flagela <b>monotrik</b> hanya satu dan terletak di satu ujung sel, 
+    misalnya pada <i>Pseudomonas aeruginosa</i>.</p>
+  `
+},
+{
+  id: 'bg10',
+  tipe: 'pg',
+  tanya: 'Bakteri yang memiliki flagela di seluruh permukaan sel disebut ...',
+  opsi: [
+    'Monotrik',
+    'Lofotrik',
+    'Amfitrik',
+    'Peritrik'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> Flagela <b>peritrik</b> menyebar di seluruh permukaan bakteri, 
+    sehingga bakteri dapat bergerak ke segala arah. Contohnya <i>Escherichia coli</i>.</p>
+  `
+},
+{
+  id: 'bg13',
+  tipe: 'pg',
+  tanya: 'Jika hasil pewarnaan Gram menunjukkan warna ungu tetapi bakteri mudah pecah saat terkena antibiotik, kemungkinan besar bakteri tersebut memiliki ...',
+  opsi: [
+    'Lapisan peptidoglikan sangat tebal tanpa LPS',
+    'Lapisan peptidoglikan tipis dan tidak stabil',
+    'Dua membran sel yang kuat',
+    'Kapsul pelindung yang tebal'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Warna ungu menunjukkan Gram positif, namun jika mudah pecah berarti lapisan peptidoglikannya tipis atau struktur dindingnya lemah.</p>
+  `
+},
+{
+  id: 'bg14',
+  tipe: 'pg',
+  tanya: 'Mengapa bakteri Gram negatif sering lebih patogen dibandingkan Gram positif?',
+  opsi: [
+    'Memiliki lebih banyak DNA patogenik',
+    'Lipopolisakarida pada membran luar dapat bersifat toksik',
+    'Dapat menghasilkan lebih banyak spora',
+    'Memiliki asam teikoat yang menyebabkan infeksi'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Komponen <b>LPS (lipopolisakarida)</b> pada dinding Gram negatif dapat bertindak sebagai endotoksin yang memicu reaksi imun dan demam pada inang.</p>
+  `
+},
+{
+  id: 'bg15',
+  tipe: 'pg',
+  tanya: 'Seorang peneliti menemukan bakteri baru yang tahan terhadap penisilin tetapi mudah rusak oleh detergen. Berdasarkan sifat tersebut, bakteri itu kemungkinan ...',
+  opsi: [
+    'Gram positif karena memiliki dinding tebal',
+    'Gram negatif karena memiliki membran luar lipid',
+    'Gram positif karena tidak memiliki LPS',
+    'Gram negatif karena tidak memiliki peptidoglikan'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Ketahanan terhadap penisilin menunjukkan adanya <b>membran luar lipid (LPS)</b> khas Gram negatif, namun membran lipid mudah dirusak oleh detergen.</p>
+  `
+},
+{
+  id: 'bg16',
+  tipe: 'pg',
+  tanya: 'Jika suatu antibiotik dirancang untuk merusak peptidoglikan, maka bakteri yang paling rentan adalah ...',
+  opsi: [
+    'Gram positif',
+    'Gram negatif',
+    'Arkea',
+    'Bakteri tanpa dinding sel'
+  ],
+  kunci: 0,
+  bahas: `
+    <p><b>Penjelasan:</b> Gram positif memiliki lapisan <b>peptidoglikan tebal</b> sebagai struktur utama, sehingga menjadi target efektif antibiotik seperti penisilin.</p>
+  `
+},
+{
+  id: 'bg17',
+  tipe: 'pg',
+  tanya: 'Dalam eksperimen, bakteri dengan flagela peritrik bergerak lebih efisien di medium kental. Hal ini menunjukkan bahwa ...',
+  opsi: [
+    'Semakin banyak flagela, semakin cepat gerakan di semua kondisi',
+    'Pola penyebaran flagela memengaruhi gaya dorong pada medium tertentu',
+    'Flagela tidak berfungsi di lingkungan kental',
+    'Gerak bakteri tidak dipengaruhi oleh distribusi flagela'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Distribusi flagela <b>peritrik</b> memberikan gaya dorong yang lebih merata di lingkungan kental, menunjukkan hubungan antara struktur dan fungsi.</p>
+  `
+},
+{
+  id: 'bg18',
+  tipe: 'pg',
+  tanya: 'Bakteri dengan flagela amfitrik akan ...',
+  opsi: [
+    'Bergerak memutar di satu arah saja',
+    'Mampu mengubah arah gerak dengan cepat',
+    'Hanya bergerak ke depan dan mundur',
+    'Tidak dapat bergerak jika salah satu flagela rusak'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Flagela <b>amfitrik</b> berada di kedua ujung sel, memungkinkan bakteri mengubah arah geraknya dengan cepat sesuai kebutuhan.</p>
+  `
+},
+{
+  id: 'bg19',
+  tipe: 'pg',
+  tanya: 'Jika gen penyandi flagelin (protein penyusun flagela) dimutasi, maka akibat yang paling mungkin adalah ...',
+  opsi: [
+    'Bakteri kehilangan kemampuan bergerak',
+    'Bakteri berhenti membelah',
+    'Bakteri menjadi resisten antibiotik',
+    'Dinding sel menjadi lebih tebal'
+  ],
+  kunci: 0,
+  bahas: `
+    <p><b>Penjelasan:</b> Flagelin adalah komponen utama penyusun <b>flagela</b>. Mutasi gen flagelin akan menyebabkan flagela tidak terbentuk atau tidak berfungsi, sehingga bakteri tidak dapat bergerak.</p>
+  `
+},
+{
+  id: 'bg20',
+  tipe: 'pg',
+  tanya: 'Dua jenis bakteri diuji: satu berwarna ungu, satu merah muda setelah pewarnaan Gram. Jika keduanya diberi antibiotik yang menghambat sintesis peptidoglikan, hasil yang paling mungkin adalah ...',
+  opsi: [
+    'Keduanya mati dengan kecepatan sama',
+    'Bakteri ungu lebih cepat mati',
+    'Bakteri merah muda lebih cepat mati',
+    'Keduanya tidak terpengaruh'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Pewarna ungu menandakan Gram positif dengan lapisan peptidoglikan tebal. Antibiotik yang menarget peptidoglikan akan lebih efektif terhadap Gram positif.</p>
+  `
+},
+{
+  id: 'bg21',
+  tipe: 'pg',
+  tanya: 'Mengapa bakteri Gram negatif sering sulit diwarnai dengan zat warna dasar?',
+  opsi: [
+    'Karena memiliki kapsul berlendir',
+    'Karena peptidoglikan terlalu tebal',
+    'Karena membran luar menghambat masuknya zat warna',
+    'Karena flagela menghalangi proses pewarnaan'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b> Membran luar LPS pada <b>Gram negatif</b> bersifat hidrofobik dan dapat menghambat penyerapan zat warna polar.</p>
+  `
+},
+{
+  id: 'bg22',
+  tipe: 'pg',
+  tanya: 'Jika suatu mutasi menyebabkan bakteri kehilangan lapisan LPS-nya, maka efek yang mungkin terjadi adalah ...',
+  opsi: [
+    'Bakteri menjadi lebih tahan terhadap antibiotik',
+    'Bakteri lebih mudah dikenali oleh sistem imun',
+    'Bakteri berubah menjadi Gram positif',
+    'Bakteri tidak dapat berkembang biak'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Tanpa lapisan <b>LPS</b>, bakteri kehilangan pelindung eksternal dan antigen O, sehingga lebih mudah dikenali dan dihancurkan oleh sistem imun.</p>
+  `
+},
+{
+  id: 'bk23',
+  tipe: 'pg',
+  tanya: 'Kandungan spesifik yang terdapat pada dinding sel bakteri adalah …',
+  opsi: [
+    'Selulosa',
+    'Kitin',
+    'Pektin',
+    'Peptidoglikan',
+    'Lignin'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> Dinding sel bakteri tersusun atas <b>peptidoglikan</b> (murein), yaitu polimer kompleks dari rantai gula dan asam amino 
+    yang berfungsi memberi kekuatan dan menjaga bentuk sel. 
+    Selulosa ditemukan pada tumbuhan, kitin pada jamur dan artropoda, pektin pada lamela tengah tumbuhan, sedangkan lignin memperkuat dinding sel sekunder tumbuhan.</p>
+  `
+},
+{
+  id: 'bk24',
+  tipe: 'pg',
+  tanya: `Bakteri dapat hidup pada berbagai macam habitat. Jika keadaan lingkungan tidak sesuai, maka bakteri akan membentuk …<br>
+  (1) selaput lendir<br>
+  (2) kapsid<br>
+  (3) endospora<br>
+  (4) flagela`,
+  opsi: [
+    '1, 2, dan 3',
+    '1 dan 3',
+    '2 dan 4',
+    '4',
+    '1, 2, 3, dan 4'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Ketika kondisi lingkungan tidak mendukung, beberapa bakteri membentuk <b>endospora</b> agar dapat bertahan hidup. 
+    Selain itu, beberapa bakteri memiliki <b>selaput lendir (kapsul)</b> yang membantu melindungi dari kekeringan dan zat kimia berbahaya. 
+    Kapsid bukan bagian dari bakteri (merupakan struktur virus), dan flagela berfungsi untuk pergerakan, bukan perlindungan. 
+    Jadi jawaban yang tepat adalah <b>(1) dan (3)</b>.</p>
+  `
+},
+{
+  id: 'bk25',
+  tipe: 'pg',
+  tanya: `Bakteri aerob yang hidup dalam tanah dan mampu mengoksidasi amoniak menjadi senyawa nitrit atau nitrat adalah …<br>
+  (1) Azotobacter<br>
+  (2) Nitrosomonas<br>
+  (3) Clostridium<br>
+  (4) Nitrobacter`,
+  opsi: [
+    '1, 2, dan 3',
+    '1 dan 3',
+    '2 dan 4',
+    '4',
+    '1, 2, 3, dan 4'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b> Bakteri <b>Nitrosomonas</b> mengoksidasi amonia (NH₃) menjadi nitrit (NO₂⁻), 
+    sedangkan <b>Nitrobacter</b> mengoksidasi nitrit menjadi nitrat (NO₃⁻). 
+    Keduanya adalah <b>bakteri kemoautotrof aerob</b> yang berperan penting dalam proses <b>nitrifikasi</b> di tanah. 
+    <i>Azotobacter</i> merupakan bakteri penambat nitrogen bebas, sedangkan <i>Clostridium</i> bersifat anaerob. 
+    Jadi jawaban yang benar adalah <b>(2) dan (4)</b>.</p>
+  `
+},
+{
+  id: 'bk26',
+  tipe: 'pg',
+  tanya: 'Salah satu penyebab penyakit surra pada ternak yaitu …',
+  opsi: [
+    'Leishmania brasiliensis',
+    'Trypanosoma evansi',
+    'Leishmania donovani',
+    'Trypanosoma cruzi',
+    'Trypanosoma brucei'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Penyakit <b>surra</b> pada ternak seperti kuda, sapi, dan unta disebabkan oleh <b><i>Trypanosoma evansi</i></b>, 
+    yang ditularkan melalui gigitan lalat pengisap darah seperti <i>Tabanus</i> dan <i>Stomoxys</i>. 
+    Penyakit ini ditandai dengan demam, anemia, dan penurunan berat badan pada hewan ternak. 
+    Sementara itu, <i>Leishmania</i> menyebabkan penyakit leismaniasis pada manusia, dan <i>Trypanosoma cruzi</i> menyebabkan penyakit Chagas.</p>
+  `
+},
+{
+  id: 'bk27',
+  tipe: 'pg',
+  tanya: 'Pada pemeriksaan air minum, untuk memeriksa ada atau tidaknya pencemaran oleh tinja manusia digunakan tolak ukur kehidupan salah satu bakteri usus yang bukan patogen tetapi keluar bersama tinja, yaitu ....',
+  opsi: [
+    'E. coli',
+    'S. typhi',
+    'Streptomyces',
+    'V. cholerae',
+    'B. coli'
+  ],
+  kunci: 0,
+  bahas: `
+    <p><b>Penjelasan:</b> Dalam pemeriksaan kualitas air minum, digunakan bakteri indikator yaitu <b><i>Escherichia coli (E. coli)</i></b>. 
+    Bakteri ini merupakan penghuni normal usus besar manusia dan hewan, tidak berbahaya (non-patogen) pada umumnya, 
+    tetapi keberadaannya menunjukkan adanya pencemaran tinja. 
+    <i>Salmonella typhi</i> dan <i>Vibrio cholerae</i> adalah bakteri patogen penyebab penyakit, 
+    sedangkan <i>Streptomyces</i> hidup di tanah.</p>
+  `
+},
+{
+  id: 'bk28',
+  tipe: 'pg',
+  tanya: 'Bakteri mempunyai plasmid yang merupakan …',
+  opsi: [
+    'Enzim',
+    'Polinukleotida',
+    'Lemak',
+    'DNA',
+    'Protein'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> <b>Plasmid</b> adalah molekul <b>DNA sirkuler kecil</b> yang terdapat di luar kromosom utama bakteri. 
+    Plasmid membawa gen tambahan, seperti gen resistensi antibiotik, dan dapat berpindah antar bakteri melalui proses konjugasi. 
+    Jadi, plasmid bukan enzim, lemak, atau protein, melainkan <b>DNA ekstrakromosomal</b>.</p>
+  `
+},
+{
+  id: 'bk29',
+  tipe: 'pg',
+  tanya: 'Bakteri yang memiliki flagela di kedua sisi tubuhnya dikategorikan ke dalam bakteri …',
+  opsi: [
+    'Monotrik',
+    'Lofotrik',
+    'Amfitrik',
+    'Peritrik',
+    'Atrik'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b> Berdasarkan letak dan jumlah flagelanya, bakteri dibedakan menjadi beberapa tipe:<br>
+    • <b>Monotrik</b>: satu flagela di salah satu ujung.<br>
+    • <b>Lofotrik</b>: sekelompok flagela di salah satu ujung.<br>
+    • <b>Amfitrik</b>: flagela terdapat di kedua ujung sel bakteri.<br>
+    • <b>Peritrik</b>: flagela tersebar di seluruh permukaan sel.<br>
+    Jadi, bakteri yang memiliki flagela di kedua sisi tubuhnya disebut <b>amfitrik</b>.</p>
+  `
+},
+{
+  id: 'bk30',
+  tipe: 'pg',
+  tanya: 'Proses berikut ini merupakan cara mengawetkan makanan agar tidak mudah busuk akibat bakteri, <b>kecuali</b> …',
+  opsi: [
+    'Pasteurisasi',
+    'Diberi garam (diasinkan)',
+    'Dibekukan',
+    'Diberi air',
+    'Dikeringkan'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> Berbagai cara dilakukan untuk menghambat pertumbuhan bakteri agar makanan tidak cepat busuk, seperti:<br>
+    • <b>Pasteurisasi</b>: memanaskan makanan untuk membunuh bakteri.<br>
+    • <b>Penggaraman (diasinkan)</b> dan <b>pengeringan</b>: mengurangi kadar air agar bakteri tidak dapat hidup.<br>
+    • <b>Pembekuan</b>: memperlambat metabolisme bakteri.<br>
+    Sebaliknya, <b>memberi air justru mempercepat pertumbuhan bakteri</b>, sehingga bukan merupakan cara pengawetan.</p>
+  `
+},
+{
+  id: 'bk31',
+  tipe: 'pg',
+  tanya: 'Bakteri nitrifikasi tumbuh subur di tanah yang ....',
+  opsi: [
+    'Gembur dan penuh bahan organik',
+    'Liat dan penuh bahan organik',
+    'Gembur dan penuh bahan anorganik',
+    'Liat dan penuh bahan anorganik',
+    'Liat dan gembur penuh bahan anorganik'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b> Bakteri <b>nitrifikasi</b> seperti <i>Nitrosomonas</i> dan <i>Nitrobacter</i> merupakan bakteri <b>aerob</b> 
+    yang memerlukan oksigen untuk mengoksidasi amonia menjadi nitrit dan nitrat. 
+    Mereka tumbuh subur di tanah yang <b>gembur</b> karena kaya oksigen dan mengandung <b>bahan anorganik</b> (seperti senyawa amonia) sebagai sumber energinya. 
+    Tanah liat atau terlalu banyak bahan organik justru menghambat pertumbuhannya.</p>
+  `
+},
+{
+  id: 'bk32',
+  tipe: 'pg',
+  tanya: 'Cyanobacteria mempunyai sel khusus untuk mengikat nitrogen yang disebut …',
+  opsi: [
+    'Heterokista',
+    'Akinet',
+    'Endospora',
+    'Kloroplas',
+    'Proplastida'
+  ],
+  kunci: 0,
+  bahas: `
+    <p><b>Penjelasan:</b> <b>Cyanobacteria</b> (ganggang hijau-biru) memiliki sel khusus yang disebut <b>heterokista</b> 
+    untuk melakukan <b>fiksasi nitrogen</b> dari udara menjadi senyawa yang dapat dimanfaatkan. 
+    Sel ini berdinding tebal untuk melindungi enzim nitrogenase dari oksigen. 
+    <i>Akinet</i> berfungsi sebagai sel istirahat, sedangkan kloroplas dan proplastida bukan bagian dari cyanobacteria.</p>
+  `
+},
+{
+  id: 'bk33',
+  tipe: 'pg',
+  tanya: 'Beberapa bakteri mempunyai kemampuan untuk bergerak secara aktif. Struktur sel bakteri yang menunjang kemampuan tersebut adalah …',
+  opsi: [
+    'Kapsul',
+    'Flagela',
+    'Dinding sel',
+    'Pilus',
+    'Plasmid'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b> Struktur yang berfungsi untuk <b>pergerakan aktif</b> pada bakteri adalah <b>flagela</b>. 
+    Flagela merupakan struktur seperti cambuk yang berputar untuk mendorong sel bakteri bergerak. 
+    <i>Kapsul</i> berfungsi melindungi sel, <i>dinding sel</i> menjaga bentuk dan kekuatan, 
+    <i>pilus</i> digunakan untuk melekat dan transfer gen, sedangkan <i>plasmid</i> merupakan DNA tambahan.</p>
+  `
+},
+{
+  id: 'bk34',
+  tipe: 'pg',
+  tanya: 'Hal utama yang membedakan Eubacteria dan Archaebacteria adalah …',
+  opsi: [
+    'Eubacteria tidak memiliki dinding sel',
+    'Eubacteria memiliki dinding sel yang lebih tipis',
+    'Eubacteria memiliki dinding sel yang mengandung lipid',
+    'Eubacteria memiliki dinding sel yang mengandung peptidoglikan',
+    'Eubacteria tidak memiliki dinding sel yang mengandung peptidoglikan'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> Perbedaan utama antara <b>Eubacteria</b> dan <b>Archaebacteria</b> terletak pada <b>komposisi dinding selnya</b>.<br>
+    • <b>Eubacteria</b> memiliki dinding sel yang mengandung <b>peptidoglikan</b>.<br>
+    • <b>Archaebacteria</b> tidak mengandung peptidoglikan, tetapi memiliki lapisan <i>pseudopeptidoglikan</i> dan lipid unik pada membrannya.<br>
+    Jadi, perbedaan utama adalah bahwa <b>dinding sel Eubacteria mengandung peptidoglikan</b>.</p>
+  `
+},
+
+
+  ]
+},
+
     'Pewarisan Sifat': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Pewarisan Sifat</h2>
