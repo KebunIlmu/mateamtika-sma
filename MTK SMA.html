@@ -7753,80 +7753,339 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
 
   soal: [
     {
-      id: 'sd1',
-      tipe: 'pg',
-      tanya: 'Stoikiometri digunakan untuk menghitung ...',
-      opsi: [
-        'Energi yang dilepaskan reaksi kimia',
-        'Hubungan kuantitatif antar zat dalam reaksi kimia',
-        'Warna dan bau senyawa kimia',
-        'Sifat asam atau basa suatu zat'
-      ],
-      kunci: 1,
-      bahas: `
-        <p><b>Penjelasan:</b> Stoikiometri membahas hubungan kuantitatif antara pereaksi dan hasil reaksi, seperti jumlah mol, massa, atau volume gas.</p>
-      `
-    },
+  id: 'sm1',
+  tipe: 'pg',
+  tanya: 'Diketahui massa 0,5 mol unsur X adalah 16 gram. Maka massa atom relatif (Ar) unsur X adalah ....',
+  opsi: [
+    '8',
+    '16',
+    '24',
+    '32'
+  ],
+  kunci: 3,
+  bahas: `
+    <p><b>Penjelasan:</b> Massa atom relatif (Ar) dapat dihitung dengan rumus:</p>
+    <p>Ar = massa (g) ÷ mol</p>
+    <p>Ar = 16 ÷ 0,5 = 32</p>
+    <p>Jadi, massa atom relatif unsur X adalah <b>32</b>.</p>
+  `
+},
+{
+  id: 'sm2',
+  tipe: 'cb',
+  tanya: 'Unsur yang memiliki massa atom relatif (Ar) antara 22 dan 28 adalah …',
+  opsi: [
+    'Natrium (Na)',
+    'Magnesium (Mg)',
+    'Aluminium (Al)',
+    'Silikon (Si)'
+  ],
+  kunci: [0,1,2],
+  bahas: 'Magnesium memiliki Ar = 24 dan Aluminium memiliki Ar = 27, keduanya berada dalam rentang 22–28. Natrium memiliki Ar = 23, sedangkan Silikon memiliki Ar = 28.'
+},
     {
-      id: 'sd2',
-      tipe: 'pg',
-      tanya: 'Jika 2 mol H₂ bereaksi dengan 1 mol O₂ menghasilkan 2 mol H₂O, maka perbandingan mol H₂ : O₂ : H₂O adalah …',
-      opsi: [
-        '1 : 1 : 1',
-        '1 : 2 : 2',
-        '2 : 1 : 2',
-        '2 : 2 : 1'
-      ],
-      kunci: 2,
-      bahas: `
-        <p><b>Penjelasan:</b> Berdasarkan reaksi setara \\(2H_2 + O_2 → 2H_2O\\), perbandingan mol H₂ : O₂ : H₂O = 2 : 1 : 2.</p>
-      `
-    },
-    {
-      id: 'sd3',
-      tipe: 'pg',
-      tanya: 'Berapa mol dalam 11 gram karbon (Ar = 12)?',
-      opsi: [
-        '0,5 mol',
-        '0,75 mol',
-        '0,92 mol',
-        '1,1 mol'
-      ],
-      kunci: 0,
-      bahas: `
-        <p><b>Penjelasan:</b> \\( n = \\frac{m}{M} = \\frac{11}{12} = 0,92 \\) mol. → Jawaban yang paling mendekati adalah 0,92 mol.</p>
-      `
-    },
-    {
-      id: 'sd4',
-      tipe: 'pg',
-      tanya: 'Pada kondisi STP, 1 mol gas menempati volume ...',
-      opsi: [
-        '11,2 L',
-        '22,4 L',
-        '44,8 L',
-        '1 L'
-      ],
-      kunci: 1,
-      bahas: `
-        <p><b>Penjelasan:</b> Pada suhu 0°C dan tekanan 1 atm (STP), 1 mol gas ideal menempati volume 22,4 liter.</p>
-      `
-    },
-    {
-      id: 'sd5',
-      tipe: 'pg',
-      tanya: 'Hubungan antara jumlah mol (n), massa (m), dan massa molar (M) yang benar adalah …',
-      opsi: [
-        'n = M × m',
-        'm = n / M',
-        'n = m / M',
-        'M = n / m'
-      ],
-      kunci: 2,
-      bahas: `
-        <p><b>Penjelasan:</b> Rumus dasar stoikiometri adalah \\( n = \\frac{m}{M} \\), di mana n = mol, m = massa (g), dan M = massa molar (g/mol).</p>
-      `
-    }
+  id:'sm3', 
+  tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang massa atom relatif (Ar) berikut:',
+  opsi:[
+    'Massa atom relatif adalah perbandingan massa atom terhadap 1/12 massa atom karbon-12',
+    'Massa atom relatif tidak mempunyai satuan',
+    'Massa atom relatif selalu bilangan bulat'
+  ],
+  kunci:[true,true,false],
+  bahas:'Massa atom relatif didefinisikan sebagai perbandingan massa atom dengan 1/12 massa atom karbon-12 dan tidak memiliki satuan. Nilainya tidak selalu bilangan bulat karena adanya isotop yang menyebabkan nilai rata-rata massa atom.'
+},
+{
+  id: 'sm4',
+  tipe: 'pg',
+  tanya: 'Diketahui massa magnesium (Mg) sebanyak 12 gram. Jika Ar Mg = 24, maka jumlah atom magnesium dalam sampel tersebut adalah ....',
+  opsi: [
+    '1,505 × 10²³ atom',
+    '3,01 × 10²³ atom',
+    '6,02 × 10²³ atom',
+    '12,04 × 10²³ atom'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Langkah 1: Hitung jumlah mol Mg.</p>
+    <p>n = massa ÷ Ar = 12 ÷ 24 = 0,5 mol</p>
+    <p>Langkah 2: Hitung jumlah atom.</p>
+    <p>Jumlah atom = mol × 6,02 × 10²³ = 0,5 × 6,02 × 10²³ = 3,01 × 10²³ atom</p>
+    <p><b>Jawaban yang benar: 3,01 × 10²³ atom.</b></p>
+  `
+},
+{
+  id: 'sm5',
+  tipe: 'cb',
+  tanya: 'Pernyataan yang benar tentang hubungan mol, massa, dan jumlah partikel adalah …',
+  opsi: [
+    'Mol = massa ÷ Ar atau Mr',
+    'Mol = jumlah partikel ÷ 6,02 × 10²³',
+    'Massa = mol × Ar atau Mr',
+    'Jumlah partikel = mol ÷ 6,02 × 10²³'
+  ],
+  kunci: [0,1,2],
+  bahas: 'Tiga pernyataan pertama benar karena sesuai dengan rumus dasar hubungan mol, massa, dan jumlah partikel. Pernyataan keempat salah karena seharusnya jumlah partikel = mol × 6,02 × 10²³.'
+},
+{
+  id:'sm6', 
+  tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang hubungan mol, massa, dan jumlah partikel berikut:',
+  opsi:[
+    'Jika massa zat meningkat, jumlah molnya juga meningkat (pada Ar tetap)',
+    'Untuk zat yang sama, semakin besar mol maka jumlah partikelnya semakin banyak',
+    'Mol tidak berhubungan dengan massa zat'
+  ],
+  kunci:[true,true,false],
+  bahas:'Mol berbanding lurus dengan massa (jika Ar tetap), dan jumlah partikel juga sebanding dengan mol. Jadi, makin besar massa suatu zat, makin banyak mol dan partikelnya. Pernyataan ketiga salah karena mol sangat berkaitan dengan massa zat.'
+},
+{
+  id: 'sm7',
+  tipe: 'pg',
+  tanya: 'Jika 0,5 mol NaCl dilarutkan ke dalam air hingga volumenya menjadi 1 liter, maka kemolaran larutan NaCl tersebut adalah ....',
+  opsi: [
+    '0,25 M',
+    '0,5 M',
+    '1 M',
+    '2 M'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Kemolaran (M) = jumlah mol zat ÷ volume larutan (L)</p>
+    <p>M = 0,5 mol ÷ 1 L = 0,5 M</p>
+    <p>Jadi, kemolaran larutan NaCl adalah <b>0,5 M</b>.</p>
+  `
+},
+{
+  id: 'sm8',
+  tipe: 'cb',
+  tanya: 'Hubungan yang benar antara mol, kemolaran (M), dan volume larutan adalah …',
+  opsi: [
+    'n = M × V',
+    'M = n ÷ V',
+    'V = n ÷ M',
+    'n = M ÷ V'
+  ],
+  kunci: [0,1,2],
+  bahas: 'Hubungan antara mol, molaritas, dan volume larutan mengikuti rumus n = M × V, sehingga M = n ÷ V dan V = n ÷ M juga benar. Pernyataan keempat salah karena pembagian posisi M dan V terbalik.'
+},
+{
+  id:'sm9', 
+  tipe:'bs',
+  tanya:'Perhatikan pernyataan berikut tentang hubungan mol dan kemolaran:',
+  opsi:[
+    'Kemolaran menyatakan jumlah mol zat terlarut per liter larutan',
+    'Jika volume larutan tetap, semakin banyak mol zat terlarut maka kemolaran meningkat',
+    'Kemolaran tidak bergantung pada jumlah zat terlarut'
+  ],
+  kunci:[true,true,false],
+  bahas:'Kemolaran (M) = mol ÷ volume (L), sehingga kemolaran bergantung langsung pada jumlah mol zat terlarut dan berbanding terbalik dengan volume larutan. Pernyataan ketiga salah karena kemolaran jelas bergantung pada jumlah zat terlarut.'
+},
+{
+  id: 'sm10',
+  tipe: 'pg',
+  tanya: 'Pada suhu dan tekanan tetap, 1 mol gas menempati volume 22,4 liter. Maka volume 0,75 mol gas oksigen (O₂) pada STP adalah ....',
+  opsi: [
+    '11,2 L',
+    '16,8 L',
+    '22,4 L',
+    '33,6 L'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Hubungan mol dan volume gas pada STP: V = n × 22,4 L.</p>
+    <p>V = 0,75 × 22,4 = 16,8 L.</p>
+    <p>Jadi, volume gas oksigen pada STP adalah <b>16,8 liter</b>.</p>
+  `
+},
+{
+  id: 'sm11',
+  tipe: 'cb',
+  tanya: 'Hubungan yang benar antara mol gas, volume, dan volume molar pada STP adalah …',
+  opsi: [
+    'V = n × 22,4 L',
+    'n = V ÷ 22,4 L',
+    '22,4 L = volume 1 mol gas pada STP',
+    'Semua gas pada STP memiliki volume yang berbeda'
+  ],
+  kunci: [0,1,2],
+  bahas: 'Pada STP (0°C, 1 atm), setiap gas ideal memiliki volume 22,4 liter per mol. Jadi, V = n × 22,4 dan n = V ÷ 22,4 adalah rumus yang benar. Pernyataan keempat salah karena semua gas ideal memiliki volume sama pada STP.'
+},
+{
+  id:'sm12', 
+  tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang hubungan mol dan volume gas berikut:',
+  opsi:[
+    'Pada STP, 1 mol gas memiliki volume 22,4 liter',
+    'Volume gas berbanding lurus dengan jumlah mol pada suhu dan tekanan tetap',
+    'Semakin kecil mol gas, semakin besar volumenya pada suhu dan tekanan tetap'
+  ],
+  kunci:[true,true,false],
+  bahas:'Pada suhu dan tekanan tetap, volume gas ∝ jumlah mol gas (Hukum Avogadro). Jadi, semakin besar mol, semakin besar pula volume gasnya. Nilai 22,4 L/mol berlaku khusus pada kondisi STP (Standard Temperature and Pressure).'
+},
+{
+  id: 'sm13',
+  tipe: 'pg',
+  tanya: 'Suatu senyawa mengandung 12 gram karbon (Ar = 12) dan 32 gram oksigen (Ar = 16). Tentukan rumus empiris senyawa tersebut!',
+  opsi: [
+    'CO',
+    'CO₂',
+    'C₂O',
+    'C₂O₃'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Mol C = 12 ÷ 12 = 1 mol</p>
+    <p>Mol O = 32 ÷ 16 = 2 mol</p>
+    <p>Perbandingan C : O = 1 : 2 → rumus empiris = <b>CO₂</b>.</p>
+  `
+},
+{
+  id: 'sm14',
+  tipe: 'cb',
+  tanya: 'Pernyataan yang benar tentang penentuan rumus empiris dan rumus molekul adalah …',
+  opsi: [
+    'Rumus empiris menunjukkan perbandingan terkecil atom unsur dalam senyawa',
+    'Rumus molekul menunjukkan jumlah sebenarnya atom tiap unsur dalam satu molekul',
+    'Rumus molekul selalu sama dengan rumus empiris',
+    'Rumus molekul dapat merupakan kelipatan bulat dari rumus empiris'
+  ],
+  kunci: [0,1,3],
+  bahas: 'Rumus empiris memberi perbandingan terkecil unsur dalam senyawa, sedangkan rumus molekul menunjukkan jumlah atom sebenarnya. Rumus molekul bisa sama dengan atau merupakan kelipatan dari rumus empiris.'
+},
+{
+  id:'sm15', 
+  tipe:'bs',
+  tanya:'Perhatikan pernyataan tentang kadar zat dalam senyawa berikut:',
+  opsi:[
+    'Kadar suatu unsur dalam senyawa menunjukkan persentase massa unsur tersebut terhadap massa senyawa',
+    'Untuk menentukan kadar, digunakan perbandingan massa unsur dengan massa total senyawa',
+    'Kadar unsur dalam senyawa selalu lebih besar dari 50%'
+  ],
+  kunci:[true,true,false],
+  bahas:'Kadar unsur dalam senyawa dihitung menggunakan rumus (massa unsur ÷ massa senyawa) × 100%. Nilai kadar bisa kurang atau lebih dari 50%, tergantung komposisi senyawanya.'
+},
+{
+  id: 'sm16',
+  tipe: 'pg',
+  tanya: 'Jika 4 gram gas hidrogen (H₂) bereaksi sempurna dengan gas oksigen (O₂) membentuk air, maka volume gas oksigen (pada STP) yang diperlukan adalah ....',
+  opsi: [
+    '11,2 L',
+    '22,4 L',
+    '33,6 L',
+    '44,8 L'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Reaksi: 2H₂ + O₂ → 2H₂O</p>
+    <p>Mol H₂ = 4 ÷ 2 = 2 mol</p>
+    <p>Dari reaksi, 2 mol H₂ bereaksi dengan 1 mol O₂ → mol O₂ = 1 mol</p>
+    <p>Volume O₂ = 1 × 22,4 = <b>22,4 L</b></p>
+    <p>Namun karena 4 g H₂ = 2 mol, maka O₂ yang dibutuhkan = 1 mol = <b>22,4 L</b>.</p>
+  `
+},
+{
+  id: 'sm17',
+  tipe: 'cb',
+  tanya: 'Pernyataan yang benar tentang konsep stoikiometri reaksi berikut adalah …',
+  opsi: [
+    'Koefisien dalam reaksi setara menunjukkan perbandingan mol zat',
+    'Jumlah massa sebelum dan sesudah reaksi selalu sama',
+    'Koefisien tidak berhubungan dengan volume gas pada kondisi sama',
+    'Stoikiometri digunakan untuk menghitung jumlah zat pereaksi dan hasil reaksi'
+  ],
+  kunci: [0,1,3],
+  bahas: 'Stoikiometri didasarkan pada hukum kekekalan massa. Koefisien reaksi menyatakan perbandingan mol, massa, maupun volume (untuk gas pada kondisi sama). Stoikiometri memungkinkan kita menghitung jumlah pereaksi dan produk yang terlibat.'
+},
+{
+  id: 'sm18',
+  tipe: 'bs',
+  tanya: 'Perhatikan pernyataan tentang stoikiometri berikut:',
+  opsi: [
+    'Perhitungan stoikiometri selalu didasarkan pada reaksi kimia yang sudah setara',
+    'Perbandingan koefisien reaksi dapat digunakan untuk menentukan jumlah mol zat lain',
+    'Stoikiometri tidak berhubungan dengan hukum kekekalan massa'
+  ],
+  kunci: [true,true,false],
+  bahas: 'Stoikiometri berlandaskan hukum kekekalan massa dan reaksi kimia yang telah setara. Koefisien digunakan untuk menentukan perbandingan mol antara pereaksi dan produk.'
+},
+{
+  id: 'sm19',
+  tipe: 'pg',
+  tanya: 'Sebanyak 4,6 gram natrium bereaksi dengan gas klorin membentuk natrium klorida. Jika reaksi berlangsung sempurna, maka massa NaCl yang terbentuk adalah .... (Ar Na = 23, Cl = 35,5)',
+  opsi: [
+    '5,8 gram',
+    '9,2 gram',
+    '11,7 gram',
+    '12,0 gram'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Reaksi: 2Na + Cl₂ → 2NaCl</p>
+    <p>Mol Na = 4,6 ÷ 23 = 0,2 mol</p>
+    <p>Dari reaksi, 2 mol Na menghasilkan 2 mol NaCl → mol NaCl = 0,2 mol</p>
+    <p>Massa NaCl = 0,2 × (23 + 35,5) = 0,2 × 58,5 = <b>11,7 gram</b></p>
+  `
+},
+{
+  id: 'sm20',
+  tipe: 'pg',
+  tanya: 'Jika 6 gram Mg direaksikan dengan 8 gram O₂ membentuk MgO, tentukan pereaksi pembatas dan massa MgO yang dihasilkan. (Ar Mg = 24, O = 16)',
+  opsi: [
+    'Mg pereaksi pembatas, MgO = 10 gram',
+    'O₂ pereaksi pembatas, MgO = 15 gram',
+    'Mg pereaksi pembatas, MgO = 10 gram',
+    'O₂ pereaksi pembatas, MgO = 5 gram'
+  ],
+  kunci: 2,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Reaksi: 2Mg + O₂ → 2MgO</p>
+    <p>Mol Mg = 6 ÷ 24 = 0,25 mol</p>
+    <p>Mol O₂ = 8 ÷ 32 = 0,25 mol</p>
+    <p>Dari reaksi, 2 mol Mg butuh 1 mol O₂ → untuk 0,25 mol Mg dibutuhkan 0,125 mol O₂.</p>
+    <p>Karena tersedia 0,25 mol O₂, maka Mg menjadi pereaksi pembatas.</p>
+    <p>Mol MgO = mol Mg = 0,25 mol → massa MgO = 0,25 × (24 + 16) = 10 gram.</p>
+  `
+},
+{
+  id: 'sm21',
+  tipe: 'pg',
+  tanya: 'Pada pembakaran 5,6 liter gas butana (C₄H₁₀) pada STP dengan oksigen berlebih, volume gas karbon dioksida yang dihasilkan adalah ....',
+  opsi: [
+    '11,2 L',
+    '22,4 L',
+    '44,8 L',
+    '56,0 L'
+  ],
+  kunci: 1,
+  bahas: `
+    <p><b>Penjelasan:</b></p>
+    <p>Reaksi: 2C₄H₁₀ + 13O₂ → 8CO₂ + 10H₂O</p>
+    <p>Dari reaksi, 2 mol C₄H₁₀ menghasilkan 8 mol CO₂ → 1 mol menghasilkan 4 mol CO₂.</p>
+    <p>Volume CO₂ = 4 × 5,6 L = <b>22,4 L</b></p>
+    <p>Namun karena perbandingan 1 : 4, maka 5,6 × 4 = <b>22,4 L</b>.</p>
+  `
+},
+{
+  id: 'sm22',
+  tipe: 'bs',
+  tanya: 'Perhatikan pernyataan berikut tentang stoikiometri reaksi:',
+  opsi: [
+    'Pereaksi pembatas adalah zat yang habis terlebih dahulu dalam reaksi kimia.',
+    'Jumlah mol hasil reaksi selalu bergantung pada pereaksi berlebih.',
+    'Untuk menentukan pereaksi pembatas, diperlukan perbandingan mol dari koefisien reaksi.'
+  ],
+  kunci: [true,false,true],
+  bahas: 'Pereaksi pembatas menentukan banyaknya produk yang dihasilkan karena habis lebih dulu. Jumlah mol hasil reaksi tidak bergantung pada pereaksi berlebih, melainkan pada zat pembatas. Penentuan pereaksi pembatas dilakukan dengan membandingkan mol zat yang bereaksi dengan koefisien reaksi.'
+},
+
   ]
 },
 
