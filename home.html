@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kebun Ilmu — Bimbel Online</title>
+  <meta name="description" content="Kebun Ilmu — Bimbel online interaktif dengan tutor berpengalaman. Les privat, kelas kelompok, dan latihan soal lengkap." />
+  <style>
+    :root{
+      --primary:#0f766e; --secondary:#14b8a6; --text:#1e293b; --muted:#64748b; --bg:#f0fdfa; --card:#ffffff;
+      --radius:16px; --shadow:0 8px 24px rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: 'Inter', sans-serif;background:var(--bg);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+
+    header{background:#ffffff;box-shadow:var(--shadow);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:50px;height:50px;border-radius:12px}
+    .brand-name{font-weight:700;font-size:20px;color:var(--primary)}
+
+    nav{display:flex;gap:18px}
+    nav a{padding:8px 14px;border-radius:10px;color:var(--muted);transition:.2s}
+    nav a:hover{background:var(--secondary);color:white}
+
+    .btn{padding:10px 18px;border:none;border-radius:10px;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-outline{border:2px solid var(--primary);background:transparent;color:var(--primary)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:50px 24px;max-width:1200px;margin:auto}
+    .hero-text h1{font-size:34px;line-height:1.2;color:var(--primary)}
+    .hero-text p{margin:18px 0;font-size:18px;color:var(--muted)}
+    .hero-actions{display:flex;gap:12px;margin-top:20px}
+
+    .hero-img img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Section */
+    section{padding:60px 24px;max-width:1200px;margin:auto}
+    h2{text-align:center;font-size:28px;color:var(--primary);margin-bottom:30px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.2s}
+    .card:hover{transform:translateY(-5px)}
+    .card img{width:100%;border-radius:12px;margin-bottom:14px}
+    .card h3{font-size:18px;margin-bottom:8px;color:var(--primary)}
+    .card p{font-size:14px;color:var(--muted)}
+
+    /* Tutors */
+    .tutors{display:flex;gap:16px;overflow-x:auto;padding-bottom:10px}
+    .tutor{min-width:220px;background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center}
+    .tutor img{width:70px;height:70px;border-radius:50%;margin-bottom:10px}
+    .tutor h4{margin:0;color:var(--primary)}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .testimonials .card{font-size:14px}
+
+    footer{background:#ffffff;padding:20px;text-align:center;color:var(--muted);margin-top:40px}
+
+    @media(max-width:768px){
+      .hero{grid-template-columns:1fr}
+    }
+  /* Responsive improvements */
+  @media(max-width:1024px){
+    .hero-text h1{font-size:28px}
+    .hero-text p{font-size:16px}
+  }
+
+  @media(max-width:768px){
+    header{flex-wrap:wrap;gap:10px}
+    nav{display:none;flex-direction:column;width:100%;background:white;border-radius:12px;margin-top:10px;padding:10px}
+    nav a{padding:10px;color:var(--text)}
+    nav.show{display:flex}
+    .hero{grid-template-columns:1fr}
+    .hero-text h1{font-size:24px}
+    .hero-text p{font-size:15px}
+  }
+
+  .menu-toggle{display:none;font-size:26px;cursor:pointer;color:var(--primary);background:none;border:none}
+  @media(max-width:768px){
+    .menu-toggle{display:block}
+    header > div:last-child{margin-left:auto}
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+  <div class="brand">
+    <img src="https://zahwan93.github.io/Kebun-Ilmu-Matematika-SMP/logo.png" alt="Kebun Ilmu Logo">
+    <span class="brand-name">Kebun Ilmu</span>
+  </div>
+  
+  <!-- Tombol menu hamburger -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="#courses">Kursus</a>
+    <a href="#tutors">Pengajar</a>
+    <a href="#testimonials">Testimoni</a>
+    <a href="#about">Tentang</a>
+  </nav>
+
+  <div>
+    <button class="btn btn-outline">Login</button>
+    <a href="https://forms.gle/Xaz7nYueVzNbevNv5" target="_blank">
+  <button class="btn btn-primary">Daftar</button>
+</a>
+
+  </div>
+</header>
+
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Belajar jadi lebih mudah bersama <span style="color:var(--secondary)">Kebun Ilmu</span></h1>
+      <p>Bimbel online dan offline interaktif dengan tutor berpengalaman. Siap membantu persiapan ujian, PR, maupun penguasaan materi sekolah.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Daftar Sekarang</button>
+        <button class="btn btn-outline">Coba Gratis</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://img-cdn.medkomtek.com/N5Y7s_fe2GGKO9ncXp_Laoumzs4=/730x411/smart/filters:quality(100):format(webp)/article/uvx8JtVZNP899gorwa7ck/original/093693900_1601632137-Belajar-Online-Saat-Pandemi-Idealnya-Berapa-Jam-Dalam-Sehari-shutterstock_1675256440.jpg?w=256&q=100" alt="Belajar Online">
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Kursus Populer</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://www.quipper.com/id/blog/wp-content/uploads/2023/01/smiling-young-female-math-teacher-sitting-desk-with-school-supplies-holding-mini-blackboard-pointing-it-with-hand-looking-front-classroom-1170x780.webp" alt="Matematika">
+        <h3>Matematika SMA</h3>
+        <p>Aljabar, geometri, trigonometri, dan persiapan UTBK.</p>
+      </div>
+      <div class="card">
+        <img src="https://mmc.tirto.id/image/otf/970x0/2024/10/29/istock-1866121335_ratio-16x9.jpg" alt="Fisika">
+        <h3>Fisika SMA</h3>
+        <p>Mekanik, listrik, dan persiapan ujian nasional.</p>
+      </div>
+      <div class="card">
+        <img src="https://edugraff.com.au/themes/cultura/img/blog/blogPost/thumb_41.jpg" alt="Biologi">
+        <h3>Biologi SMA</h3>
+        <p>Materi genetik, ekosistem, dan latihan soal intensif.</p>
+      </div>
+    </div>
+  </section>
+<section id="packages">
+  <h2>Pilih Paket Belajarmu</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://img.freepik.com/free-vector/startup-concept-illustration_114360-1405.jpg" alt="Paket Starter">
+      <h3>🌱 Paket Starter</h3>
+      <p>5x pertemuan per bulan. Cocok untuk kamu yang mau coba-coba dulu atau butuh pendampingan ringan.</p>
+      <button class="btn btn-primary" style="margin-top:12px">Pilih Paket</button>
+    </div>
+    <div class="card">
+      <img src="https://img.freepik.com/free-vector/education-online-training-courses_52683-37860.jpg" alt="Paket Regular">
+      <h3>🌿 Paket Regular</h3>
+      <p>8x pertemuan per bulan. Pas buat pelajar yang ingin rutin belajar dan siap menghadapi ujian.</p>
+      <button class="btn btn-primary" style="margin-top:12px">Pilih Paket</button>
+    </div>
+    <div class="card">
+      <img src="https://img.freepik.com/free-vector/online-courses-tutorials_23-2148524913.jpg" alt="Paket Intensive">
+      <h3>🌳 Paket Intensive</h3>
+      <p>12x pertemuan per bulan. Belajar lebih intensif dengan tutor untuk hasil maksimal.</p>
+      <button class="btn btn-primary" style="margin-top:12px">Pilih Paket</button>
+    </div>
+  </div>
+</section>
+
+  <section id="tutors">
+    <h2>Pengajar Kami</h2>
+    <div class="tutors">
+      <div class="tutor">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Tutor Matematika">
+        <h4>Ibu Sinta</h4>
+        <p>Matematika — 10 tahun pengalaman</p>
+      </div>
+      <div class="tutor">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Tutor Fisika">
+        <h4>Pak Arif</h4>
+        <p>Fisika — Alumni ITB</p>
+      </div>
+      <div class="tutor">
+        <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Tutor Biologi">
+        <h4>Ibu Ria</h4>
+        <p>Biologi — Praktisi Lab</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Apa Kata Mereka?</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>“Nilai matematika saya meningkat drastis setelah ikut Kebun Ilmu. Tutornya sabar dan jelas.”</p>
+        <strong>- Rizka, SMA 12</strong>
+      </div>
+      <div class="card">
+        <p>“Metode belajar sangat interaktif. Banyak latihan soal yang membantu persiapan UTBK.”</p>
+        <strong>- Dito, SMA 3</strong>
+      </div>
+    </div>
+  </section>
+<section id="about" style="margin-top:40px">
+  <h2>Tentang Program Belajar</h2>
+  <div class="grid">
+    <!-- Online & Offline -->
+    <div class="card">
+      <h3>✨ Fleksibel Online & Offline</h3>
+      <p>Kamu bisa pilih belajar <strong>offline</strong> di rumah dengan tutor atau <strong>online</strong> dengan kelas kecil. Jadi belajar tetap fokus & nyaman.</p>
+      <ul style="margin-top:12px; font-size:15px; color:var(--muted); line-height:1.7">
+        <li>💻 Belajar online interaktif</li>
+        <li>🏠 Belajar offline dengan tutor</li>
+        <li>📘 Akses soal & pembahasan di <strong>Rumah Belajar</strong></li>
+        <li>👨‍👩‍👧 Offline: max 5 orang • Online: max 3 orang</li>
+      </ul>
+    </div>
+
+    <!-- Mata Pelajaran -->
+    <div class="card">
+      <h3>📚 Pilihan Mata Pelajaran</h3>
+      <p>Kami mendampingi siswa dari SD, SMP, hingga SMA dengan mata pelajaran inti dan favorit.</p>
+      <ul style="margin-top:12px; font-size:15px; color:var(--muted); line-height:1.7">
+        <li><strong>SD:</strong> Matematika, IPA, Bahasa Inggris</li>
+        <li><strong>SMP:</strong> Matematika, IPA, Bahasa Inggris</li>
+        <li><strong>SMA:</strong> Matematika, Ekonomi, Akuntansi, Biologi, Fisika, Kimia, Bahasa Inggris</li>
+      </ul>
+    </div>
+
+    <!-- Persiapan Ujian -->
+    <div class="card">
+      <h3>🎯 Persiapan Ujian</h3>
+      <p>Bersama tutor berpengalaman, kami siap mendampingi persiapan ujian sekolah hingga masuk perguruan tinggi.</p>
+      <ul style="margin-top:12px; font-size:15px; color:var(--muted); line-height:1.7">
+        <li>📝 Try Out & latihan soal TKA/UTBK</li>
+        <li>🎓 Strategi masuk perguruan tinggi</li>
+        <li>⚡ Tips belajar cepat & efektif</li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <footer style="margin-top:50px; background:var(--primary); color:white; padding:30px; border-radius:20px 20px 0 0">
+  <h3 style="margin-bottom:12px">📍 Kebun Ilmu</h3>
+  <p style="margin:5px 0">Perumahan Puri Indah Permata 1 Blok D5</p>
+  <p style="margin:5px 0">Desa Bulakelor, Kec. Ketanggungan, Kab. Brebes</p>
+  <p style="margin:10px 0">📞 <a href="https://wa.me/6285641387872" target="_blank" style="color:#fff; font-weight:600; text-decoration:underline">+62 856-4138-7872</a></p>
+  
+  <button onclick="window.open('https://wa.me/6285641387872','_blank')" 
+          class="btn btn-primary" 
+          style="background:#25D366; border:none; margin-top:15px; font-size:16px; padding:12px 22px; border-radius:12px; cursor:pointer">
+    💬 Hubungi via WhatsApp
+  </button>
+
+  <p style="margin-top:25px; font-size:14px; color:#e0f7f4">© 2025 Kebun Ilmu • Belajar jadi lebih mudah</p>
+</footer>
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
