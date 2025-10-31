@@ -7329,7 +7329,7 @@ gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFb
 },
 
 
-'FluidaStatis': {
+'Fluida Statis': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Fluida Statis: Konsep, Hukum, dan Penerapan</h2>
 
@@ -7390,7 +7390,7 @@ gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFb
       </a>
     </p>
   `,
-  video: 'cw6P-SxQM74', 
+  video: ['cw6P-SxQM74'], 
   soal: [
 {
   id:'tp1',
@@ -7666,6 +7666,90 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
 
   ]
 },
+'Dinamika Partikel': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Dinamika Partikel: Gaya, Hukum Newton, dan Penerapan</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Dinamika Partikel</h3>
+    <p class="mb-4">
+      Dinamika partikel mempelajari hubungan antara gaya yang bekerja pada suatu benda dengan gerak yang ditimbulkannya. 
+      Cabang ini didasari oleh Hukum Newton yang menjelaskan bagaimana gaya memengaruhi percepatan dan gerak benda.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Gaya dan Jenis-jenisnya</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Gaya Berat (W):</b> Gaya gravitasi bumi terhadap benda, \\( W = m g \\)</li>
+      <li><b>Gaya Normal (N):</b> Gaya yang diberikan permukaan terhadap benda yang bersentuhan dengannya.</li>
+      <li><b>Gaya Gesek (f):</b> Gaya yang menentang arah gerak benda, \\( f = \\mu N \\), dengan \\( \\mu \\) = koefisien gesekan.</li>
+      <li><b>Gaya Tegangan Tali (T):</b> Gaya yang diteruskan melalui tali, kabel, atau kawat.</li>
+      <li><b>Gaya Sentripetal:</b> Gaya yang menyebabkan benda bergerak melingkar, \\( F = m v^2 / r \\).</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Hukum Newton tentang Gerak</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Hukum I Newton:</b> Benda akan tetap diam atau bergerak lurus beraturan jika resultan gaya pada benda = 0.</li>
+      <li><b>Hukum II Newton:</b> Resultan gaya sama dengan massa kali percepatan: \\( \\Sigma F = m a \\).</li>
+      <li><b>Hukum III Newton:</b> Jika benda A memberikan gaya pada benda B, maka benda B memberikan gaya yang sama besar tetapi berlawanan arah pada benda A.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">4. Gaya dan Gerak pada Bidang Miring</h3>
+    <p class="mb-4">
+      Pada bidang miring dengan sudut kemiringan \\( \\theta \\):<br>
+      Komponen gaya berat:
+      <ul class="list-disc pl-6">
+        <li>Sejajar bidang: \\( W_{\\parallel} = m g \\sin\\theta \\)</li>
+        <li>Tegak lurus bidang: \\( W_{\\perp} = m g \\cos\\theta \\)</li>
+      </ul>
+    </p>
+
+    <h3 class="font-semibold mt-3">5. Penerapan Dinamika Partikel</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Analisis gaya pada lift yang bergerak naik atau turun.</li>
+      <li>Gaya sentripetal pada gerak melingkar (mobil di tikungan, satelit).</li>
+      <li>Gaya gesek dalam pergerakan benda di bidang datar dan miring.</li>
+      <li>Tarikan pada benda yang dihubungkan dengan katrol.</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">6. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk pembahasan lebih rinci tentang hukum Newton dan gaya-gaya dalam dinamika partikel, silakan baca materi berikut:<br>
+      <a href="https://fisika.id/dinamika-partikel-hukum-newton/" target="_blank" class="text-blue-600 underline">
+        📘 Klik di sini untuk membuka materi lengkap Dinamika Partikel
+      </a>
+    </p>
+  `,
+  video: 'U7xF3ItqFno', 
+  soal: [
+    {
+      id:'dp1',
+      tipe:'pg',
+      bacaan:'Sebuah benda bermassa 5 kg dikenai gaya sebesar 20 N pada permukaan licin mendatar.',
+      tanya:'Berapakah percepatan yang dialami benda tersebut?',
+      opsi:['2 m/s²','3 m/s²','4 m/s²','5 m/s²'],
+      kunci:2,
+      bahas:'Gunakan Hukum II Newton: \\( F = m a \\) → \\( a = F/m = 20 / 5 = 4\\, m/s^2 \\).'
+    },
+    {
+      id:'dp2',
+      tipe:'pg',
+      bacaan:'Sebuah benda bermassa 10 kg berada di bidang miring licin dengan sudut 30° terhadap horizontal.',
+      tanya:'Hitung percepatan benda di sepanjang bidang miring! (gunakan \\( g = 10\\, m/s^2 \\))',
+      opsi:['2 m/s²','3 m/s²','5 m/s²','10 m/s²'],
+      kunci:2,
+      bahas:'Percepatan di bidang miring: \\( a = g \\sin\\theta = 10 \\times \\sin 30° = 10 \\times 0,5 = 5\\, m/s^2 \\).'
+    },
+    {
+      id:'dp3',
+      tipe:'pg',
+      bacaan:'Sebuah benda bermassa 2 kg ditarik gaya horizontal 8 N di atas permukaan dengan koefisien gesekan 0,2. (\\( g = 10\\, m/s^2 \\))',
+      tanya:'Berapakah percepatan benda?',
+      opsi:['2 m/s²','3 m/s²','4 m/s²','5 m/s²'],
+      kunci:1,
+      bahas:'Gaya gesek: \\( f = \\mu N = 0,2 \\times 2 \\times 10 = 4\\, N \\). Maka \\( F_{net} = 8 - 4 = 4\\, N \\). Jadi \\( a = 4/2 = 2\\, m/s^2 \\).'
+    }
+  ]
+},
+
   }
 },
 
