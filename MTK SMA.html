@@ -7402,7 +7402,25 @@ gambar:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKtjBgzndzIFb
   bahas:'Tekanan: \\(P = F/A = 200 / 0,5 = 400\\, Pa\\).'
 },
 {
-  id:'tp2',
+  id: 'tp2a',
+  tipe: 'pg',
+   tanya: 'Perhatikan gambar berikut! <br> <img src="http://fisikastudycenter.files.wordpress.com/2010/10/unsmp_p1209_7.png" class="my-2 w-full max-w-sm mx-auto" /> <br> Massa kotak = 75 kg dan percepatan gravitasi \\( g = 10\\, m/s^2 \\).<br>Tekanan yang diberikan oleh dasar kotak adalah ....',
+  opsi: ['150 N/m²', '125 N/m²', '75 N/m²', '25 N/m²'],
+  kunci: 0,
+  bahas: 'Tekanan \\(P = F / A = (m \\times g) / A = (75 \\times 10) / 5 = 150\\, N/m²\\).'
+},
+{
+  id: 'tp3a',
+  tipe: 'pg',
+  bacaan: 'Seorang pria dengan berat 800 N menggunakan sepatu dengan ukuran alas sepatu 8 cm × 25 cm. Ketika ia melangkah, seluruh berat badannya ditumpu oleh salah satu sepatunya.',
+  tanya: 'Tekanan yang diberikan pria tersebut pada lantai adalah ....',
+  opsi: ['3 × 10⁴ N/m²', '4 × 10⁴ N/m²', '5 × 10⁴ N/m²', '6 × 10⁴ N/m²'],
+  kunci: 1,
+  bahas: 'Luas alas sepatu \\(A = 8\\,\\text{cm} \\times 25\\,\\text{cm} = 200\\,\\text{cm}^2 = 0{,}02\\,\\text{m}^2\\). <br> Tekanan \\(P = F / A = 800 / 0{,}02 = 40{,}000\\,\\text{N/m}^2 = 4 \\times 10^4\\,\\text{N/m}^2\\).'
+},
+
+{
+  id:'tp4',
   tipe:'bs',
   bacaan:'Tekanan merupakan besaran turunan dalam fisika yang satuannya adalah Pascal (Pa). 1 Pa = 1 N/m².',
   tanya:'Tentukan benar atau salah setiap pernyataan berikut!',
@@ -7755,6 +7773,270 @@ gambar:'http://physics.fisikastudycenter.com/images/u-pipe-3-fluids.png',
 
 'Kimia': {
   bab: {
+'Termokimia': {
+  materi: `
+    <h2 class="text-xl font-bold mb-2">Termokimia</h2>
+
+    <h3 class="font-semibold mt-3">1. Pengertian Termokimia</h3>
+    <p class="mb-4">
+      <b>Termokimia</b> adalah cabang kimia yang mempelajari hubungan antara reaksi kimia dan perubahan energi dalam bentuk panas.
+      Pada dasarnya, setiap reaksi kimia disertai dengan perubahan energi, baik pelepasan maupun penyerapan panas.
+    </p>
+
+    <h3 class="font-semibold mt-3">2. Jenis Reaksi Berdasarkan Perubahan Energi</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Reaksi Eksoterm</b>: Reaksi yang <b>melepaskan</b> panas ke lingkungan. Energi produk <b>lebih rendah</b> dari energi reaktan. Contoh: \\(CH_4 + 2O_2 → CO_2 + 2H_2O + energi\\).</li>
+      <li><b>Reaksi Endoterm</b>: Reaksi yang <b>menyerap</b> panas dari lingkungan. Energi produk <b>lebih tinggi</b> dari energi reaktan. Contoh: \\(N_2 + O_2 → 2NO - energi\\).</li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">3. Enthalpi (ΔH)</h3>
+    <p class="mb-4">
+      <b>Enthalpi (ΔH)</b> adalah perubahan energi panas pada tekanan tetap.
+      <br>Rumus umum:
+      \\[
+      ΔH = H_{produk} - H_{reaktan}
+      \\]
+      <ul class="list-disc pl-6">
+        <li>Jika ΔH < 0 → reaksi eksoterm</li>
+        <li>Jika ΔH > 0 → reaksi endoterm</li>
+      </ul>
+    </p>
+
+    <h3 class="font-semibold mt-3">4. Kalor Reaksi dan Persamaan Termokimia</h3>
+    <p class="mb-4">
+      Persamaan reaksi kimia yang disertai dengan informasi perubahan entalpi disebut <b>persamaan termokimia</b>.<br>
+      Contoh:<br>
+      \\(H_2(g) + \\frac{1}{2}O_2(g) → H_2O(l)\\), ΔH = -286 kJ<br>
+      Artinya, pembentukan 1 mol H₂O melepaskan 286 kJ energi.
+    </p>
+
+    <h3 class="font-semibold mt-3">5. Hukum Hess</h3>
+    <p class="mb-4">
+      Hukum Hess menyatakan bahwa perubahan entalpi total suatu reaksi tidak bergantung pada jalannya reaksi, tetapi hanya pada keadaan awal dan akhir.
+      <br>Jika suatu reaksi dapat berlangsung dalam beberapa tahap, maka:
+      \\[
+      ΔH_{total} = ΔH_1 + ΔH_2 + ΔH_3 + ...
+      \\]
+    </p>
+
+    <h3 class="font-semibold mt-3">6. Kalor Jenis dan Kapasitas Kalor</h3>
+    <ul class="list-disc pl-6 mb-4">
+      <li><b>Kalor (q)</b> adalah energi panas yang diterima atau dilepaskan zat.</li>
+      <li><b>Kalor jenis (c)</b> menyatakan banyaknya energi panas yang diperlukan untuk menaikkan suhu 1 gram zat sebesar 1°C.</li>
+      <li>Rumus umum:
+        \\[
+        q = m \\times c \\times ΔT
+        \\]
+        di mana:
+        <br>m = massa (g),
+        <br>c = kalor jenis (J/g°C),
+        <br>ΔT = perubahan suhu (°C).
+      </li>
+    </ul>
+
+    <h3 class="font-semibold mt-3">7. Materi Lebih Lengkap</h3>
+    <p class="mb-4">
+      Untuk penjelasan lebih detail, baca materi berikut:<br>
+      <a href="https://materi78.wordpress.com/wp-content/uploads/2013/06/termo_kim2_3.pdf"
+         target="_blank" class="text-blue-600 underline">
+         📘 Klik di sini untuk membuka materi lengkap Termokimia (PDF)
+      </a>
+    </p>
+  `,
+
+  video: ['9D6WGcLf7UU'],
+
+  soal: [
+    {
+      id: 'tk1',
+      tipe: 'pg',
+      tanya: 'Reaksi \\(CH_4 + 2O_2 → CO_2 + 2H_2O + energi\\) termasuk reaksi ....',
+      opsi: ['Endoterm', 'Eksoterm', 'Setara', 'Netral'],
+      kunci: 1,
+      bahas: 'Reaksi tersebut melepaskan energi (panas) ke lingkungan sehingga termasuk reaksi <b>eksoterm</b>.'
+    },
+    {
+      id: 'tk2',
+      tipe: 'pg',
+      tanya: 'Jika suatu reaksi memiliki ΔH = +150 kJ, maka reaksi tersebut ....',
+      opsi: ['Melepaskan panas', 'Menyerap panas', 'Tidak ada perubahan energi', 'Netral terhadap lingkungan'],
+      kunci: 1,
+      bahas: 'Karena ΔH bernilai positif, reaksi menyerap energi panas dari lingkungan, sehingga termasuk <b>reaksi endoterm</b>.'
+    },
+    {
+      id: 'tk3',
+      tipe: 'bs',
+      tanya: 'Perhatikan pernyataan berikut:',
+      opsi: [
+        'Reaksi eksoterm menyebabkan suhu lingkungan naik',
+        'Reaksi endoterm menyerap panas dari lingkungan',
+        'Nilai ΔH pada reaksi eksoterm bernilai positif'
+      ],
+      kunci: [true, true, false],
+      bahas: 'Reaksi eksoterm melepaskan panas ke lingkungan (ΔH negatif), sedangkan reaksi endoterm menyerap panas dari lingkungan (ΔH positif).'
+    },
+{
+  id: 'tk4',
+  tipe: 'pg',
+  tanya: 'Hitunglah besarnya kerja (dalam Joule) yang dilakukan suatu sistem yang mengalami ekspansi melawan tekanan 2 atm dengan perubahan volume 10 liter!',
+  opsi: ['200 J', '1013 J', '2026 J', '4000 J'],
+  kunci: 2,
+  bahas: `
+    <p>Kerja (W) pada ekspansi gas dihitung dengan rumus:</p>
+    <p>\\( W = -P \\Delta V \\)</p>
+    <p>Diketahui \\( P = 2\\,\\text{atm} \\) dan \\( \\Delta V = 10\\,\\text{L} \\).</p>
+    <p>Maka \\( W = -2 \\times 10 = -20\\,\\text{L·atm} \\).</p>
+    <p>Karena 1 L·atm = 101,3 J, maka:</p>
+    <p>\\( W = -20 \\times 101,3 = -2026\\,\\text{J} \\)</p>
+    <p>Besarnya kerja adalah <b>2026 J</b> (tanda negatif menunjukkan kerja dilakukan oleh sistem).</p>
+  `
+},
+{
+  id: 'tk5',
+  tipe: 'pg',
+  tanya: 'Kalor jenis air = 4,18 J·g⁻¹·K⁻¹. Berapa Joule kalor yang diperlukan untuk memanaskan 100 gram air dari 25℃ menjadi 100℃? ',
+  opsi: ['15,7 kJ', '31,4 kJ', '41,8 kJ', '75,2 kJ'],
+  kunci: 1,
+  bahas: `
+    <p>Diketahui:</p>
+    <p>\\( m = 100\\,g \\), \\( c = 4,18\\,J·g^{-1}·K^{-1} \\), dan \\( \\Delta T = 100 - 25 = 75\\,K \\).</p>
+    <p>Maka kalor yang diperlukan:</p>
+    <p>\\( Q = m \\times c \\times \\Delta T \\)</p>
+    <p>\\( Q = 100 \\times 4,18 \\times 75 = 31\\,350\\,J \\)</p>
+    <p>Ubah ke kJ: \\( 31\\,350\\,J = 31,35\\,kJ \\)</p>
+    <p>Jadi kalor yang diperlukan adalah sekitar <b>31,4 kJ</b>.</p>
+  `
+},
+{
+  id: 'tk6',
+  tipe: 'pg',
+  tanya: 'Suatu sistem menyerap kalor sebanyak 100 kJ dan melakukan kerja sebanyak 5 kJ. Berapakah perubahan energi dalam sistem tersebut?',
+  opsi: ['5 kJ', '50 kJ', '95 kJ', '105 kJ'],
+  kunci: 2,
+  bahas: `
+    <p>Diketahui:</p>
+    <p>\\( Q = +100\\,kJ \\) (kalor diserap) dan \\( W = 5\\,kJ \\) (kerja dilakukan oleh sistem).</p>
+    <p>Rumus perubahan energi dalam sistem:</p>
+    <p>\\( \\Delta E = Q - W \\)</p>
+    <p>\\( \\Delta E = 100 - 5 = 95\\,kJ \\)</p>
+    <p>Jadi, perubahan energi dalam sistem adalah <b>95 kJ</b>.</p>
+  `
+},
+{
+  id: 'tk7',
+  tipe: 'bs',
+  tanya: 'Suatu reaksi berlangsung pada volume tetap dan disertai penyerapan kalor sebanyak 200 kJ. Tentukan benar (B) atau salah (S) untuk setiap pernyataan tentang nilai ΔE, ΔH, q, dan W dari reaksi berikut!',
+  opsi: [
+    'ΔE = 200 kJ',
+    'ΔH = +200 kJ',
+    'q = +200 kJ',
+    'W = 200 kJ'
+  ],
+  kunci: [true, true, true, false],
+  bahas: `
+    <p>Pada volume tetap, tidak ada perubahan volume sehingga:</p>
+    <p>\\( W = 0 \\)</p>
+    <p>Kalor yang diserap sistem sebesar 200 kJ, maka:</p>
+    <p>\\( q = +200\\,kJ \\)</p>
+    <p>Karena volume tetap, \\( \\Delta E = q \\), sehingga:</p>
+    <p>\\( \\Delta E = +200\\,kJ \\)</p>
+    <p>Untuk reaksi pada volume tetap, \\( \\Delta H = \\Delta E \\), jadi:</p>
+    <p>\\( \\Delta H = +200\\,kJ \\)</p>
+    <p>Dengan demikian, nilai-nilai yang benar adalah:</p>
+    <p><b>ΔE = 200 kJ, ΔH = +200 kJ, q = +200 kJ, dan W = 0 kJ.</b></p>
+  `
+},
+{
+  id: 'tk8',
+  tipe: 'pg',
+  tanya: 'Diketahui persamaan termokimia: <br>2 C₂H₂(g) + 5 O₂(g) → 4 CO₂(g) + 2 H₂O(l), ΔH = -2372 kJ.<br> Hitunglah kalor yang dilepaskan pada pembakaran 5,6 L C₂H₂ (STP)!',
+  opsi: ['-1186 kJ', '-592 kJ', '-237 kJ', '-297 kJ', '-118 kJ'],
+  kunci: 3,
+  bahas: `
+    <p>Diketahui:</p>
+    <p>Reaksi: 2 C₂H₂ menghasilkan ΔH = -2372 kJ.</p>
+    <p>Pada STP, 1 mol gas = 22,4 L → mol C₂H₂ = 5,6 / 22,4 = 0,25 mol.</p>
+    <p>Kalor per 2 mol = -2372 kJ → kalor per 1 mol = -1186 kJ.</p>
+    <p>Untuk 0,25 mol: \\( Q = 0,25 × (-1186) = -296,5\\,kJ \\).</p>
+    <p>Dibulatkan ≈ <b>-297 kJ</b> (≈ -0,25 × 1186).</p>
+    <p>Jadi kalor yang dilepaskan pada pembakaran 5,6 L C₂H₂ adalah sekitar <b>-297 kJ</b>.</p>
+  `
+},
+{
+  id: 'tk9',
+  tipe: 'pg',
+  tanya: 'Diketahui kalor jenis air = 4,18 J g⁻¹ °C⁻¹. Berapa energi yang diperlukan untuk memanaskan 20 gram air dari suhu 27°C menjadi 77°C?',
+  opsi: ['0,418 kJ', '1,045 kJ', '4,18 kJ', '6,27 kJ', '8,15 kJ'],
+  kunci: 2,
+  bahas: `
+    <p>Diketahui:</p>
+    <p>\\( m = 20\\,g \\), \\( c = 4{,}18\\,Jg^{-1}°C^{-1} \\), dan \\( \\Delta T = 77 - 27 = 50°C \\).</p>
+    <p>Rumus: \\( Q = m \\times c \\times \\Delta T \\)</p>
+    <p>\\( Q = 20 \\times 4{,}18 \\times 50 = 4180\\,J \\)</p>
+    <p>Ubah ke kJ: \\( 4180\\,J = 4{,}18\\,kJ \\)</p>
+    <p>Jadi, energi yang diperlukan untuk memanaskan air tersebut adalah <b>4,18 kJ</b>.</p>
+  `
+},
+{
+  id: 'tk10',
+  tipe: 'bs',
+  tanya: 'Air sebanyak 2 liter dipanaskan dengan pembakaran elpiji dari suhu 27°C sampai 77°C. Diketahui massa jenis air = 1 g/cm³ dan kalor jenis air = 4,18 J/g°C. <br>Tentukan benar (B) atau salah (S) untuk setiap pernyataan berikut:',
+  opsi: [
+    'Energi yang diperlukan untuk menaikkan suhu air adalah 418 kJ',
+    'Perubahan entalpi reaksi pembakaran elpiji adalah -418 kJ',
+    'Reaksi pembakaran elpiji bersifat endoterm'
+  ],
+  kunci: [true, true, false],
+  bahas: `
+    <p><b>Diketahui:</b></p>
+    <p>Volume air = 2 L → massa air \\( = 2000\\,g \\)</p>
+    <p>Kalor jenis air \\( c = 4{,}18\\,J/g°C \\)</p>
+    <p>Perubahan suhu \\( \\Delta T = 77 - 27 = 50°C \\)</p>
+
+    <p><b>(a) Energi yang diperlukan:</b></p>
+    <p>\\( Q = m \\times c \\times \\Delta T \\)</p>
+    <p>\\( Q = 2000 \\times 4{,}18 \\times 50 = 418000\\,J = 418\\,kJ \\)</p>
+    <p>Jadi, energi yang diperlukan untuk menaikkan suhu air adalah <b>418 kJ ✅</b>.</p>
+
+    <p><b>(b) Perubahan entalpi reaksi pembakaran elpiji:</b></p>
+    <p>Air menyerap panas 418 kJ, maka pembakaran elpiji <i>melepaskan</i> panas sebesar 418 kJ.</p>
+    <p>Sehingga \\( \\Delta H = -418\\,kJ \\) → reaksi bersifat <b>eksoterm ✅</b>.</p>
+
+    <p>Pernyataan “Reaksi pembakaran elpiji bersifat endoterm” adalah <b>salah ❌</b> karena pembakaran selalu bersifat eksoterm karena <b>perubahan entalpi negatif</b> .</p>
+  `
+},
+{
+  id: 'tk11',
+  tipe: 'pg',
+  tanya: 'Sebanyak 100 mL larutan 0,2 M KOH dicampur dengan 100 mL larutan 0,1 M H₂SO₄. Suhu awal kedua larutan 25°C dan suhu akhir setelah reaksi 60°C. Jika kalor jenis larutan = 1 kal/g°C, massa jenis = 1 g/cm³, dan kapasitas kalor kalorimeter = 80 kal/°C, tentukanlah ΔH reaksi (dalam kkal/mol H₂SO₄)!',
+  opsi: ['-5 kkal/mol', '-10 kkal/mol', '-20 kkal/mol', '-980 kkal/mol', '-50 kkal/mol'],
+  kunci: 3,
+  bahas: `
+    <p><b>Diketahui:</b></p>
+    <p>V<sub>KOH</sub> = 100 mL, M<sub>KOH</sub> = 0,2 M → n = 0,1 × 0,2 = 0,02 mol</p>
+    <p>V<sub>H₂SO₄</sub> = 100 mL, M<sub>H₂SO₄</sub> = 0,1 M → n = 0,1 × 0,1 = 0,01 mol</p>
+
+    <p>Reaksi: \\( H_2SO_4 + 2KOH → K_2SO_4 + 2H_2O \\)</p>
+    <p>Perbandingan stoikiometri 1 : 2 → 0,01 mol H₂SO₄ bereaksi sempurna dengan 0,02 mol KOH.</p>
+
+    <p><b>Perhitungan kalor:</b></p>
+    <p>Total massa larutan = 100 g + 100 g = 200 g</p>
+    <p>ΔT = 60 − 25 = 35°C</p>
+    <p>q<sub>larutan</sub> = m × c × ΔT = 200 × 1 × 35 = 7000 kal</p>
+    <p>q<sub>kalorimeter</sub> = C × ΔT = 80 × 35 = 2800 kal</p>
+    <p>Total kalor = 7000 + 2800 = 9800 kal</p>
+
+    <p>Karena reaksi melepaskan panas, maka \\( q = -9800\\,kal \\)</p>
+    <p>Untuk 0,01 mol H₂SO₄ →</p>
+    <p>\\( ΔH = \\frac{-9800}{0,01} = -980000\\,kal/mol = -980\\,kkal/mol \\)</p>
+
+    <p><b>ΔH = -980 kkal/mol H₂SO₄</b></p>
+  `
+},
+
+  ]
+},
+
 'Stoikiometri Dasar': {
   materi: `
     <h2 class="text-xl font-bold mb-2">Stoikiometri Dasar</h2>
